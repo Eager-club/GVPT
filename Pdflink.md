@@ -1724,8 +1724,766 @@ https://www.gvpcdpgc.edu.in/bba/bba_data/faculty.pdf
 Placements
 https://www.gvpcdpgc.edu.in/bba/bba_data/placements_bba.pdf
  
+Programs:
+Post graduate:
+DEPARTMENT OF Master of Business Administration
+About Department:
+FY 2021-22 MBA Financial Audit Report
+https://www.gvpcdpgc.edu.in/mba/mba_data/FY_2021-22_MBA_Financial_Audit_Report.pdf
 
 
+FY 2020-21 MBA Financial Audit Report
+https://www.gvpcdpgc.edu.in/mba/mba_data/FY_2020-21_MBA_Financial_Audit_Report.pdf
+FY 2019-20 MBA Financial Audit Report
+https://www.gvpcdpgc.edu.in/mba/mba_data/FY_2019-20_MBA_Financial_Audit_Report.pdf
+
+
+FY 2018-19 MBA Financial Audit Report
+https://www.gvpcdpgc.edu.in/mba/mba_data/FY_2018-19_MBA_Financial_Audit_Report.pdf
+POLICIES AND PROCEDURES
+https://www.gvpcdpgc.edu.in/mba/mba_data/POLICIES%20AND%20PROCEDURES%20(1).pdf
+
+
+GVPCDPGC GOVERNANCE
+https://www.gvpcdpgc.edu.in/mba/mba_data/GVPCDPGC%20GOVERNANCE%20(1).pdf
+
+
+
+Syllabus
+
+MBA Syllabus (Under CBCS Pattern) (With effect from 2022 – 2023 Admitted Batch) https://www.gvpcdpgc.edu.in/mba/mba_data/MBA_(General)_Syllabus_2022-23_Admitted_Batch.pdf
+
+MBA Syllabus (Under CBCS Pattern) (With effect from 2021 – 2022 Admitted Batch) https://www.gvpcdpgc.edu.in/mba/mba_data/MBA_(General)_Syllabus_2021-22_Admitted_Batch.pdf
+
+MBA Syllabus (Under CBCS Pattern) (With effect from 2018 – 2019 Admitted Batch) https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-Syllabus-%20Book_2018-19.pdf
+
+
+Academic Calendar
+Academic Calendar PG 2022-23 https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2022-23.pdf
+
+Academic Calendar PG 2021-22 https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2021-22.pdf
+
+
+Academic Calendar PG 2020-21 https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2020-21.pdf
+
+Academic Calendar 2019-20_Sem_2_and_Sem 4 https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2019-20_Sem_2_and_Sem%204.pdf
+
+
+Academic Calendar 2019-20_Sem_1_and_Sem 3 https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2019-20_Sem_1_and_Sem_3.pdf
+
+
+Academic Calendar 2018-19_Sem_2_and_Sem 4 https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2018-19_Sem_2_and_Sem_4.pdf
+
+
+Academic Calendar 2018-19_Sem_1_and_Sem 3 https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2018-19_Sem_1_and_Sem_3.pdf
+
+
+Academic Calendar PG 2019-20 (Tentative) https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-Academic-Calendar-2019-20.pdf
+
+
+Academic Calendar 2017-18.pdf https://www.gvpcdpgc.edu.in/mba/mba_data/Academic_Calendar_2017-18.pdf
+
+
+
+
+List of Departmantal Committees
+Departmental Committees - MBA https://www.gvpcdpgc.edu.in/mba/mba_data/Departmental%20Committees%20(2)%20(1).pdf
+
+
+Placement:
+Recruiters
+
+Recruiters https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-Placement-Recruiters-Logos.pdf
+
+
+Recruiters 2023 https://www.gvpcdpgc.edu.in/mba/mba_data/OUR%20RECRUITERS%202023.pdf
+
+
+Placements Data
+
+
+MBA 2021-2023 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA_Student_Placement_Data_2021-23_Batch.pdf
+
+
+
+MBA 2020-2022 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA_Student_Placement_Data_2020-22_Batch.pdf
+
+
+
+MBA 2019-2021 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA_Student_Placement_Data_2019-21_Batch.pdf
+
+
+
+MBA 2018-2020 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA_Student_Placement_Data_2018-20_Batch.pdf
+
+
+
+MBA 2017-2019 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-2017-2019-Batch-Placement-Data.pdf
+
+
+
+MBA 2016-2018 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-2016-2018-Batch-Placement-Data.pdf
+
+
+
+MBA 2015-2017 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-2015-2017-Batch-Placement-Data.pdf
+
+
+
+MBA 2014-2016 Batch Placement Data https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-2014-2016-Batch-Placement-Data.pdf
+
+
+
+
+
+Placements Brochure
+
+
+MBA Placement Brochure https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-Placement-Brochure.pdf
+
+
+
+
+
+List of MBA Students
+
+
+List of MBA Students 2018-2020 BATCHhttps://www.gvpcdpgc.edu.in/mba/mba_data/List-of-MBA-Students-2018-2020-BATCH.pdf
+
+
+
+List of MBA Students 2019-2021 BATCHhttps://www.gvpcdpgc.edu.in/mba/mba_data/List-of-MBA-Students-2019-2021-BATCH.pdf
+
+
+
+List of MBA Students 2020-2022 BATCHhttps://www.gvpcdpgc.edu.in/mba/mba_data/List_of_MBA_Students_2020-2022_BATCH.pdf
+
+
+
+List of MBA Students 2021-2023 BATCHhttps://www.gvpcdpgc.edu.in/mba/mba_data/List_of_MBA_Students_2021-2023_BATCH.pdf
+
+
+
+List of MBA Students 2022-2024 BATCHhttps://www.gvpcdpgc.edu.in/mba/mba_data/List_of_MBA_Students_2022-2024_BATCH.pdf
+
+
+
+
+
+
+
+
+Research
+
+
+Curricular Activities
+Sponsored Research Projects https://www.gvpcdpgc.edu.in/mba/mba_data/Sponsored-Research-Projects-Department-of-Management-Studies.pdf
+
+
+
+
+Publications
+Faculty Publications - Academic Year 2021-2022 https://www.gvpcdpgc.edu.in/mba/mba_data/Faculty%20Publications%20-%20Academic%20Year%202021%202022.pdf
+
+
+
+Faculty Publications - Academic Year 2020-2021 https://www.gvpcdpgc.edu.in/mba/mba_data/Faculty%20Publications%20-%20Academic%20Year%202020%202021.pdf
+
+
+
+Faculty Publications - Academic Year 2019-2020 https://www.gvpcdpgc.edu.in/mba/mba_data/Faculty%20Publications%20-%20Academic%20Year%202019%202020.pdf
+
+
+
+Books Published - Academic Year 2021-2022 https://www.gvpcdpgc.edu.in/mba/mba_data/Books%20Published%20-%20Academic%20Year%202021%202022.pdf
+
+
+
+Books Published - Academic Year 2020-2021 https://www.gvpcdpgc.edu.in/mba/mba_data/Books%20Published%20-%20Academic%20Year%202020%202021.pdf
+
+
+
+Books Published - Academic Year 2019-2020 https://www.gvpcdpgc.edu.in/mba/mba_data/Books%20Published%20-%20Academic%20Year%202019%202020.pdf
+
+
+
+
+Archives
+List of Books Published https://www.gvpcdpgc.edu.in/mba/mba_data/List-of-Books-Published-%E2%80%93-MBA-Faculty.pdf
+
+
+
+List of Research Journal Publications https://www.gvpcdpgc.edu.in/mba/mba_data/List-of-Research-Journal-Publications-MBA-Faculty.pdf
+
+
+
+List of Papers Presented in Conferenceshttps://www.gvpcdpgc.edu.in/mba/mba_data/List-of-Papers-Presented-in-Conferences-MBA-Faculty.pdf
+
+
+
+Paper Publications by Faculty (2018-19)https://www.gvpcdpgc.edu.in/mba/mba_data/2018-2019-Paper-Publications-by-MBA-Faculty.pdf
+
+
+
+Participation in Seminars/Workshops (2018-19)https://www.gvpcdpgc.edu.in/mba/mba_data/2018-2019-MBA-Faculty-Participation-in-Seminars-and-Workshops.pdf
+
+
+
+
+Research Cell
+Research Scholars List https://www.gvpcdpgc.edu.in/mba/mba_data/Research-Scholars-list.pdf
+
+
+
+
+Research Consultancy
+List of Consultancy Work https://www.gvpcdpgc.edu.in/mba/mba_data/List_of_Consultancy_Work.pdf
+
+
+Activities
+IIPC Activities
+
+
+List of Guest Lectures 2022 to 2018 - https://www.gvpcdpgc.edu.in/mba/mba_data/List_of_Guest_Lectures_2022to2018.pdf
+
+
+
+List of Industrial Visits 2022 to 2018 - https://www.gvpcdpgc.edu.in/mba/mba_data/List_of_industrial_Visits_2022to2018.pdf
+
+
+Archives
+
+
+JUNE 2019
+International Yoga Day
+https://www.gvpcdpgc.edu.in/mba/mba_data/YOGA.pdf
+
+
+JULY 2019
+Alumni Meet
+https://www.gvpcdpgc.edu.in/mba/mba_data/Alumni-Meet.pdf
+
+
+Hospital Management Workshop
+https://www.gvpcdpgc.edu.in/mba/mba_data/Hospital-Management-Workshop.pdf
+
+
+AUGUST 2019
+Guest Lecture - Importance of Technology And Work-Life Balance To Managers
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-Importance-of-Technology-And-Work-Life-Balance-To-Managers.pdf
+
+
+Guest Lecture - Learning and Development
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-Learning-and-Development.pdf
+
+
+Guest Lecture - Study Skills
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-Study-Skills.pdf
+
+
+India First Leadership Talk Series (Web Talk)- Union Minister for HRD
+https://www.gvpcdpgc.edu.in/mba/mba_data/India-First-Leadership-Talk-Series-Web-Talk-Union-Minister-for-HRD.pdf
+
+
+Guest Lecture - Disruptive Technology
+https://www.gvpcdpgc.edu.in/mba/mba_data/MBA-Guest-Lecture-Disruptive-Technology.pdf
+
+
+Moodle Training For MBA Faculty
+https://www.gvpcdpgc.edu.in/mba/mba_data/Moodle-Training-For-MBA-Faculty.pdf
+
+
+Panel Discussion on National Education Policy
+https://www.gvpcdpgc.edu.in/mba/mba_data/Panel-Discussion-on-National-Education-Policy.pdf
+
+
+SEPTEMBER 2019
+Fresher's Day
+https://www.gvpcdpgc.edu.in/mba/mba_data/Freshers-Day.pdf
+
+
+Guest Lecture - Career Planning and Future Orientation
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-Career-Planning-and-Future-Orientation.pdf
+
+
+Guest Lecture - Career Planning
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-Career-Planning.pdf
+
+
+Guest Lecture - Enhancing Performance, Goal Setting
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-Enhancing-Performance-Goal-Setting.pdf
+
+
+Guest Lecture - Nutrition For a Healthy World and You
+https://www.gvpcdpgc.edu.in/mba/Guest%20Lecture%20-%20Nutrition%20For%20a%20Healthy%20World%20and%20You
+
+
+Guest Lecture Preparedness for the Corporate Sector
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-Preparedness-for-the-Corporate-Sector.pdf
+
+
+Soham Inner Development Workshop
+https://www.gvpcdpgc.edu.in/mba/mba_data/Soham-Inner-Development-Workshop.pdf
+
+
+Usage of E-Resources and EBSCO
+https://www.gvpcdpgc.edu.in/mba/mba_data/Usage-of-E-Resources-and-EBSCO.pdf
+
+
+OCTOBER 2019
+Guest Lecture - Career Opportunities for Students in Wealth Managementhttps://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture
+-Career-Opportunities-for-Students-in-Wealth-Management.pdf
+Guest Lecture - HR@HPCL Transactional to Transformation
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest-Lecture-HR@HPCL-Transactional-to-Transformation.pdf
+
+
+Guest Lecture by Mr. Masafumi Mizuno, CEO, Japan Automatic Machine Co. Ltd.
+https://www.gvpcdpgc.edu.in/mba/mba_data/Guest_Lecture_by_Mr.Masafumi-Mizuno,CEO,Japan_Automatic_Machine_Co.Ltd.pdf
+
+
+MoA Between NRDC and GVPCDPGC(A)
+https://www.gvpcdpgc.edu.in/mba/mba_data/MoA_Between_NRDC_and_GVPCDPGC(A).pdf
+
+
+NOVEMBER 2019
+Guest Lecture-Commodity Derivatives
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2019/12/Guest-Lecture-Commodity-Derivatives.pdf
+
+
+DECEMBER 2019
+Department of Management Studies - MBA Alumni Newsletter
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2019/12/Department_of_Management_Studies-MBA_Alumni_Newsletter.pdf
+
+
+MBA Alumni - Hyderabad Chapter Inauguration
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2019/12/MBA_Alumni-Hyderabad_Chapter_Inauguration.pdf
+
+
+NBA peer Visit to 5 AICTE programs
+https://www.gvpcdpgc.edu.in/mba/mba_facultyactivities.php
+
+
+Guest Lecture-Data Science in India
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/03/Data-Science-in-India.pdf
+
+
+JANUARY 2020
+Guest Lecture - Management Career Opportunities in Digital Space and IOT
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/03/Guest-Lecture-Management-Career-Opportunities-in-Digital-Space-and-IOT.pdf
+
+
+Guest Lecture - Startup Career Opportunities
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/03/Guest-Lecture-Startup-Career-Opportunities.pdf
+
+
+Pariksha Pe Charcha-Online Live Telecast Session by Hon'bl Prime Minister
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/03/Pariksha-Pe-Charcha-Online-Live-Telecast-Session-by-Honbl-Prime-Minister.pdf
+
+
+FEBRUARY 2020
+Guest Lecture - An Analysis on Union Budget 2020
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/03/Guest-Lecture-An-Analysis-on-Union-Budget-2020.pdf
+
+
+Guest Lecture - Awareness on Digital Marketing
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/03/Guest-Lecture-Awareness-on-Digital-Marketing.pdf
+
+
+MARCH 2020
+International Women's Day 2020 Celebrations - KASTURBA CENTRE FOR WOMEN’S STUDIES
+https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/03/International-Women's-Day-2020.pdf
+
+
+
+DEPARTMENT OF MASTER OF COMPUTER APPLICATIONS
+
+
+MCA Syllabus
+
+
+MCA-Syllabus 2023-24 https://www.gvpcdpgc.edu.in/syllabus/mca/Final-Proposed%20Syllabus%20for%20MCA[2yrs]-2023-24%20admitted.pdf
+
+
+MCA-Syllabus 2022-23 https://www.gvpcdpgc.edu.in/syllabus/mca/Final-Proposed%20Syllabus%20for%20MCA[2yrs]-2022-24%20Batch%20(1).pdf
+
+
+MCA-Syllabus 2021-22 https://www.gvpcdpgc.edu.in/syllabus/mca/MCA%20Syllabi%202020-21.pdf
+
+
+MCA-Syllabus 2020-21 https://www.gvpcdpgc.edu.in/syllabus/mca/MCA%20Syllabi%202020-21.pdf
+
+
+MCA-Syllabus 2019-20 https://www.gvpcdpgc.edu.in/syllabus/mca/MCA-Syllabus2016-17.pdf
+
+
+MCA-Syllabus 2018-19 https://www.gvpcdpgc.edu.in/syllabus/mca/MCA-Syllabus2016-17.pdf
+
+
+MCA-Syllabus 2017-18 https://www.gvpcdpgc.edu.in/syllabus/mca/MCA-Syllabus2016-17.pdf
+
+
+MCA-Syllabus 2016-17 https://www.gvpcdpgc.edu.in/syllabus/mca/MCA-Syllabus2016-17.pdf
+
+
+
+Academic Calendar
+
+
+Academic Calendar -2020-21https://www.gvpcdpgc.edu.in/mca/mca_academic_cal.php#
+
+Academic Calendar -2019-20 https://www.gvpcdpgc.edu.in/mca/mca_academic_cal.php#
+
+
+Academic Calendar for Academic Batch 2016-17,2017-18,2018 -19https://www.gvpcdpgc.edu.in/mca/mca_academic_cal.php#
+
+
+
+
+TimeTables
+
+
+Time Table-2020-21  https://www.gvpcdpgc.edu.in/mca/mca_data/MCA%20timetable(20-21).pdf
+
+
+
+Time Table-2019-20  https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/02/Timetable-for-MCA-MScCS-BCA.pdf
+
+
+ 
+Placements
+
+Placements-2021-2023 https://www.gvpcdpgc.edu.in/mca/mca_data/MCA%202021-23%20Relived%20Batch%20Placement%20Data%20FLEX.pdf
+
+
+Placements-2020-2022 https://www.gvpcdpgc.edu.in/mca/mca_data/MCA%2020-2022%20Relived%20Batch%20Placement%20Data.pdf
+
+
+Placements-2018-2021 https://www.gvpcdpgc.edu.in/mca/mca_data/MCAselectedstudentsdata.pdf
+
+
+Placements-2016-2019 https://www.gvpcdpgc.edu.in/mca/mca_data/2016-2019-Placements.pdf
+
+
+Placements-2015-2018 https://www.gvpcdpgc.edu.in/mca/mca_data/2015-2018-Placements.pdf
+
+
+Placements-2014-2017 https://www.gvpcdpgc.edu.in/mca/mca_data/2014-2017-Placements.pdf
+
+
+Placements-2013-2016 https://www.gvpcdpgc.edu.in/mca/mca_data/2013-2016-Placements.pdf
+
+
+Placements-2012-2015 https://www.gvpcdpgc.edu.in/mca/mca_data/2012-2015-Placements.pdf
+
+
+Placements-2011-2014 https://www.gvpcdpgc.edu.in/mca/mca_data/2011-2014-Placements.pdf
+
+
+Placements-2010-2013 https://www.gvpcdpgc.edu.in/mca/mca_data/2010-2013-Placements.pdf
+
+
+Placements-2009-2012 https://www.gvpcdpgc.edu.in/mca/mca_data/2009-2012-Placements.pdf
+
+
+Placements-2008-2011 https://www.gvpcdpgc.edu.in/mca/mca_data/2008-2011-Placements.pdf
+
+
+Placements-2007-2010 https://www.gvpcdpgc.edu.in/mca/mca_data/2007-2010-Placements.pdf
+
+
+Placements-2006-2009 https://www.gvpcdpgc.edu.in/mca/mca_data/2007-2010-Placements.pdf
+
+
+Placements-2005-2008 https://www.gvpcdpgc.edu.in/mca/mca_data/2005-2008-Placements.pdf
+
+
+Placements-2004-2007 https://www.gvpcdpgc.edu.in/mca/mca_data/2004-2007-Placements.pdf
+
+
+Placements-2003-2006 https://www.gvpcdpgc.edu.in/mca/mca_data/2003-2006-Placements.pdf
+
+
+Placements-2002-2005 https://www.gvpcdpgc.edu.in/mca/mca_data/2002-2005-Placements.pdf
+
+
+Placements-2001-2004 https://www.gvpcdpgc.edu.in/mca/mca_data/2001-2004-Placements.pdf
+
+
+Placements-2000-2003 https://www.gvpcdpgc.edu.in/mca/mca_data/2000-2003-Placements.pdf
+
+
+Placements-1999-2002 https://www.gvpcdpgc.edu.in/mca/mca_data/1999-2002-Placements.pdf
+
+
+Placements-1998-2001 https://www.gvpcdpgc.edu.in/mca/mca_data/1998-2001-Placements.pdf
+
+
+
+
+Research
+Academic Curricular Activities https://www.gvpcdpgc.edu.in/mca/mca_data/MCA-Curricular-Activities.pdf
+
+
+Faculty Activities
+2020-2021 https://www.gvpcdpgc.edu.in/mca/mca_data/Faculty_Activity%202021.pdf
+
+
+Student Activities
+Events/Presentations https://www.gvpcdpgc.edu.in/mca/mca_data/The-students-of-MCA-and-MSc.pdf
+
+
+
+DEPARTMENT OF MASTER OF ORGANIC CHEMISTRY
+Syllabus
+
+
+I-Semester https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/I%20Semester%2020-21.pdf
+
+
+II Semester https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/II%20%20Semester%2020-21.pdf
+
+
+III Semester https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/III%20Semester%2020-21.pdf
+
+
+IV Semester https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/IV%20Semester%2020-21.pdf
+
+
+Academic Calendar
+No file
+TimeTables
+Time Table-2020-21  https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/2020-21%20timetable.pdf
+
+Time Table-2019-20  https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/2019-20%20timetable.pdf
+
+Time Table-2018-19  https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/2018-19%20timetable.pdf
+
+Time Table-2017-18  https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/2017-18%20timetable.pdf
+
+
+Placements
+Placements-2021-2022 https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/Placement_data_2021-22.pdf
+
+
+Placements-2017-2021 https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/placements.pdf
+
+
+Research Areas
+Recent Publications- https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/Publications.pdf
+
+
+
+Activities
+Faculty Activities
+List of Seminars Attended 2020-21 https://www.gvpcdpgc.edu.in/mscorganicchemistry/organic-chemistry_facultyactivities.php
+
+
+List of FDP/Workshop Attended 2019-20 https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/2019-20%20seminars.pdf
+
+
+List of FDP/Workshop Attended 2018-19 https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/2018-19%20seminars.pdf
+
+
+List of FDP/Workshop Attended 2017-18 https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/2017-2018%20seminars.pdf
+
+
+
+
+
+
+Student Activities
+Students Seminars Attended https://www.gvpcdpgc.edu.in/mscorganicchemistry/msc_oc_data/seminars%20by%20students.pdf
+
+ 
+DEPARTMENT OF MASTER OF HUMAN RESOURCE MANAGEMENT
+B.Tech Syllabus
+MHRM Syllabus  https://www.gvpcdpgc.edu.in/mhrm/mhrm_data/Syllabus.pdf
+
+
+Academic Calendar
+Academic Calendar -2020-21https://www.gvpcdpgc.edu.in/mhrm/mhrm_data/2020-21.pdf
+
+
+
+Academic Calendar -2019-20 https://www.gvpcdpgc.edu.in/mhrm/mhrm_data/2019-20.%20%20%20%20pdf
+
+
+
+Academic Calendar for Academic Batch 2016-17,2017-18,2018 -19https://www.gvpcdpgc.edu.in/mhrm/mhrm_academic_cal.php#
+
+
+TimeTables
+Time Table-2020-21-Even-Sem  https://www.gvpcdpgc.edu.in/mhrm/mhrm_academic_cal.php#
+
+
+
+Time Table-2020-21-Odd-Sem  https://www.gvpcdpgc.edu.in/mhrm/mhrm_academic_cal.php#
+
+
+
+Time Table-2019-20-Even-Sem  https://www.gvpcdpgc.edu.in/mhrm/mhrm_academic_cal.php#
+
+
+
+Time Table-2019-20-Odd-Sem  
+https://www.gvpcdpgc.edu.in/mhrm/mhrm_academic_cal.php#
+
+
+Placements
+Consistently 75-80% students of MHRM are being placed in various organizations of repute every year.
+Placements-2016 - 2020 https://www.gvpcdpgc.edu.in/mhrm/mhrm_data/Placements.pdf
+
+
+
+
+Research
+
+
+Faculty Publications of Academic Year 2020-21 https://www.gvpcdpgc.edu.in/mhrm/mhrm_data/MHRM-RESEARCH%20PUBLICATIONS%20for%20web.pdf
+
+
+Student Activities
+List of FDP/Workshop Attended 2019-20 https://www.gvpcdpgc.edu.in/mhrm/mhrm_data/ACITIVITIES.pdf
+
+
+WELCOME TO DEPARTMENT OF MBA - Business Analytics
+
+DEPARTMENT OF MASTER OF COMPUTER SCIENCE
+MSc Computer science Syllabus
+
+
+MSc-Syllabus 2023-24 https://www.gvpcdpgc.edu.in/syllabus/msc/Final-Proposed%20Syllabus%20for%20M.Sc(CS)-2022-24%20batch%20(1).pdf
+
+
+MSc-Syllabus 2022-23 https://www.gvpcdpgc.edu.in/syllabus/msc/Final-Proposed%20Syllabus%20for%20M.Sc(CS)-2022-24%20batch%20(1).pdf
+
+
+MSc-Syllabus 2021-22 https://www.gvpcdpgc.edu.in/syllabus/msc/M.Sc(CS)%20Syllabi%202020-21.pdf
+MSc-Syllabus 2020-21 https://www.gvpcdpgc.edu.in/syllabus/msc/M.Sc(CS)%20Syllabi%202020-21.pdf
+
+
+MSc-Syllabus 2019-20 https://www.gvpcdpgc.edu.in/syllabus/msc/MSc-Syllabus%202016-17.pdf
+
+
+MSc-Syllabus 2018-19 https://www.gvpcdpgc.edu.in/syllabus/mca/MCA-Syllabus2016-17.pdf
+
+
+MSc-Syllabus 2017-18 https://www.gvpcdpgc.edu.in/syllabus/msc/MSc-Syllabus%202016-17.pdf
+
+
+MSc-Syllabus 2016-17 https://www.gvpcdpgc.edu.in/syllabus/msc/MSc-Syllabus%202016-17.pdf
+
+
+Academic Calendar
+
+Academic Calendar -2020-21https://www.gvpcdpgc.edu.in/msc/msc_academic_cal.php#
+
+
+
+Academic Calendar -2019-20 https://www.gvpcdpgc.edu.in/msc/msc_academic_cal.php#
+
+
+
+Academic Calendar for Academic Batch 2016-17,2017-18,2018 -19https://www.gvpcdpgc.edu.in/msc/msc_academic_cal.php#
+
+
+TimeTables
+
+Time Table-2020-21  https://www.gvpcdpgc.edu.in/msc/msc_data/msc_timetable(20-21)-Aug-21.pdf
+
+
+
+Time Table-2019-20  https://www.gvpcdpgc.edu.in/wp-content/uploads/2020/02/Timetable-for-MCA-MScCS-BCA.pdf
+
+
+
+Placements
+
+Placements-1998-2001 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/1998-2001-Placements.pdf
+
+
+Placements-1999-2002 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/1999-2002-Placements.pdf
+
+
+Placements-2000-2003 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2000-2003-Placements.pdf
+
+
+Placements-2001-2004 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2001-2004-Placements.pdf
+
+
+Placements-2002-2005 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2002-2005-Placements.pdf
+
+
+Placements-2003-2006 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2003-2006-Placements.pdf
+
+
+Placements-2004-2007 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2004-2007-Placements.pdf
+
+
+Placements-2005-2008 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2005-2008-Placements.pdf
+
+
+Placements-2006-2009 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2006-2009-Placements.pdf
+
+
+Placements-2007-2010 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2007-2010-Placements.pdf
+
+
+Placements-2008-2011 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2008-2011-Placements.pdf
+
+
+Placements-2009-2012 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2009-2012-Placements.pdf
+
+
+Placements-2010-2013 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2010-2013-Placements.pdf
+
+
+Placements-2011-2014 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2011-2014-Placements.pdf
+
+
+Placements-2012-2015 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2012-2015-Placements.pdf
+
+
+Placements-2013-2016 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2013-2016-Placements.pdf
+
+
+Placements-2014-2017 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2014-2017-Placements.pdf
+
+
+Placements-2015-2018 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2015-2018-Placements.pdf
+
+
+Placements-2017-2019 https://www.gvpcdpgc.edu.in/wp-content/uploads/2018/12/2016-2019-Placements.pdf
+
+
+Placements-2019-2021 https://www.gvpcdpgc.edu.in/msc/msc_data/M.Sc(cs)%20(2021)%20selected%20students%20data%20UP%20TO%20NOV%202021.pdf
+
+
+Placements-2020-2022 https://www.gvpcdpgc.edu.in/msc/msc_data/M.Sc(CS)%202020%20-21%20Batch%20Placement.pdf
+
+
+Placements-2021-2023 https://www.gvpcdpgc.edu.in/msc/msc_data/M.Sc(CS)%202021%20-23%20Batch%20Placement%20FLEX.pdf
+
+
+
+Research
+
+Academic Curricular Activities https://www.gvpcdpgc.edu.in/msc/mca_data/MCA-Curricular-Activities.pdf
+
+
+Activities
+Student Activities
+
+Events/Presentations https://www.gvpcdpgc.edu.in/msc/mca_data/The-students-of-MCA-and-MSc.pdf
+
+
+
+Code of Conduct:
+Faculty and non teaching:
+https://www.gvpcdpgc.edu.in/code_of_conduct.pdf
+
+
+student:https://www.gvpcdpgc.edu.in/student_code_of_conduct.pdf
 
 CLUB:
 
