@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="includeHTML.js" defer></script>
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
     <style>
     *{
         margin: 0px;
@@ -35,6 +36,7 @@
         border-radius: 5px;
         box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.329);
         transition: 0.5s;
+        
     }
     .card img{
         width: 278px;
@@ -143,7 +145,7 @@
     }
     .heading{
 
-            margin-left: 550px;
+            margin-left: 525px;
             color: rgba(34,49,109,1);
             margin-top: 35px;
             margin-bottom: 35px;
@@ -207,7 +209,9 @@
 
 <body>
     <!-- Header from nav.html -->
-    <header data-include="nav.html"> </header>
+    <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header>
+   
+    <!-- <header data-include="nav.html"> </header> -->
     <main>
         <h1 class="heading">HEAD OF THE DEPARTMENT-UG</h1>
         <div>
@@ -437,5 +441,8 @@
     });
 });
     </script>
+    <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
