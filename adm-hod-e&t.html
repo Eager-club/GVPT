@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=GVPT/t, initial-scale=1.0">
+    <title>ADM-HOB-E&T</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="includeHTML.js" defer></script>
+    
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+</head>
+<style>
+    
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+
+        letter-spacing: .5px;
+        font-family: "Inter", sans-serif;
+    }
+    .container{
+        width: 80%;
+        margin: 4rem auto;
+        display:grid;
+        gap: 2rem;
+        grid-template-columns: repeat(4,1fr);
+        color: black;
+    }
+    
+    .card{
+        padding: 1px;
+        width: 282px;
+        height: 314px;
+        color: black;
+        box-sizing: border-box;
+        border: 1px solid;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.329);
+        transition: 0.5s;
+    }
+    .card img{
+        width: 278px;
+        height:197px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    .designation{
+        padding-left: 45px;
+        color:black;
+    }
+    .details h1{
+        font-size: 24.5px;
+        width: 270px;
+        color:black;
+        font-weight: 1000px;
+        text-align: center;
+        margin-bottom: -5px;
+    }
+    .details hr{
+        opacity: 50%;
+        margin-top: 10px;
+        margin-bottom: -5px;
+        visibility: hidden;
+    }
+    .details button{
+        height: 39px;
+        width: 157px;
+        margin-top: -15px;
+        font-size: 15px;
+        font-weight: bold;
+        border-style: none; 
+        border-radius: 5px;
+        background-color:rgba(34, 49, 108, 0.518) ;            
+        color: white;
+        margin-top: 0px;
+        margin-left: 55px ;
+        
+    }
+    .intro{
+        font-size: 13px;
+        margin: 2px 0;
+        display: flex;
+        margin-top: 0px;
+        color: #100707;
+        visibility: hidden;
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 0.5s;
+    
+    }
+    .intro p{
+        padding: 1px;
+        
+    }
+    .intro .colon p{
+        color: white;
+    }
+    .intro .fill p{
+        width: 170px;
+        word-wrap: break-word;
+        word-break: break-all; 
+        color: black;
+    }
+    .intro .opt{
+        color: white;
+        padding: 3px;
+        font-weight: bold;
+    }
+    .card:hover,.details:hover {
+        cursor: pointer;
+    }
+    .card:hover .details{
+
+        height: 165px;
+        background-color:rgba(34, 49, 108, 0.518);
+        border-radius: 5px;
+        clear: both;
+        
+    }
+    .card:hover button{
+        visibility: hidden;
+
+       
+    }
+    .card:hover hr{
+        visibility: visible;
+        
+    }
+
+    .card:hover img{
+        margin-top:-60px;
+        margin-bottom: -70px;
+        width: 270px;
+        height: 270px;
+        border-radius: 95%;
+        transform: scale(0.4);
+    }
+
+    .card:hover .intro  {
+        opacity: 1;
+        display: flex;
+        margin-top: -40px;
+        flex-direction: row;
+        visibility: visible;
+        color: black;
+        padding: 5px;
+    }
+    .heading{
+
+            margin-left: 525px;
+            color: rgba(34,49,109,1);
+            margin-top: 35px;
+            margin-bottom: 35px;
+    }
+       
+    @media (max-width: 600px) {
+        .card {
+            width: 90%;
+            height: auto;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .details {
+            height: auto;
+
+            padding: 10px;
+            align-items: center;
+        }
+
+        .details h1 {
+            font-size: 10px;
+            align-items: center;
+        }
+        
+        .details p {
+            font-size: 13px;
+            
+        }
+
+        .details button {
+            width: 100%;
+            align-items: center;
+            font-size: 10px;
+        }
+        
+        .intro{
+            display: flex;
+            flex-direction: row;
+
+            align-items: flex-start;
+        }
+
+        .intro .opt, .intro .fill {
+            width: 100%;
+            text-align: left;
+        }
+        .intro .fill p{
+            color: black;
+        }
+        .intro p {
+            font-size: 13px;
+        }
+
+    }
+
+</style>
+<body>
+    <!-- call for header from nav.html -->
+    <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header>
+    <main>
+        
+            <div class="heading" ><h1>HEAD OF THE DEPARMENTS-E&T</h1></div>
+            <div class="container" id="card-hod-e&t">
+                <div class="card">
+                <img src="https://www.gvpcdpgc.edu.in/gvp_faculty/bsh_data/Dr.%20S.%20Rajesh.jpg" alt="Prof B.S Bose">
+                <div class="details">
+                    <h1>Dr.S.Rajesh</h1>
+                    <!-- <p style="padding-left: 40px;">M.B.A., Ph.D.</p> -->
+                    <hr>
+                    <button>HOD-Basic Science and Humanities</button>
+                
+                    <div class="intro">
+                        <div class="opt">
+                            <p>Designation</p>
+                            <p>Phone No</p>
+                            <p>Extension</p>
+                            <p>Email</p>
+                        </div>
+                        <div class="colon">
+                           <p> <strong>:</strong></p>
+                           <p> <strong>:</strong></p>
+                           <p> <strong>:</strong></p>
+                           <p> <strong>:</strong></p>
+                        </div>
+                        <div class="fill">
+                            <p>HOD-BBA</p>  
+                            <p>----</p> 
+                            <p>328</p> 
+                            <p>nagaraj@gvpcdpgc.edu.in</p>          </div>
+                </div>
+                </div>
+                
+    
+            
+            
+
+
+
+        </div>
+       
+
+    </main>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+    // Data for the cards
+    const cardsData = [
+        {
+            id: "1",
+            image: "https://www.gvpcdpgc.edu.in/civil/images/Dr.-P.-Jyotsna-Devi.jpg",
+            name: "Dr.P.Jyotsna Devi",
+            designation: " ",
+            title: "HOD-Civil Engineering",
+            cardDesignation: "HOD-Civil Engineering",
+            phoneNumber: "---",
+            extension: "386",
+            email: "drjyotsnadevi@gvpcdpgc.edu.in"
+        },
+        
+        {
+            id: "2",
+            image: "https://www.gvpcdpgc.edu.in/cse/images/Dr.GRS-Murthy.jpeg",
+            name: "Dr.G.R.S Murthy",
+            designation: "",
+            title: "HOD-Computer Science & Engineering",
+            cardDesignation: "HOD-Computer Science & Engineering",
+            phoneNumber: "---",
+            extension: "376",
+            email: "murthy.grs@gvpcdpgc.edu.in"
+        },
+        {
+            id: "3",
+            image: "https://www.gvpcdpgc.edu.in/cse/images/DrNVRM.jpg",
+            name: "Dr.N.V.RamanaMurthy",
+            designation: "",
+            title: "HOD-CSE(Artificial Intelligence and Machine",
+            cardDesignation: "HOD-Computer Science & Engineering",
+            phoneNumber: "---",
+            extension: "376",
+            email: "murthy.grs@gvpcdpgc.edu.in"
+        },
+        {
+            id: "4",
+            image: "https://www.gvpcdpgc.edu.in/ece/images/P.A-Nageswar-Rao.jpg",
+            name: "Dr.P.A.NageswaraRao",
+            designation: "",
+            title: "HOD-Electronics & Communication Engineering",
+            cardDesignation: "HOD-Electronics & Communication Engineering",
+            phoneNumber: "---",
+            extension: "381",
+            email: "drnageswararao@gvpcdpgc.edu.in"
+        },
+        {
+            id: "5",
+            image: "https://www.gvpcdpgc.edu.in/mech/images/Ch.Hima-Gireesh.jpg",
+            name: "Dr.Ch.Himagireesh",
+            designation: "",
+            title: "Mechanical Engineering",
+            cardDesignation: "Mechanical Engineering",
+            phoneNumber: "---",
+            extension: "388",
+            email: "gireeshhima@gvpcdpgc.edu.in"
+        },
+
+       
+
+        
+        // Add more card data as needed
+    ];
+
+    // Function to create a card element
+    function createCard(data) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = data.id;
+
+        card.innerHTML = `
+            <img class="profile-image" src="${data.image}" alt="${data.name}">
+            <div class="details">
+                <h1 class="name">${data.name}</h1>
+                
+                <hr>
+                <button class="title">${data.title}</button>
+                <div class="intro">
+                    <div class="opt">
+                        <p>Designation</p>
+                        <p>Phone No</p>
+                        <p>Extension</p>
+                        <p>Email</p>
+                    </div>
+                    <div class="colon">
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                    </div>
+                    <div class="fill">
+                    <p><span class="card-designation">${data.cardDesignation}</span></p>
+                    <p><span class="phone-number">${data.phoneNumber}</span></p>
+                    <p><span class="extension">${data.extension}</span></p>
+                    <p><span class="email">${data.email}</span></p>
+                
+                </div>
+            </div>
+        `;
+
+        return card;
+    }
+
+    // Get the container element
+    const container = document.getElementById('card-hod-e&t');
+
+    // Create and append cards to the container
+    cardsData.forEach(cardData => {
+        const card = createCard(cardData);
+        container.appendChild(card);
+    });
+});
+
+</script>
+    <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+     
+    
+</body>
+</html>
