@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.6.1"></script>
     <title>Templete</title>
+    <script src="./templates/includeHTML.js" defer></script>
+     <script src="./scprit.js"></script>
     <style>
       * {
         margin: 0;
@@ -107,8 +109,7 @@
           setTimeout(o, 4e3);
       });
     </script>
-     <!-- <script src="includeHTML.js" defer></script>
-     <script src="https://unpkg.com/htmx.org@1.8.5"></script> -->
+     
   </head>
   <body>
     <section class="preloader">
@@ -122,15 +123,16 @@
       </div>
     </section>
     <div>
+  
+      <div id="nav-placeholder">
+      </div>
 
-      <!-- <header data-include="./templates/nav.html"></header> -->
-      <header hx-get="nav.html" hx-trigger="load" hx-swap="outerHTML"></header>
-    <main>
-        <h1>Welcome to GVPCDPGC</h1>
-        <p>This is the home page.</p>
-    </main>
-    <footer hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
-    <script src="script.js"></script>
+      <main>
+          <h1>Welcome to GVPCDPGC</h1>
+          <p>This is the home page.</p>
+      </main>
+      <footer hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+      <script src="script.js"></script>
     </div>
   </body>
 </html>
