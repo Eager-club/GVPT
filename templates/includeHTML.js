@@ -8,17 +8,18 @@
       initializeStickyNav();
   });
 
-// Function to initialize sticky navigation
-function initializeStickyNav() {
-  window.addEventListener('scroll', function() {
-      var mainNav = document.querySelector('.main-nav');
-      var navLogo = document.querySelector('.logo');
-      if (window.scrollY > 170) { // Adjust the scroll value as needed
-          mainNav.classList.add('sticky');
-          navLogo.classList.add('sticky');
-      } else {
-          mainNav.classList.remove('sticky');
-          navLogo.classList.remove('sticky');
-      }
-  });
-}
+// JavaScript to handle the sticky navigation effect
+window.addEventListener('scroll', function() {
+  var mainNav = document.querySelector('.main-nav');
+  var navLogo = document.querySelector('.main-logo');
+  var navLink = document.querySelector('.main-link');
+  if (window.scrollY > 170) { // Adjust the scroll value as needed
+      mainNav.classList.add('sticky');
+      navLogo.classList.add('stick');
+      navLink.classList.add('stic');
+  } else {
+      mainNav.classList.remove('sticky');
+      navLogo.classList.remove('stick');
+      navLink.classList.remove('stic');
+  }
+});

@@ -16,12 +16,7 @@
         background-size: cover;
         color: #fff;
     }
-    /* .logo{
-        width: min-content;
-    } */
-    .logo img{
-        width: 5.5rem;
-    }
+    
     .nav1 {
         width: 100%;
         height: 28px * 100%;
@@ -70,17 +65,39 @@
         position: relative; /* Start as relative to scroll normally */
         transition: top 0.3s ease, background-color 0.3s ease;
     }
+    .main-logo{
+        display: none;
+        margin:0% 0% 0px 6%;
+        position: absolute;
+        background: #22316c !important;
+        border-radius: 50% !important;
+        width: 80px !important;
+        height: 80px !important;
+        overflow: visible !important;
+        position: absolute !important;
+        top: 0px !important;
+        max-height: none !important;
+        padding: 7px !important;
+        transition: all .2s ease !important;
+}
     .main-nav.sticky {
         position: fixed; /* Fixed position when sticky */
         top: 0;
         background-color: #22316C; /* Background color when sticky */
     }
-    .main-nav > ul {
+    .main-logo.stick{
+        display: block;
+    }
+    
+    .main-link {
         list-style: none;
         display: flex;
         justify-content: center;
         width: 100%;
         padding: 0;
+    }
+    .main-link.stic{
+        justify-content: end;
     }
     
     .main-nav > ul > li {
@@ -148,6 +165,7 @@
         }
 
     }
+   
 </style>
 </head>
 <body>
@@ -172,7 +190,7 @@
     <div class="block" style="display: flex; justify-content: space-around;padding-top: 1%;color: #fff;">
         <div style="display: flex;">   
             <div class="logo">
-                <img src="../assects/gvplogorm.png" alt="gayatri_logo" >
+                <img src="../assects/gvplogorm.png" srcset alt="gayatri_logo" width="110px">
             </div>
             <div class="title">
                 <h1>GAYATRI VIDYA PARISHAD <br/>COLLEGE FOR DEGREE AND PG COURSES (AUTONOMOUS)</h1>
@@ -195,8 +213,11 @@
         </div>
     </div>
     <div class="main-nav">
-        
-        <ul>
+        <div>
+            <img class="main-logo" src="../assects/gvplogorm.png" srcset alt="gayatri_logo" >
+        </div>
+        <ul class="main-link">
+            
             <li><a href="#"><span class="material-symbols-outlined">home</span></a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Administration<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
@@ -262,13 +283,17 @@
     // JavaScript to handle the sticky navigation effect
     window.addEventListener('scroll', function() {
         var mainNav = document.querySelector('.main-nav');
-        var navLogo = document.querySelector('.logo');
+        var navLogo = document.querySelector('.main-logo');
+        var navLink = document.querySelector('.main-link');
         if (window.scrollY > 170) { // Adjust the scroll value as needed
             mainNav.classList.add('sticky');
-            navLogo.classList.add('sticky');
+            navLogo.classList.add('stick');
+            navLink.classList.add('stic');
         } else {
             mainNav.classList.remove('sticky');
-            navLogo.classList.remove('sticky');
+            navLogo.classList.remove('stick');
+            navLink.classList.remove('stic');
         }
     });
 </script>
+
