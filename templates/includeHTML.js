@@ -1,26 +1,25 @@
-function includeHTML() {
-    var elements = document.querySelectorAll('[data-include]');
-    elements.forEach(function(element) {
-        var file = element.getAttribute('data-include');
-        if (file) {
-            fetch(file)
-                .then(response => {
-                    if (response.ok) {
-                        return response.text();
-                    } else {
-                        throw new Error('Could not load ' + file);
-                    }
-                })
-                .then(data => {
-                    element.innerHTML = data;
-                    element.removeAttribute('data-include');
-                })
-                .catch(error => {
-                    console.error(error);
-                    element.innerHTML = '<p>Content not found.</p>';
-                });
-        }
-    });
-}
+  // Fetch and insert the nav template
+  fetch('./templates/nav.html')
+  .then(response => response.text())
+  .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
 
-document.addEventListener('DOMContentLoaded', includeHTML);
+      // Reinitialize sticky functionality
+      initializeStickyNav();
+  });
+
+// JavaScript to handle the sticky navigation effect
+window.addEventListener('scroll', function() {
+  var mainNav = document.querySelector('.main-nav');
+  var navLogo = document.querySelector('.main-logo');
+  var navLink = document.querySelector('.main-link');
+  if (window.scrollY > 170) { // Adjust the scroll value as needed
+      mainNav.classList.add('sticky');
+      navLogo.classList.add('stick');
+      navLink.classList.add('stic');
+  } else {
+      mainNav.classList.remove('sticky');
+      navLogo.classList.remove('stick');
+      navLink.classList.remove('stic');
+  }
+});
