@@ -2,8 +2,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <style>
     * {
         margin: 0;
@@ -18,7 +16,12 @@
         background-size: cover;
         color: #fff;
     }
-    
+    /* .logo{
+        width: min-content;
+    } */
+    .logo img{
+        width: 5.5rem;
+    }
     .nav1 {
         width: 100%;
         height: 28px * 100%;
@@ -40,6 +43,7 @@
         font-size: small;
         text-decoration: none;
         padding-left: 10%;
+        color: #fff;
     }
     
     .title h1, .para {
@@ -49,7 +53,10 @@
             -1px -1px 0 #000,
             1px -1px 0 #000;
     }
-
+    .codes p{
+        font-size: 20px;
+        font-weight: bolder;
+    }
     /* Main nav styles */
     
     .main-nav {
@@ -133,62 +140,66 @@
     }
 
     @media only screen and (max-width: 1235px) {
-        .title h1, p {
+        .title h1, .title p,.codes p {
             font-size: small;
         }
+        .main-nav > ul {
+        display: ruby;
+        }
+
     }
 </style>
-<nav>
+</head>
+<body>
+<nav >
     <!-- Your navigation content here -->
-    <div class="nav1">
+    <div class="nav1" style="color: #fff;">
         <div class="right" style="width: 60%;margin-left: 5%;">
-            <a href="">AICTE Mandatory Info</a>
+            <a href="">AICTE Mandatory Info</a>
             <a href="">IQAC</a>
             <a href="">IIPC</a>
             <a href="">NAAC</a>
             <a href="">ALUMNI</a>
-            <a href="">Online Payments</a>
+            <a href="">Online Payments</a>
             <a href="">CAREERS</a>
-            <a href="">360 Virtual Tour</a>
+            <a href="">360 Virtual Tour</a>
         </div>
         <div class="left" style="margin-right: 5%;display:flex;">
-            <a href=""><span class="material-symbols-outlined">
-                mail
-                </span></a>
+            <a href=""><span class="material-symbols-outlined">mail</span></a>
             <a href="" style="padding-top: 5px;">Login</a>
         </div>
     </div>
-    <div class="block" style="display: flex; justify-content: space-around;padding-top: 1%;">
+    <div class="block" style="display: flex; justify-content: space-around;padding-top: 1%;color: #fff;">
         <div style="display: flex;">   
             <div class="logo">
-                <img src="../assects/gvplogorm.png" alt="gayatri_logo" width="110px">
+                <img src="../assects/gvplogorm.png" alt="gayatri_logo" >
             </div>
-            <div class="title" >
-                <h1 style="font-size: 26px * 100%;">GAYATRI VIDYA PARISHAD <br/>
-                COLLEGE FOR DEGREE AND PG COURSES (AUTONOMOUS)</h1><P class="para">
-                Affiliated to Andhra University | Reaccredited by NAAC<br>
-                PG-MBA and UG Engineering B.Tech(CE,CSE,ECE and ME) programs are Accredited by NBA
-                <br>Visakhapatnam - 530045.
+            <div class="title">
+                <h1>GAYATRI VIDYA PARISHAD <br/>COLLEGE FOR DEGREE AND PG COURSES (AUTONOMOUS)</h1>
+                <p class="para">
+                    Affiliated to Andhra University | Reaccredited by NAAC<br>
+                    PG-MBA and UG Engineering B.Tech(CE,CSE,ECE and ME) programs are Accredited by NBA
+                    <br>Visakhapatnam - 530045.
+                </p>
             </div>
         </div>
         <div>
             <div class="codes">
-                <p style="font-size: 20px;font-weight: bolder;">AUCET CODE <span> - 112</span><br>
-                ICET CODE <span>- GVPP</span><br>
-                PGCET CODE <span>- GVPT1</span><br>
-                EAPCET / ECET <span> GVPT</span></p></div>
+                <p>
+                    AUCET CODE <span> - 112</span><br>
+                    ICET CODE <span>- GVPP</span><br>
+                    PGCET CODE <span>- GVPT1</span><br>
+                    EAPCET / ECET <span> GVPT</span>
+                </p>
+            </div>
         </div>
     </div>
     <div class="main-nav">
+        
         <ul>
-            <li><a href="#"><span class="material-symbols-outlined">
-                home</span></a>
-            </li>
-            <li><a href="#">About</a>
-            </li>
-            <li><a href="#">Administration<span class="material-symbols-outlined">
-                keyboard_arrow_down
-                </span></a>
+            <li><a href="#"><span class="material-symbols-outlined">home</span></a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Administration<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="#">Administrators</a></li>
                     <li><a href="#">Directors</a></li>
@@ -196,24 +207,20 @@
                     <li><a href="#">Controers</a></li>
                     <li><a href="#">HOD's</a></li>
                     <li><a href="#">Coordinators</a></li>
-                    <li><a href="#">Govening bodies</a></li>
+                    <li><a href="#">Governing bodies</a></li>
                 </ul>
             </li>
-            <li><a href="#">Academics<span class="material-symbols-outlined">
-                keyboard_arrow_down
-                </span></a>
+            <li><a href="#">Academics<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="#">Programs</a></li>
-                    <li><a href="#">Academic calender</a></li>
+                    <li><a href="#">Academic calendar</a></li>
                     <li><a href="#">Department</a></li>
-                    <li><a href="#">Sylabus</a></li>
+                    <li><a href="#">Syllabus</a></li>
                     <li><a href="#">Regulations</a></li>
                     <li><a href="#">Archives</a></li>
                 </ul>
             </li>
-            <li><a href="#">Admissions<span class="material-symbols-outlined">
-                keyboard_arrow_down
-                </span></a>
+            <li><a href="#">Admissions<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="#">Undergraduate</a></li>
                     <li><a href="#">Graduate</a></li>
@@ -227,27 +234,21 @@
                     <li><a href="#">Publications</a></li>
                 </ul>
             </li>
-            <li><a href="#">Placements<span class="material-symbols-outlined">
-                keyboard_arrow_down
-                </span></a>
+            <li><a href="#">Placements<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="#">Overview</a></li>
                     <li><a href="#">Recruiters</a></li>
                     <li><a href="#">Alumni Success</a></li>
                 </ul>
             </li>
-            <li><a href="#">Research<span class="material-symbols-outlined">
-                keyboard_arrow_down
-                </span></a>
+            <li><a href="#">Research<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="#">Centers</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Publications</a></li>
                 </ul>
             </li>
-            <li><a href="#">Others<span class="material-symbols-outlined">
-                keyboard_arrow_down
-                </span></a>
+            <li><a href="#">Others<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="#">Events</a></li>
                     <li><a href="#">News</a></li>
@@ -257,4 +258,17 @@
         </ul>
     </div>
 </nav>
-
+<script>
+    // JavaScript to handle the sticky navigation effect
+    window.addEventListener('scroll', function() {
+        var mainNav = document.querySelector('.main-nav');
+        var navLogo = document.querySelector('.logo');
+        if (window.scrollY > 170) { // Adjust the scroll value as needed
+            mainNav.classList.add('sticky');
+            navLogo.classList.add('sticky');
+        } else {
+            mainNav.classList.remove('sticky');
+            navLogo.classList.remove('sticky');
+        }
+    });
+</script>
