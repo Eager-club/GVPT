@@ -1,0 +1,7 @@
+
+
+body {
+position: relative; /* Ensure preloader is positioned correctly */
+}.hidden {
+display: none; /* Hide elements with this class */
+}
