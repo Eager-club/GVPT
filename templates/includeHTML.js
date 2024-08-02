@@ -1,5 +1,5 @@
   // Fetch and insert the nav template
-  fetch('./templates/nav.html')
+  fetch('../templates/nav.html')
   .then(response => response.text())
   .then(data => {
       document.getElementById('nav-placeholder').innerHTML = data;
@@ -8,7 +8,7 @@
       initializeStickyNav();
   });
   // Fetch and insert the nav template
-  fetch('./templates/footer.html')
+  fetch('../templates/footer.html')
   .then(response => response.text())
   .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
