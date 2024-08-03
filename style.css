@@ -1,0 +1,106 @@
+nav{
+    width:100%;
+    height: 45vh;
+    background-image: url("https://images.shiksha.com/mediadata/images/articles/1693247327php9Ixvyk.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav1{
+    width: 100%;
+    height: 28px * 100%;
+    background-color: #22316C;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.nav1 .right a{
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    padding-left: 1%;
+}
+.nav1 .left a{
+    font-size: small;
+    text-decoration: none;
+    padding-left: 10%;
+}
+.title h1,.para{
+   text-shadow: 
+   1px 1px 0 #000,
+   -1px 1px 0 #000,
+   -1px -1px 0 #000,
+   1px -1px 0 #000;
+}
+.title 
+/* Main nav */
+.main-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2.5%;
+        padding: 7px 0;
+    }
+    .main-nav > ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+    .main-nav > ul > li {
+        position: relative;
+        margin: 0 1px;
+    }
+    .main-nav > ul > li > a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 20px;
+        display: flex;
+    }
+    .main-nav > ul > li > a:hover, .main-nav > ul > li:hover > a {
+        color: #22316C;
+        border-radius: 5px;
+        backdrop-filter: blur(5px); 
+        /* text-shadow: 
+            1px 1px 20PX #FFF,
+            1px 1px 20PX #FFF,
+            1px 1px 20PX #FFF,  //REPATI KOSAM                1px 1px 20PX #FFF; */
+    }
+    .main-nav > ul > li > ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: #ffffff;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 200px;
+        z-index: 1;
+    }
+    .main-nav > ul > li > ul > li > a {
+        padding: 10px;
+        color: #000000;
+        display: block;
+        text-decoration: none;
+    }
+    .main-nav > ul > li > ul > li > a:hover {
+        background-color: #22316C;
+        color: #ffffff;
+    }
+    .main-nav > ul > li:hover > ul {
+        display: block;
+    }
+    .codes span{
+        color: #22316C;
+    }
+    .material-symbols-outline{
+        margin-top: 20px;
+    }
+@media only screen and (max-width:1235px){
+    .title h1,p{
+        font-size: small;
+    }
+}

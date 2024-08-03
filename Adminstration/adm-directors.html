@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adm-Directors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="../templates/includeHTML.js" defer></script>
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script> 
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        letter-spacing: .5px;
+        font-family: "Inter", sans-serif;
+    }
+    .container{
+        width: 90%;
+        margin: 4rem auto;
+        display:grid;
+        gap: 2rem;
+        grid-template-columns: repeat(4,1fr);
+        color: black;
+    }
+    
+    .card{
+        padding: 1px;
+        width: 282px;
+        height: 314px;
+        color: black;
+        box-sizing: border-box;
+        border: 1px solid;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.329);
+        transition: 0.5s;
+    }
+    .card img{
+        width: 278px;
+        height:197px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    .designation{
+        padding-left: 45px;
+        color:black;
+    }
+    .details h1{
+        font-size: 25px;
+        width: 270px;
+        color:black;
+        font-weight: 1000px;
+        text-align: center;
+        margin-bottom: -10px;
+    }
+    .details hr{
+        opacity: 50%;
+        margin-top: 10px;
+        visibility: hidden;
+    }
+    .details button{
+        height: 39px;
+        width: 157px;
+        margin-top: -10px;
+        font-size: 15px;
+        font-weight: bold;
+        border-style: none; 
+        border-radius: 5px;
+        background-color:rgba(34, 49, 108, 0.518) ;            
+        color: white;
+        margin-top: 0px;
+        margin-left: 55px ;
+        
+    }
+    .intro{
+        font-size: 12px;
+        margin: 2px 0;
+        display: flex;
+        margin-top: 10px;
+        color: #100707;
+        visibility: hidden;
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 0.5s;
+    
+    }
+    .intro p{
+        padding: 3px;
+        
+    }
+    .colon {
+        color: white;
+    }
+    .intro .fill p{
+        width: 170px;
+        word-wrap: break-word;
+        word-break: break-all; 
+        color: black;
+    }
+    .intro .opt{
+        color: white;
+        font-weight: bold;
+      
+    }
+    .card:hover,.details:hover {
+        cursor: pointer;
+    }
+    .card:hover .details{
+
+        height: 165px;
+        background-color:rgba(34, 49, 108, 0.518);
+        border-radius: 5px;
+        clear: both;
+        
+    }
+    .card:hover button{
+        visibility: hidden;
+
+       
+    }
+    .card:hover hr{
+        visibility: visible;
+        
+    }
+
+    .card:hover img{
+        margin-top:-60px;
+        margin-bottom: -70px;
+        width: 270px;
+        height: 270px;
+        border-radius: 95%;
+        transform: scale(0.4);
+    }
+
+    .card:hover .intro  {
+        opacity: 1;
+        display: flex;
+        margin-top: -40px;
+        flex-direction: row;
+        visibility: visible;
+        color: black;
+        padding: 5px;
+    }
+    .heading{
+
+            margin-left: 650px;
+            color: rgba(34,49,109,1);
+            margin-top: 35px;
+            margin-bottom: 35px;
+    }
+       
+    @media (max-width: 600px) {
+        .card {
+            width: 90%;
+            height: auto;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .details {
+            height: auto;
+
+            padding: 10px;
+            align-items: center;
+        }
+
+        .details h1 {
+            font-size: 10px;
+            align-items: center;
+        }
+        
+        .details p {
+            font-size: 13px;
+            
+        }
+
+        .details button {
+            width: 100%;
+            align-items: center;
+            font-size: 10px;
+        }
+        
+        .intro{
+            display: flex;
+            flex-direction: row;
+
+            align-items: flex-start;
+        }
+
+        .intro .opt, .intro .fill {
+            width: 100%;
+            text-align: left;
+        }
+        .intro .fill p{
+            color: black;
+        }
+        .intro p {
+            font-size: 13px;
+        }
+
+    }
+</style>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <main>
+        <h1 class="heading">DIRECTORS</h1>
+        <div>
+     
+            <div class="container" id="card-hod-ug">
+                <div class="card">
+                <img src="https://www.gvpcdpgc.edu.in/about/principal_bosesir1.jpeg" alt="Prof B.S Bose">
+                <div class="details">
+                    <h1 >Prof.K.S.Bose</h1>
+                    <p style="padding-left: 40px; margin-top: 5px;">M.B.A,Ph.D</p>
+                    <hr>
+                    <button>I/C Principal</button>
+                
+                    <div class="intro">
+                    <div class="opt">
+                        <p>Designation</p>
+                        <p>Phone No</p>
+                        <p>Extension</p>
+                        <p>Email</p>
+                    </div>
+                    <div class="colon">
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                    </div>
+                    <div class="fill">
+                        <p>I/C Principal</p>  
+                        <p>0891-2955084/85</p> 
+                        <p>6307</p> 
+                        <p>principal@gvpcdpgc.edu.in</p>          </div>
+        
+                       <!----- <p><span style="color: white;">Designation :</span> I/C Principal </p>
+                        <p><span style="color: white;">Phone no    <span style="padding-left: 15px;">:</span style="padding-left:20px;"></span> 46548954 </p>
+                        <p><span style="color: white;">Extension   <span style="padding-left: 13px;">:</span></span> 6307</p>
+                        <p><span style="color: white;">Email       <span style="padding-left: 40px;">:</span></span> principal@gvpcdpgc.edu.in</p>-->
+                    </div>
+                </div>
+                </div>
+            </div>
+           
+            </div>
+        </div>
+        
+
+    
+    </main>
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+    // Data for the cards
+    const cardsData = [
+        {
+            id: "1",
+            image: "https://www.gvpcdpgc.edu.in/placement/giri_plac.jpg",
+            name: "Prof.D.Giridhar",
+            designation: " ",
+            title: "I/C Director-UG Courses",
+            cardDesignation: "I/C Director-UG Courses",
+            phoneNumber: "-----",
+            extension: "---",
+            email: "giridittakavi@gvpcdpgc.edu.in"
+        },
+        {
+            id: "2",
+            image: "https://www.gvpcdpgc.edu.in/mca/images/Smt.Dr_.I.S.Pallavi.jpg",
+            name: "Dr.I.S.Pallavi",
+            designation: "",
+            title: "Director-MCA",
+            cardDesignation: "Director-MCA",
+            phoneNumber: "---",
+            extension: "---",
+            email: "ipallavi@gvpcdpgc.edu.in"
+        },
+        {
+            id: "3",
+            image: "https://www.gvpcdpgc.edu.in/mhrm/images/AVJR.jpg",
+            name: "Dr.A.V.Joga Rao",
+            designation: "",
+            title: "I/C Director-OPG",
+            cardDesignation: "I/C Director-OPG",
+            phoneNumber: "---",
+            extension: "---",
+            email: "drvjrattota@gvpcdpgc.edu.in"
+        },
+        {
+            id: "4",
+            image: "https://www.gvpcdpgc.edu.in/mech/images/Dr.-P.V.Vinay_.jpg",
+            name: "Dr.P.V.Vinay",
+            designation: "-",
+            title: "Incharge Director-E&T",
+            cardDesignation: "Incharge Director-E&T",
+            phoneNumber: "---",
+            extension: "---",
+            email: "vpragada@gmail.com"
+        },
+        {
+            id: "5",
+            image: "https://www.gvpcdpgc.edu.in/cse/images/director-R&D.jpg",
+            name: "Dr.N.V.RamanaMurty",
+            designation: "",
+            title: "Director-Research & Development",
+            cardDesignation: "Director-Research & Development",
+            phoneNumber: "---",
+            extension: "---",
+            email: "drnvrmurty@gvpcdpgc.edu.in"
+        },
+        {
+            id: "6",
+            image: "https://www.gvpcdpgc.edu.in/about/images/p%20venkata%20krishna%20photo.jpeg",
+            name: "Mr.P Venkata Krishna",
+            designation: "",
+            title: "Director-IIPC",
+            cardDesignation: "Director-IIPC",
+            phoneNumber: "---",
+            extension: "-----",
+            email: "venkatakrishna@gvpcdpgc.edu.in"
+        },
+        
+       
+       
+
+        
+        // Add more card data as needed
+    ];
+
+    // Function to create a card element
+    function createCard(data) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = data.id;
+
+        card.innerHTML = `
+            <img class="profile-image" src="${data.image}" alt="${data.name}">
+            <div class="details">
+                <h1 class="name">${data.name}</h1>
+            
+                <hr>
+                <button class="title">${data.title}</button>
+                <div class="intro">
+                    <div class="opt">
+                        <p>Designation</p>
+                        <p>Phone No</p>
+                        <p>Extension</p>
+                        <p>Email</p>
+                    </div>
+                    <div class="fill">
+                        <p><span>:</span><span class="card-designation">${data.cardDesignation}</span></p>
+                        <p><span>:</span><span class="phone-number">${data.phoneNumber}</span></p>
+                        <p><span>:</span><span class="extension">${data.extension}</span></p>
+                        <p><span>:</span><span class="email">${data.email}</span></p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        return card;
+    }
+
+    // Get the container element
+    const container = document.getElementById('card-hod-ug');
+
+    // Create and append cards to the container
+    cardsData.forEach(cardData => {
+        const card = createCard(cardData);
+        container.appendChild(card);
+    });
+});
+    </script>
+    <div id="footer-placeholder"></div>
+</body>
+    <script src="script.js"></script>
+</html>
