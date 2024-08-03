@@ -2850,11 +2850,5 @@ const cardsData = [
       },
     
 
-<<<<<<< HEAD
 ];
 export default cardsData;
-=======
-]
-export default cardsData;
-//  './faculty.js';
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
