@@ -87,6 +87,7 @@ body {
     font-size: 20px;
     font-weight: 1000px;
     text-align: center;
+    color: #000000;
 }
 .details hr{
     visibility: hidden;
@@ -161,6 +162,9 @@ body {
     visibility: visible;
     padding: 5px;
 }
+a{
+    text-decoration: none;
+}
 @media (max-width: 600px) {
     .card {
         width: 90%;
@@ -211,14 +215,14 @@ body {
      </style>
 </head>
 <body>
-    <!-- <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
+    <div id="nav-placeholder"></div>
     <div class="cards">
         <div class="container">
             <h1 class="heading">HEADS OF COLLEGE</h1>
             <div class="card-container" id="card-container"></div>
             <h1 class="heading">DIRECTORS</h1>
             <div id="director-container"></div>
-            <div class="viewall"><a href="##"><button>view all</button></a></div>
+            <div class="viewall"><a href="./adm-coordinators.html"><button>view all</button></a></div>
             <h1 class="heading">DEANS</h1>
             <div id="deans-container"></div>
             <h1 class="heading">CONTROLLER OF EXAMINATION</h1>
@@ -227,7 +231,7 @@ body {
             <div id="hodpg-container"></div>
             <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
             <div id="hodet-container"></div>
-            <div class="viewall"><a href="##"><button>view all</button></div>
+            <div class="viewall"><a href="./adm-hod-e&t.html"><button>view all</button></div>
             <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
             <div id="hodug-container"></div>
         </div>
@@ -321,7 +325,7 @@ body {
             });
         });
     </script>   
-    <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
-    <!-- <script src="script.js"></script> -->
+    <script src="./templates/includeHTML.js" defer></script>
+    <div id="footer-placeholder"></div>
 </body>
 </html> 
