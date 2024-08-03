@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .title1{
+            background-color: #22316C;
+            color: white;
+            width: 56%;
+            margin-top:12px;
+            text-align: center;
+            padding: 10px ;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .circular-list {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        .circular-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .circular-item:hover {
+            background-color: #22316DBF;
+            color: white;
+        }
+        .view-all-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+        .view-all-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #22316C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .view-all-button button:hover {
+            background-color: #344ba7;
+        }
+        .hidden-item {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title1">CIRCULARS</div>
+        <div class="circular-list" id="circularList">
+            <div class="circular-item">MHRM & MSC OC SEM 1 JUNE REVALUATION CIRCULAR JUNE 2022</div>
+            <div class="circular-item">MCA & MSC CS SEM 1 REVALUATION CIRCULAR MAY 2022</div>
+            <div class="circular-item">MBA SEM1 REVALUATION CIRCULAR MAY 2022</div>
+            <div class="circular-item">I Yr M.Tech II Semester Exam Time Table SEP-2022</div>
+            <div class="circular-item">PG sem 2 Exam Time Table Sep-2022</div>
+            <div class="circular-item">Pg Sem 2 Exam Fee circular Sept-2022</div>
+            <div class="circular-item">I Yr B.Tech II Sem Exam Revised Time Table SEP-2022</div>
+            <div class="circular-item">UG B.Sc B.Voc II Sem Exam Time Table Sep-2022</div>
+            <div class="circular-item">UG B.Com II Sem Exam Time Table Sep-2022</div>
+            <div class="circular-item">UG BBA BCA II Sem Exam Time Table Sep-2022</div>
+            <div class="circular-item">UG B.Sc B.Voc IV Sem Exam Time Table Sep-2022</div>
+            <div class="circular-item">UG B.Com IV Sem Exam Time Table Sep-2022</div>
+            <div class="circular-item">UG BBA BCA IV Sem Exam Time Table Sep-2022</div>
+            <div class="circular-item">Advanced Supplementary Examination</div>
+            <div class="circular-item">UG Advanced Supplememtary Examination Time Table</div>
+            <div class="circular-item">I B.Tech II Sem Examination Fee Circular</div>
+            <div class="circular-item">UG Instant Examination Time Table 2022</div>
+            <div class="circular-item">PPG IV SEM Exam Postponed Circular</div>
+            <div class="circular-item">PG 3 SEM RV CIRCULAR 22</div>
+            <div class="circular-item">III B.Tech II SEM RV Circular 2022</div>
+            <div class="circular-item">PG SEM-IV MHRM Time Table</div>
+            <div class="circular-item">PG SEM-IV MBA MCA MScOC Time Table</div>
+            <div class="circular-item">UG INSTANT EXAMINATION NOTIFICATION</div>
+            <div class="circular-item">PG SEM 4 EXAM FEE CIRCULAR 22</div>
+            <div class="circular-item">II B.Tech Honor Minor Fee Notification & Time Table</div>
+            <div class="circular-item">II B.Tech II Sem Exam Fee Circular-jul-2022</div>
+            <div class="circular-item">II B.Tech II Sem Exam Fee Circular-July 2022</div>
+            <div class="circular-item">Graduation Ceremony Registration circular-2022</div>
+            <div class="circular-item">Graduation Ceremony Notification - 2022</div>
+            <div class="circular-item">UG Special Examination Updated Time Table, Jun-2022</div>
+            <div class="circular-item">B.Tech SEM- I RV CIRCULAR APR-2022</div>
+            <div class="circular-item">Convocation Notification</div>
+            <div class="circular-item">PG SEM-I MHRM, MSc OC SEM End Exam Time Table, JUN-22</div>
+            <div class="circular-item">UG SEM- I, II, IV, VI RV CIRCULAR APR-2022</div>
+            <div class="circular-item">UG SEM-III RV CIRCULAR MAR-2022</div>
+            <div class="circular-item">B.Tech II Yr SEM-I Revaluation Circular, MAR-2022</div>
+            <div class="circular-item">UG Special Examination Circular, May 2022</div>
+            <div class="circular-item">PG SEM 1 MBA MCA MSC-CS TIME TABLE MAY 2022</div>
+            <div class="circular-item">PG SEM-I MBA MCA FEE CIRCULAR, MAY-2022</div>
+            <div class="circular-item">III Yr B.Tech SEM-II Time Table, MAY-2022</div>
+            <div class="circular-item">III Yr B.Tech SEM-II FEE CIRCULAR, MAY-2022</div>
+            <div class="circular-item">I Yr M.Tech SEM-I Time table, MAY-2022</div>
+            <div class="circular-item">I Yr M.Tech SEM-I FEE CIRCULAR MAY-2022</div>
+            <div class="circular-item">UG SEM II B.Sc, B.Com, BBA, BCA Exam SUPPLEMENTARY Time Table, APR-2022</div>
+            <div class="circular-item">UG SEM I BBA, BCA, BCA(DS) Exam Time Table, APR-2022</div>
+            <div class="circular-item">UG SEM I B.Com Exam Time Table, APR-2022</div>
+            <div class="circular-item">UG SEM I B.Sc, B.Voc Exam Time Table, APR-2022</div>
+            <div class="circular-item">UG SEM I Exam Fee Circular, APR-2022</div>
+            <div class="circular-item">PG SEM-III REGULAR AND SUPPLY EXAM TIME TABLE, APR-2022</div>
+            <div class="circular-item">I B.Tech I Semester Time table Apr-2022</div>
+            <div class="circular-item">I B.Tech I Semester Exam Fee Circular Apr-2022</div>
+            <div class="circular-item">UG IV SEMESTER SUPPLY EXAM TIME TABLE APR-2022</div>
+            <div class="circular-item">UG VI B.Sc B.Com BBA BCA SEMESTER EXAM TIME TABLE APR-2022</div>
+            <div class="circular-item">UG EVEN SEM (,2,4,6) EXAM FEE CIRCULAR REG , SUPPLY APR-2022</div>
+            <div class="circular-item">UG Sem-III Examination Fee Circular March-2022</div>
+            <div class="circular-item">UG Sem-III Examination Time Table March-2022</div>
+            <div class="circular-item">PG Sem-III Examination Fee Circular</div>
+            <div class="circular-item">B.Tech II-I Semester R-20 & R-19 EXAM TIME TABLE, MAR- 2022</div>
+            <div class="circular-item">B.Tech II-I Semester R-20 & R-19 EXAM NOTIFICATION, MAR- 2022</div>
+            <div class="circular-item">UG BBA SEM-II, V REVALUATION CIRCULAR, NOV-2021</div>
+            <div class="circular-item">M.Tech II-I (III) SEMESTER R-20 EXAM TIME TABLE, MAR- 2022</div>
+            <div class="circular-item">M.Tech II-I REGULAR SEMESTER (R-20) EXAM NOTIFICATION, FEB-2022</div>
+            <div class="circular-item">UG SEMESTER II, III, V REVALUATION CIRCULAR-NOV-2021</div>
+            <div class="circular-item">B.Tech III-I (V) SEMESTER R-19 EXAM NOTIFICATION, JAN 2022</div>
+            <div class="circular-item">B.Tech III-I (V) SEMESTER R-19 EXAMINATION TIME TABLE, JAN 2022</div>
+            <div class="circular-item">UG SEM-II B.Com TIME TABLE REGULAR</div>
+            <div class="circular-item">UG SEM-II B.Sc B.Voc TIME TABLE REGULAR</div>
+            <div class="circular-item">UG SEM-II BBA BCA TIME TABLE REGULAR</div>
+            <div class="circular-item">UG SEM-III B.SC B.COM BBA BCA TIME TABLE SUPPLY</div>
+            <div class="circular-item">UG SEM-V B.SC B.COM BBA BCA REG.SUPPLY TIME TABLE</div>
+            <div class="circular-item">PG SEM-II TIME TABLE REGULAR</div>
+            <div class="circular-item">PG SEM-V REG, SUPPLY of MCA TIME TABLE</div>
+            <!-- Initially hidden items -->
+             </div>
+             <div class="title1">Results</div>
+             <div class="circular-list" id="circularList">
+                <div class="circular-item">MSC ORGANIC CHEMISTRY SEM 1 RESULTS JUNE 2022</div>
+                <div class="circular-item">MSC COMPUTER SCIENCE SEM 1 RESULTS MAY 2022</div>
+                <div class="circular-item">MHRM SEM 1 RESULTS JUNE 2022</div>
+                <div class="circular-item">MCA SEM 1 RESULTS MAY 2022</div>
+                <div class="circular-item">MBA SEM 1 MAY 2022 RESULTS</div>
+                <div class="circular-item">MCA SEM 6 JUNE 22 RESULTS</div>
+                <div class="circular-item">UG Instant Exam Result</div>
+                <div class="circular-item">PG SEM-III Results 2022</div>
+                <div class="circular-item">III B.Tech II SEM result 2022</div>
+                <div class="circular-item">II B.Tech I SEM RV Result</div>
+                <div class="circular-item">UG Special Exam Result</div>
+                <div class="circular-item">UG B.Sc SEM 1 2 4 6 RV Result APR-2022</div>
+                <div class="circular-item">UG B.Com SEM 1 2 4 6 RV Result APR-2022</div>
+                <div class="circular-item">UG BBA BCA SEM 1 2 4 6 RV Result APR-2022</div>
+                <div class="circular-item">B.Tech SEM- I REG & SUPPLY RESULT APR-2022</div>
+                <div class="circular-item">UG SEM- VI REG & SUPPLY RESULT APR-2022</div>
+                <div class="circular-item">UG SEM- IV SUPPLY RESULT APR-2022</div>
+                <div class="circular-item">UG SEM- II SUPPLY RESULT APR-2022</div>
+                <div class="circular-item">UG SEM- I REG & SUPPLY RESULT APR-2022</div>
+                <div class="circular-item">UG SEM- III REGULAR RESULT MAR-2022</div>
+                <div class="circular-item">B.Tech II Yr SEM-I Result, MAR-2022</div>
+                <div class="circular-item">B.Tech III Yr SEM-I Revaluation Result, Jan-2022</div>
+                <div class="circular-item">UG SEM-II, III and V B.Sc Revaluation Result, NOV-2021</div>
+                <div class="circular-item">UG SEM-II, III and V B.Com Revaluation Result, NOV-2021</div>
+                <div class="circular-item">UG SEM-II, III and V BBA BCA Revaluation Result, NOV-2021</div>
+                <div class="circular-item">B.Tech 3-1 JAN-2022 RESULT</div>
+                <div class="circular-item">B.Tech 3-1 JAN-2022 RV CIRCULAR</div>
+                <div class="circular-item">PG SEM-II RV RESULT,NOV-21</div>
+                <div class="circular-item">UG BBA SEM-V RESULT NOV-2021</div>
+                <div class="circular-item">UG BBA SEM-II RESULT NOV-2021</div>
+                <div class="circular-item">PG MCA SEM-V RESULTS-NOV-2021</div>
+                <div class="circular-item">PG M.SC (ORG.) SEM-II RESULTS-NOV-2021</div>
+                <div class="circular-item">PG M.SC. (CS) SEM-II RESULTS-NOV-2021</div>
+                <div class="circular-item">PG MBA SEM-II RESULTS-NOV-2021</div>
+                <div class="circular-item">PG MCA SEM-II RESULTS-NOV-2021</div>
+                <div class="circular-item">PG MHRM SEM-II RESULTS-NOV-2021</div>
+                <div class="circular-item">B.Tech I YR SEM-II REVALUATION RESULT-OCT-2021</div>
+                <div class="circular-item">B.Sc, BCA SEM-V RESULT NOV-2021</div>
+                <div class="circular-item">B.Com SEM-V RESULT NOV-2021</div>
+                <div class="circular-item">B.Sc, BCA SEM-III (S) RESULT NOV-2021</div>
+                <div class="circular-item">B.Com SEM-III(S) RESULT NOV-2021</div>
+                <div class="circular-item">BBA SEM-III (S) RESULT NOV-2021</div>
+                <div class="circular-item">B.Sc, BCA & B.Voc SEM-II RESULT NOV-2021</div>
+                <div class="circular-item">B.Com SEM-II RESULT NOV-2021</div>
+                <div class="circular-item">B.Tech I YR SEM-I & II YR SEM-IV REVALUATION RESULT-JUL-2021</div>
+                <div class="circular-item">B.TECH II-II (IV) SEMESTER RESULTS</div>
+                <div class="circular-item">B.TECH I-II (II) SEMESTER RESULTS, OCT 2021</div>
+                <div class="circular-item">Results of 1,3,5 Semester-end UG Examinations, November, 2018</div>
+                <div class="circular-item">Results of 1,3,5, Semester-end PG Examinations, November, 2018</div>
+                <div class="circular-item">8th Convocation -2018</div>
+                
+        
+            </div>
+            <div class="title1">Time Table</div>
+            <div class="circular-list" id="circularList">
+                    <div class="circular-item">Semester-end UG examinations, November, 2018</div>
+                    <div class="circular-item">Semester-end PG examinations for I MBA and I MCA December,2018</div>
+                        </div>
+        <div class="view-all-button">
+            <button onclick="toggleViewAll()">View All</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewAllButton = document.querySelector('.view-all-button button');
+            const circularItems = document.querySelectorAll('.circular-item');
+            let showingAll = false;
+    
+            viewAllButton.addEventListener('click', function() {
+                if (showingAll) {
+                    // Hide additional items
+                    circularItems.forEach((item, index) => {
+                        if (index >= 14) {
+                            item.style.display = 'none';
+                        }
+                    });
+                    viewAllButton.textContent = 'View All';
+                } else {
+                    // Show all items
+                    circularItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                    viewAllButton.textContent = 'Show Less';
+                }
+                showingAll = !showingAll;
+            });
+    
+            // Initially hide additional items
+            circularItems.forEach((item, index) => {
+                if (index >= 14) {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
