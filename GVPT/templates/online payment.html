@@ -11,6 +11,7 @@
             border: 0;
             font-family: "Inter", sans-serif;
             box-sizing: border-box;
+            font-size: 25px;
         }
         .title {
             display: flex;
@@ -73,7 +74,7 @@
         }
         .heading {
             background: #344ba7bf;
-            border: 2px solid rgb(8, 8, 8);  
+            border: 2px solid rgb(8, 8, 8);
             color: white;
             width: 1115px;
             height: 75px;
@@ -157,10 +158,9 @@
                 padding: 15px;
             }
         }
-        .heading1
-        {
+        .heading1 {
             background: #344ba7bf;
-            border: 2px solid rgb(8, 8, 8);  
+            border: 2px solid rgb(8, 8, 8);
             color: white;
             width: 1115px;
             height: 75px;
@@ -169,8 +169,7 @@
             padding: 40px;
             justify-content: space-between;
         }
-        .file1
-        {
+        .file1 {
             display: flex;
             align-items: center;
             padding: 40px;
@@ -195,7 +194,23 @@
         .file h1:hover, .file.active h1 {
             color: white;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 2px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #344ba7bf;
+            color: white;
+        }
     </style>
+    
 </head>
 <body>
     <div class="container">
@@ -244,52 +259,57 @@
         </div>
     </div>
     <div id="sub2" class="hidden">
-        <div class="head">
-            <div class="heading1">
-                <h1>AICTE COURCES</h1>
-                <h1>FEE STRUCTURE</h1>
-            </div>
-        </div>
+       
         <div class="box">
             <div class="files">
-                <div class="file1">
-                    <h2>M.B.A</h2>
-                    <h2>70,000/-</h2>
-                </div>
-                <div class="file1">
-                    <h2>M.C.A</h2>
-                    <h2>70,000/-</h2>
-                </div>
-                <div class="heading">
-                    <h1>MTECH</h1>
-                </div>
-                <div class="file1">
-                    <h2>STRUCTURAL ENGINEERING</h2>
-                    <h2>63,000/-</h2>
-                </div>
-                <div class="file1">
-                    <h2>M.C.A</h2>
-                    <h2>63,000/-</h2>
-                </div>
-                <div class="heading">
-                    <h1>BTECH</h1>
-                </div>
-                <div class="file1">
-                    <h2>CIVIL ENGINEERING</h2>
-                    <h2>63,000/-</h2>
-                </div>
-                <div class="file1">
-                    <h2>COMPUTER SCIENCE ENGINEERING</h2>
-                    <h2>63,000/-</h2>
-                </div>
-                <div class="file1">
-                    <h2>ELECTONICS AND COMMUNICATION ENGINEERING</h2>
-                    <h2>63,000/-</h2>
-                </div>
-                <div class="file1">
-                    <h2>CIVIL ENGINEERING</h2>
-                    <h2>63,000/-</h2>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>M.B.A</td>
+                            <td>70,000/-</td>
+                        </tr>
+                        <tr>
+                            <td>M.C.A</td>
+                            <td>70,000/-</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">MTECH</th>
+                        </tr>
+                        <tr>
+                            <td>STRUCTURAL ENGINEERING</td>
+                            <td>63,000/-</td>
+                        </tr>
+                        <tr>
+                            <td>M.C.A</td>
+                            <td>63,000/-</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">BTECH</th>
+                        </tr>
+                        <tr>
+                            <td>CIVIL ENGINEERING</td>
+                            <td>63,000/-</td>
+                        </tr>
+                        <tr>
+                            <td>COMPUTER SCIENCE ENGINEERING</td>
+                            <td>63,000/-</td>
+                        </tr>
+                        <tr>
+                            <td>ELECTRONICS AND COMMUNICATION ENGINEERING</td>
+                            <td>63,000/-</td>
+                        </tr>
+                        <tr>
+                            <td>CIVIL ENGINEERING</td>
+                            <td>63,000/-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
