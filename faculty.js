@@ -2403,6 +2403,7 @@ const cardsData = [
         cardDesignation: 'Electronics',
         phone: '---',
         extension: '---',
+        sir:'',
         email: 'mtirumalarao@gvpcdpgc.edu.in',
         dateOfJoining: '03-12-2012',
         natureOfAssosiation: '---',
