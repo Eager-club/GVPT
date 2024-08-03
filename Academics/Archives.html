@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Calendar</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+        .faculty-main {
+            width: 80%;
+            margin-left: 85px;
+            position: relative;
+        }
+        .faculty-main h1 {
+            text-align: center;
+            color: #22316D;
+            padding: 50px 0;
+            font-size: 2.5em;
+        }
+        .faculty-main .content {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .faculty-main .content a {
+            display: block;
+            margin: 10px 0;
+        }
+        .faculty-main button h3{
+            text-align: center;
+            font-weight: 400;
+        }
+        .faculty-main button {
+
+            width: 100%;
+            background: transparent;
+            border: 1px solid #22316D;
+            color: #000000;
+            font-weight: bolder;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: left;
+        }
+        .faculty-main button:hover {
+            background-color: #22316C;
+            opacity: 50%;
+            color: #ffffff;
+        }
+        @media (max-width: 480px) {
+            .faculty-main {
+                width: 95%;
+                margin: 0 auto;
+                padding: 10px;
+            }
+            .faculty-main h1 {
+                font-size: 1.5em;
+                padding: 20px 0;
+            }
+            .faculty-main button {
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <div class="faculty-main">
+        <h1>ARCHIVES</h1>
+        <div class="content">
+            <a href="#"><button><h3>Academic Calendar of P.G Courses 2018-19</h3></button></a>
+            <a href="#"><button><h3>List of Working days/ Holidays of P.G Courses</h3></button></a>
+            <a href="#"><button><h3>Academic Calendar of U.G Courses 2018-19</h3></button></a>
+            <a href=""><button><h3>List of Working days/ Holidays of U.G Courses</h3></button></a>
+            <a href=""><button><h3>List of Working days/ Holidays of P.G Courses</h3></button></a>
+            <a href=""><button><h3>Academic Calendar for Engineering & Technology 2016-17,2017-18,<br>2018 -19</h3></button></a>
+            <a href=""><button><h3>Academic calendar and list of holidays Engineering & Technology <br>Program- 2019 admitted autonomous batch</h3></button></a>
+        </div>
+    </div>
+    <script src="../templates/includeHTML.js" defer></script>
+    <div id="footer-placeholder"></div>
+</body>
+</html>
