@@ -17,7 +17,7 @@ const cardsData = [
         natureOfAssosiation:"Regular",
         areaOfSpecialisation:" Cryptography and Network Security,Cyber Security,DBMS,OS",
         director:"1",
-        button:"Director-MCA",
+        Dbutton:"Director-MCA",
         viewprofile:"",
             
     },
@@ -55,7 +55,7 @@ const cardsData = [
         email:"ratnapavanip@gvpcdpgc.edu.in",
         dateOfJoining:"18-03-2007",
         natureOfAssosiation:" Regular",
-        areaOfSpecialisation:"Network Security,AI,Multimedia,OS",
+        areaOfSpecialisation:"Network Security,AI,Multimedia,OS",       
         viewprofile:"",
        
     },
@@ -173,7 +173,8 @@ const cardsData = [
         areaOfSpecialisation:"Marketing management",
         administration:"1",
         director:"1",
-        button:"I/C principal",
+        hbutton:"I/C principal",
+        Dbutton:"I/C principal",
         viewprofile:"",
       
     },
@@ -194,7 +195,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Finance",
         dean:"1",
-        dbutton:"Dean-Academics",
+        dbutton:"I/C Director-OPG",
         viewprofile:"",
       
     },
@@ -297,7 +298,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Marketing Management",
         director:"1",
-        button:"Director-IIPC",
+        Dbutton:"Director-IIPC",
         iipc:"yes",
         mem:"Director",
         cod:"1",
@@ -757,7 +758,7 @@ const cardsData = [
         natureOfAssosiation:"Regular",
         areaOfSpecialisation:"Databases & Data Minining",
         administration:"1",
-        button:"I/C principal",
+        hbutton:"I/C principal",
         viewprofile:"",
     },
     {
@@ -777,7 +778,7 @@ const cardsData = [
         natureOfAssosiation:"Regular",
         areaOfSpecialisation:"Artificial Intelligence & Robotics Machine Learning",
         director:"1",
-        button:"Director-Research & Development",
+        Dbutton:"Director-Research & Development",
         hodet:'1',
         etbutton:'HOD-CSE(Artificial Intelligence & Engineering',
         viewprofile:"",
@@ -1290,7 +1291,7 @@ const cardsData = [
         natureOfAssosiation:"Regular",
         areaOfSpecialisation:" Heat Transfer In Energy Systems, Manufacturing",
         director:"1",
-        button:"Incharge Director-E&T",
+        Dbutton:"Incharge Director-E&T",
         viewprofile:"",
     },
     {
@@ -1866,7 +1867,7 @@ const cardsData = [
         natureOfAssosiation: "Regular",
         areaOfSpecialisation: "Organic Synthesis, Computational Chemistry",
         hodpg:"1",
-        pgbutton:"HOD-MSc(Organic Chemistry",
+        pgbutton:"HOD-MSc(Organic Chemistry)",
         viewprofile:""
     },
     {
@@ -1904,7 +1905,7 @@ const cardsData = [
         natureOfAssosiation: "Regular",
         areaOfSpecialisation: "HR",
         director:"1",
-        button:"I/C Director-OPG",
+        Dbutton:"I/C Director-OPG",
         hodpg:"1",
         pgbutton:"HOD-MHRM",
         viewprofile:""
@@ -2659,7 +2660,7 @@ const cardsData = [
         category: 'UNIVERSITY',
         subCategory: 'UNDERGRADUATE',
         branch: 'Department of Biotechnology',
-        name: 'Dr. Hepzibah Rani Singh',
+        name: 'Dr. Hephzibah Rani Singh',
         image: 'https://www.gvpcdpgc.edu.in/gvp_faculty/faculty_images/Dr%20Hepzibah%20Rani%20Singh.jpg',
         designation: 'Senior Assistant Professor & HOD',
         title: 'M.Sc., PhD',
@@ -2839,7 +2840,7 @@ const cardsData = [
         natureOfAssosiation: '---',
         areaOfSpecialisation: '---',
         director:"1",
-        button:"I/C Director-UG Courses",
+        Dbutton:"I/C Director-UG Courses",
         dean:"1",
         dbutton:"Dean Career Guidance,Training & Placement",
         placementT:"1",
