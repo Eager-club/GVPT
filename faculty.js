@@ -215,6 +215,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Systems and Marketing",
         dean:"1",
+        button:"",
         dbutton:"Dean-Academics",
         hodpg:"1",
         pgbutton:"HOD-MBA(Business Analytics)",
@@ -238,7 +239,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:" Human Resource Management",
         coe:"1",
-        cbutton:"Dean-Academics",
+        cbutton:"Controller of Examinations",
         viewprofile:"",
       
     },
@@ -2849,6 +2850,11 @@ const cardsData = [
       },
     
 
+<<<<<<< HEAD
+];
+export default cardsData;
+=======
 ]
 export default cardsData;
 //  './faculty.js';
+>>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909

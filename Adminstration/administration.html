@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script src="includeHTML.js" defer></script>
+    <script src="../templates/includeHTML.js" defer></script>
     <script src="https://unpkg.com/htmx.org@1.8.5"></script>
      <style>
         *{
@@ -87,7 +87,6 @@ body {
     font-size: 20px;
     font-weight: 1000px;
     text-align: center;
-    color: #000000;
 }
 .details hr{
     visibility: hidden;
@@ -162,9 +161,6 @@ body {
     visibility: visible;
     padding: 5px;
 }
-a{
-    text-decoration: none;
-}
 @media (max-width: 600px) {
     .card {
         width: 90%;
@@ -216,13 +212,14 @@ a{
 </head>
 <body>
     <div id="nav-placeholder"></div>
+    <!-- <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
     <div class="cards">
         <div class="container">
             <h1 class="heading">HEADS OF COLLEGE</h1>
             <div class="card-container" id="card-container"></div>
             <h1 class="heading">DIRECTORS</h1>
             <div id="director-container"></div>
-            <div class="viewall"><a href="./adm-coordinators.html"><button>view all</button></a></div>
+            <div class="viewall"><a href="##"><button>view all</button></a></div>
             <h1 class="heading">DEANS</h1>
             <div id="deans-container"></div>
             <h1 class="heading">CONTROLLER OF EXAMINATION</h1>
@@ -231,18 +228,15 @@ a{
             <div id="hodpg-container"></div>
             <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
             <div id="hodet-container"></div>
-            <div class="viewall"><a href="./adm-hod-e&t.html"><button>view all</button></div>
+            <div class="viewall"><a href="##"><button>view all</button></div>
             <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
             <div id="hodug-container"></div>
-            <h1 class="heading">COORDINATORS</h1>
-            <div id="coordinators-container"></div>
-            <div class="viewall"><a href="./adm-coordinators.html"><button>view all</button></div>
         </div>
     </div>
     <script type="module">
         import cardsData from '../faculty.js';
         document.addEventListener('DOMContentLoaded', () => {
-            //
+
         function createCard(data) {
             const card = document.createElement('div');
             card.className = 'card';
@@ -326,16 +320,10 @@ a{
                 const card = createCard(cardData);
                 container.appendChild(card);
             });
-            var container = document.getElementById('coordinator-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.h=== "1").slice(0, 4);;
-            // Create and append cards to the container
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
         });
     </script>   
-    <script src="../templates/includeHTML.js" defer></script>
+    <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
     <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
 </body>
 </html> 
