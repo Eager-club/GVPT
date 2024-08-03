@@ -496,7 +496,6 @@ B.Tech, M.Tech	Communication Systems	sridevivelaga@       12-06-2023          Re
          gvpcdpgc.edu.in	
 https://www.gvpcdpgc.edu.in/ece/images/sridevi_photo.jpg
 
-
 /Students Corner
 
 https://www.gvpcdpgc.edu.in/ece/images/student_corner/ece1.jpg
