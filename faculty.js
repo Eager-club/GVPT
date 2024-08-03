@@ -216,6 +216,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Systems and Marketing",
         dean:"1",
+        button:"",
         dbutton:"Dean-Academics",
         hodpg:"1",
         pgbutton:"HOD-MBA(Business Analytics)",
@@ -2858,8 +2859,8 @@ const cardsData = [
         name: 'Dr.M.S.R.Seshagiri',
         image: 'https://www.gvpcdpgc.edu.in/gvp_faculty/bsh_data/Dr.Seshagiri_photo.jpeg',
         designation: 'HOD-MBA',
-        title: '---',
-        cardDesignation: '---',
+        title: 'HOD-MBA',
+        cardDesignation: 'HOD-MBA',
         phone: '---',
         extension: '---',
         email: 'Seshagiri.msr@gvpcdpgc.edu.in',
@@ -2867,7 +2868,7 @@ const cardsData = [
         natureOfAssosiation: '---',
         areaOfSpecialisation: '---',
         hodpg:"1",
-        pgbutton:"HOD-MBA",
+        button:"HOD-MBA",
         viewprofile: '',
       },
       {
@@ -2935,4 +2936,6 @@ const cardsData = [
     
     
 
-]
+
+];
+export default cardsData;
