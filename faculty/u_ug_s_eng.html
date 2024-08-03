@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ug_s_eng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="includeHTML.js" defer></script>
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            letter-spacing: .5px;
+            font-family: "Inter", sans-serif;
+        }
+        body {
+            width: 100%;
+            
+        }
+        main {
+            width: 80%;
+            max-width: 1200px;
+            margin : auto; 
+            justify-content: center;
+            padding-bottom: 75px;
+            justify-items: center;
+            
+        }
+
+        .heading{
+            text-align: center;
+            color: #22316D;
+            font-size: 28px;
+            padding-top: 35px;
+            padding-bottom: 40px;
+
+        }
+        .card-container {
+            
+            width: 80%;
+            display: grid;           
+            gap: 6rem;
+            padding-top: 20px;
+            padding-bottom: 5rem;
+            grid-template-columns: repeat(2,1fr);
+            justify-content:space-around;
+            
+        }
+        .fac_card {
+            height: 206px;
+            width: 546px;
+            display: flex;
+            margin-bottom: -65px;
+            border-radius: 10px;
+            border: 1px black solid;
+            transition: transform 0.2s ease-in-out;
+        }
+        .fac_img {
+            padding: 9px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-image {
+            
+            height: 188px;
+            width: 151px;
+            border-radius: 10px;
+        }
+       
+        .fac_title {
+            margin-top: 50px;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        .fac_title h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .fac_title p {
+            padding: px;
+            font-size: 20px;
+        }
+        .fac_title .designation {
+            visibility: hidden;
+            margin-bottom: -20px;
+        }
+        .fac_details {
+            visibility: hidden;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        .color {
+            width: 30px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .fac_details .bold {
+            font-weight: bold;
+        }
+        .fac_details .color {
+            
+            word-break: break-all;
+        }
+        .fac_img a {
+            visibility: hidden;
+           
+        }
+        .fac_card button {
+            font-size: 17px;
+            background-color: #22316d4d;
+            padding: 3px;
+            border: 1px #ffffff57 solid;
+            border-radius: 5px;
+        }
+        .fac_card:hover {
+            cursor: pointer;
+            color: #1a0909;
+            background-color: #22316d77;
+
+        }
+        .fac_card:hover img {
+            height: 200px;
+            width: 190px;
+            margin: -20px;
+            border-radius: 25px;
+            scale: 0.7;
+        }
+        .fac_card:hover .fac_title {
+            margin: 13px;
+            
+        }
+        .fac_card:hover  h1{
+            margin-bottom: -3px;
+            font-size: 25px;
+        }
+        .fac_card:hover .fac_title p {
+            font-size: 15px;
+        }
+        .fac_card:hover .designation {
+            margin-bottom: 0px;
+            visibility: visible;
+        }
+        .fac_card:hover .fac_details p {
+            visibility: visible;
+        }
+        .fac_card:hover button {
+            cursor: pointer;
+        }
+        .fac_card:hover a {
+            visibility: visible;
+        }
+       /* Media Queries */
+       @media (max-width: 768px) {
+            .card-container {
+                width: 100%;
+                max-width: 546px;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding-bottom: 5rem;
+            }
+            .fac_card {
+                width: 100%;
+                max-width: 546px;
+                margin-bottom: 20px;
+            }
+            .fac_title h1 {
+                font-size: 20px;
+            }
+            .fac_title p {
+                font-size: 14px;
+            }
+            .fac_details {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .card-container {
+                width: 100%;
+                max-width: 480px;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .fac_card {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                width: 100%;
+                max-width: 450px;
+            }
+            .profile-image {
+                width: 100%;
+                max-width: 120px;
+            }
+            .fac_title {
+                padding: 10px;
+            }
+            .fac_title h1 {
+                font-size: 18px;
+            }
+            .fac_title p {
+                font-size: 12px;
+            }
+            .fac_details {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header>
+        
+        <main>
+            <h1 class="heading">DEPARTMENT OF ENGLISH</h1>
+            <div class="card-container" id="card-container">
+            </div>
+        </main>
+        <script type="module">
+            import cardsData from './faculty.js';
+    
+            document.addEventListener('DOMContentLoaded', () => {
+                
+                
+                // Function to create a card element
+                function createCard(data) {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.dataset.id = data.id;
+                    card.innerHTML = `
+                    
+                        <div class="fac_card">
+                            <div class="fac_img">
+                                <img class="profile-image" src="${data.image}" alt="${data.name}">
+                                <a href="${data.viewprofile}"><button class="view-profile-btn">View Profile</button></a>
+                            </div>
+                             <div class="fac_title">
+                            <h1 class="name">${data.name}</h1>
+                            <p>${data.title}</p>
+                            <p class="designation">${data.designation}</p>
+                            <p>${data.email}</p>
+                            <div class="fac_details">
+                                <p><span class="bold">Area of Specialization:</span> <span class="color">${data.areaOfSpecialisation}</span></p>
+                                <p><span class="bold">Date of Joining:</span> <span class="color">${data.dateOfJoining}</span></p>
+                                <p><span class="bold">Nature of Association:</span> <span class="color">${data.natureOfAssosiation}</span></p>
+                            </div>
+                        </div>
+                        
+                
+                    `;
+                    return card;
+                }
+    
+                // Get the container element
+                const container = document.getElementById('card-container');
+                const selectedCategory = 'UNIVERSITY';// Replace with your desired category
+                const selectedBranch = 'Department of English'; 
+                // Filter and create cards based on title
+                const filteredCardsData = cardsData.filter(cardData => cardData.category === selectedCategory && cardData.branch === selectedBranch);
+    
+                // Create and append cards to the container
+                filteredCardsData.forEach(cardData => {
+                    const card = createCard(cardData);
+                    container.appendChild(card);
+                });
+            });
+        </script>
+        
+        <!-- Footer -->
+        <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>
