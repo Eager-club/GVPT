@@ -215,6 +215,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Systems and Marketing",
         dean:"1",
+        button:"",
         dbutton:"Dean-Academics",
         hodpg:"1",
         pgbutton:"HOD-MBA(Business Analytics)",
@@ -238,7 +239,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:" Human Resource Management",
         coe:"1",
-        cbutton:"Dean-Academics",
+        cbutton:"Controller of Examinations",
         viewprofile:"",
       
     },
@@ -2849,4 +2850,5 @@ const cardsData = [
       },
     
 
-]
+];
+export default cardsData;
