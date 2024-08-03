@@ -24,6 +24,8 @@
         background-repeat: no-repeat;
         background-position: center;
         background-clip: content-box;
+        position: relative;
+
       }
       .knowmr{
       
@@ -65,30 +67,64 @@
       font-weight: 500;
       border: 2px solid #22316c;
       border-radius: 6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .btn button:hover{
       color: #e78709;
-      font-size: 1.51vw;
-      transition: 0.2s ease-in-out;
+      /* font-size: 1.51vw;
+      transition: 0.2s ease-in-out; */
+      transform: translateY(-4px); /* Slightly raise the card */
+      box-shadow: 0 4px 8px rgba(231, 135, 9, 0.25);
     }
+    .page2{
+      display: flex;
+    }
+    .mivison{
+      margin: 4vw;
+      padding: 4vw;
+      border: 2px solid transparent;
+      border-radius: 1vw;
+      font-size: 1.3vw;
+      text-align: justify;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+    .mivison:hover {
+    transform: translateY(-10px); /* Slightly raise the card */
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+     /* Add shadow for depth */
+    /* border-color:5px solid #000000;  */
+
+  }
     </style>
 
   </head>
   <body>
     <!-- <section id="preloader-placeholder"></section> -->
-    <div  class="hidden" id="main-content" >
-      <div class="page1">
-        <header id="nav-placeholder"></header>
-        <div class="knowmr">
-          <div> <h1 id="dynamic-heading"></h1></div>
-          <div ><a href="" class="btn">
-            <button>Know More</button>
-          </a></div>
-        </div>
-      </div>
+    
 
-      <main>
-          
+      <main class="hidden" id="main-content" >
+          <div class="page1">
+            <header id="nav-placeholder"></header>
+            <div class="knowmr">
+              <div> <h1 id="dynamic-heading"></h1></div>
+              <div ><a href="" class="btn">
+                <button>Know More</button>
+              </a></div>
+            </div>
+          </div>
+          <div class="page2">
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
+              <h1 style="color: white;padding-bottom: 3vh;">MISSION :</h1>
+              <p>Create and sustain as a centre of excellence in Computer Science and Engineering and allied areas of research to pave the way for
+                providing better technocrats to the society</p>
+            </div>
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 2.5%);">
+              <h1  style="color: #22316c;padding-bottom: 3vh;">VISION :</h1>
+              <p >To provide strong conceptual base (M1) for acquiring programming skills,
+                to develop high computational innovative skills (M2) and to empower leadership qualities with strong ethical
+                base</p>
+            </div>
       </main>
       <footer id="footer-placeholder"></footer>
       <script>
