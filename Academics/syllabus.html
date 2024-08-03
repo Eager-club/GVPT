@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+        .faculty-main {
+            width: 80%;
+            margin-left: 85px;
+            position: relative;
+        }
+        .faculty-main h1 {
+            text-align: center;
+            color: #22316D;
+            padding: 50px 0;
+            font-size: 2.5em;
+        }
+        .faculty-main .dropdown {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .faculty-main button {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #22316D;
+            color: #000000;
+            font-weight: bolder;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            text-align: left;
+            position: relative;
+        }
+        .faculty-main button:after {
+            content: '\25BC';
+            position: absolute;
+            right: 20px;
+        }
+        .faculty-main button.active {
+            background-color: #22316D;
+            color: #ffffff;
+        }
+        .dropdown-content {
+            display: none;
+            background-color: #f1f1f1;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            padding: 10px;
+            transition: max-height 0.3s ease;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase; /* Converts text to uppercase */
+        }
+        .dropdown-content a:hover {
+            background-color: #e0e0e0;
+        }
+        .show {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .faculty-main {
+                width: 95%;
+                margin: 0 auto;
+                padding: 10px;
+            }
+            .faculty-main h1 {
+                font-size: 1.5em;
+                padding: 20px 0;
+            }
+            .faculty-main button {
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+            .dropdown-content a {
+                font-size: 14px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <div class="faculty-main">
+        <h1>SYLLABUS</h1>
+        <div class="dropdown">
+            <button class="dropbtn" data-target="pg-dropdown">POST GRADUATE</button>
+            <div class="dropdown-content" id="pg-dropdown">
+                <a href="#" target="_blank" >MBA - Master of Business Administration Syllabus</a>
+                <a href="#" target="_blank">MCA- Master of Computer Applications Syllabus</a>
+                <a href="#" target="_blank">M.Sc. (Computer Science) Syllabus</a>
+                <a href="#" target="_blank">MSc Organic Chemistry Syllabus</a>
+                <a href="#" target="_blank">Master of Human Resource Management(MHRM) Syllabus</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" data-target="ug-engineering-dropdown">UG-ENGINEERING</button>
+            <div class="dropdown-content" id="ug-engineering-dropdown">
+                <a href="#" target="_blank">Engineering & Technology Civil Engineering Syllabus</a>
+                <a href="#" target="_blank">Engineering & Technology Computer Science & Engineering Syllabus</a>
+                <a href="#" target="_blank">Engineering & Technology Computer Science (AI&ML) & Engineering Syllabus</a>
+                <a href="#" target="_blank">Engineering & Technology Electronics and Communication Engineering Syllabus</a>
+                <a href="#" target="_blank">Engineering & Technology Mechanical Engineering Syllabus</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" data-target="undergraduate-dropdown">UNDERGRADUATE</button>
+            <div class="dropdown-content" id="undergraduate-dropdown">
+                <a href="#" target="_blank">B.Sc. Mathematics, Physics and Computer Science Syllabus</a>
+                <a href="#" target="_blank">B.Sc. Mathematics, Electronics and Computer Science Syllabus</a>
+                <a href="#" target="_blank">B.Sc. Mathematics, Statistics and Computer Science Syllabus</a>
+                <a href="#" target="_blank">B.Sc. Mathematics, Physics and Chemistry Syllabus</a>
+                <a href="#" target="_blank">B.Sc. Microbiology, Biotechnology and Biochemistry Syllabus</a>
+                <a href="#" target="_blank">Bachelor of Business Administration Syllabus</a>
+                <a href="#" target="_blank">Bachelor of Computer Applications Syllabus</a>
+                <a href="#" target="_blank">B.Com. (Computers) Syllabus</a>
+                <a href="#" target="_blank">B.Com. Syllabus</a>
+                <a href="#" target="_blank">B.Vocational. Syllabus</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.dropbtn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.getElementById(this.getAttribute('data-target'));
+                if (target.classList.contains('show')) {
+                    target.classList.remove('show');
+                    this.classList.remove('active');
+                } else {
+                    document.querySelectorAll('.dropdown-content').forEach(content => content.classList.remove('show'));
+                    document.querySelectorAll('.dropbtn').forEach(btn => btn.classList.remove('active'));
+                    target.classList.add('show');
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script src="../templates/includeHTML.js" defer></script>
+    <div id="footer-placeholder"></div>
+</body>
+</html>
