@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostGraduate</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            font-family: "Inter", sans-serif;
+        }
+        .container
+        {
+            margin-bottom: 80px;
+        }
+        .pg {
+            color: #22316C;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            justify-content: center;
+        }
+        .scrolling-wrapper {
+            display: flex;
+            margin-left: 40px;
+            width: 95%;
+            overflow: hidden;
+            position: relative;
+        }
+        .scrolling-images {
+            display: flex;
+            width: max-content; /* Ensure the container is wide enough to hold all images */
+            animation: scroll 20s linear infinite;
+        }
+        .scrolling-images img {
+            width: 345px; /* Adjust this to your desired image width */
+            height: 400px; /* Maintain aspect ratio */
+            padding: 10px;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .scrolling-wrapper:hover .scrolling-images  {
+            animation-play-state: paused; 
+        }
+        .img:hover
+        {
+            
+            height: 420px;
+            width: 365px;   
+        }
+        .img {
+            height: 400px;
+            width: 345px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <div class="container">
+        <div class="pg">
+            <h1>POSTGRADUATE</h1>
+        </div>
+        <div class="scrolling-wrapper">
+            <div class="scrolling-images">
+                <a href=""><img class="img" src="./assects/MBA.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MCA.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MSC.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MHRM.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MBA-BA.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MOC.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MSC-CS.png" alt=""></a>
+                <!-- Duplicate images for seamless scroll -->
+                <a href=""><img class="img" src="./assects/MBA.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MCA.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MSC.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MHRM.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MBA-BA.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MOC.png" alt=""></a>
+                <a href=""><img class="img" src="./assects/MSC-CS.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <script src="./templates/includeHTML.js" defer></script>
+    <div id="footer-placeholder"></div>
+</body>
+</html>
