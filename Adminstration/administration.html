@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script src="includeHTML.js" defer></script>
+    <script src="../templates/includeHTML.js" defer></script>
     <script src="https://unpkg.com/htmx.org@1.8.5"></script>
      <style>
         *{
@@ -211,6 +211,7 @@ body {
      </style>
 </head>
 <body>
+    <div id="nav-placeholder"></div>
     <!-- <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
     <div class="cards">
         <div class="container">
@@ -233,9 +234,9 @@ body {
         </div>
     </div>
     <script type="module">
-        import cardsData from './faculty.js';
+        import cardsData from '../faculty.js';
         document.addEventListener('DOMContentLoaded', () => {
-            //
+
         function createCard(data) {
             const card = document.createElement('div');
             card.className = 'card';
@@ -322,6 +323,7 @@ body {
         });
     </script>   
     <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
-    <!-- <script src="script.js"></script> -->
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
 </body>
 </html> 

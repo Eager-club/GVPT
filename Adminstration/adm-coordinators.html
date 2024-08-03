@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adm-Directors</title>
+    <meta name="viewport" content="width=GVPT/t, initial-scale=1.0">
+    <title>ADM-COORDINATORS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script src="../templates/includeHTML.js" defer></script>
-    <script src="https://unpkg.com/htmx.org@1.8.5"></script> 
-    <style>
+    <script src="../templates/includeHTML.js" defer></script>   
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+</head>
+<style>
+    
     *{
         margin: 0px;
         padding: 0px;
@@ -48,7 +50,7 @@
         color:black;
     }
     .details h1{
-        font-size: 25px;
+        font-size: 26px;
         width: 270px;
         color:black;
         font-weight: 1000px;
@@ -58,6 +60,7 @@
     .details hr{
         opacity: 50%;
         margin-top: 10px;
+        
         visibility: hidden;
     }
     .details button{
@@ -73,12 +76,13 @@
         margin-top: 0px;
         margin-left: 55px ;
         
+        
     }
     .intro{
-        font-size: 12px;
-        margin: 2px 0;
+        font-size: 13px;
+        
         display: flex;
-        margin-top: 10px;
+        margin-bottom: 30px;
         color: #100707;
         visibility: hidden;
         display: inline-block;
@@ -87,14 +91,16 @@
     
     }
     .intro p{
-        padding: 3px;
+        padding: 5px;
+
         
     }
-    .colon {
+    .intro .colon p{
         color: white;
     }
     .intro .fill p{
         width: 170px;
+        font-size: 12px;
         word-wrap: break-word;
         word-break: break-all; 
         color: black;
@@ -102,7 +108,6 @@
     .intro .opt{
         color: white;
         font-weight: bold;
-      
     }
     .card:hover,.details:hover {
         cursor: pointer;
@@ -137,7 +142,7 @@
     .card:hover .intro  {
         opacity: 1;
         display: flex;
-        margin-top: -40px;
+        margin-top: -50px;
         flex-direction: row;
         visibility: visible;
         color: black;
@@ -145,7 +150,7 @@
     }
     .heading{
 
-            margin-left: 650px;
+            margin-left: 550px;
             color: rgba(34,49,109,1);
             margin-top: 35px;
             margin-bottom: 35px;
@@ -204,22 +209,27 @@
         }
 
     }
-</style>
-</head>
 
+</style> 
 <body>
+    <!-- call for header from nav.html -->
+<<<<<<< HEAD
+    <!-- <header hx-get="./templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
     <div id="nav-placeholder"></div>
+=======
+    <header hx-get="./templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header>
+>>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
     <main>
-        <h1 class="heading">DIRECTORS</h1> <div>
-     
-            <div class="container" id="card-hod-ug">
+        <div class="adm-hod-e&t" > 
+            <div class="heading" ><h1>COORDINATORS</h1></div>
+            <div class="container" id="card-coordinators">
                 <div class="card">
-                <img src="https://www.gvpcdpgc.edu.in/about/principal_bosesir1.jpeg" alt="Prof B.S Bose">
+                <img src="https://www.gvpcdpgc.edu.in/cse/images/padma-1.jpg" alt="Prof B.S Bose">
                 <div class="details">
-                    <h1 >Prof.K.S.Bose</h1>
-                    <p style="padding-left: 40px; margin-top: 5px;">M.B.A,Ph.D</p>
+                    <h1>Dr.Bh.Padma</h1>
+                    <!-- <p style="padding-left: 40px;">M.B.A., Ph.D.</p> -->
                     <hr>
-                    <button>I/C Principal</button>
+                    <button>IQAC</button>
                 
                     <div class="intro">
                     <div class="opt">
@@ -228,17 +238,11 @@
                         <p>Extension</p>
                         <p>Email</p>
                     </div>
-                    <div class="colon">
-                       <p> <strong>:</strong></p>
-                       <p> <strong>:</strong></p>
-                       <p> <strong>:</strong></p>
-                       <p> <strong>:</strong></p>
-                    </div>
                     <div class="fill">
-                        <p>I/C Principal</p>  
-                        <p>0891-2955084/85</p> 
-                        <p>6307</p> 
-                        <p>principal@gvpcdpgc.edu.in</p>          </div>
+                        <p><span>:</span>IQAC</p>  
+                        <p><span>:</span>---</p> 
+                        <p><span>:</span>---</p> 
+                        <p><span>:</span>padmabh@gvpcdpgc.edu.in</p>          </div>
         
                        <!----- <p><span style="color: white;">Designation :</span> I/C Principal </p>
                         <p><span style="color: white;">Phone no    <span style="padding-left: 15px;">:</span style="padding-left:20px;"></span> 46548954 </p>
@@ -247,86 +251,68 @@
                     </div>
                 </div>
                 </div>
-            </div>
-           
-            </div>
-        </div>
-        
-
+                
     
+            </div>
+            
+
+
+
+        </div>
+       
+
     </main>
     <script>
-         document.addEventListener('DOMContentLoaded', () => {
+        
+document.addEventListener('DOMContentLoaded', () => {
     // Data for the cards
     const cardsData = [
         {
             id: "1",
-            image: "https://www.gvpcdpgc.edu.in/placement/giri_plac.jpg",
-            name: "Prof.D.Giridhar",
-            designation: " ",
-            title: "I/C Director-UG Courses",
-            cardDesignation: "I/C Director-UG Courses",
-            phoneNumber: "-----",
-            extension: "---",
-            email: "giridittakavi@gvpcdpgc.edu.in"
-        },
-        {
-            id: "2",
-            image: "https://www.gvpcdpgc.edu.in/mca/images/Smt.Dr_.I.S.Pallavi.jpg",
-            name: "Dr.I.S.Pallavi",
+            image: "https://www.gvpcdpgc.edu.in/cse/images/brahmaji_photo.jpeg",
+            name: "Dr.K.N.BrahmajiRao",
             designation: "",
-            title: "Director-MCA",
-            cardDesignation: "Director-MCA",
+            title: "IT Infrastructure & Website Development and Maintenance",
+            cardDesignation: "IT Infrastructure&WebDev ",
             phoneNumber: "---",
             extension: "---",
-            email: "ipallavi@gvpcdpgc.edu.in"
+            email: "brahmaji77@gvpcdpgc.edu.in"
+        },
+        
+        {
+            id: "2",
+            image: "https://www.gvpcdpgc.edu.in/civil/civil_data/vidya.jpg",
+            name: "Dr.B.Vidya",
+            designation: "",
+            title: "Infrastructure",
+            cardDesignation: "Infrastructure",
+            phoneNumber: "---",
+            extension: "---",
+            email: "vidya@gvpcdpgc.edu.in"
         },
         {
             id: "3",
-            image: "https://www.gvpcdpgc.edu.in/mhrm/images/AVJR.jpg",
-            name: "Dr.A.V.Joga Rao",
+            image: "https://www.gvpcdpgc.edu.in/about/images/p%20venkata%20krishna%20photo.jpeg",
+            name: "P Venkata Krishna",
             designation: "",
-            title: "I/C Director-OPG",
-            cardDesignation: "I/C Director-OPG",
-            phoneNumber: "---",
+            title: "HOD-BBA",
+            cardDesignation: "HOD-BBA",
+            phoneNumber: "9063587140",
             extension: "---",
-            email: "drvjrattota@gvpcdpgc.edu.in"
+            email: "venkatakrishna@gvpcdpgc.edu.in"
         },
         {
             id: "4",
-            image: "https://www.gvpcdpgc.edu.in/mech/images/Dr.-P.V.Vinay_.jpg",
-            name: "Dr.P.V.Vinay",
-            designation: "-",
-            title: "Incharge Director-E&T",
-            cardDesignation: "Incharge Director-E&T",
-            phoneNumber: "---",
-            extension: "---",
-            email: "vpragada@gmail.com"
-        },
-        {
-            id: "5",
-            image: "https://www.gvpcdpgc.edu.in/cse/images/director-R&D.jpg",
-            name: "Dr.N.V.RamanaMurty",
+            image: "https://www.gvpcdpgc.edu.in/about/images/Mr.-Seshagiri-Kumar.jpg",
+            name: "Mr.S.SeshagiriKumar",
             designation: "",
-            title: "Director-Research & Development",
-            cardDesignation: "Director-Research & Development",
-            phoneNumber: "---",
-            extension: "---",
-            email: "drnvrmurty@gvpcdpgc.edu.in"
-        },
-        {
-            id: "6",
-            image: "https://www.gvpcdpgc.edu.in/about/images/p%20venkata%20krishna%20photo.jpeg",
-            name: "Mr.P Venkata Krishna",
-            designation: "",
-            title: "Director-IIPC",
-            cardDesignation: "Director-IIPC",
-            phoneNumber: "---",
-            extension: "-----",
-            email: "venkatakrishna@gvpcdpgc.edu.in"
+            title: "Advisor,Adminstrative and Financial matters",
+            cardDesignation: "Advisor,Adminstrative&Financial matters",
+            phoneNumber: "0891-2953719",
+            extension: "370",
+            email: "kumarsampara@gvpcdpgc.edu.in"
         },
         
-       
        
 
         
@@ -343,7 +329,7 @@
             <img class="profile-image" src="${data.image}" alt="${data.name}">
             <div class="details">
                 <h1 class="name">${data.name}</h1>
-            
+                
                 <hr>
                 <button class="title">${data.title}</button>
                 <div class="intro">
@@ -353,12 +339,19 @@
                         <p>Extension</p>
                         <p>Email</p>
                     </div>
-                    <div class="fill">
-                        <p><span>:</span><span class="card-designation">${data.cardDesignation}</span></p>
-                        <p><span>:</span><span class="phone-number">${data.phoneNumber}</span></p>
-                        <p><span>:</span><span class="extension">${data.extension}</span></p>
-                        <p><span>:</span><span class="email">${data.email}</span></p>
+                    <div class="colon">
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
+                       <p> <strong>:</strong></p>
                     </div>
+                    <div class="fill">
+                    <p><span class="card-designation">${data.cardDesignation}</span></p>
+                    <p><span class="phone-number">${data.phoneNumber}</span></p>
+                    <p><span class="extension">${data.extension}</span></p>
+                    <p><span class="email">${data.email}</span></p>
+                
+                </div>
                 </div>
             </div>
         `;
@@ -367,7 +360,7 @@
     }
 
     // Get the container element
-    const container = document.getElementById('card-hod-ug');
+    const container = document.getElementById('card-coordinators');
 
     // Create and append cards to the container
     cardsData.forEach(cardData => {
@@ -375,9 +368,19 @@
         container.appendChild(card);
     });
 });
-    </script>
-    <div id="footer-placeholder"></div>
-    <script src="script.js"></script>
-</body>
+
+</script>
     
+<<<<<<< HEAD
+<div id="footer-placeholder"></div>
+<script src="script.js"></script>
+=======
+    <footer hx-get="./templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+>>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
+
+    
+</body>
+
+
+
 </html>
