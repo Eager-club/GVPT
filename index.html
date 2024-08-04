@@ -29,7 +29,7 @@
       }
       .knowmr{
       
-        height: 55vh;
+        height: 49vh;
         text-align: center;
         font-size: 3vw;
         font-weight: 900;
@@ -40,7 +40,9 @@
         justify-content: space-evenly;
       }
 
-
+    .dyn-div{
+      margin-top: -20vh;
+    }
     #dynamic-heading {
       font-size: 5vw;
       font-weight: bold;
@@ -48,9 +50,7 @@
       white-space: nowrap; /* Keeps the text in a single line */
       margin: 0 auto; /* Center the heading */
       letter-spacing: .03em; /* Adjusts the spacing between letters */
-      animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+
     }
     .btn{
       display: inline-block;
@@ -96,22 +96,229 @@
     /* border-color:5px solid #000000;  */
 
   }
+  /* notification */
+  
+/* notification */
+.notifications{
+    position: relative;
+    background-color: #D9D9D9;
+    padding: 3px 0 3px 0;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    
+}
+.notifications a {
+    text-decoration: solid;
+    color: #2f51bf;
+    font-size: 2.5vmin;
+    padding-left: 5vw;
+    direction: rtl;
+}
+.notifications a:hover,a:active {
+    color: #e78709;
+}
+/* page3 */
+.page3{
+  width: 100%;
+  background-color: rgba(217, 217,217,0.15);
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+}
+.page3 .carousel-container {
+      width: 80%;
+      height: max-content;
+      margin-left:10%;
+      position: relative;
+      overflow: hidden;
+      padding: 5% 0 5% 0;
+    }
+    .page3 .carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .page3 .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+    .page3 .carousel-item .content {
+      width: 50%;
+      padding: 20px;
+    }
+    .page3 .carousel-item img {
+      width: 50%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-left: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .page3 .carousel-item img:hover {
+      transform: translateY(-10px); 
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .page3  .carousel-item h2 {
+      margin-top: 0;
+      margin-bottom: 10%;
+      font-size: 1.5em;
+      color: #22316c;
+    }
+    .page3 .carousel-item p {
+      text-align: justify;
+      /* width: 80% ; */
+      margin-bottom: 0;
+    }
+    .page3  .carousel-controls {
+      position: relative;
+      bottom: 5px;
+      display: Start;
+      justify-content: center;
+      width: calc(100% - 20px);
+    }
+
+    .page3  .carousel-controls button,.carousel-controls span {
+      font-size: 35px;
+      background-color: rgba(0, 0, 0, 0);
+      color: #22316c;
+      border: none;
+      cursor: pointer;
+      border-radius: 100%;
+      outline: none;
+      margin: 0 5px;
+    }
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .page3 .carousel-item {
+        display: block;
+        text-align: center;
+      }
+      .page3 .carousel-item .content {
+        width: 100%;
+        padding: 10px;
+      }
+      .page3 .carousel-item img {
+        width: 100%;
+        margin-left:-7%;
+      }
+      .page3 .carousel-item p{
+        text-align: center;
+      }
+      .page3 .carousel-controls {
+        position: relative;
+        /*top: 20%;*/
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+        
+      /*.carousel-controls span {*/
+      /*  text-align: center;*/
+      /*  width: 45px;*/
+      /*  max-height: 45px;*/
+      /*  background: rgba(225,225,225,01.5);*/
+      /*font-size: 35px;*/
+      /*color: #22316c;*/
+      /*border: 2px solid  rgba(225,225,225,1.5);*/
+      /*}*/
+      .page3 .carousel-controls button{
+          padding-bottom:25px;
+        }
+        
+    }
+
+  /* page4 */
+.page4 {
+      height: 30vh;
+      display: grid;
+      place-items: center;
+    }
+    .page4 .carousel {
+      width: 100%;
+      height: var(--height);
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, #000 10%, 90%, transparent);
+    }
+    .page4 .carousel:hover .carousel__item {
+      animation-play-state: paused !important;
+    }
+    .page4 .carousel__list {
+      display: flex;
+      width: 100%;
+      min-width: calc(var(--width) * var(--quantity));
+      position: relative;
+    }
+    .page4 .carousel__item {
+      width: var(--width);
+      height: var(--height);
+      position: absolute;
+      left: 100%;
+      text-align: center;
+      font-size: 45px;
+      animation: slide var(--duration) linear infinite;
+      animation-delay: calc((var(--duration) / var(--quantity)) * (var(--position) - var(--quantity))) !important;
+    }
+    .page4 .carousel[reverse="true"] .carousel__item {
+      animation: slideReverse var(--duration) linear infinite;
+    }
+    @keyframes slide {
+      from {
+        left: 100%;
+      }
+      to {
+        left: calc(var(--width) * -1);
+      }
+    }
+    @keyframes slideReverse {
+      from {
+        left: calc(var(--width) * -1);
+      }
+      to {
+        left: 100%;
+      }
+    }
+@keyframes slide {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+
+@keyframes slideReverse {
+  from {
+    left: calc(var(--width) * -1);
+  }
+  to {
+    left: 100%;
+  }
+}
     </style>
 
   </head>
   <body>
-    <!-- <section id="preloader-placeholder"></section> -->
+    <section id="preloader-placeholder"></section>
     
 
       <main class="hidden" id="main-content" >
           <div class="page1">
             <header id="nav-placeholder"></header>
             <div class="knowmr">
-              <div> <h1 id="dynamic-heading"></h1></div>
+              <div class="dyn-div"> <h1 id="dynamic-heading"></h1></div>
               <div ><a href="" class="btn">
                 <button>Know More</button>
               </a></div>
             </div>
+          </div>
+          <div class="page-margue">
+            <marquee  class="notifications nul" >
+              <a href="./notification"><span class="notify"></span></a>
+            </marquee>
           </div>
           <div class="page2">
             <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
@@ -125,6 +332,52 @@
                 to develop high computational innovative skills (M2) and to empower leadership qualities with strong ethical
                 base</p>
             </div>
+          </div>
+          <div class="page3">
+            <div class="carousel-container">
+              <div class="carousel"></div>
+              <div class="carousel-controls">
+                <span><button id="prevBtn">&#9664;</button></span>
+                <span><button id="nextBtn">&#9654;</button></span>
+              </div>
+            </div>
+          </div>
+          <div class="page4">
+            <div><h3>OUR RECRUITERS</h3></div>
+            <div class="carousel-container">
+              <!-- slider 1 -->
+              <div class="carousel" style="--width: 110px; --height: 50px; --quantity: 10; --duration: 15s;">
+                <div class="carousel__list">
+                  <i class="carousel__item fa-brands fa-apple" style="--position: 1"></i>
+                  <i class="carousel__item fa-brands fa-windows" style="--position: 2"></i>
+                  <i class="carousel__item fa-brands fa-cc-visa" style="--position: 3"></i>
+                  <i class="carousel__item fa-brands fa-dribbble" style="--position: 4"></i>
+                  <i class="carousel__item fa-brands fa-airbnb" style="--position: 5"></i>
+                  <i class="carousel__item fa-brands fa-amazon" style="--position: 6"></i>
+                  <i class="carousel__item fa-brands fa-imdb" style="--position: 7"></i>
+                  <i class="carousel__item fa-brands fa-linkedin" style="--position: 8"></i>
+                  <i class="carousel__item fa-brands fa-facebook" style="--position: 9"></i>
+                  <i class="carousel__item fa-brands fa-twitter" style="--position: 10"></i>
+                </div>
+              </div>
+              <br>
+              <!-- slider 2 -->
+              <div class="carousel" reverse="true" style="--width: 110px; --height: 50px; --quantity: 10; --duration: 15s;">
+                <div class="carousel__list">
+                  <i class="carousel__item fa-brands fa-apple" style="--position: 1"></i>
+                  <i class="carousel__item fa-brands fa-windows" style="--position: 2"></i>
+                  <i class="carousel__item fa-brands fa-cc-visa" style="--position: 3"></i>
+                  <i class="carousel__item fa-brands fa-dribbble" style="--position: 4"></i>
+                  <i class="carousel__item fa-brands fa-airbnb" style="--position: 5"></i>
+                  <i class="carousel__item fa-brands fa-amazon" style="--position: 6"></i>
+                  <i class="carousel__item fa-brands fa-imdb" style="--position: 7"></i>
+                  <i class="carousel__item fa-brands fa-linkedin" style="--position: 8"></i>
+                  <i class="carousel__item fa-brands fa-facebook" style="--position: 9"></i>
+                  <i class="carousel__item fa-brands fa-twitter" style="--position: 10"></i>
+                </div>
+              </div>
+            </div>
+          </div>
       </main>
       <footer id="footer-placeholder"></footer>
       <script>
@@ -149,8 +402,147 @@
         }
       
         window.onload = typeEffect;
-      </script>
+        // page3 events carsouel
+        const carouselData = [
+      {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+      // Repeat for other items
+    ];
 
+
+  const carousel = document.querySelector('.carousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let index1 = 1;
+  let interval = 2000; // Auto-scroll interval
+  let autoScroll;
+
+  function renderCarousel() {
+    const isMobile = window.innerWidth <= 768;
+    carousel.innerHTML = carouselData.map(item => {
+      if (isMobile) {
+        return `
+          <div class="carousel-item">
+            <div class="content">
+              <h2>${item.title}</h2>
+              <img src="${item.imgSrc}" alt="${item.imgAlt}">
+              <p>${item.text}</p>
+            </div>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="carousel-item">
+            <div class="content">
+              <h2>${item.title}</h2>
+              <p>${item.text}</p>
+            </div>
+            <img src="${item.imgSrc}" alt="${item.imgAlt}">
+          </div>
+        `;
+      }
+    }).join('');
+  }
+
+  function updateCarousel() {
+    renderCarousel();
+    window.addEventListener('resize', renderCarousel);
+    startAutoScroll(); // Start auto-scroll on desktop
+  }
+
+  function startAutoScroll() {
+
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+      autoScroll = setInterval(nextSlide, interval);
+    }
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
+  }
+
+  function showSlide(i) {
+    const items = document.querySelectorAll('.carousel-item');
+    index1 = (i + items.length) % items.length;
+    carousel.style.transition = 'transform 0.5s ease';
+    carousel.style.transform = `translateX(${-index1 * 100}%)`;
+
+    if (index1 === 0) {
+      setTimeout(() => {
+        carousel.style.transition = 'none';
+        index1 = items.length - 2;
+        carousel.style.transform = `translateX(${-index1 * 100}%)`;
+      }, 500);
+    } else if (index1 === items.length - 1) {
+      setTimeout(() => {
+        carousel.style.transition = 'none';
+        index1 = 1;
+        carousel.style.transform = `translateX(${-index1 * 100}%)`;
+      }, 500);
+    }
+  }
+
+  function nextSlide() {
+    showSlide(index1 + 1);
+     interval = 20000;
+  }
+
+  function prevSlide() {
+    showSlide(index1 - 1);
+  }
+
+  function resetAutoScroll() {
+    stopAutoScroll();
+    startAutoScroll();
+  }
+
+  prevBtn.addEventListener('click', () => {
+    resetAutoScroll();
+    prevSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    resetAutoScroll();
+    nextSlide();
+  });
+
+  document.querySelector('.carousel-container').addEventListener('mouseover', stopAutoScroll);
+  document.querySelector('.carousel-container').addEventListener('mouseout', resetAutoScroll);
+
+  updateCarousel();
+
+
+      </script>
+           <script src="./notfication.js"></script>
     </div>
   </body>
 </html>
