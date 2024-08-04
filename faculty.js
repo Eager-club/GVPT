@@ -215,6 +215,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Systems and Marketing",
         dean:"1",
+        button:"",
         dbutton:"Dean-Academics",
         hodpg:"1",
         pgbutton:"HOD-MBA(Business Analytics)",
@@ -238,7 +239,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:" Human Resource Management",
         coe:"1",
-        cbutton:"Dean-Academics",
+        cbutton:"Controller of Examinations",
         viewprofile:"",
       
     },
@@ -298,6 +299,8 @@ const cardsData = [
         areaOfSpecialisation:"Marketing Management",
         director:"1",
         button:"Director-IIPC",
+        iipc:"yes",
+        mem:"Director",
         viewprofile:"",
     },
     {
@@ -316,6 +319,8 @@ const cardsData = [
         dateOfJoining:"01-08-2012",
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Finance",
+        iipc:"yes",
+        mem:"Member",
         viewprofile:"",
     },
     {
@@ -370,6 +375,8 @@ const cardsData = [
         dateOfJoining:"10-09-2015",
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Human Resource Management",
+        iipc:"yes",
+        mem:"Cnvener",
         viewprofile:"",
     },
     {
@@ -519,6 +526,7 @@ const cardsData = [
         dateOfJoining:"01-01-2015",
         natureOfAssosiation:"Regular",
         areaOfSpecialisation:"Structural Engineering",
+        iipc:"yes",
         viewprofile:"",
     },
     {
@@ -1273,6 +1281,8 @@ const cardsData = [
         dateOfJoining:"18-06-2014",
         natureOfAssosiation:"Regular",
         areaOfSpecialisation:" Industrial Engineering",
+        iipc:"yes",
+        mem:"Member",
         viewprofile:''
     },
     {
@@ -2664,6 +2674,8 @@ const cardsData = [
         areaOfSpecialisation: 'Bio Chemistry',
         hodug:'1',
         ugbutton:'HOD-Bio Chemistry',
+        iipc:"yes",
+        mem:"Member",
         viewprofile: '',
       },
       {
@@ -2780,7 +2792,7 @@ const cardsData = [
         subCategory: '---',
         branch: '---',
         name: 'Prof.D.Giridhar',
-        image: '---',
+        image: 'https://www.gvpcdpgc.edu.in/placement/giri_plac.jpg',
         designation: '---',
         title: '---',
         cardDesignation: '---',
@@ -2802,10 +2814,10 @@ const cardsData = [
         subCategory: '---',
         branch: '---',
         name: 'Dr.M.S.R.Seshagiri',
-        image: '---',
+        image: 'https://www.gvpcdpgc.edu.in/gvp_faculty/bsh_data/Dr.Seshagiri_photo.jpeg',
         designation: 'HOD-MBA',
-        title: '---',
-        cardDesignation: '---',
+        title: 'HOD-MBA',
+        cardDesignation: 'HOD-MBA',
         phone: '---',
         extension: '---',
         email: 'Seshagiri.msr@gvpcdpgc.edu.in',
@@ -2813,10 +2825,36 @@ const cardsData = [
         natureOfAssosiation: '---',
         areaOfSpecialisation: '---',
         hodpg:"1",
-        pgbutton:"HOD-MBA",
+        button:"HOD-MBA",
+        viewprofile: '',
+      },
+      {
+        id: '152',
+        category: '---',
+        subCategory: '---',
+        branch: '---',
+        name: 'Mr. S.S.R.S. S.N. Murty',
+        image: '---',
+        designation: '---',
+        title: '---',
+        cardDesignation: '---',
+        phone: '---',
+        extension: '---',
+        email: 'ssrssnmurty@gvpcdpgc.edu.in',
+        dateOfJoining: '---',
+        natureOfAssosiation: '---',
+        areaOfSpecialisation: '---',
+        iipc:"yes",
+        mem:"Member",
         viewprofile: '',
       },
     
-    
 
+<<<<<<< HEAD
+];
+export default cardsData;
+=======
 ]
+export default cardsData;
+//  './faculty.js';
+>>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909

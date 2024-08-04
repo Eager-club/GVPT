@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./demo.css"> -->
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="../templates/includeHTML.js" defer></script>
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+     <style>
+        *{
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+.card-container ,#director-container,#deans-container,#coe-container,#hodug-container,#hodet-container,#hodpg-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+body {
+    /* margin-left: 20px; */
+    gap: 10px;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: whitesmoke;
+    font-family: Arial, sans-serif;
+}
+.cards{
+    width: 95%;
+    margin-left: 30px;
+}
+.container{
+    width: 100%;
+    margin-top: 70px;
+}
+.heading{
+    color: #22316C;
+    padding: 10px;
+}
+.viewall{
+    height: 33px;
+    /* width: 100%; */
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+}
+.viewall button{
+    border: 1px solid #22316D;
+    height: 40px;
+    width: 114px;
+    border-radius: 10px;
+    font-size: 16px;
+    
+}
+.viewall button:hover{
+    background-color: #22316D;
+    color: #fff;
+    opacity: 60%;
+}
+.card{
+    padding: 1px;
+    width: 282px;
+    height: 314px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.329);
+    transition: 0.5s;
+    margin-top: 25px;
+    justify-content: space-between;
+    margin: 0 12px 0 10px;
+}
+.card img{
+    width: 278px;
+    height:197px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.details h1{
+    font-size: 20px;
+    font-weight: 1000px;
+    text-align: center;
+}
+.details hr{
+    visibility: hidden;
+    color: #fff;
+}
+.details button{
+    height: 51px;
+    width: 187px;
+    font-size: 13px;
+    font-weight: bold;
+    border-style: none; 
+    border-radius: 5px;
+    background-color:rgba(34, 49, 108, 0.518) ;            
+    color: white;
+    margin-top: 10px;
+    margin-left: 55px ;
+    
+}
+.intro{
+    font-size: 13px;
+    margin: 5px 0;
+    display: flex;
+    color: #100707;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.intro .opt{
+    color: white;
+}
+.intro .fill{
+    color: #000;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.colon {
+    color: #fff;
+}
+.intro p{
+    padding: 5px;
+}
+.card:hover,.details:hover {
+    cursor: pointer;
+}
+.card:hover .details{
+
+    height: 165px;
+    background-color:rgba(34, 49, 108, 0.518);
+    border-radius: 5px;
+    clear: both; 
+}
+.card:hover button{
+    visibility: hidden;   
+}
+.card:hover hr{
+    visibility: visible;
+    color: #000;
+}
+
+.card:hover img{
+    margin-top:-60px;
+    margin-bottom: -70px;
+    width: 270px;
+    height: 270px;
+    border-radius: 95%;
+    transform: scale(0.4);
+}
+
+.card:hover .intro  {
+    opacity: 1;
+    margin-top: -40px;
+    visibility: visible;
+    padding: 5px;
+}
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+        height: auto;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .details {
+        height: auto;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .details h1 {
+        font-size: 20px;
+        align-items: center;
+    }
+
+    .details p {
+        font-size: 13px;
+    }
+
+    .details button {
+        width: 100%;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .intro {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .intro .opt, .intro .fill {
+        width: 100%;
+        text-align: left;
+    }
+
+    .intro p {
+        font-size: 13px;
+    }
+   
+}
+     </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <!-- <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
+    <div class="cards">
+        <div class="container">
+            <h1 class="heading">HEADS OF COLLEGE</h1>
+            <div class="card-container" id="card-container"></div>
+            <h1 class="heading">DIRECTORS</h1>
+            <div id="director-container"></div>
+            <div class="viewall"><a href="##"><button>view all</button></a></div>
+            <h1 class="heading">DEANS</h1>
+            <div id="deans-container"></div>
+            <h1 class="heading">CONTROLLER OF EXAMINATION</h1>
+            <div id="coe-container"></div>
+            <h1 class="heading">HEAD OF DEPARTMENTS-PG</h1>
+            <div id="hodpg-container"></div>
+            <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
+            <div id="hodet-container"></div>
+            <div class="viewall"><a href="##"><button>view all</button></div>
+            <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
+            <div id="hodug-container"></div>
+        </div>
+    </div>
+    <script type="module">
+        import cardsData from '../faculty.js';
+        document.addEventListener('DOMContentLoaded', () => {
+
+        function createCard(data) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.dataset.id = data.id;
+
+            card.innerHTML = `
+                <img class="profile-image" src="${data.image}" alt="${data.name}">
+                <div class="details">
+                    <h1 class="name">${data.name}</h1>
+                    <hr>
+                    <button class="title">${data.button}</button>
+                    <div class="intro">
+                        <div class="opt">
+                            <p>Designation</p>
+                            <p>Phone No</p>
+                            <p>Extension</p>
+                            <p>Email</p>
+                        </div>
+                    <div class="colon">
+                        <p> <strong>:</strong></p>
+                        <p> <strong>:</strong></p>
+                        <p> <strong>:</strong></p>
+                        <p> <strong>:</strong></p>
+                        </div>
+                        <div class="fill">
+                        <p><span class="card-designation">${data.button}</span></p>
+                        <p><span class="phone-number">${data.phone}</span></p>
+                        <p><span class="extension">${data.extension}</span></p>
+                        <p><span class="email">${data.email}</span></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Get the container element
+            var container = document.getElementById('card-container');
+            var filteredCardsData = cardsData.filter(cardData => cardData.administration === "1" && cardData.category === "AICTE APPROVED").slice(0, 4);;
+            filteredCardsData.forEach(cardData => {
+                const card = createCard(cardData);
+                container.appendChild(card);
+            });
+            var container = document.getElementById('director-container');
+            var filteredCardsData = cardsData.filter(cardData => cardData.director=== "1").slice(0, 4);;
+            filteredCardsData.forEach(cardData => {
+                const card = createCard(cardData);
+                container.appendChild(card);
+            });
+            var container = document.getElementById('deans-container');
+            var filteredCardsData = cardsData.filter(cardData => cardData.dean=== "1").slice(0, 4);;
+            filteredCardsData.forEach(cardData => {
+                const card = createCard(cardData);
+                container.appendChild(card);
+            });
+            var container = document.getElementById('coe-container');
+            var filteredCardsData = cardsData.filter(cardData => cardData.coe=== "1").slice(0, 4);;
+            filteredCardsData.forEach(cardData => {
+                const card = createCard(cardData);
+                container.appendChild(card);
+            });
+            var container = document.getElementById('hodug-container');
+            var filteredCardsData = cardsData.filter(cardData => cardData.hodug=== "1").slice(0, 4);;
+            // Create and append cards to the container
+            filteredCardsData.forEach(cardData => {
+                const card = createCard(cardData);
+                container.appendChild(card);
+            });
+            var container = document.getElementById('hodet-container');
+            var filteredCardsData = cardsData.filter(cardData => cardData.hodet=== "1").slice(0, 4);;
+            // Create and append cards to the container
+            filteredCardsData.forEach(cardData => {
+                const card = createCard(cardData);
+                container.appendChild(card);
+            });
+            var container = document.getElementById('hodpg-container');
+            var filteredCardsData = cardsData.filter(cardData => cardData.hodpg=== "1").slice(0, 4);;
+            // Create and append cards to the container
+            filteredCardsData.forEach(cardData => {
+                const card = createCard(cardData);
+                container.appendChild(card);
+            });
+        });
+    </script>   
+    <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+</body>
+</html> 
