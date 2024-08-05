@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="../templates/includeHTML.js" defer></script>
     <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+<<<<<<< HEAD
      <style>
         *{
     margin: 0px;
@@ -209,6 +210,9 @@ body {
    
 }
      </style>
+=======
+    <link rel="stylesheet" href="administration.css">
+>>>>>>> d84c3f154c20ee21a0cb4a00e7a9311b9d9314ab
 </head>
 <body>
     <div id="nav-placeholder"></div>
@@ -219,7 +223,8 @@ body {
             <div class="card-container" id="card-container"></div>
             <h1 class="heading">DIRECTORS</h1>
             <div id="director-container"></div>
-            <div class="viewall"><a href="##"><button>view all</button></a></div>
+            <div class="view"><a href="##" id="view-all-director"><button>view more</button></a></div>
+           
             <h1 class="heading">DEANS</h1>
             <div id="deans-container"></div>
             <h1 class="heading">CONTROLLER OF EXAMINATION</h1>
@@ -228,15 +233,26 @@ body {
             <div id="hodpg-container"></div>
             <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
             <div id="hodet-container"></div>
-            <div class="viewall"><a href="##"><button>view all</button></div>
+            <div class="view"><a href="##" id="view-all-hodet"><button>view more</button></a></div>
             <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
             <div id="hodug-container"></div>
+            <div class="view"><a href="##" id="view-all-hodug"><button>view more</button></a></div>
+            <h1 class="heading">COORDINATORS</h1>
+            <div id="cod-container"></div>
+            <div class="view"><a href="##" id="view-all-cod"><button>view more</button></a></div>
         </div>
     </div>
-    <script type="module">
+   
+     <script type="module">
         import cardsData from '../faculty.js';
-        document.addEventListener('DOMContentLoaded', () => {
 
+        document.addEventListener('DOMContentLoaded', () => {
+            function createCard(data) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.dataset.id = data.id;
+
+<<<<<<< HEAD
         function createCard(data) {
             const card = document.createElement('div');
             card.className = 'card';
@@ -269,11 +285,76 @@ body {
                         </div>
                     </div>
                 </div>
+=======
+                let buttonHtml = '';
+                let buttondesignation = '';
+
+                if (data.administration === "1") {
+                    buttonHtml = `<button class="title">${data.button}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.button}</span></p>`;
+                }   
+                if (data.director === "1") {
+                    buttonHtml = `<button class="title">${data.button}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.button}</span></p>`;
+                }
+                if (data.dean === "1") {
+                    buttonHtml = `<button class="title dbutton">${data.dbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.dbutton}</span></p>`;
+                } 
+                if (data.coe === "1") {
+                    buttonHtml = `<button class="title dbutton">${data.cbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.cbutton}</span></p>`;
+                }
+                if (data.hodug === "1") {
+                    buttonHtml = `<button class="title">${data.ugbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.ugbutton}</span></p>`;
+                } 
+                if (data.hodet === "1") {
+                    buttonHtml = `<button class="title">${data.etbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.etbutton}</span></p>`;
+                }
+                if (data.hodpg === "1") {
+                    buttonHtml = `<button class="title">${data.pgbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.pgbutton}</span></p>`;
+                }
+                if (data.cod === "1") {
+                    buttonHtml = `<button class="title">${data.codbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.codbutton}</span></p>`;
+                }
+                card.innerHTML = `
+                    <img class="profile-image" src="${data.image}" alt="${data.name}">
+                    <div class="details">
+                        <h1 class="name">${data.name}</h1>
+                        <hr>
+                        ${buttonHtml}
+                        <div class="intro">
+                            <div class="opt">
+                                <p>Designation</p>
+                                <p>Phone No</p>
+                                <p>Extension</p>
+                                <p>Email</p>
+                            </div>
+                            <div class="colon">
+                                <p><strong>:</strong></p>
+                                <p><strong>:</strong></p>
+                                <p><strong>:</strong></p>
+                                <p><strong>:</strong></p>
+                            </div>
+                            <div class="fill">
+                                ${buttondesignation}
+                                <p><span class="phone-number">${data.phone}</span></p>
+                                <p><span class="extension">${data.extension}</span></p>
+                                <p><span class="email">${data.email}</span></p>
+                            </div>
+                        </div>
+                    </div>
+            `;
+>>>>>>> d84c3f154c20ee21a0cb4a00e7a9311b9d9314ab
             `;
 
-            return card;
-        }
+                `;
 
+<<<<<<< HEAD
         // Get the container element
             var container = document.getElementById('card-container');
             var filteredCardsData = cardsData.filter(cardData => cardData.administration === "1" && cardData.category === "AICTE APPROVED").slice(0, 4);;
@@ -322,6 +403,64 @@ body {
             });
         });
     </script>   
+=======
+                return card;
+            }
+
+            function populateContainer(containerId, filterFunction, limit = 4) {
+                const container = document.getElementById(containerId);
+                const filteredCardsData = cardsData.filter(filterFunction);
+                const existingCardIds = new Set(Array.from(container.children).map(card => card.dataset.id));
+                const newCardsData = filteredCardsData.filter(cardData => !existingCardIds.has(cardData.id));
+                const limitedCardsData = newCardsData.slice(0, limit);
+
+                limitedCardsData.forEach(cardData => {
+                    const card = createCard(cardData);
+                    container.appendChild(card);
+                });
+            }
+
+            function toggleView(buttonId, containerId, filterFunction) {
+                const button = document.getElementById(buttonId);
+                const container = document.getElementById(containerId);
+
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const isExpanded = button.classList.contains('expanded');
+
+                    if (isExpanded) {
+                        // Collapse
+                        button.textContent = 'View More';
+                        button.classList.remove('view-less');
+                        container.innerHTML = ''; // Clear all cards
+                        populateContainer(containerId, filterFunction, 4); // Show limited cards
+                    } else {
+                        // Expand
+                        button.textContent = 'View Less';
+                        button.classList.add('view-less');
+                        populateContainer(containerId, filterFunction, 100); // Show all cards
+                    }
+
+                    button.classList.toggle('expanded');
+                });
+            }
+
+            populateContainer('card-container', cardData => cardData.administration === "1" && cardData.category === "AICTE APPROVED");
+            populateContainer('director-container', cardData => cardData.director === "1");
+            populateContainer('deans-container', cardData => cardData.dean === "1");
+            populateContainer('coe-container', cardData => cardData.coe === "1");
+            populateContainer('hodug-container', cardData => cardData.hodug === "1");
+            populateContainer('hodet-container', cardData => cardData.hodet === "1");
+            populateContainer('hodpg-container', cardData => cardData.hodpg === "1");
+            populateContainer('cod-container', cardData => cardData.cod === "1");
+
+            toggleView('view-all-director', 'director-container', cardData => cardData.director === "1");
+            toggleView('view-all-hodet', 'hodet-container', cardData => cardData.hodet === "1");
+            toggleView('view-all-hodug', 'hodug-container', cardData => cardData.hodug === "1");
+            toggleView('view-all-cod', 'cod-container', cardData => cardData.cod === "1");
+        });
+    </script>
+>>>>>>> d84c3f154c20ee21a0cb4a00e7a9311b9d9314ab
     <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
     <div id="footer-placeholder"></div>
     <script src="script.js"></script>
