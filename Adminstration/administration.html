@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="../templates/includeHTML.js" defer></script>
     <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+<<<<<<< HEAD
 
      <style>
         *{
@@ -218,6 +219,8 @@ header{
 }
      </style>
 
+=======
+>>>>>>> 034e434fd9f208742cf72e43425f66450ca6711a
     <link rel="stylesheet" href="administration.css">
 </head>
 <body>
@@ -266,8 +269,8 @@ header{
                     buttondesignation = `<p><span class="card-designation">${data.hbutton}</span></p>`;
                 }   
                 if (data.director === "2") {
-                    buttonHtml = `<button class="title">${data.Dbutton}</button>`;
-                    buttondesignation = `<p><span class="card-designation">${data.Dbutton}</span></p>`;
+                    buttonHtml = `<button class="title">${data.dir_button}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.dir_button}</span></p>`;
                 }
                 if (data.dean === "3") {
                     buttonHtml = `<button class="title dbutton">${data.dbutton}</button>`;
@@ -366,19 +369,18 @@ header{
                 });
             }
 
-            populateContainer('card-container', cardData => cardData.administration === "1" && cardData.category === "AICTE APPROVED");
-            populateContainer('director-container', cardData => cardData.director === "1");
-            populateContainer('deans-container', cardData => cardData.dean === "1");
-            populateContainer('coe-container', cardData => cardData.coe === "1");
-            populateContainer('hodug-container', cardData => cardData.hodug === "1");
-            populateContainer('hodet-container', cardData => cardData.hodet === "1");
-            populateContainer('hodpg-container', cardData => cardData.hodpg === "1");
-            populateContainer('cod-container', cardData => cardData.cod === "1");
-
-            toggleView('view-all-director', 'director-container', cardData => cardData.director === "1");
-            toggleView('view-all-hodet', 'hodet-container', cardData => cardData.hodet === "1");
-            toggleView('view-all-hodug', 'hodug-container', cardData => cardData.hodug === "1");
-            toggleView('view-all-cod', 'cod-container', cardData => cardData.cod === "1");
+            populateContainer('card-container', cardData => cardData.administration === "1" );
+            populateContainer('director-container', cardData => cardData.director === "2");
+            populateContainer('deans-container', cardData => cardData.dean === "3");
+            populateContainer('coe-container', cardData => cardData.coe === "4");
+            populateContainer('hodug-container', cardData => cardData.hodug === "5");
+            populateContainer('hodet-container', cardData => cardData.hodet === "6");
+            populateContainer('hodpg-container', cardData => cardData.hodpg === "7");
+            populateContainer('cod-container', cardData => cardData.cod === "8");
+            toggleView('view-all-director', 'director-container', cardData => cardData.director === "2");
+            toggleView('view-all-hodet', 'hodet-container', cardData => cardData.hodet === "6");
+            toggleView('view-all-hodug', 'hodug-container', cardData => cardData.hodug === "5");
+            toggleView('view-all-cod', 'cod-container', cardData => cardData.cod === "8");
         });
     </script>
     <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
