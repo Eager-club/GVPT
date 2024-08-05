@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training & Placements</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            margin: 0 auto;
+            width: 90%;
+            padding: 40px;
+            margin-bottom: 100px;
+        }
+        .container h1 {
+            color: #22316D;
+            padding: 40px;
+            font-size: 2.5em;
+        }
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .box a {
+            text-decoration: none;
+        }
+        .box button {
+            /* flex: 1 1 300px; */
+            width: 400px;
+            height: 135px;
+            background: transparent;
+            border: 1px solid #000;
+            border-radius: 10px;
+            font-weight: bolder;
+            font-size: 1.5em;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .box button {
+                font-size: 1.2em;
+                height: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .box button {
+                font-size: 1em;
+                height: 100px;
+            }
+        }
+        footer {
+            text-align: center;
+            /* padding: 20px; */
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <h1>TRAINING & PLACEMENTS</h1>
+        <div class="box">
+            <a href="../Academics/engeenering.html"><button>ENGINEERING & TECHNOLOGY</button></a>
+            <a href="../Academics/undergraduate.html"><button>UNDERGRADUATE</button></a>
+            <a href="../Academics/pg.html"><button>POST GRADUATE</button></a>
+        </div>
+    </div>
+    <footer id="footer-placeholder">Footer Content Here</footer>
+    
+    <script src="../templates/includeHTML.js" defer></script>
+</body>
+</html>
