@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="../templates/includeHTML.js" defer></script>
     <script src="https://unpkg.com/htmx.org@1.8.5"></script>
-<<<<<<< HEAD
+
      <style>
         *{
     margin: 0px;
@@ -32,6 +32,13 @@ body {
     height: 100vh;
     background: whitesmoke;
     font-family: Arial, sans-serif;
+}
+header{
+    background-image: url("https://cdn.govexec.com/media/img/cd/2021/07/21/072121cabinet/860x394.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    /* background-position: center; */
 }
 .cards{
     width: 95%;
@@ -210,12 +217,11 @@ body {
    
 }
      </style>
-=======
+
     <link rel="stylesheet" href="administration.css">
->>>>>>> d84c3f154c20ee21a0cb4a00e7a9311b9d9314ab
 </head>
 <body>
-    <div id="nav-placeholder"></div>
+    <header id="nav-placeholder"></header>
     <!-- <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
     <div class="cards">
         <div class="container">
@@ -225,19 +231,19 @@ body {
             <div id="director-container"></div>
             <div class="view"><a href="##" id="view-all-director"><button>view more</button></a></div>
            
-            <h1 class="heading">DEANS</h1>
+            <h1 class="heading" id="deans">DEANS</h1>
             <div id="deans-container"></div>
-            <h1 class="heading">CONTROLLER OF EXAMINATION</h1>
-            <div id="coe-container"></div>
-            <h1 class="heading">HEAD OF DEPARTMENTS-PG</h1>
-            <div id="hodpg-container"></div>
-            <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
+            <h1 class="heading" id="controllers">CONTROLLER OF EXAMINATION</h1>
+            <div id="coe-container" ></div>
+            <h1 class="heading" id="hod-pg">HEAD OF DEPARTMENTS-PG</h1>
+            <div id="hodpg-container" ></div>
+            <h1 class="heading" id="hod-ET">HEAD OF DEPARTMENTS-ET</h1>
             <div id="hodet-container"></div>
             <div class="view"><a href="##" id="view-all-hodet"><button>view more</button></a></div>
-            <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
+            <h1 class="heading" id="hod-ug">HEAD OF DEPARTMENTS-UG</h1>
             <div id="hodug-container"></div>
             <div class="view"><a href="##" id="view-all-hodug"><button>view more</button></a></div>
-            <h1 class="heading">COORDINATORS</h1>
+            <h1 class="heading" id="COORDINATORS">COORDINATORS</h1>
             <div id="cod-container"></div>
             <div class="view"><a href="##" id="view-all-cod"><button>view more</button></a></div>
         </div>
@@ -376,7 +382,7 @@ body {
         });
     </script>
     <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder"></footer>
     <script src="script.js"></script>
 </body>
 </html> 
