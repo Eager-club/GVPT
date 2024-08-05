@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pg_computer applications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="../templates/includeHTML.js" defer></script>
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            letter-spacing: .5px;
+            font-family: "Inter", sans-serif;
+        }
+        body {
+            width: 100%;
+            
+        }
+        main {
+            width: 80%;
+            max-width: 1200px;
+            margin : auto; 
+            justify-content: center;
+            padding-bottom: 75px;
+            justify-items: center;
+            
+        }
+
+        .heading{
+            text-align: center;
+            color: #22316D;
+            font-size: 28px;
+            padding-top: 35px;
+            padding-bottom: 40px;
+
+        }
+        .card-container {
+            
+            width: 80%;
+            display: grid;           
+            gap: 6rem;
+            padding-top: 20px;
+            padding-bottom: 5rem;
+            grid-template-columns: repeat(2,1fr);
+            justify-content:space-around;
+            
+        }
+        .fac_card {
+            height: 206px;
+            width: 546px;
+            display: flex;
+            margin-bottom: -65px;
+            border-radius: 10px;
+            border: 1px black solid;
+            transition: transform 0.2s ease-in-out;
+        }
+        .fac_img {
+            padding: 9px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-image {
+            
+            height: 188px;
+            width: 151px;
+            border-radius: 10px;
+        }
+       
+        .fac_title {
+            margin-top: 50px;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        .fac_title h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .fac_title p {
+            padding: px;
+            font-size: 20px;
+        }
+        .fac_title .designation {
+            visibility: hidden;
+            margin-bottom: -20px;
+        }
+        .fac_details {
+            visibility: hidden;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        .color {
+            width: 30px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .fac_details .bold {
+            font-weight: bold;
+        }
+        .fac_details .color {
+            
+            word-break: break-all;
+        }
+        .fac_img a {
+            visibility: hidden;
+           
+        }
+        .fac_card .extension {
+            font-size: 15px;
+            visibility: hidden;
+        }
+        .fac_card:hover {
+            cursor: pointer;
+            color: #1a0909;
+            background-color: #22316d77;
+
+        }
+        .fac_card:hover img {
+            height: 200px;
+            width: 190px;
+            margin: -20px;
+            border-radius: 25px;
+            scale: 0.7;
+        }
+        .fac_card:hover .fac_title {
+            margin: 13px;
+            
+        }
+        .fac_card:hover  h1{
+            margin-bottom: -3px;
+            font-size: 25px;
+        }
+        .fac_card:hover .extension{
+            visibility: visible;
+        }
+        .fac_card:hover .fac_title p {
+            font-size: 15px;
+        }
+        .fac_card:hover .designation {
+            margin-bottom: 0px;
+            visibility: visible;
+        }
+        .fac_card:hover .fac_details p {
+            visibility: visible;
+        }
+        .fac_card:hover button {
+            cursor: pointer;
+        }
+        .fac_card:hover a {
+            visibility: visible;
+        }
+       /* Media Queries */
+       @media (max-width: 768px) {
+            .card-container {
+                width: 100%;
+                max-width: 546px;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding-bottom: 5rem;
+            }
+            .fac_card {
+                width: 100%;
+                max-width: 546px;
+                margin-bottom: 20px;
+            }
+            .fac_title h1 {
+                font-size: 20px;
+            }
+            .fac_title p {
+                font-size: 14px;
+            }
+            .fac_details {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .card-container {
+                width: 100%;
+                max-width: 480px;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .fac_card {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                width: 100%;
+                max-width: 450px;
+            }
+            .profile-image {
+                width: 100%;
+                max-width: 120px;
+            }
+            .fac_title {
+                padding: 10px;
+            }
+            .fac_title h1 {
+                font-size: 18px;
+            }
+            .fac_title p {
+                font-size: 12px;
+            }
+            .fac_details {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <header hx-get="../templates/nav1.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
+    <div id="nav-placeholder"></div>
+        <main>
+            <h1 class="heading">TRAINING & PLACEMENT OFFICER </h1>
+            <div class="card-container" id="pto-container"></div>
+            <h1 class="heading">PLACEMENT TEAM FOR ENGINEERING AND TECHNOLOGY PROGRAM </h1>
+            <div class="card-container" id="et-container"></div>
+            <h1 class="heading">PLACEMENT TEAM FOR  MBA PROGRAM </h1>
+            <div class="card-container" id="mba-container"></div>
+            <h1 class="heading">PLACEMENT TEAM FOR  MCA PROGRAM </h1>
+            <div class="card-container" id="mca-container"></div>
+            
+
+            
+        </main>
+        <script type="module">
+            import cardsData from '../faculty.js';
+    
+            document.addEventListener('DOMContentLoaded', () => {
+                
+                
+                // Function to create a card element
+                function createCard(data) {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.dataset.id = data.id;
+                    let Title = '';
+                    let Email ='';
+                    let dept='';
+                    if (data.placementT === "1") {
+                Title =`<p>${data.placementTtitle}</p> `;
+                Email =` <p>${data.placementTemail}</p>`;
+                dept=` <p><span class="bold">Department:</span> <span class="color">${data.placementTdepartment}</span></p>`;
+                 } 
+
+            if (data.placementE === "1") {
+                Title =`<p>${data.placementEtitle}</p> `;
+                Email =` <p>${data.placementEemail}</p>`;
+                dept=` <p><span class="bold">Department:</span> <span class="color">${data.placementEdepartment}</span></p>`;
+                 } 
+                 if (data.placementM === "1") {
+                Title =`<p>${data.placementMtitle}</p> `;
+                Email =` <p>${data.placementMemail}</p>`;
+                dept=` <p><span class="bold">Department:</span> <span class="color">${data.placementMdepartment}</span></p>`;
+                 } 
+                 if (data.placementC === "1") {
+                Title =`<p>${data.placementCtitle}</p> `;
+                Email =` <p>${data.placementCemail}</p>`;
+                dept=` <p><span class="bold">Department:</span> <span class="color">${data.placementCdepartment}</span></p>`;
+                 } 
+                    card.innerHTML = `
+                    
+                        <div class="fac_card">
+                            <div class="fac_img">
+                                <img class="profile-image" src="${data.image}" alt="${data.name}">
+                                <p class="extension">Extension:${data.extension}</p>
+                            </div>
+                             <div class="fac_title">
+                            <h1 class="name">${data.name}</h1>
+                            ${Title}
+                            <p class="designation">${data.designation}</p>
+                            ${Email}
+                            
+                            <div class="fac_details">
+                                ${dept}
+                                <p><span class="bold">Phone No:</span> <span class="color">${data.phone}</span></p>
+                                
+                            </div>
+                        </div>
+
+                        
+                
+                    `;
+                    return card;
+                }
+    
+ // Get the container element
+    var container = document.getElementById('pto-container');
+    var filteredCardsData = cardsData.filter(cardData => cardData.placementT === '1' );
+    filteredCardsData.forEach(cardData => {
+        var card = createCard(cardData);
+        container.appendChild(card);
+    });
+    var container = document.getElementById('et-container');
+    var filteredCardsData = cardsData.filter(cardData => cardData.placementE === '1');
+    filteredCardsData.forEach(cardData => {
+        var card = createCard(cardData);
+        container.appendChild(card);
+    });
+    var container = document.getElementById('mba-container');
+    var filteredCardsData = cardsData.filter(cardData => cardData.placementM === '1');
+    filteredCardsData.forEach(cardData => {
+        var card = createCard(cardData);
+        container.appendChild(card);
+    });
+    var container = document.getElementById('mca-container');
+    var filteredCardsData = cardsData.filter(cardData => cardData.placementC === '1');
+    filteredCardsData.forEach(cardData => {
+        var card = createCard(cardData);
+        container.appendChild(card);
+    });
+    
+});
+        </script>
+        
+        <!-- Footer -->
+        <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>
