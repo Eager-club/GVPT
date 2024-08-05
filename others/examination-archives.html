@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            
         }
         .container {
             display: flex;
@@ -16,13 +17,13 @@
             align-items: center;
             padding: 20px;
         }
-        .title1{
+        .title1 {
             background-color: #22316C;
             color: white;
             width: 56%;
-            margin-top:12px;
+            margin-top: 14px;
             text-align: center;
-            padding: 10px ;
+            padding: 10px;
             font-size: 24px;
             font-weight: bold;
         }
@@ -64,6 +65,10 @@
             background-color: #344ba7;
         }
         .hidden-item {
+            display: none;
+        }
+        .results,
+        .time-table {
             display: none;
         }
     </style>
@@ -221,7 +226,7 @@
                 if (showingAll) {
                     // Hide additional items
                     circularItems.forEach((item, index) => {
-                        if (index >= 14) {
+                        if (index >= 10) {
                             item.style.display = 'none';
                         }
                     });
@@ -238,7 +243,7 @@
     
             // Initially hide additional items
             circularItems.forEach((item, index) => {
-                if (index >= 14) {
+                if (index >= 10) {
                     item.style.display = 'none';
                 }
             });
