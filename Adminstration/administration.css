@@ -1,0 +1,266 @@
+
+*{
+margin: 0px;
+border: 0px;
+box-sizing: border-box;
+}
+.card-container ,#director-container,
+#deans-container,#coe-container,
+#hodug-container,#hodet-container,
+#hodpg-container,#cod-container{
+display: flex;
+flex-wrap: wrap;
+margin: 30px auto;
+gap: 4.5rem;
+margin-bottom: 20px;
+}
+body {
+/* margin-left: 20px; */
+gap: 10px;
+align-content: space-around;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: whitesmoke;
+font-family: Arial, sans-serif;
+}
+.cards{
+width: 100%;
+/* margin: 50px auto; */
+}
+.container{
+width: 90%;
+margin: auto;
+}
+.heading{
+color: #22316C;
+padding: 10px;
+}
+ .view{
+    display: flex;
+    justify-content: end;
+    padding-right: 30px;
+    font-size: 25px;
+
+}
+.view a{
+
+justify-content: end;
+border: 1px solid #22316d76;
+border-radius: 5px;
+padding: 3px;
+font-size: 25px;
+
+}
+.view :hover{
+background-color: #22316da0;
+color: #fff;
+opacity: 60%;
+}
+.view button {
+    padding: 3px;
+    font-size: 25px;
+    background-color: white;
+    color: #22316D;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view button:hover {
+    background-color: #22316D;
+    color: #fff;
+    opacity: 60%;
+}
+
+.view button.view-less {
+    background-color: #22316D;
+    color: #fff;
+}
+
+.view button.view-less:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+a{
+text-decoration: none;
+}
+.card{
+padding: 1px;
+width: 282px;
+height: 320px;
+box-sizing: border-box;
+border: 1px solid;
+border-radius: 5px;
+box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.329);
+transition: 0.5s;
+margin-top: 25px;
+justify-content: space-between;
+/* margin: 0 12px 0 10px; */
+}
+
+.card img{
+width: 278px;
+height:197px;
+border-radius: 5px;
+transition: 0.3s;
+}
+.details h1{
+font-size: 20px;
+font-weight: 1000px;
+text-align: center;
+color: #000;
+}
+.details hr{
+visibility: hidden;
+color: #fff;
+}
+.details button{
+height: 51px;
+width: 187px;
+font-size: 13px;
+font-weight: bold;
+border-style: none; 
+border-radius: 5px;
+background-color:rgba(34, 49, 108, 0.518) ;            
+color: white;
+margin-top: 10px;
+margin-left: 45px ;
+
+}
+
+.intro{
+font-size: 13px;
+margin: 5px 0;
+display: flex;
+color: #100707;
+visibility: hidden;
+opacity: 0;
+transition: opacity 0.5s;
+
+}
+.intro .opt,.colon {
+color: white;
+font-weight: bold;
+}
+.intro .fill{
+color: #000;
+font-size: 12px;
+word-wrap: break-word;
+word-break: break-all;
+}
+.colon {
+color: #fff;
+}
+.intro p{
+padding: 5px;
+}
+.card:hover,.details:hover {
+cursor: pointer;
+}
+.card:hover .details{
+
+height: 175px;
+background-color:rgba(34, 49, 108, 0.518);
+border-radius: 5px;
+clear: both; 
+}
+.card:hover button{
+visibility: hidden;   
+}
+.card:hover hr{
+visibility: visible;
+color: #000;
+}
+
+.card:hover img{
+margin-top:-60px;
+margin-bottom: -70px;
+width: 270px;
+height: 270px;
+border-radius: 95%;
+transform: scale(0.4);
+}
+
+.card:hover .intro  {
+opacity: 1;
+margin-top: -70px;
+visibility: visible;
+padding: 5px;
+
+}
+@media (max-width: 600px) {
+.card {
+width: 90%;
+height: auto;
+}
+
+.card img {
+width: 100%;
+height: auto;
+}
+
+.details {
+height: auto;
+padding: 10px;
+align-items: center;
+}
+
+.details h1 {
+font-size: 20px;
+align-items: center;
+}
+
+.details p {
+font-size: 13px;
+}
+
+.details button {
+width: 100%;
+align-items: center;
+font-size: 14px;
+}
+
+.intro {
+flex-direction: row;
+align-items: flex-start;
+}
+
+.intro .opt, .intro .fill {
+width: 100%;
+text-align: left;
+}
+
+.intro p {
+font-size: 13px;
+}
+
+}
+/* .view button {
+    border: 1px solid #22316D;
+    height: 40px;
+    width: 114px;
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: white;
+    color: #22316D;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view button:hover {
+    background-color: #22316D;
+    color: #fff;
+    opacity: 60%;
+}
+
+.view button.view-less {
+    background-color: #22316D;
+    color: #fff;
+}
+
+.view button.view-less:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+} */
