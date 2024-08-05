@@ -252,72 +252,38 @@ body {
                 card.className = 'card';
                 card.dataset.id = data.id;
 
-<<<<<<< HEAD
-        function createCard(data) {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.dataset.id = data.id;
-
-            card.innerHTML = `
-                <img class="profile-image" src="${data.image}" alt="${data.name}">
-                <div class="details">
-                    <h1 class="name">${data.name}</h1>
-                    <hr>
-                    <button class="title">${data.button}</button>
-                    <div class="intro">
-                        <div class="opt">
-                            <p>Designation</p>
-                            <p>Phone No</p>
-                            <p>Extension</p>
-                            <p>Email</p>
-                        </div>
-                    <div class="colon">
-                        <p> <strong>:</strong></p>
-                        <p> <strong>:</strong></p>
-                        <p> <strong>:</strong></p>
-                        <p> <strong>:</strong></p>
-                        </div>
-                        <div class="fill">
-                        <p><span class="card-designation">${data.button}</span></p>
-                        <p><span class="phone-number">${data.phone}</span></p>
-                        <p><span class="extension">${data.extension}</span></p>
-                        <p><span class="email">${data.email}</span></p>
-                        </div>
-                    </div>
-                </div>
-=======
                 let buttonHtml = '';
                 let buttondesignation = '';
 
                 if (data.administration === "1") {
-                    buttonHtml = `<button class="title">${data.button}</button>`;
-                    buttondesignation = `<p><span class="card-designation">${data.button}</span></p>`;
+                    buttonHtml = `<button class="title">${data.hbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.hbutton}</span></p>`;
                 }   
-                if (data.director === "1") {
-                    buttonHtml = `<button class="title">${data.button}</button>`;
-                    buttondesignation = `<p><span class="card-designation">${data.button}</span></p>`;
+                if (data.director === "2") {
+                    buttonHtml = `<button class="title">${data.Dbutton}</button>`;
+                    buttondesignation = `<p><span class="card-designation">${data.Dbutton}</span></p>`;
                 }
-                if (data.dean === "1") {
+                if (data.dean === "3") {
                     buttonHtml = `<button class="title dbutton">${data.dbutton}</button>`;
                     buttondesignation = `<p><span class="card-designation">${data.dbutton}</span></p>`;
                 } 
-                if (data.coe === "1") {
+                if (data.coe === "4") {
                     buttonHtml = `<button class="title dbutton">${data.cbutton}</button>`;
                     buttondesignation = `<p><span class="card-designation">${data.cbutton}</span></p>`;
                 }
-                if (data.hodug === "1") {
+                if (data.hodug === "5") {
                     buttonHtml = `<button class="title">${data.ugbutton}</button>`;
                     buttondesignation = `<p><span class="card-designation">${data.ugbutton}</span></p>`;
                 } 
-                if (data.hodet === "1") {
+                if (data.hodet === "6") {
                     buttonHtml = `<button class="title">${data.etbutton}</button>`;
                     buttondesignation = `<p><span class="card-designation">${data.etbutton}</span></p>`;
                 }
-                if (data.hodpg === "1") {
+                if (data.hodpg === "7") {
                     buttonHtml = `<button class="title">${data.pgbutton}</button>`;
                     buttondesignation = `<p><span class="card-designation">${data.pgbutton}</span></p>`;
                 }
-                if (data.cod === "1") {
+                if (data.cod === "8") {
                     buttonHtml = `<button class="title">${data.codbutton}</button>`;
                     buttondesignation = `<p><span class="card-designation">${data.codbutton}</span></p>`;
                 }
@@ -349,61 +315,10 @@ body {
                         </div>
                     </div>
             `;
->>>>>>> d84c3f154c20ee21a0cb4a00e7a9311b9d9314ab
             `;
 
                 `;
 
-<<<<<<< HEAD
-        // Get the container element
-            var container = document.getElementById('card-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.administration === "1" && cardData.category === "AICTE APPROVED").slice(0, 4);;
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
-            var container = document.getElementById('director-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.director=== "1").slice(0, 4);;
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
-            var container = document.getElementById('deans-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.dean=== "1").slice(0, 4);;
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
-            var container = document.getElementById('coe-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.coe=== "1").slice(0, 4);;
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
-            var container = document.getElementById('hodug-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.hodug=== "1").slice(0, 4);;
-            // Create and append cards to the container
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
-            var container = document.getElementById('hodet-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.hodet=== "1").slice(0, 4);;
-            // Create and append cards to the container
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
-            var container = document.getElementById('hodpg-container');
-            var filteredCardsData = cardsData.filter(cardData => cardData.hodpg=== "1").slice(0, 4);;
-            // Create and append cards to the container
-            filteredCardsData.forEach(cardData => {
-                const card = createCard(cardData);
-                container.appendChild(card);
-            });
-        });
-    </script>   
-=======
                 return card;
             }
 
@@ -460,7 +375,6 @@ body {
             toggleView('view-all-cod', 'cod-container', cardData => cardData.cod === "1");
         });
     </script>
->>>>>>> d84c3f154c20ee21a0cb4a00e7a9311b9d9314ab
     <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
     <div id="footer-placeholder"></div>
     <script src="script.js"></script>
