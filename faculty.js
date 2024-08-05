@@ -2869,6 +2869,7 @@ const cardsData = [
         areaOfSpecialisation: '---',
         hodpg:"1",
         button:"HOD-MBA",
+        codbutton:'',
         viewprofile: '',
       },
       {
