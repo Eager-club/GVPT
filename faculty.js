@@ -759,7 +759,7 @@ const cardsData = [
         natureOfAssosiation:"Regular",
         areaOfSpecialisation:"Databases & Data Minining",
         administration:"1",
-        hbutton:"I/C principal",
+        hbutton:"Vice principal",
         viewprofile:"",
     },
     {
@@ -2868,7 +2868,7 @@ const cardsData = [
         natureOfAssosiation: '---',
         areaOfSpecialisation: '---',
         hodpg:"1",
-        button:"HOD-MBA",
+        pgbutton:"HOD-MBA",
         viewprofile: '',
       },
       {
