@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         .container {
             display: flex;
@@ -62,6 +63,28 @@
         }
         .view-all-button button:hover {
             background-color: #344ba7;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .title1 {
+                width: 90%;
+            }
+        }
+        @media (max-width: 480px) {
+            .title1 {
+                padding: 20px;
+                font-size: 20px;
+            }
+            .circular-item {
+                height: auto;
+                padding: 20px;
+            }
+            .circular-item h1 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -202,33 +225,41 @@
             <div class="circular-item">B.Tech VI Sem Supplementary Results April-2022</div>
         </div>
         <div class="view-all-button">
-            <button onclick="toggleViewAll()">View All</button>
+            <button id="viewAllButton" onclick="viewAll()">View All</button>
+            <button id="showLessButton" onclick="showLess()" style="display: none;">Show Less</button>
         </div>
+        
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const viewAllButton = document.querySelector('.view-all-button button');
-            const circularItems = document.querySelectorAll('.circular-item');
-            let showingAll = false;
+        function viewAll() {
+            const circularList = document.getElementById('circularList');
+            const items = circularList.getElementsByClassName('circular-item');
+            for (let i = 13; i < items.length; i++) {
+                items[i].style.display = 'block';
+            }
+            document.getElementById('viewAllButton').style.display = 'none';
+            document.getElementById('showLessButton').style.display = 'inline-block';
+        }
     
-            viewAllButton.addEventListener('click', function() {
-                circularItems.forEach((item, index) => {
-                    if (index >= 14) {
-                        item.style.display = showingAll ? 'block' : 'none';
-                    }
-                });
-                viewAllButton.textContent = showingAll ? 'Show Less' : 'View All';
-                showingAll = !showingAll;
-            });
+        function showLess() {
+            const circularList = document.getElementById('circularList');
+            const items = circularList.getElementsByClassName('circular-item');
+            for (let i = 13; i < items.length; i++) {
+                items[i].style.display = 'none';
+            }
+            document.getElementById('viewAllButton').style.display = 'inline-block';
+            document.getElementById('showLessButton').style.display = 'none';
+        }
     
-
-            circularItems.forEach((item, index) => {
-                if (index >= 14) {
-                    item.style.display = 'none';
-                }
-            });
-        });
+        window.onload = function() {
+            const circularList = document.getElementById('circularList');
+            const items = circularList.getElementsByClassName('circular-item');
+            for (let i = 13; i < items.length; i++) {
+                items[i].style.display = 'none';
+            }
+        }
     </script>
+    
 </body>
 </html>
