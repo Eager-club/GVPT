@@ -12,6 +12,13 @@
 
     font-family: "Inter", sans-serif;
 }
+header{
+  background-image: url("/assects/home.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-clip: content-box;
+        position: relative;
+}
 .container{
   width: 100%;
 
@@ -29,6 +36,7 @@
    gap: 5%;
 }
  
+/* From Uiverse.io by alexroumi */ 
 .content button {
  padding: 15px 25px;
  border: unset;
@@ -37,13 +45,12 @@
  z-index: 1;
  background: #e8e8e8;
  position: relative;
- font-weight: 600;
- font-size: 2vw;
+ font-weight: 700;
+ font-size: 1.3vw;
  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
  transition: all 250ms;
  overflow: hidden;
-transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .content button::before {
@@ -58,7 +65,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
  z-index: -1;
  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms;
+ transition: all 250ms
 }
 
 .content button:hover {
@@ -80,6 +87,10 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: #22316DBF;
     color: white;
     text-align: center;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .heading h6 {
@@ -87,19 +98,27 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     justify-content: center;
     margin-top: 1.67vw; 
     padding: 2%;
+
 }
-.files{
+.files {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .file {
-    width: 100%;
-    border: 0.17vw solid black; 
-
+     width: 100%;
+    background-color: rgba(34, 49, 104, 0.25);
+    border: 0.17vw solid transparent; 
+    border-radius: 10px;
     margin-bottom: 0.83vw; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 } 
 .file:hover, .file.active {
-    background-color: #22316DBF;
+    background-color:  rgba(34, 49, 104, 0.55);
     color: #ffffff;
+    transform: translateY(-1px); 
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    
 }
 .file h6:hover, .file.active h6 {
     color: white;
@@ -109,23 +128,19 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     justify-content: center;
     margin-top: 1.67vw;
 }
-/* .files {
-    padding: 1.67vw; 
-} */
 a {
     text-decoration: none;
     color: black;
 }
-.c1:hover{
+/* .c1:hover{
     transform: translateY(-6px); 
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
-}
-.c1:hover, .c1.active {
-    background-color: #22316DBF;
-}
-.c1 h6:hover, .c1.active h6 {
+} */
+ .c1.active {
+    background-color: #22316c;
     color: white;
-}
+} 
+
 .sub1 {
     margin-top: 5.83vw; 
 }
@@ -136,6 +151,8 @@ a {
     padding: 4.58vw; 
     display: block;
 }
+
+      
 .file{
     width: 97%;
     display: flex;
@@ -144,11 +161,19 @@ a {
     padding: 1.3%;
 }
 .file button {
+  color: #22316C;
+  font-size: medium;
   padding: 0;
   margin: 0;
   border: none;
   background: none;
   cursor: pointer;
+}
+.file:hover button{
+  font-size: large;
+  color: #e78709;
+  text-decoration: underline;
+  text-underline-offset: calc(4px);
 }
 
 /* @media (max-width: 768px) {
@@ -168,7 +193,7 @@ a {
     .files {
         padding: 0.83vw; 
     }
-} */
+} 
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .heading {
@@ -211,264 +236,106 @@ a {
     <header id="nav-placeholder"></header>
    
     <div class="container">
-       <div class="head">
-        <h6>NAAC</h6>
-      </div>
-          <div class="content">
-              <a href="javascript:void(0)" ><button class="c1" id="button1">NAAC ADDENDUM</button></a>
-              <a href="javascript:void(0)"><button class="c1" id="button2">AQAR</button></a>
-              <a href="javascript:void(0)"><button class="c1" id="button3">NAAC SSR</button></a>
-              <a href="javascript:void(0)"><button class="c1" id="button4">IIQA</button></a>
-          </div>
-      </div>
-    <div id="sub1" class="hidden">
         <div class="head">
-            <div class="heading" id="NAACADDENDUM">
-                <h6>NAAC ADDENDUM</h6>
-            </div>
+            <h6>NAAC</h6>
         </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    CRITERION 1 CIRCULAR ASPECTS
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>CRITERION 2 TEACHING-LEARNING & EVALUATION</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>CRITERION 3 RESEARCH, INNOVATIONS 7 EXTENSIONS</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>CRITERION 4 INFRASTRUCTURE & LEARNING RESOURCES</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>CRITERION 5 STUDENT SUPPORT & PROGRESSION</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>CRITERION 6 GOVERNANCE, LEADERSHIP AND MANAGEMENT</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>CRITERION 7 VALUES AND BEST PRACTICES</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-            </div>
+        <div class="content">
+            <a href="javascript:void(0)"><button class="c1" id="button1">NAAC ADDENDUM</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button2">AQAR</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button3">NAAC SSR</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button4">IIQA</button></a>
         </div>
     </div>
-    <div id="sub2" class="hidden">
-        <div class="head">
-            <div class="heading">
-                <h6>AQAR</h6>
-            </div>
-        </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    <p>AQAR REPORT 2022 - 2023</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2021 - 2022</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2020 - 2021</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2019 - 2020</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2018- 2019</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2017 - 2018</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2016 - 2017</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2015 - 2016</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2014 - 2015</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>AQAR REPORT 2013 - 2014</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="sub3" class="hidden">
-        <div class="head">
-            <div class="heading">
-                <h6>NAAC SSR</h6>
-            </div>
-        </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    <p>SSR 2022 - 2023</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>SSR 2021 - 2022</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>SSR 2020 - 2021</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>SSR 2019 - 2020</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="sub4" class="hidden">
-        <div class="head">
-            <div class="heading">
-                <h6>IIQA</h6>
-            </div>
-        </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    <p>IIQA 2017 - 2018</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>RTI ACT 2005</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-                <div class="file">
-                    <p>RTI ACT 2005-NEW</p>
-                    <a href=""><button>
-                      click me
-                      </button></a>
-                      
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="sub1" class="hidden"></div>
+    <div id="sub2" class="hidden"></div>
+    <div id="sub3" class="hidden"></div>
+    <div id="sub4" class="hidden"></div>
     <script>
-        document.getElementById('button1').addEventListener('click', function() {
-            toggleVisibility('button1', 'sub1');
-        });
-    
-        document.getElementById('button2').addEventListener('click', function() {
-            toggleVisibility('button2', 'sub2');
-        });
-    
-        document.getElementById('button3').addEventListener('click', function() {
-            toggleVisibility('button3', 'sub3');
-        });
-    
-        document.getElementById('button4').addEventListener('click', function() {
-            toggleVisibility('button4', 'sub4');
-        });
-    
+        const sectionsData = {
+            sub1: {
+                heading: 'NAAC ADDENDUM',
+                files: [
+                    { text: 'CRITERION 1 CIRCULAR ASPECTS', link: '#' },
+                    { text: 'CRITERION 2 TEACHING-LEARNING & EVALUATION', link: '#' },
+                    { text: 'CRITERION 3 RESEARCH, INNOVATIONS & EXTENSIONS', link: '#' },
+                    { text: 'CRITERION 4 INFRASTRUCTURE & LEARNING RESOURCES', link: '#' },
+                    { text: 'CRITERION 5 STUDENT SUPPORT & PROGRESSION', link: '#' },
+                    { text: 'CRITERION 6 GOVERNANCE, LEADERSHIP AND MANAGEMENT', link: '#' },
+                    { text: 'CRITERION 7 VALUES AND BEST PRACTICES', link: '#' }
+                ]
+            },
+            sub2: {
+                heading: 'AQAR',
+                files: [
+                    { text: 'AQAR REPORT 2022 - 2023', link: '#' },
+                    { text: 'AQAR REPORT 2021 - 2022', link: '#' },
+                    { text: 'AQAR REPORT 2020 - 2021', link: '#' },
+                    { text: 'AQAR REPORT 2019 - 2020', link: '#' },
+                    { text: 'AQAR REPORT 2018 - 2019', link: '#' },
+                    { text: 'AQAR REPORT 2017 - 2018', link: '#' },
+                    { text: 'AQAR REPORT 2016 - 2017', link: '#' },
+                    { text: 'AQAR REPORT 2015 - 2016', link: '#' },
+                    { text: 'AQAR REPORT 2014 - 2015', link: '#' },
+                    { text: 'AQAR REPORT 2013 - 2014', link: '#' }
+                ]
+            },
+            sub3: {
+                heading: 'NAAC SSR',
+                files: [
+                    { text: 'SSR 2022 - 2023', link: '#' },
+                    { text: 'SSR 2021 - 2022', link: '#' },
+                    { text: 'SSR 2020 - 2021', link: '#' },
+                    { text: 'SSR 2019 - 2020', link: '#' }
+                ]
+            },
+            sub4: {
+                heading: 'IIQA',
+                files: [
+                    { text: 'IIQA 2017 - 2018', link: '#' },
+                    { text: 'RTI ACT 2005', link: '#' },
+                    { text: 'RTI ACT 2005-NEW', link: '#' }
+                ]
+            }
+        };
+
+        function renderSection(sectionId, sectionData) {
+            const container = document.getElementById(sectionId);
+            container.innerHTML = `
+                <div class="head">
+                    <div class="heading">
+                        <h6>${sectionData.heading}</h6>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="files">
+                        ${sectionData.files.map(file => `
+                            <div class="file">
+                                <p>${file.text}</p>
+                                <a href="${file.link}"><button>click me</button></a>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
         function toggleVisibility(buttonId, sectionId) {
             var sections = ['sub1', 'sub2', 'sub3', 'sub4'];
             var buttons = ['button1', 'button2', 'button3', 'button4'];
-    
-            sections.forEach(function(id) {
+
+            sections.forEach(id => {
                 var section = document.getElementById(id);
                 if (id === sectionId) {
-                    section.classList.toggle('visible');
-                    section.classList.toggle('hidden');
-                    // Scroll to the section if it becomes visible
-                    if (section.classList.contains('visible')) {
-                        section.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    section.classList.add('visible');
+                    section.classList.remove('hidden');
+                    section.scrollIntoView({ behavior: 'smooth' });
                 } else {
                     section.classList.remove('visible');
                     section.classList.add('hidden');
                 }
             });
-    
-            buttons.forEach(function(id) {
+
+            buttons.forEach(id => {
                 var button = document.getElementById(id);
                 if (id === buttonId) {
                     button.classList.add('active');
@@ -477,7 +344,32 @@ a {
                 }
             });
         }
+
+        Object.keys(sectionsData).forEach(sectionId => {
+            renderSection(sectionId, sectionsData[sectionId]);
+        });
+
+        document.getElementById('button1').addEventListener('click', function() {
+            toggleVisibility('button1', 'sub1');
+        });
+
+        document.getElementById('button2').addEventListener('click', function() {
+            toggleVisibility('button2', 'sub2');
+        });
+
+        document.getElementById('button3').addEventListener('click', function() {
+            toggleVisibility('button3', 'sub3');
+        });
+
+        document.getElementById('button4').addEventListener('click', function() {
+            toggleVisibility('button4', 'sub4');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleVisibility('button1', 'sub1');
+        });
     </script>
+
         <footer id="footer-placeholder"></footer>
     <script src="script.js"></script>
 </body>
