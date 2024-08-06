@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about-placements.css" />
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+    <script src="../templates/includeHTML.js" defer></script>
+  </head>
+  <body>
+    <div id="nav-placeholder"></div>
+    <main>
+      <div class="container">
+        <h1 class="heading">about-placements</h1>
+        <div class="container">
+          <div class="top-row row">
+            <img
+              class="crd"
+              src="https://www.gvpcdpgc.edu.in/placement/Mech_1.jpeg"
+              alt="CSE placements"
+              width="40%"
+            />
+            <img
+              class="crd"
+              src="https://www.gvpcdpgc.edu.in/placement/Mech_1.jpeg"
+              alt="CSE placements"
+              width="40%"
+            />
+          </div>
+          <div class="bottom-row row">
+            <img
+              class="crd"
+              src="https://www.gvpcdpgc.edu.in/placement/Mech_1.jpeg"
+              alt="CSE placements"
+              width="40%"
+            />
+            <img
+              class="crd"
+              src="https://www.gvpcdpgc.edu.in/placement/Mech_1.jpeg"
+              alt="CSE placements"
+              width="40%"
+            />
+          </div>
+        </div>
+        <h1 class="heading sub-head">Training and placement</h1>
+        <hr />
+        <p>
+          Training and Placement (T&P) cell is an integral part of all the
+          institutions. Gayatri Vidya Parishad has been strengthened over the
+          years and achieved many milestones in its journey towards Quality and
+          quantity of students who are placed from the various institutions of
+          Gayatri Vidya Parishad.
+        </p>
+        <h1 class="heading sub-head oa">our aim:</h1>
+        <hr />
+        <p>
+          The aim of the T & P cell is to mould all the students of the
+          institution to meet the industry expectations and place them into top
+          companies in the industry. To achieve these objectives the cell
+          organizes and coordinates Campus Recruitment Training (CRT) programs
+          with a commitment of placing every students in a reputed company.
+          These programmes help the students acquire required technical skills,
+          develop personality and focus on holistic development. They are
+          designed to give the society, better citizens as per our mission
+          statement.
+        </p>
+        <h1 class="heading sub-head oa">Our strengths:</h1>
+        <hr />
+        <p>
+          Our students who have excelled themselves in the academics also
+          displayed ethical and moral values picked up during their tenure in
+          the college, thus making themselves self learning and self evolving
+          into good Samaritans. The success stories of their contributions to
+          the organizations who picked them up from the campus, have new and
+          better companies to the campus and enhanced their trust and belief in
+          our institutions.
+        </p>
+        <h1 class="heading sub-head oa">our training:</h1>
+        <hr />
+        <p>
+          A thorough and complete awareness is given to the students on various
+          career programmes and certifications as per the current demands.
+          Accordingly, appropriate resource persons are identified and training
+          sessions are planned in such a way that their curriculum is not
+          disturbed.
+        </p>
+        <h1 class="heading">TRAINING & PLACEMENT OFFICER</h1>
+      </div>
+      <div class="crds">
+        <div class="card-container" id="pto-container"></div>
+      </div>
+      <div id="popup" class="popup">
+        <span class="popup-close" id="popup-close">&times;</span>
+        <div class="popup-content">
+          <img id="popup-image" src="../assects/civil.png" alt="Popup Image" />
+        </div>
+      </div>
+    </main>
+    <script type="module">
+      import cardsData from "../faculty.js";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Function to create a card element
+        function createCard(data) {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.dataset.id = data.id;
+          let Title = "";
+          let Email = "";
+          let dept = "";
+          if (data.placementT === "1") {
+            Title = `<p>${data.placementTtitle}</p> `;
+            Email = ` <p>${data.placementTemail}</p>`;
+            dept = ` <p><span class="bold">Department:</span> <span class="color">${data.placementTdepartment}</span></p>`;
+          }
+
+          if (data.placementE === "1") {
+            Title = `<p>${data.placementEtitle}</p> `;
+            Email = ` <p>${data.placementEemail}</p>`;
+            dept = ` <p><span class="bold">Department:</span> <span class="color">${data.placementEdepartment}</span></p>`;
+          }
+          if (data.placementM === "1") {
+            Title = `<p>${data.placementMtitle}</p> `;
+            Email = ` <p>${data.placementMemail}</p>`;
+            dept = ` <p><span class="bold">Department:</span> <span class="color">${data.placementMdepartment}</span></p>`;
+          }
+          if (data.placementC === "1") {
+            Title = `<p>${data.placementCtitle}</p> `;
+            Email = ` <p>${data.placementCemail}</p>`;
+            dept = ` <p><span class="bold">Department:</span> <span class="color">${data.placementCdepartment}</span></p>`;
+          }
+          card.innerHTML = `
+                
+                    <div class="fac_card">
+                        <div class="fac_img">
+                            <img class="profile-image" src="${data.image}" alt="${data.name}">
+                            <p class="extension">Extension:${data.extension}</p>
+                        </div>
+                         <div class="fac_title">
+                        <h1 class="name">${data.name}</h1>
+                        ${Title}
+                        <p class="designation">${data.designation}</p>
+                        ${Email}
+                        
+                        <div class="fac_details">
+                            ${dept}
+                            <p><span class="bold">Phone No:</span> <span class="color">${data.phone}</span></p>
+                            
+                        </div>
+                    </div>
+
+                    
+            
+                `;
+          return card;
+        }
+
+        // Get the container element
+        var container = document.getElementById("pto-container");
+        var filteredCardsData = cardsData.filter(
+          (cardData) => cardData.placementT === "1"
+        );
+        filteredCardsData.forEach((cardData) => {
+          var card = createCard(cardData);
+          container.appendChild(card);
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const crdImages = document.querySelectorAll(".crd");
+        const popup = document.getElementById("popup");
+        const popupClose = document.getElementById("popup-close");
+        const popupImage = document.getElementById("popup-image");
+
+        const images = [
+          "../assects/civil.png",
+          "../assects/cse.png",
+          "../assects/csm.png",
+        ];
+        let currentIndex = 0;
+        let intervalId;
+
+        function showImage(index) {
+          popupImage.src = images[index];
+        }
+
+        function startImageRotation() {
+          intervalId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+          }, 2000); // Change image every 1 seconds
+        }
+
+        function stopImageRotation() {
+          clearInterval(intervalId);
+        }
+
+        crdImages.forEach((img) => {
+          img.addEventListener("click", () => {
+            popup.style.display = "block";
+            showImage(currentIndex);
+            startImageRotation();
+          });
+        });
+
+        popupClose.addEventListener("click", () => {
+          popup.style.display = "none";
+          stopImageRotation();
+        });
+
+        window.addEventListener("click", (event) => {
+          if (event.target === popup) {
+            popup.style.display = "none";
+            stopImageRotation();
+          }
+        });
+      });
+    </script>
+    <footer
+      hx-get="../templates/footer.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></footer>
+  </body>
+</html>
