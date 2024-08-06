@@ -12,11 +12,7 @@
             font-family: "Inter", sans-serif;
         }
         .faculty-main {
-<<<<<<< HEAD
-            height: 80vh;
-=======
             height: 100vh;
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
             width: 80%;
             margin-left: 85px;
             position: relative;
@@ -94,8 +90,6 @@
             margin-top: var(--dropdown-height);
             transform: scale(1.05);
         }
-<<<<<<< HEAD
-=======
         .footer {
             position: relative;
             transition: margin-top 0.5s ease, transform 0.5s ease;
@@ -104,7 +98,6 @@
             margin-top: var(--dropdown-height);
             transform: scale(1.05);
         }
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
 
         @media (max-width: 480px) {
             .faculty-main {
@@ -132,10 +125,7 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-=======
     <div id="nav-placeholder"></div>
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
     <div class="faculty-main">
         <div class="aicte">
             <h1>AITCE APPROVED</h1>
@@ -143,11 +133,7 @@
                 <div class="dropdown">
                     <button class="dropbtn">POST GRADUATE</button>
                     <div class="dropdown-content">
-<<<<<<< HEAD
-                        <a href="#">COMPUTER APPLICATIONS</a>
-=======
                         <a href="./aicte_pg_ca.html" target="_top">COMPUTER APPLICATIONS</a>
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
                         <a href="#">MANAGEMENT STUDIES</a>
                     </div>
                 </div>
@@ -185,12 +171,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-
-    <script>
-        const aicteDropdowns = document.querySelectorAll('.aicte .dropdown');
-        const university = document.querySelector('.university');
-=======
     <div id="footer-placeholder"  class="footer"></div>
 
     <script>
@@ -198,15 +178,10 @@
         const universityDropdowns = document.querySelectorAll('.university .dropdown');
         const university = document.querySelector('.university');
         const footer = document.querySelector('.footer');
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
 
         aicteDropdowns.forEach(dropdown => {
             const dropdownContent = dropdown.querySelector('.dropdown-content');
             dropdown.addEventListener('mouseover', () => {
-<<<<<<< HEAD
-                // Calculate the height of the visible dropdown-content
-=======
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
                 const dropdownHeight = dropdownContent.offsetHeight;
                 university.style.setProperty('--dropdown-height', `${dropdownHeight + 20}px`);
                 university.classList.add('move-university');
@@ -216,9 +191,6 @@
                 university.classList.remove('move-university');
             });
         });
-<<<<<<< HEAD
-    </script>
-=======
 
         universityDropdowns.forEach(dropdown => {
             const dropdownContent = dropdown.querySelector('.dropdown-content');
@@ -235,6 +207,5 @@
     </script>
     <script src="../templates/includeHTML.js" defer></script>
     
->>>>>>> dc15cbf434bd171dae9aef998e1986bf63fa3909
 </body>
 </html>

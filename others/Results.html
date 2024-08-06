@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circulars</title>
+    <title>RESULTS</title>
+    <script src="../templates/includeHTML.js" defer></script>
+    <link rel="stylesheet" href="../templates/preloder.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            margin-bottom: 160px;
         }
         .title1 {
             background-color: #22316C;
@@ -33,10 +37,12 @@
         }
         .circular-item {
             background-color: #f9f9f9;
+            text-align: center;
             border: 1px solid #ddd;
             padding: 15px;
             margin-bottom: 5px;
             cursor: pointer;
+            text-transform: uppercase;
             transition: all 0.3s ease;
         }
         .circular-item:hover {
@@ -44,13 +50,6 @@
             color: white;
         }
         .view-all-button {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-        }
-        .view-all-button button {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #22316C;
@@ -59,13 +58,37 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
-        .view-all-button button:hover {
+        .view-all-button:hover {
             background-color: #344ba7;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .title1 {
+                width: 90%;
+            }
+        }
+        @media (max-width: 480px) {
+            .title1 {
+                padding: 20px;
+                font-size: 20px;
+            }
+            .circular-item {
+                height: auto;
+                padding: 20px;
+            }
+            .circular-item h1 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header id="nav-placeholder"></header>
     <div class="container">
         <div class="title1">RESULTS</div>
         <div class="circular-list" id="circularList">
@@ -201,34 +224,44 @@
             <div class="circular-item">B.Tech VI Sem Regular Results April-2022</div>
             <div class="circular-item">B.Tech VI Sem Supplementary Results April-2022</div>
         </div>
-        <div class="view-all-button">
-            <button onclick="toggleViewAll()">View All</button>
-        </div>
+        <button class="view-all-button" id="viewAllButton" onclick="toggleView()">View All</button>
+        <button class="view-all-button" id="showLessButton" style="display: none; margin-left: 44%" onclick="toggleView()">Show Less</button>
+        
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const viewAllButton = document.querySelector('.view-all-button button');
-            const circularItems = document.querySelectorAll('.circular-item');
-            let showingAll = false;
-    
-            viewAllButton.addEventListener('click', function() {
-                circularItems.forEach((item, index) => {
-                    if (index >= 14) {
-                        item.style.display = showingAll ? 'block' : 'none';
-                    }
-                });
-                viewAllButton.textContent = showingAll ? 'Show Less' : 'View All';
-                showingAll = !showingAll;
-            });
-    
+        const circularList = document.getElementById('circularList');
+        const viewAllButton = document.getElementById('viewAllButton');
+        const showLessButton = document.getElementById('showLessButton');
 
+        const initialVisibleItems = 8;
+        const circularItems = Array.from(circularList.children);
+
+        function toggleView() {
+            if (viewAllButton.style.display !== 'none') {
+                circularItems.forEach(item => item.style.display = 'block');
+                viewAllButton.style.display = 'none';
+                circularList.appendChild(showLessButton); // Move the Show Less button to the end
+                showLessButton.style.display = 'inline-block';
+            } else {
+                circularItems.forEach((item, index) => {
+                    item.style.display = index < initialVisibleItems ? 'block' : 'none';
+                });
+                viewAllButton.style.display = 'inline-block';
+                showLessButton.style.display = 'none';
+            }
+        }
+
+        function initializeView() {
             circularItems.forEach((item, index) => {
-                if (index >= 14) {
-                    item.style.display = 'none';
-                }
+                item.style.display = index < initialVisibleItems ? 'block' : 'none';
             });
-        });
+        }
+
+        initializeView();
     </script>
+    <footer id="footer-placeholder"></footer>
+    <script src="script.js"></script>
+    
 </body>
 </html>

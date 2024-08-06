@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAAC</title>
+    <script src="../templates/includeHTML.js" defer></script>
     <style>
         *
         {
@@ -11,11 +12,14 @@
             border: 0;
             font-family: "Inter", sans-serif;
         }
-        .title {
+        .head {
             display: flex;
             justify-content: center;
             padding: 40px;
             color: #22316C;
+        }
+        .container{
+            margin-bottom: 150px;
         }
         .content {
             padding: 10px;
@@ -67,6 +71,7 @@
             width: 1125px;
             height: 85px;
             background-color: #22316DBF;
+            color: #ffffff;
         }
         .file h1:hover, .file.active h1 {
             color: white;
@@ -159,8 +164,9 @@
     </style>
 </head>
 <body>
+    <header id="nav-placeholder"></header>
     <div class="container">
-        <div class="title">
+        <div class="head">
             <h1>NAAC</h1>
         </div>
         <div class="content">
@@ -339,5 +345,7 @@
             });
         }
     </script>
+    <footer id="footer-placeholder"></footer>
+    <script src="script.js"></script>
 </body>
 </html>

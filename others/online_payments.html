@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONLINE PAYMENTS</title>
+    <script src="../templates/includeHTML.js" defer></script>
+    <link rel="stylesheet" href="../templates/preloder.css">
     
     <style>
         * {
@@ -13,11 +15,14 @@
             box-sizing: border-box;
             font-size: 25px;
         }
-        .title {
+        .head {
             display: flex;
             justify-content: center;
             padding: 40px;
             color: #22316C;
+        }
+        .container{
+            margin-bottom: 150px;
         }
         .content {
             padding: 10px;
@@ -213,8 +218,9 @@
     
 </head>
 <body>
+    <header id="nav-placeholder"></header>
     <div class="container">
-        <div class="title">
+        <div class="head">
             <h1>ONLINE FEE PAYMENT</h1>
         </div>
         <div class="content">
@@ -346,5 +352,7 @@
             });
         }
     </script>
+    <footer id="footer-placeholder"></footer>
+    <script src="script.js"></script>
 </body>
 </html>

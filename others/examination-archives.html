@@ -30,6 +30,8 @@
             width: 100%;
             max-width: 800px;
             margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
         }
         .circular-item {
             background-color: #f9f9f9;
@@ -221,7 +223,7 @@
                 if (showingAll) {
                     // Hide additional items
                     circularItems.forEach((item, index) => {
-                        if (index >= 14) {
+                        if (index >= 5) {
                             item.style.display = 'none';
                         }
                     });
