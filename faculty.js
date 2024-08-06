@@ -379,7 +379,7 @@ const cardsData = [
         natureOfAssosiation:" Regular",
         areaOfSpecialisation:"Human Resource Management",
         iipc:"yes",
-        mem:"Covener",
+        mem:"Convener",
         viewprofile:"",
     },
     {

@@ -6,178 +6,178 @@
     <title>NAAC</title>
     <script src="../templates/includeHTML.js" defer></script>
     <style>
-        *
-        {
-            margin: 0;
-            border: 0;
-            font-family: "Inter", sans-serif;
-        }
-        .head {
-            display: flex;
-            justify-content: center;
-            padding: 40px;
-            color: #22316C;
-        }
-        .container{
-            margin-bottom: 150px;
-        }
-        .content {
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .c1 {
-            border: 2px solid black;
-            border-radius: 5px;
-            width: 100%;
-            max-width: 400px;
-            height: 135px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-        }
-        .c1 h1 {
-            text-align: center;
-        }
-        .box {
-            margin-top: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .heading {
-            background: #22316DBF;
-            border: 2px solid rgb(8, 8, 8);  
-            color: white;
-            width: 1115px;
-            height: 75px;
-        }
-        .heading h1 {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .file {
-            border: 2px solid black;
-            width: 1115px;
-            height: 75px;
-            margin-bottom: 10px;
-        }
-        .file:hover, .file.active {
-            width: 1125px;
-            height: 85px;
-            background-color: #22316DBF;
-            color: #ffffff;
-        }
-        .file h1:hover, .file.active h1 {
-            color: white;
-        }
-        .file h1 {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .files {
-            padding: 20px;
-        }
-        a {
-            text-decoration: none;
-            color: black;
-        }
-        .c1:hover, .c1.active {
-            background-color: #22316DBF;
-        }
-        .c1 h1:hover, .c1.active h1 {
-            color: white;
-        }
-        .head {
-            display: flex;
-            justify-content: center;
-        }
-        .sub1 {
-            margin-top: 70px;
-        }
-        .hidden {
-            display: none;
-        }
-        .visible {
-            padding: 55px;
-            display: block;
-        }
-        @media (max-width: 768px) {
-            .heading {
-                width: 100%;
-                height: auto;
-                padding: 10px;
-            }
-            .file {
-                width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-            }
-            .file h1 {
-                font-size: 1rem;
-            }
-            .files {
-                padding: 10px;
-            }
-        }
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .heading {
-                width: 90%;
-                height: auto;
-            }
-            .file {
-                width: 100%;
-                height: auto;
-            }
-            .files {
-                padding: 15px;
-            }
-        }
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                align-items: center;
-            }
-            .c1 {
-                width: 90%;
-                margin-bottom: 10px;
-            }
-        }
-        @media (max-width: 480px) {
-            .title {
-                padding: 20px;
-            }
-            .c1 {
-                height: auto;
-                padding: 20px;
-            }
-            .c1 h1 {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    *
+{
+    margin: 0;
+    border: 0;
+    font-family: "Inter", sans-serif;
+}
+.head {
+    display: flex;
+    justify-content: center;
+    padding: 3.33vw; /* 40px */
+    color: #22316C;
+}
+.container{
+    margin-bottom: 12.5vw; /* 150px */
+}
+.content {
+    width: 100%;
+    /* padding: 0.83vw; /* 10px  */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3.33vw; /* 40px */
+    flex-wrap: wrap;
+    /* gap: 0.83vw; 10px */
+}
+.c1 {
+    background-color: rgba(34, 49, 104, .1);;
+    border: 0.17vw solid rgba(34, 49, 104, .1); /* 2px */
+    border-radius: 0.42vw; /* 5px */
+    width: 100%;
+    max-width: 33.33vw; /* 400px */
+    height: 11.25vw; /* 135px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.83vw; /* 10px */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.c1 h1 {
+    text-align: center;
+}
+.box {
+    margin-top: 2.5vw; /* 30px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading {
+    background: #22316DBF;
+    border: 0.17vw solid rgb(8, 8, 8); /* 2px */
+    color: white;
+    width: 92.5vw; /* 1115px */
+    height: 6.25vw; /* 75px */
+}
+.heading h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.67vw; /* 20px */
+}
+.file {
+    border: 0.17vw solid black; /* 2px */
+    width: 92.5vw; /* 1115px */
+    height: 6.25vw; /* 75px */
+    margin-bottom: 0.83vw; /* 10px */
+}
+.file:hover, .file.active {
+    width: 93.75vw; /* 1125px */
+    height: 6.67vw; /* 85px */
+    background-color: #22316DBF;
+    color: #ffffff;
+}
+.file h1:hover, .file.active h1 {
+    color: white;
+}
+.file h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.67vw; /* 20px */
+}
+.files {
+    padding: 1.67vw; /* 20px */
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.c1:hover, .c1.active {
+    background-color: #22316DBF;
+    transform: translateY(-10px); 
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+.c1 h1:hover, .c1.active h1 {
+    color: white;
+}
+.sub1 {
+    margin-top: 5.83vw; /* 70px */
+}
+.hidden {
+    display: none;
+}
+.visible {
+    padding: 4.58vw; /* 55px */
+    display: block;
+}
+@media (max-width: 768px) {
+    .heading {
+        width: 100%;
+        height: auto;
+        padding: 0.83vw; /* 10px */
+    }
+    .file {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0.83vw; /* 10px */
+    }
+    .file h1 {
+        font-size: 1vw; /* Adjusted font size */
+    }
+    .files {
+        padding: 0.83vw; /* 10px */
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .heading {
+        width: 90%;
+        height: auto;
+    }
+    .file {
+        width: 100%;
+        height: auto;
+    }
+    .files {
+        padding: 1.25vw; /* 15px */
+    }
+}
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .c1 {
+        width: 90%;
+        margin-bottom: 0.83vw; /* 10px */
+    }
+}
+@media (max-width: 480px) {
+    .title {
+        padding: 1.67vw; /* 20px */
+    }
+    .c1 {
+        height: auto;
+        padding: 1.67vw; /* 20px */
+    }
+    .c1 h1 {
+        font-size: 1.2vw; /* Adjusted font size */
+    }
+}
+</style>
 </head>
 <body>
     <header id="nav-placeholder"></header>
+    <div class="head">
+        <h1>NAAC</h1>
+    </div>
     <div class="container">
-        <div class="head">
-            <h1>NAAC</h1>
-        </div>
         <div class="content">
             <div class="c1" id="button1">
-                <a href="javascript:void(0)"><h1>NAAC ADDENDUM</h1></a>
+                <a href="javascript:void(0)" ></a><h1>NAAC ADDENDUM</h1></a>
             </div>
             <div class="c1" id="button2">
                 <a href="javascript:void(0)"><h1>AQAR</h1></a>
             </div>
-        </div>
-        <div class="content">
+
             <div class="c1" id="button3">
                 <a href="javascript:void(0)"><h1>NAAC SSR</h1></a>
             </div>
@@ -188,7 +188,7 @@
     </div>
     <div id="sub1" class="hidden">
         <div class="head">
-            <div class="heading">
+            <div class="heading" id=">NAACADDENDUM">
                 <h1>NAAC ADDENDUM</h1>
             </div>
         </div>
@@ -302,39 +302,42 @@
             </div>
         </div>
     </div>
-
     <script>
         document.getElementById('button1').addEventListener('click', function() {
             toggleVisibility('button1', 'sub1');
         });
-
+    
         document.getElementById('button2').addEventListener('click', function() {
             toggleVisibility('button2', 'sub2');
         });
-
+    
         document.getElementById('button3').addEventListener('click', function() {
             toggleVisibility('button3', 'sub3');
         });
-
+    
         document.getElementById('button4').addEventListener('click', function() {
             toggleVisibility('button4', 'sub4');
         });
-
+    
         function toggleVisibility(buttonId, sectionId) {
             var sections = ['sub1', 'sub2', 'sub3', 'sub4'];
             var buttons = ['button1', 'button2', 'button3', 'button4'];
-
+    
             sections.forEach(function(id) {
                 var section = document.getElementById(id);
                 if (id === sectionId) {
                     section.classList.toggle('visible');
                     section.classList.toggle('hidden');
+                    // Scroll to the section if it becomes visible
+                    if (section.classList.contains('visible')) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
                 } else {
                     section.classList.remove('visible');
                     section.classList.add('hidden');
                 }
             });
-
+    
             buttons.forEach(function(id) {
                 var button = document.getElementById(id);
                 if (id === buttonId) {
@@ -345,7 +348,7 @@
             });
         }
     </script>
-    <footer id="footer-placeholder"></footer>
+        <footer id="footer-placeholder"></footer>
     <script src="script.js"></script>
 </body>
 </html>
