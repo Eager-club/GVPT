@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="../templates/includeHTML.js" defer></script>
+    <script src="https://unpkg.com/htmx.org@1.8.5"></script>
+  
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            margin: 0 auto;
+            width: 90%;
+            padding: 40px;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        .container h1 {
+            color: #22316D;
+            padding: 40px;
+            font-size: 2.5em;
+        }
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 90px;
+        }
+        .box a {
+            text-decoration: none;
+        }
+        .box button {
+            width: 400px;
+            height: 135px;
+            background: transparent;
+            border: 1px solid #000;
+            border-radius: 10px;
+            font-weight: bolder;
+            font-size: 1.5em;
+            padding: 20px;
+            cursor: pointer;
+            /* Removed transition for hover effect */
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .box button {
+                font-size: 1.2em;
+                height: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .box button {
+                font-size: 1em;
+                height: 100px;
+            }
+        }
+        footer {
+            text-align: center;
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .form-container {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+            width: 100%;
+            font-size: 20px;
+
+        }
+        .form-container table {
+            width: 100%;
+            border-collapse: collapse;
+            justify-content: center;
+
+        }
+        .form-container table, .form-container th, .form-container td {
+            border: 1px solid #000;
+            font-weight: bold;
+           
+        }
+        .form-container th, .form-container td {
+            padding: 10px;
+            text-align: center;
+
+        }
+        .form-container th {
+            background-color: #22316d6b;
+            color: #fff;
+            text-align: center;
+           
+            
+            
+            
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <h1>ADMISSIONS</h1>
+        <div class="box">
+            <button onclick="showForm('undergraduate')">UNDERGRADUATE</button>
+            <button onclick="showForm('engineering')">UG-ENGINEERING</button>
+            <button onclick="showForm('postgraduate')">POST GRADUATE</button>
+        </div>
+        <!-- Form containers -->
+        <div id="undergraduate-form" class="form-container">
+            
+            <table>
+                <tr>
+                    <th>S.NO</th>
+                    <th>NAME OF THE COURSE</th>
+                    <th>INTAKE</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>B.COM.HONORS(GENERAL)</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>BBA HONORS</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>BBA HONORS(DIGITAL MARKETING)</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>B.COM.HONORS(COMPUTER APPLICATIONS)</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>B.SC.HONORS(COMPUTER SCIENCE)</td>
+                    <td>390</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>B.SC.HONORS(BIOCHEMISTRY)</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>B.SC.HONORS(MICROBIOLOGY)</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>B.SC.HONORS(ELECTRONICS)</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>B.SC.HONORS(CHEMISTRY)</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>B.SC.HONORS(PHYSICS)</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>B.SC.HONORS(MATHEMATICS)</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>B.SC.HONORS(STATISTICS)</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>BCA HONORS</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>B.SC.HONORS(DATA SCIENCE)</td>
+                    <td>60</td>
+                </tr>
+
+
+            </table>
+        </div>
+        <div id="engineering-form" class="form-container">
+            
+            <table>
+                <tr>
+                    <th>S.NO</th>
+                    <th>NAME OF THE COURSE</th>
+                    <th>INTAKE</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>B.TECH.COMPUTER SCIENCE AND ENGINEERING</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>B.TECH.COMPUTER SCIENCE AND ENGINEERING<br>(ARITIFICAL INTELLIGENCE AND MACHINE LEARNING)</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>B.TECH.CIVIL ENGINEERING</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>B.TECH.ELECTRONICS & COMMUNICATION ENGINEERING</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>B.TECH.MECHANICAL ENGINEERING</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>M.TECH.STRUCTURAL ENGINEERING</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>M.TECH.COMPUTER SCIENCE AND TECHNOLOGY</td>
+                    <td>12</td>
+                </tr>
+            </table>
+        </div>
+        <div id="postgraduate-form" class="form-container">
+            
+            <table>
+                <tr>
+                    <th>S.NO</th>
+                    <th>NAME OF THE COURSE</th>
+                    <th>INTAKE</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>MASTER OF BUSINESS ADMINISTRATION (MBA)</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>MASTER OF BUSINESS ADMINISTRATION (MBA) -<br> BUSINESS ANALYTICS</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>MASTER OF COMPUTER APPLICATIONS (MCA)</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>MASTER OF HUMAN RESOURCE MANAGEMENT (MHRM)</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>M.SC. COMPUTER SCIENCE</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>M.SC.ORGANIC CHEMISTRY</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>M.COM</td>
+                    <td>40</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer id="footer-placeholder"></footer>
+    
+    <script>
+        function showForm(formId) {
+            // Hide all forms
+            document.querySelectorAll('.form-container').forEach(form => form.style.display = 'none');
+            // Show the selected form
+            document.getElementById(formId + '-form').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
