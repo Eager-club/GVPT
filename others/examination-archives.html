@@ -9,7 +9,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            
         }
         .container {
             display: flex;
@@ -17,13 +16,13 @@
             align-items: center;
             padding: 20px;
         }
-        .title1 {
+        .title1{
             background-color: #22316C;
             color: white;
             width: 56%;
-            margin-top: 14px;
+            margin-top:12px;
             text-align: center;
-            padding: 10px;
+            padding: 10px ;
             font-size: 24px;
             font-weight: bold;
         }
@@ -31,6 +30,8 @@
             width: 100%;
             max-width: 800px;
             margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
         }
         .circular-item {
             background-color: #f9f9f9;
@@ -65,10 +66,6 @@
             background-color: #344ba7;
         }
         .hidden-item {
-            display: none;
-        }
-        .results,
-        .time-table {
             display: none;
         }
     </style>
@@ -226,7 +223,7 @@
                 if (showingAll) {
                     // Hide additional items
                     circularItems.forEach((item, index) => {
-                        if (index >= 10) {
+                        if (index >= 5) {
                             item.style.display = 'none';
                         }
                     });
@@ -243,7 +240,7 @@
     
             // Initially hide additional items
             circularItems.forEach((item, index) => {
-                if (index >= 10) {
+                if (index >= 14) {
                     item.style.display = 'none';
                 }
             });
