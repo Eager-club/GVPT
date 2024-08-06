@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIPC</title>
+    <style>
+        *
+        {
+            margin: 0;
+            border: 0;
+            font-family: "Inter", sans-serif;
+        }
+        .title1{
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            color: #22316C;
+        }
+        .content {
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .c1 {
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            height: 135px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        .c1 h1 {
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .content1 {
+                flex-direction: column;
+                align-items: center;
+            }
+            .c1 {
+                width: 90%;
+                margin-bottom: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .title {
+                padding: 20px;
+            }
+            .c1 {
+                height: auto;
+                padding: 20px;
+            }
+            .c1 h1 {
+                font-size: 1.2rem;
+            }
+        }
+        .c1:hover {
+            background-color: #344ba7bf;
+            
+        }
+        .c1 h1:hover{
+            color: white;
+        }
+        a
+        {
+            text-decoration: none;
+        }
+        a h1{
+            color: black;
+        }
+        .content1 {
+            display: flex;
+           padding-left: 63px ;
+           margin-top: 10px;
+           margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <div class="container">
+        <div class="container">
+            <div class="title1">
+                <h1>IIPC</h1>
+            </div>
+            <div class="content">
+                <div class="c1" id="button1">
+                    <a href="javascript:void(0)"><h1>MEMBERS OF IIPC</h1></a>
+                </div>
+                <div class="c1" id="button2">
+                    <a href="javascript:void(0)"><h1>INDUSTINDUSTRIAL VISITS</h1></a>
+                </div>
+                <div class="c1" id="button3">
+                    <a href="javascript:void(0)"><h1>GUEST LECTURE</h1></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="c1" id="button1">
+                    <a href="javascript:void(0)"><h1>MOU’s</h1></a>
+                </div>
+                <div class="c1" id="button2">
+                    <a href="javascript:void(0)"><h1>MDP PROGRAMS</h1></a>
+                </div>
+                <div class="c1" id="button3">
+                    <a href="javascript:void(0)"><h1>SESSIONS WITH PROFESSIONAL BODIES</h1></a>
+                </div>
+            </div>
+            <div class="content1">
+                <div class="c1" id="button1">
+                    <a href="javascript:void(0)"><h1>CONSULTANCIES</h1></a>
+                </div>
+            </div>
+        </div>
+        <script src="./templates/includeHTML.js" defer></script>
+        <div id="footer-placeholder"></div>
+</body>
+</html>
