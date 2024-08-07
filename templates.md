@@ -29,6 +29,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-clip: content-box;
+            background-size: cover;
             position: relative;
         }
 ```
