@@ -4,268 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AICTE</title>
-    
+    <script src="../templates/includeHTML.js" defer></script>
     <style>
         * {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
             font-family: "Inter", sans-serif;
-            
         }
-        body {
-            font-size: 20px;
-            line-height: 1.6;
-            text-align: center;
-           
-        }
-        .title1 {
-            display: flex;
-            justify-content: center;
-            padding: 40px;
-            color: #22316C;
-            text-align: center;
+        header {
+            background-image: url("/assets/home.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-clip: content-box;
+            position: relative;
         }
         .container {
-            
-            padding: 20px;
+            width: 100%;
+            position: relative;
+        }
+        .container > .head {
+            text-align: center;
+            padding: 1.3vw;
+            color: #22316C;
+            font-size: 6vw;
         }
         .content {
-            padding: 10px;
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .c1 {
-            border: 2px solid black;
-            border-radius: 5px;
             width: 100%;
-            max-width: 400px;
-            height: 135px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 10px;
-            transition: all 0.3s ease;
+            gap: 5%;
         }
-        .c1 h1 {
-            text-align: center;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
+        .content button {
+            padding: 15px 25px;
+            border: unset;
+            border-radius: 15px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 700;
+            font-size: 1.3vw;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
         }
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                align-items: center;
-            }
-            .c1 {
-                width: 90%;
-                margin-bottom: 10px;
-            }
+        .content button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #22316C;
+            z-index: -1;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
         }
-        @media (max-width: 480px) {
-            .title1 {
-                padding: 20px;
-            }
-            .c1 {
-                height: auto;
-                padding: 20px;
-            }
-            .c1 h1 {
-                font-size: 1.2rem;
-            }
+        .content button:hover {
+            color: #e8e8e8;
         }
-        .c1:hover, .c1.active {
-            background-color: #22316DBF;
-            color: white;
-        }
-        .file {
-            border: 2px solid black;
+        .content button:hover::before {
             width: 100%;
-            max-width: 1115px;
-            height: 75px;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .file:hover, .file.active {
-            background-color: #22316DBF;
-            color: white;
-        }
-        .file h1 {
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
         }
         .box {
+            margin-top: 2.5vw;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 0; /* Adjust this value as needed */
         }
         .heading {
-            background: #344ba7bf;
-            border: 2px solid rgb(8, 8, 8);
+            background: #22316DBF;
             color: white;
+            text-align: center;
+            border-radius: 15px;
             width: 100%;
-            max-width: 1115px;
-            height: 75px;
-            display: flex;
-            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .heading h6 {
+            font-size: 2vw;
             justify-content: center;
-            transition: all 0.3s ease;
-            margin-bottom: 10px; /* Adjust this value as needed */
+            margin-top: 0.01vw;
+            padding: 2%;
         }
         .files {
-            padding: 20px;
             width: 100%;
-            max-width: 1115px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .file {
+            width: 100%;
+            background-color: rgba(34, 49, 104, 0.25);
+            border: 0.17vw solid transparent;
+            border-radius: 10px;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .file:hover, .file.active {
+            background-color: rgba(34, 49, 104, 0.55);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+        }
+        .file h6:hover, .file.active h6 {
+            color: white;
+        }
+        .file h6 {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.67vw;
         }
         a {
             text-decoration: none;
-            color: inherit;
+            color: black;
         }
-        .head {
-            display: flex;
-            justify-content: center;
-            width: 100%;
+        .c1.active {
+            background-color: #22316c;
+            color: white;
+        }
+        .sub1 {
+            margin-top: 5.83vw;
         }
         .hidden {
             display: none;
         }
         .visible {
+            padding: 4vw;
             display: block;
-            margin-top: 20px;
+        }
+        .file {
+            width: 97%;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            padding: 1.3%;
+        }
+        .file button {
+            color: #22316C;
+            font-size: medium;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .file:hover button {
+            font-size: large;
+            color: #e78709;
+            text-decoration: underline;
+            text-underline-offset: calc(4px);
+        }
+        .scroll-to-top {
+            position: fixed;
+            right: 20px;
+            background-color: #22316C;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s ease;
+            z-index: 1000;
+        }
+        .scroll-to-top.show {
+            opacity: 1;
+            box-shadow: 0 0 20px white;
+        }
+        .scroll-to-top:hover {
+            background-color: #e78709;
         }
         @media (max-width: 768px) {
-            .heading, .file {
-                width: 100%;
-                height: auto;
-                padding: 10px;
+            .content button {
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 1.6vw;
             }
-            .file h1 {
-                font-size: 1rem;
+            .heading {
+                border-radius: 5px;
             }
-            .files {
-                padding: 10px;
+            .file p {
+                font-size: 3vw;
+            }
+            .file {
+                border-radius: 6px;
+            }
+            .file button {
+                font-size: 3vw;
+                display: flex;
+                white-space: nowrap;
+            }
+            .scroll-to-top.show {
+                display: none;
             }
         }
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .heading, .file {
-                width: 90%;
-                height: auto;
-            }
-            .files {
-                padding: 15px;
-            }
+        footer {
+            height: 200px;
+            position: relative;
         }
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
+    <header id="nav-placeholder"></header>
+   
     <div class="container">
-        <div class="title1">
-            <h1>AICTE MANDATORY INFORMATION</h1>
+        <div class="head">
+            <h6>AICTE MANDATORY INFORMATION</h6>
         </div>
         <div class="content">
-            <div class="c1" id="button1">
-                <a href="javascript:void(0)"><h1>DISCLOSURE</h1></a>
-            </div>
-            <div class="c1" id="button2">
-                <a href="javascript:void(0)"><h1>NBA ACCREDITATION STATUS</h1></a>
-            </div>
-            <div class="c1" id="button3">
-                <a href="javascript:void(0)"><h1>AICTE EXTENSION OF APPROVAL</h1></a>
-            </div>
+            <a href="javascript:void(0)"><button class="c1" id="button1">DISCLOSURE</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button2">NBA ACCREDITATION STATUS</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button3">AICTE EXTENSION OF APPROVAL</button></a>
         </div>
     </div>
-    <div id="sub1" class="hidden">
-        <div class="head">
-            <div class="heading">
-                <h1>DISCLOSURE</h1>
-            </div>
-        </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    <a href=""><h1>AICTE MANDATORY DISCLOSURE 2022-23</h1></a>
-                </div>
-                <div class="file">
-                    <a href=""><h1>AICTE MANDATORY DISCLOSURE</h1></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="sub2" class="hidden">
-        <div class="head">
-            <div class="heading">
-                <h1>NBA ACCREDITATION STATUS</h1>
-            </div>
-        </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    <a href=""><h1>MASTER OF BUSINESS ADMINISTRATION</h1></a>
-                </div>
-                <div class="file">
-                    <a href=""><h1>ENGINEERING & TECHNOLOGY PROGRAMS (CIVIL, CSE, ECE, MECH)</h1></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="sub3" class="hidden">
-        <div class="head">
-            <div class="heading">
-                <h1>AICTE EXTENSION OF APPROVAL</h1>
-            </div>
-        </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    <a href=""><h1>AICTE EOA APPROVAL LETTER 2023-2024</h1></a>
-                </div>
-                <div class="file">
-                    <a href=""><h1>AICTE EOA APPROVAL LETTER 2023-2022</h1></a>
-                </div>
-                <div class="file">
-                    <a href=""><h1>AICTE EOA APPROVAL LETTER 2022-2021</h1></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        document.getElementById('button1').addEventListener('click', function() {
-            toggleVisibility('button1', 'sub1');
-        });
+    <div id="sub1" class="hidden"></div>
+    <div id="sub2" class="hidden"></div>
+    <div id="sub3" class="hidden"></div>
+    <div id="sub4" class="hidden"></div>
+    <button id="scrollToTop" class="scroll-to-top">
+        &#8593;
+    </button>
+    <footer id="footer-placeholder"></footer>
+    <script type="module">
+        import aictedata from '../data/topadataaicte.js';
 
-        document.getElementById('button2').addEventListener('click', function() {
-            toggleVisibility('button2', 'sub2');
-        });
-
-        document.getElementById('button3').addEventListener('click', function() {
-            toggleVisibility('button3', 'sub3');
-        });
+        function renderSection(aicteId, data) {
+            const container = document.getElementById(aicteId);
+            container.innerHTML = `
+                <div class="head">
+                    <div class="heading">
+                        <h6>${data.heading}</h6>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="files">
+                        ${data.files.map(file => `
+                            <div class="file">
+                                <p>${file.text}</p>
+                                <a href="${file.link}"><button>Click me</button></a>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
 
         function toggleVisibility(buttonId, sectionId) {
-            var sections = ['sub1', 'sub2', 'sub3'];
-            var buttons = ['button1', 'button2', 'button3'];
+            const sections = ['sub1', 'sub2', 'sub3'];
+            const buttons = ['button1', 'button2', 'button3'];
 
-            sections.forEach(function(id) {
-                var section = document.getElementById(id);
+            sections.forEach(id => {
+                const section = document.getElementById(id);
                 if (id === sectionId) {
-                    section.classList.toggle('visible');
-                    section.classList.toggle('hidden');
+                    section.classList.add('visible');
+                    section.classList.remove('hidden');
                 } else {
                     section.classList.remove('visible');
                     section.classList.add('hidden');
                 }
             });
 
-            buttons.forEach(function(id) {
-                var button = document.getElementById(id);
+            buttons.forEach(id => {
+                const button = document.getElementById(id);
                 if (id === buttonId) {
                     button.classList.add('active');
                 } else {
@@ -273,8 +279,58 @@
                 }
             });
         }
+
+        Object.keys(aictedata).forEach(aicteId => {
+            renderSection(aicteId, aictedata[aicteId]);
+        });
+
+        document.getElementById('button1').addEventListener('click', () => toggleVisibility('button1', 'sub1'));
+        document.getElementById('button2').addEventListener('click', () => toggleVisibility('button2', 'sub2'));
+        document.getElementById('button3').addEventListener('click', () => toggleVisibility('button3', 'sub3'));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleVisibility('button1', 'sub1');
+        });
+        
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        const footer = document.querySelector('footer');
+
+        function handleScroll() {
+            if (window.scrollY > 100) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+            updateScrollToTopButtonPosition();
+        }
+
+        function updateScrollToTopButtonPosition() {
+            const footerRect = footer.getBoundingClientRect();
+            const buttonRect = scrollToTopButton.getBoundingClientRect();
+            const footerTop = footerRect.top;
+            const buttonHeight = buttonRect.height;
+            const viewportHeight = window.innerHeight;
+            const footerBuffer = 10;
+
+            if (footerTop < viewportHeight) {
+                const bottomOffset = Math.max(footerTop - buttonHeight - footerBuffer, 20);
+                scrollToTopButton.style.bottom = `${bottomOffset}px`;
+            } else {
+                scrollToTopButton.style.bottom = '20px';
+            }
+        }
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', updateScrollToTopButtonPosition);
+
+        updateScrollToTopButtonPosition();
     </script>
-    <script src="./templates/includeHTML.js" defer></script>
-    <div id="footer-placeholder"></div>
 </body>
 </html>
