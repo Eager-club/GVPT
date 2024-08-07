@@ -22,6 +22,16 @@
     <link rel="stylesheet" href="./templates/preloder.css">
 
 ```
+# styling header background
+```
+          header {
+            background-image: url("image url");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-clip: content-box;
+            position: relative;
+        }
+```
 # code is always in btwn main
 ```
 <body>
