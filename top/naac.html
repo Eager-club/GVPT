@@ -20,7 +20,7 @@
         .container {
             width: 100%;
             position: relative;
-            padding-bottom: 60px; /* Enough space for the button at the bottom */
+            /* padding-bottom: 1%; Enough space for the button at the bottom */
         }
         .container > .head {
             text-align: center;
@@ -85,7 +85,7 @@
         .heading h6 {
             font-size: 2vw;
             justify-content: center;
-            margin-top: 1.67vw;
+            margin-top: 0.01vw;
             padding: 2%;
         }
         .files {
@@ -130,7 +130,7 @@
             display: none;
         }
         .visible {
-            padding: 4.58vw;
+            padding: 4vw;
             display: block;
         }
         .file {
@@ -176,11 +176,34 @@
         }
         .scroll-to-top.show {
             opacity: 1;
+            box-shadow: 0 0 20px white;
         }
         .scroll-to-top:hover {
             background-color: #e78709;
         }
-
+        @media (max-width: 768px) {
+            .content button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.6vw;}
+            .heading {
+                border-radius: 5px;
+            }
+            .file p{
+                font-size: 3vw;
+            }
+            .file{
+                border-radius: 6px;
+            }
+            .file button{
+                font-size: 3vw;
+                display: flex;
+                white-space: nowrap;
+            }
+            .scroll-to-top.show{
+                display: none;
+            }
+        }
         footer {
             height: 200px; /* Adjust according to your footer height */
             position: relative; /* Ensure footer has a relative position */
@@ -200,80 +223,34 @@
             <a href="javascript:void(0)"><button class="c1" id="button3">NAAC SSR</button></a>
             <a href="javascript:void(0)"><button class="c1" id="button4">IIQA</button></a>
         </div>
-        <button id="scrollToTop" class="scroll-to-top">
-            &#9650; <!-- Unicode character for up arrow -->
-        </button>
+
     </div>
 
     <div id="sub1" class="hidden"></div>
     <div id="sub2" class="hidden"></div>
     <div id="sub3" class="hidden"></div>
     <div id="sub4" class="hidden"></div>
-    
+    <button id="scrollToTop" class="scroll-to-top">
+        &#8593; <!-- Unicode character for up arrow -->
+    </button>
     <footer id="footer-placeholder"></footer>
-    
-    <script>
-        const sectionsData = {
-            sub1: {
-                heading: 'NAAC ADDENDUM',
-                files: [
-                    { text: 'CRITERION 1 CIRCULAR ASPECTS', link: '#' },
-                    { text: 'CRITERION 2 TEACHING-LEARNING & EVALUATION', link: '#' },
-                    { text: 'CRITERION 3 RESEARCH, INNOVATIONS & EXTENSIONS', link: '#' },
-                    { text: 'CRITERION 4 INFRASTRUCTURE & LEARNING RESOURCES', link: '#' },
-                    { text: 'CRITERION 5 STUDENT SUPPORT & PROGRESSION', link: '#' },
-                    { text: 'CRITERION 6 GOVERNANCE, LEADERSHIP AND MANAGEMENT', link: '#' },
-                    { text: 'CRITERION 7 VALUES AND BEST PRACTICES', link: '#' }
-                ]
-            },
-            sub2: {
-                heading: 'AQAR',
-                files: [
-                    { text: 'AQAR REPORT 2022 - 2023', link: '#' },
-                    { text: 'AQAR REPORT 2021 - 2022', link: '#' },
-                    { text: 'AQAR REPORT 2020 - 2021', link: '#' },
-                    { text: 'AQAR REPORT 2019 - 2020', link: '#' },
-                    { text: 'AQAR REPORT 2018 - 2019', link: '#' },
-                    { text: 'AQAR REPORT 2017 - 2018', link: '#' },
-                    { text: 'AQAR REPORT 2016 - 2017', link: '#' },
-                    { text: 'AQAR REPORT 2015 - 2016', link: '#' },
-                    { text: 'AQAR REPORT 2014 - 2015', link: '#' },
-                    { text: 'AQAR REPORT 2013 - 2014', link: '#' }
-                ]
-            },
-            sub3: {
-                heading: 'NAAC SSR',
-                files: [
-                    { text: 'SSR 2022 - 2023', link: '#' },
-                    { text: 'SSR 2021 - 2022', link: '#' },
-                    { text: 'SSR 2020 - 2021', link: '#' },
-                    { text: 'SSR 2019 - 2020', link: '#' }
-                ]
-            },
-            sub4: {
-                heading: 'IIQA',
-                files: [
-                    { text: 'IIQA 2017 - 2018', link: '#' },
-                    { text: 'RTI ACT 2005', link: '#' },
-                    { text: 'RTI ACT 2005-NEW', link: '#' }
-                ]
-            }
-        };
+    <script type="module">
+        import naacData from '../data/topdata.js';
 
-        function renderSection(sectionId, sectionData) {
-            const container = document.getElementById(sectionId);
+        function renderSection(naacId, data) {
+            const container = document.getElementById(naacId);
             container.innerHTML = `
                 <div class="head">
                     <div class="heading">
-                        <h6>${sectionData.heading}</h6>
+                        <h6>${data.heading}</h6>
                     </div>
                 </div>
                 <div class="box">
                     <div class="files">
-                        ${sectionData.files.map(file => `
+                        ${data.files.map(file => `
                             <div class="file">
                                 <p>${file.text}</p>
-                                <a href="${file.link}"><button>click me</button></a>
+                                <a href="${file.link}"><button>Click me</button></a>
                             </div>
                         `).join('')}
                     </div>
@@ -282,11 +259,11 @@
         }
 
         function toggleVisibility(buttonId, sectionId) {
-            var sections = ['sub1', 'sub2', 'sub3', 'sub4'];
-            var buttons = ['button1', 'button2', 'button3', 'button4'];
+            const sections = ['sub1', 'sub2', 'sub3', 'sub4'];
+            const buttons = ['button1', 'button2', 'button3', 'button4'];
 
             sections.forEach(id => {
-                var section = document.getElementById(id);
+                const section = document.getElementById(id);
                 if (id === sectionId) {
                     section.classList.add('visible');
                     section.classList.remove('hidden');
@@ -297,7 +274,7 @@
             });
 
             buttons.forEach(id => {
-                var button = document.getElementById(id);
+                const button = document.getElementById(id);
                 if (id === buttonId) {
                     button.classList.add('active');
                 } else {
@@ -306,87 +283,71 @@
             });
         }
 
-        Object.keys(sectionsData).forEach(sectionId => {
-            renderSection(sectionId, sectionsData[sectionId]);
+        Object.keys(naacData).forEach(naacId => {
+            renderSection(naacId, naacData[naacId]);
         });
 
-        document.getElementById('button1').addEventListener('click', function() {
+        document.getElementById('button1').addEventListener('click', () => toggleVisibility('button1', 'sub1'));
+        document.getElementById('button2').addEventListener('click', () => toggleVisibility('button2', 'sub2'));
+        document.getElementById('button3').addEventListener('click', () => toggleVisibility('button3', 'sub3'));
+        document.getElementById('button4').addEventListener('click', () => toggleVisibility('button4', 'sub4'));
+
+        document.addEventListener('DOMContentLoaded', () => {
             toggleVisibility('button1', 'sub1');
         });
+        
+        // Button for scrolling to the top
 
-        document.getElementById('button2').addEventListener('click', function() {
-            toggleVisibility('button2', 'sub2');
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        const footer = document.querySelector('footer');
+
+        // Function to handle scroll events
+        function handleScroll() {
+            // Show or hide the button based on scroll position
+            if (window.scrollY > 100) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+            updateScrollToTopButtonPosition();
+        }
+
+        // Function to update the button's position
+        function updateScrollToTopButtonPosition() {
+            const footerRect = footer.getBoundingClientRect();
+            const buttonRect = scrollToTopButton.getBoundingClientRect();
+
+            // Calculate the space between the button and the footer
+            const footerTop = footerRect.top;
+            const buttonHeight = buttonRect.height;
+            const viewportHeight = window.innerHeight;
+            const footerBuffer = 10; // Buffer to keep the button above the footer
+
+            if (footerTop < viewportHeight) {
+                // Adjust button position to stay above the footer
+                const bottomOffset = Math.average(footerTop - buttonHeight - footerBuffer, 20);
+                scrollToTopButton.style.bottom = `${bottomOffset}px`;
+            } else {
+                // Fixed position if not near footer
+                scrollToTopButton.style.bottom = '20px';
+            }
+        }
+
+        // Function to handle scroll-to-top button click
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
-        document.getElementById('button3').addEventListener('click', function() {
-            toggleVisibility('button3', 'sub3');
-        });
+        // Add event listeners for scroll and resize events
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', updateScrollToTopButtonPosition);
 
-        document.getElementById('button4').addEventListener('click', function() {
-            toggleVisibility('button4', 'sub4');
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            toggleVisibility('button1', 'sub1');
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-    // Initial setup of the visibility of sections
-    toggleVisibility('button1', 'sub1');
-});
-
-// Button for scrolling to the top
-
-const scrollToTopButton = document.getElementById('scrollToTop');
-const footer = document.querySelector('footer');
-
-// Function to handle scroll events
-function handleScroll() {
-    // Show or hide the button based on scroll position
-    if (window.scrollY > 100) {
-        scrollToTopButton.classList.add('show');
-    } else {
-        scrollToTopButton.classList.remove('show');
-    }
-    updateScrollToTopButtonPosition();
-}
-
-// Function to update the button's position
-function updateScrollToTopButtonPosition() {
-    const footerRect = footer.getBoundingClientRect();
-    const buttonRect = scrollToTopButton.getBoundingClientRect();
-
-    // Calculate the space between the button and the footer
-    const footerTop = footerRect.top;
-    const buttonHeight = buttonRect.height;
-    const viewportHeight = window.innerHeight;
-    const footerBuffer = 10; // Buffer to keep the button above the footer
-
-    if (footerTop < viewportHeight) {
-        // Adjust button position to stay above the footer
-        const bottomOffset = Math.average(footerTop - buttonHeight - footerBuffer, 20);
-        scrollToTopButton.style.bottom = `${bottomOffset}px`;
-    } else {
-        // Fixed position if not near footer
-        scrollToTopButton.style.bottom = '20px';
-    }
-}
-
-// Function to handle scroll-to-top button click
-scrollToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Add event listeners for scroll and resize events
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', updateScrollToTopButtonPosition);
-
-// Initial position update
-updateScrollToTopButtonPosition();
-
+        // Initial position update
+        updateScrollToTopButtonPosition();
     </script>
+ 
 </body>
 </html>

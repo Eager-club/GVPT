@@ -32,5 +32,3 @@ window.addEventListener('scroll', function() {
 });
 
 
-
-
