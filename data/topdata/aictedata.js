@@ -1,4 +1,4 @@
-const aictedata = {
+const aicteData = {
     sub1: {
         heading: 'DISCLOSURE',
         files: [
@@ -23,4 +23,4 @@ const aictedata = {
     }
 };
 
-export default aictedata;
+export default aicteData;
