@@ -232,7 +232,7 @@
     </button>
     <footer id="footer-placeholder"></footer>
     <script type="module">
-        import aictedata from '../data/topadataaicte.js';
+        import aicteData from '../data/topdata/aictedata.js';
 
         function renderSection(aicteId, data) {
             const container = document.getElementById(aicteId);
@@ -280,8 +280,8 @@
             });
         }
 
-        Object.keys(aictedata).forEach(aicteId => {
-            renderSection(aicteId, aictedata[aicteId]);
+        Object.keys(aicteData).forEach(aicteId => {
+            renderSection(aicteId, aicteData[aicteId]);
         });
 
         document.getElementById('button1').addEventListener('click', () => toggleVisibility('button1', 'sub1'));
