@@ -1,0 +1,42 @@
+<style>
+    .scroll-to-top {
+            position: fixed;
+            right: 20px;
+            background-color: #22316C;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s ease; /* Smooth transition for both opacity and bottom */
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+        .scroll-to-top.show {
+            opacity: 1;
+            box-shadow: 0 0 20px white;
+        }
+        .scroll-to-top:hover {
+            background-color: #e78709;
+        }
+        @media (max-width: 768px) {
+            .scroll-to-top.show{
+                display: none;
+            }
+        }
+    
+</style>
+<button id="scrollToTop" class="scroll-to-top">
+    &#8593; <!-- Unicode character for up arrow -->
+</button>
+<script>
+    
+    </script>
+ 
+</script>
