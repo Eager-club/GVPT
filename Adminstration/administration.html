@@ -11,42 +11,207 @@
     <script src="../templates/includeHTML.js" defer></script>
     <script src="https://unpkg.com/htmx.org@1.8.5"></script>
     <link rel="stylesheet" href="administration.css">
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    
+    <style>
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 1000,
+    'GRAD' 0,
+    'opsz' 48;
+}
+.view{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    right: 3%;
+    /* bottom: 5rem; */
+} 
+.view button,.view-less,.view-more{
+    background-color: rgba(34, 49, 104, 2.5%); ;
+    padding: 4px 8px 4px 8px;
+    border: 1px solid  rgba(34, 49, 104, 3%);
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+}
+
+.view button span,.view-more span,.view-less span{
+    font-weight: 1000;
+    color: #22316C;
+    margin-top: 4px;
+}
+.view button:hover,.view-less:hover ,.view-more:hover{
+    background-color: #22316C;
+}
+.view button:hover span,.view-less:hover span,.view-more:hover span{
+    color: white;
+}
+
+</style>
 <body>
     <header id="nav-placeholder"></header>
     <div class="cards">
         <div class="container">
-            <h1 class="heading">HEADS OF COLLEGE</h1>
-            <div class="card-container" id="card-container"></div>
-            <span id="Directors"></span><br><br><br><br>
-            <h1 class="heading">DIRECTORS</h1>
-            <div id="director-container"></div><br>
-            <div class="view"><a href="##" id="view-all-director"><button>view more</button></a></div>
-            <span id="deans"></span><br><br><br><br>
-            <div >
-            <h1 class="heading" >DEANS</h1>
-            <div id="deans-container"></div>
-           </div>
-            <span id="controllers"></span><br><br><br><br>
-            <h1 class="heading" >CONTROLLER OF EXAMINATION</h1>
-            <div id="coe-container" ></div>
-            <span  id="hod-pg"></span><br><br><br><br>
-            <h1 class="heading">HEAD OF DEPARTMENTS-PG</h1>
-            <div id="hodpg-container" ></div>
-            <span  id="hod-ET"></span><br><br><br><br>
-            <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
-            <div id="hodet-container"></div>
-            <div class="view"><a href="##" id="view-all-hodet"><button>view more</button></a></div>
-            <span id="hod-ug"></span><br><br><br><br>
-            <h1 class="heading" >HEAD OF DEPARTMENTS-UG</h1>
-            <div id="hodug-container"></div>
-            <div class="view"><a href="##" id="view-all-hodug"><button>view more</button></a></div>
-            <span id="COORDINATORS"></span><br><br><br><br>
-            <h1 class="heading" >COORDINATORS</h1>
-            <div id="cod-container"></div>
-            <div class="view"><a href="##" id="view-all-cod"><button>view more</button></a></div>
+            <!-- Heads of College -->
+            <section>
+                <h1 class="heading">HEADS OF COLLEGE</h1>
+                <div class="card-container" id="card-container"></div>
+            </section>
+    
+            <!-- Directors -->
+            <section>
+                <h1 class="heading">DIRECTORS</h1>
+                <div class="view">
+                    <a href="#" id="view-all-director">
+                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                    </a>
+                </div>
+                <div class="card-container" id="director-container"></div>
+                
+            </section>
+    
+            <!-- Deans -->
+            <section>
+                <h1 class="heading">DEANS</h1>
+                <div class="card-container" id="deans-container"></div>
+            </section>
+    
+            <!-- Controller of Examination -->
+            <section>
+                <h1 class="heading">CONTROLLER OF EXAMINATION</h1>
+                <div class="card-container" id="coe-container"></div>
+            </section>
+    
+            <!-- Head of Departments-PG -->
+            <section>
+                <h1 class="heading">HEAD OF DEPARTMENTS-PG</h1>
+                <div class="card-container" id="hodpg-container"></div>
+            </section>
+    
+            <!-- Head of Departments-ET -->
+            <section>
+                <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
+                <div class="card-container" id="hodet-container"></div>
+                <div class="view">
+                    <a href="#" id="view-all-hodet">
+                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                    </a>
+                </div>
+            </section>
+    
+            <!-- Head of Departments-UG -->
+            <section>
+                <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
+                <div class="card-container" id="hodug-container"></div>
+                <div class="view">
+                    <a href="#" id="view-all-hodug">
+                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                    </a>
+                </div>
+            </section>
+    
+            <!-- Coordinators -->
+            <section>
+                <h1 class="heading">COORDINATORS</h1>
+                <div class="card-container" id="cod-container"></div>
+                <div class="view">
+                    <a href="#" id="view-all-cod">
+                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                    </a>
+                </div>
+            </section>
         </div>
+        <div class="res-container">
+            <table class="table">
+                <!-- Heads of College -->
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Phone</th>
+                <th>Extension</th>
+                <th>Email</th>
+                <th>Image</th>
+
+                <tr>
+                    <th colspan="6" class="section-heading">HEADS OF COLLEGE</th>
+                </tr>
+                <tr class="card-container" id="card-container">
+
+                </tr>
+                
+                <!-- Directors -->
+                <tr>
+                    <th colspan="6" class="section-heading">DIRECTORS</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-container" id="director-container"></div>
+                    </td>
+                </tr>
+                
+                <!-- Deans -->
+                <tr>
+                    <th colspan="6" class="section-heading">DEANS</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-container" id="deans-container"></div>
+                    </td>
+                </tr>
+                
+                <!-- Controller of Examination -->
+                <tr>
+                    <th colspan="6" class="section-heading">CONTROLLER OF EXAMINATION</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-container" id="coe-container"></div>
+                    </td>
+                </tr>
+                
+                <!-- Head of Departments-PG -->
+                <tr>
+                    <th colspan="6" class="section-heading">HEAD OF DEPARTMENTS-PG</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-container" id="hodpg-container"></div>
+                    </td>
+                </tr>
+                
+                <!-- Head of Departments-ET -->
+                <tr>
+                    <th colspan="6" class="section-heading">HEAD OF DEPARTMENTS-ET</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-container" id="hodet-container"></div>
+                    </td>
+                </tr>
+                
+                <!-- Head of Departments-UG -->
+                <tr>
+                    <th colspan="6" class="section-heading">HEAD OF DEPARTMENTS-UG</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-container" id="hodug-container"></div>
+                    </td>
+                </tr>
+                
+                <!-- Coordinators -->
+                <tr>
+                    <th colspan="6" class="section-heading">COORDINATORS</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-container" id="cod-container"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
     </div>
+    
    
      <script type="module">
         import cardsData from '../faculty.js';
@@ -56,6 +221,7 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.dataset.id = data.id;
+                
 
                 let buttonHtml = '';
                 let buttondesignation = '';
@@ -99,25 +265,30 @@
                         <hr>
                         ${buttonHtml}
                         <div class="intro">
-                            <div class="opt">
-                                <p>Designation</p>
-                                <p>Phone No</p>
-                                <p>Extension</p>
-                                <p>Email</p>
-                            </div>
-                            <div class="colon">
-                                <p><strong>:</strong></p>
-                                <p><strong>:</strong></p>
-                                <p><strong>:</strong></p>
-                                <p><strong>:</strong></p>
-                            </div>
-                            <div class="fill">
-                                ${buttondesignation}
-                                <p><span class="phone-number">${data.phone}</span></p>
-                                <p><span class="extension">${data.extension}</span></p>
-                                <p><span class="email">${data.email}</span></p>
-                            </div>
+                            <table>
+                                <tr>
+                                    <td class="opt"><p>Designation</p></td>
+                                    <td class="colon"><p><strong>:</strong></p></td>
+                                    <td class="fill">${buttondesignation}</td>
+                                </tr>
+                                <tr>
+                                    <td class="opt"><p>Phone No</p></td>
+                                    <td class="colon"><p><strong>:</strong></p></td>
+                                    <td class="fill"><p><span class="phone-number">${data.phone}</span></p></td>
+                                </tr>
+                                <tr>
+                                    <td class="opt"><p>Extension</p></td>
+                                    <td class="colon"><p><strong>:</strong></p></td>
+                                    <td class="fill"><p><span class="extension">${data.extension}</span></p></td>
+                                </tr>
+                                <tr>
+                                    <td class="opt"><p>Email</p></td>
+                                    <td class="colon"><p><strong>:</strong></p></td>
+                                    <td class="fill"><p><span class="email">${data.email}</span></p></td>
+                                </tr>
+                            </table>
                         </div>
+
                     </div>
             `;
             `;
@@ -126,7 +297,8 @@
 
                 return card;
             }
-
+            // responsive table
+            
             function populateContainer(containerId, filterFunction, limit = 4) {
                 const container = document.getElementById(containerId);
                 const filteredCardsData = cardsData.filter(filterFunction);
@@ -150,14 +322,16 @@
 
                     if (isExpanded) {
                         // Collapse
-                        button.textContent = 'View More';
+                        button.innerHTML = '<span class="material-symbols-outlined">keyboard_arrow_down</span>';
                         button.classList.remove('view-less');
+                        button.classList.add('view-more');
                         container.innerHTML = ''; // Clear all cards
                         populateContainer(containerId, filterFunction, 4); // Show limited cards
                     } else {
                         // Expand
-                        button.textContent = 'View Less';
+                        button.innerHTML = '<span class="material-symbols-outlined">keyboard_arrow_up</span>';
                         button.classList.add('view-less');
+                        button.classList.remove('view-more');
                         populateContainer(containerId, filterFunction, 100); // Show all cards
                     }
 
@@ -179,6 +353,7 @@
             toggleView('view-all-cod', 'cod-container', cardData => cardData.cod === "8");
         });
     </script>
+    
     <footer id="footer-placeholder"></footer>
     <script src="script.js"></script>
 </body>
