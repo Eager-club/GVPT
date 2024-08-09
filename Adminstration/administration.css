@@ -188,7 +188,7 @@
       }
     @media (max-width: 600px) {
     .container{
-        display: none;
+        /* display: none; */
     }
     .container {
         width: 100%;
