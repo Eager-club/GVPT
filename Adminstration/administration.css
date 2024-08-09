@@ -58,6 +58,7 @@ border: 1px solid #22316d76;
 border-radius: 5px;
 padding: 3px;
 font-size: 25px;
+background-color: transparent;
 
 }
 .view :hover{
@@ -69,7 +70,7 @@ opacity: 60%;
     padding: 3px;
     font-size: 25px;
     background-color: white;
-    color: #22316D;
+    color: #000;
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: 5px;
@@ -77,9 +78,11 @@ opacity: 60%;
 }
 
 .view button:hover {
-    background-color: #22316D;
-    color: #fff;
+    background-color:transparent;
+    color:white;
     opacity: 60%;
+
+
 }
 
 .view button.view-less {
@@ -93,6 +96,7 @@ opacity: 60%;
 }
 a{
 text-decoration: none;
+color: #000;
 }
 .card{
 padding: 1px;
