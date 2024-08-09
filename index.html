@@ -14,7 +14,7 @@
     <title>GVPCDPGC</title>
     <script src="./templates/includeHTML.js" defer></script>
      <script src="./scprit.js"></script>
-    <link rel="stylesheet" href="./templates/preloder.css">
+    <!-- <link rel="stylesheet" href="./templates/preloder.css"> -->
     <style>
       *{
         font-family: "inter",sans-serif;
@@ -97,27 +97,7 @@
 
   }
   /* notification */
-  
-/* notification */
-.notifications{
-    position: relative;
-    background-color: #D9D9D9;
-    padding: 3px 0 3px 0;
-    display: flex;
-    align-items: center;
-    overflow-x: hidden;
-    
-}
-.notifications a {
-    text-decoration: solid;
-    color: #2f51bf;
-    font-size: 2.5vmin;
-    padding-left: 5vw;
-    direction: rtl;
-}
-.notifications a:hover,a:active {
-    color: #e78709;
-}
+
 /* page3 */
 .page3{
   width: 100%;
@@ -190,7 +170,7 @@
       margin: 0 5px;
     }
     /* Mobile Styles */
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       .page3 .carousel-item {
         display: block;
         text-align: center;
@@ -306,11 +286,6 @@
               </a></div>
             </div>
           </div>
-          <div class="page-margue">
-            <marquee  class="notifications nul" >
-              <a href="./notification"><span class="notify"></span></a>
-            </marquee>
-          </div>
           <div class="page2">
             <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
               <h1 style="color: white;padding-bottom: 3vh;">MISSION :</h1>
@@ -333,7 +308,7 @@
               </div>
             </div>
           </div>
-          <div class="page4">
+          <div class="page4" style="justify-content: center;">
             <div><h3>OUR RECRUITERS</h3></div>
             <div class="carousel-container">
               <!-- slider 1 -->
@@ -369,8 +344,9 @@
               </div>
             </div>
           </div>
+
       </main>
-      <footer id="footer-placeholder"></footer>
+ 
       <script>
         const heading = document.getElementById('dynamic-heading');
         const texts = ["Welcome to GVP", "Gayatri Vidya Parishad"]; // Array of texts
@@ -533,7 +509,10 @@
 
 
       </script>
+      <script src="./templates/preloader.js"></script>
         <script src="./notfication.js"></script>
-    </div>
+        
+        <footer id="footer-placeholder" delay></footer>
+
   </body>
 </html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACEMENT ACTIVITIES</title>
+    <script src="../templates/includeHTML.js" defer></script>
+    <link rel="stylesheet" href="./templates/preloder.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 160px;
+        }
+        .title1 {
+            background-color: #22316C;
+            color: white;
+            width: 56%;
+            margin-top: 12px;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .circular-list {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        .circular-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .circular-item:hover {
+            background-color: #22316DBF;
+            color: white;
+        }
+        .view-all-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #22316C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .view-all-button:hover {
+            background-color: #344ba7;
+        }
+    </style>
+</head>
+<body>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <div class="title1">PLACEMENT ACTIVITIES</div>
+        <div class="circular-list" id="circularList">
+            <div class="circular-item">PLACEMENT DETAILS OF 2022</div>
+            <div class="circular-item">BRANCH WISE PLACEMENTS DETAILS</div>
+            <div class="circular-item">OFFERED PACKAGES SUMMARY & PLACEMENTS SUMMARY</div>
+            <div class="circular-item">Overview of 2019-20 placements</div>
+            <div class="circular-item">Placement Selected Students 2016-2020 Batch</div>
+            <div class="circular-item">List of Companies Visited for Campus Drives-Engineering & Technology Program</div>
+            <div class="circular-item">Engineering & Technology Program Placement Report for the Academic Year 2018-19</div>
+            <div class="circular-item">Placement activities (UG)</div>
+            <div class="circular-item">Placement activities (UG)</div>
+            <div class="circular-item">Placements ( Msc Organic Chemistry)</div>
+            <div class="circular-item">Summary of Placement for the last four years 2018, 2017, 2016 and 2015</div>
+            <div class="circular-item">Summary of Placement for the last three years 2017, 2016 and 2015</div>
+            <div class="circular-item">Placement Selected Students 2013-2017 Batch</div>
+            <div class="circular-item">Placement Selected Students 2013-2017 Batch as on April, 2017</div>
+            <div class="circular-item">Placement Selected Students 2013-2017 Batch as on Sept. 2016</div>
+            <div class="circular-item">Placement Selected Students 2012-2016 Batch (Second Batch)</div>
+            <div class="circular-item">Placement Selected Students 2011-2015 Batch (First Batch)</div>
+            <div class="circular-item">Students Selected in Campus Drives as on March, 2016</div>
+            <div class="circular-item">Students Selected in Campus Drives as on February, 2016</div>
+            <div class="circular-item">Students Selected in Campus Drives as on 07-11-2015</div>
+            <div class="circular-item">Students Selected in POLARIS,HEXAGON, TECH MAHINDRA Campus Drive</div>
+            <div class="circular-item">Students Selected in POLARIS,HEXAGON, TECH MAHINDRA Campus Drive</div>
+            <div class="circular-item">Students Selected in WIPRO Campus Drive</div>
+            <div class="circular-item">Students Selected in TCS Campus Drive</div>
+            <div class="circular-item">Placement article in Andhra Jyothi Paper</div>
+            <div class="circular-item">Students Selected in Campus Drive as on 05.01.2015</div>
+            <div class="circular-item">Placement Press note in EENADU paper</div>
+            <div class="circular-item">Placement Press note in Andhra Jyothi paper</div>
+            <div class="circular-item">Students Selected in WIPRO Campus Drive</div>
+            <div class="circular-item">Students Selected in Campus Drives</div>
+            <div class="circular-item">Placement Activities Calendar for Final Year Students 2014-2015</div>
+            <div class="circular-item">Latest Technologies, Current Trends & Innovations in the IT Industry by Sri Hari Kishan Burle, Vice President,
+                Enterprise Architecture, Business Application Services, WIPRO</div>
+        </div>
+        <button class="view-all-button" id="viewAllButton" onclick="toggleView()">View All</button>
+        <button class="view-all-button" id="showLessButton" style="display: none; margin-left: 44%" onclick="toggleView()">Show Less</button>
+    </div>
+    <script>
+        const circularList = document.getElementById('circularList');
+        const viewAllButton = document.getElementById('viewAllButton');
+        const showLessButton = document.getElementById('showLessButton');
+
+        const initialVisibleItems = 8;
+        const circularItems = Array.from(circularList.children);
+
+        function toggleView() {
+            if (viewAllButton.style.display !== 'none') {
+                circularItems.forEach(item => item.style.display = 'block');
+                viewAllButton.style.display = 'none';
+                circularList.appendChild(showLessButton); // Move the Show Less button to the end
+                showLessButton.style.display = 'inline-block';
+            } else {
+                circularItems.forEach((item, index) => {
+                    item.style.display = index < initialVisibleItems ? 'block' : 'none';
+                });
+                viewAllButton.style.display = 'inline-block';
+                showLessButton.style.display = 'none';
+            }
+        }
+
+        function initializeView() {
+            circularItems.forEach((item, index) => {
+                item.style.display = index < initialVisibleItems ? 'block' : 'none';
+            });
+        }
+
+        initializeView();
+    </script>
+    <footer id="footer-placeholder"></footer>
+    <script src="script.js"></script>
+</body>
+</html>
