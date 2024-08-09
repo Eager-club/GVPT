@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Main</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <link rel="stylesheet" href="faculty.css">
     <style>
         * {
             margin: 0;
@@ -14,6 +17,8 @@
         .faculty-main {
             height: 100vh;
             width: 80%;
+            width: 90%;
+            justify-content: center;
             margin-left: 85px;
             position: relative;
         }
@@ -24,14 +29,15 @@
             font-size: 2.5em;
         }
         .faculty-main button {
-            height: 135px;
-            width: 400px;
+            /* height: 135px;
+            width: 400px; */
+            padding: 35px;
             background: transparent;
             border: 1px solid #22316D;
             color: #000000;
             font-weight: bolder;
             font-size: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-top: 30px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -39,6 +45,7 @@
         .faculty-main button:hover {
             background-color: #22316D;
             color: #ffffff;
+            background-position: right bottom;
             transform: translateY(-5px);
         }
         .top1, .top2 {
@@ -52,7 +59,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f1f1f1;
+            background-color: #f1f1f100;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -60,24 +67,68 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        .dropdown-content a {
+        .dropdown-content .dropdown-item {
+            color: black;
+            padding: 12px 16px;
+            border: 1px solid #00000094;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            width: 335px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+            /* Basic styling for .item class */
+        .dropdown-content .item {
             color: black;
             padding: 12px 16px;
             border: 1px solid #000000;
             border-radius: 5px;
             text-decoration: none;
+            margin-bottom: 2%;
             display: block;
-            width: 400px;
-            transition: background-color 0.3s ease;
+            width: 335px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .dropdown-content a:hover {
+
+        /* Hover effect for .item class */
+        .dropdown-content .item:hover {
             background-color: #e0e0e0;
+            color: #22316D; /* Optional: Change text color on hover */
+        }
+
+        .sub-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease, display 0.3s ease;
+        }
+
+        .sub-content.open {
+            display: block;
+            opacity: 1;
+        }
+        .dropdown-content .dropdown-item:hover {
+            background-color: #e0e0e0;
+        }
+        /* .dropdown-content .sub-content {
+            position:relative;
+            left: 0;
+            top: 100%;
+            display: none;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1;
+        } */
+        .dropdown-content .has-sub:hover  {
+            display: block;
         }
         .dropdown:hover .dropdown-content {
             display: block;
             opacity: 1;
-            top: 100%; /* Ensure the dropdown opens below the button */
-            left: 0;   /* Align with the left edge of the button */
+            top: 100%;
+            left: 0;
         }
         .dropdown:hover .dropbtn {
             background-color: #22316C;
@@ -114,7 +165,7 @@
                 height: auto;
                 padding: 10px 15px;
             }
-            .dropdown-content a {
+            .dropdown-content .dropdown-item {
                 font-size: 14px;
                 padding: 8px 10px;
             }
@@ -170,6 +221,11 @@
                 </div>  
             </div>
         </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Footer Content</p>
+            </div>
+        </footer>
     </div>
     <div id="footer-placeholder"  class="footer"></div>
 
