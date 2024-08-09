@@ -1,4 +1,4 @@
-const naacData = {
+export const naacData = {
     sub1: {
         heading: 'NAAC ADDENDUM',
         files: [
