@@ -62,18 +62,20 @@
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            border-radius: 5px;
+            border-radius: 10px;
+            padding:3px;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         .dropdown-content .dropdown-item {
             color: black;
             padding: 12px 16px;
-            border: 1px solid #00000094;
+            border: 0.5px solid #0000006e;
             border-radius: 5px;
             text-decoration: none;
             display: block;
-            width: 335px;
+            width: 330px;
+            margin-bottom: 1px;
             transition: background-color 0.3s ease;
             cursor: pointer;
         }
@@ -81,12 +83,12 @@
         .dropdown-content .item {
             color: black;
             padding: 12px 16px;
-            border: 1px solid #000000;
+            border: 1px solid #000;
             border-radius: 5px;
             text-decoration: none;
             margin-bottom: 2%;
             display: block;
-            width: 335px;
+            width: 330px;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
@@ -257,7 +259,7 @@
         </footer>
     </div>
     <script type="module">
-        import cardsData from '../faculty.js'; // Ensure the correct path to your faculty.js file
+        import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
     
         const aicteDropdowns = document.querySelectorAll('.aicte .dropdown');
         const universityDropdowns = document.querySelectorAll('.university .dropdown');
