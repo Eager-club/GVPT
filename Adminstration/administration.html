@@ -13,36 +13,43 @@
     <link rel="stylesheet" href="administration.css">
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <!-- <header hx-get="../templates/nav.html" hx-trigger="load" hx-swap="outerHTML"></header> -->
+    <header id="nav-placeholder"></header>
     <div class="cards">
         <div class="container">
             <h1 class="heading">HEADS OF COLLEGE</h1>
             <div class="card-container" id="card-container"></div>
+            <span id="Directors"></span><br><br><br><br>
             <h1 class="heading">DIRECTORS</h1>
-            <div id="director-container"></div>
+            <div id="director-container"></div><br>
             <div class="view"><a href="##" id="view-all-director"><button>view more</button></a></div>
-           
-            <h1 class="heading">DEANS</h1>
+            <span id="deans"></span><br><br><br><br>
+            <div >
+            <h1 class="heading" >DEANS</h1>
             <div id="deans-container"></div>
-            <h1 class="heading">CONTROLLER OF EXAMINATION</h1>
-            <div id="coe-container"></div>
+           </div>
+            <span id="controllers"></span><br><br><br><br>
+            <h1 class="heading" >CONTROLLER OF EXAMINATION</h1>
+            <div id="coe-container" ></div>
+            <span  id="hod-pg"></span><br><br><br><br>
             <h1 class="heading">HEAD OF DEPARTMENTS-PG</h1>
-            <div id="hodpg-container"></div>
+            <div id="hodpg-container" ></div>
+            <span  id="hod-ET"></span><br><br><br><br>
             <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
             <div id="hodet-container"></div>
             <div class="view"><a href="##" id="view-all-hodet"><button>view more</button></a></div>
-            <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
+            <span id="hod-ug"></span><br><br><br><br>
+            <h1 class="heading" >HEAD OF DEPARTMENTS-UG</h1>
             <div id="hodug-container"></div>
             <div class="view"><a href="##" id="view-all-hodug"><button>view more</button></a></div>
-            <h1 class="heading">COORDINATORS</h1>
+            <span id="COORDINATORS"></span><br><br><br><br>
+            <h1 class="heading" >COORDINATORS</h1>
             <div id="cod-container"></div>
-            <div class="view"><a href="##" id="view-all-cod"><button>view more</button></a></div>
+            <div class="view"><a href="##" id="view-all-cod"><button>View More</button></a></div>
         </div>
     </div>
    
      <script type="module">
-        import cardsData from '../faculty.js';
+        import cardsData from '../data/faculty.js';
 
         document.addEventListener('DOMContentLoaded', () => {
             function createCard(data) {
@@ -172,8 +179,7 @@
             toggleView('view-all-cod', 'cod-container', cardData => cardData.cod === "8");
         });
     </script>
-    <!-- <footer hx-get="../templates/footer.html" hx-trigger="load" hx-swap="outerHTML"></footer> -->
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder"></footer>
     <script src="script.js"></script>
 </body>
 </html> 

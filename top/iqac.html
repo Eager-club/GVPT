@@ -11,16 +11,17 @@
             font-family: "Inter", sans-serif;
         }
         header {
+            width: 100%;
             background-image: url("/assects/home.png");
             background-repeat: no-repeat;
             background-position: center;
-            background-clip: content-box;
+            background-size: cover;
             position: relative;
         }
         .container {
             width: 100%;
             position: relative;
-            /* padding-bottom: 1%; Enough space for the button at the bottom */
+            padding-bottom: 1%; 
         }
         .container > .head {
             text-align: center;
@@ -212,33 +213,28 @@
 </head>
 <body>
     <header id="nav-placeholder"></header>
-   
     <div class="container">
         <div class="head">
-            <h6>NAAC</h6>
+            <h6>IQAC</h6>
         </div>
         <div class="content">
-            <a href="javascript:void(0)"><button class="c1" id="button1">NAAC ADDENDUM</button></a>
-            <a href="javascript:void(0)"><button class="c1" id="button2">AQAR</button></a>
-            <a href="javascript:void(0)"><button class="c1" id="button3">NAAC SSR</button></a>
-            <a href="javascript:void(0)"><button class="c1" id="button4">IIQA</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button1">IQAC MINUTES & ATR REPORTS</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button2">ANNUAL REPORTS</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button3">ACADEMIC AUDIT REPORTS</button></a>
         </div>
-
     </div>
 
     <div id="sub1" class="hidden"></div>
     <div id="sub2" class="hidden"></div>
     <div id="sub3" class="hidden"></div>
-    <div id="sub4" class="hidden"></div>
     <button id="scrollToTop" class="scroll-to-top">
         &#8593; <!-- Unicode character for up arrow -->
     </button>
     <footer id="footer-placeholder"></footer>
     <script type="module">
-        import naacData from '../data/topdata.js';
-
-        function renderSection(naacId, data) {
-            const container = document.getElementById(naacId);
+        import iqacData from '../data/topdata/iqac.js';
+        function renderSection(iqacId, data) {
+            const container = document.getElementById(iqacId);
             container.innerHTML = `
                 <div class="head">
                     <div class="heading">
@@ -259,8 +255,8 @@
         }
 
         function toggleVisibility(buttonId, sectionId) {
-            const sections = ['sub1', 'sub2', 'sub3', 'sub4'];
-            const buttons = ['button1', 'button2', 'button3', 'button4'];
+            const sections = ['sub1', 'sub2', 'sub3'];
+            const buttons = ['button1', 'button2', 'button3'];
 
             sections.forEach(id => {
                 const section = document.getElementById(id);
@@ -283,14 +279,13 @@
             });
         }
 
-        Object.keys(naacData).forEach(naacId => {
-            renderSection(naacId, naacData[naacId]);
+        Object.keys(iqacData).forEach(iqacId => {
+            renderSection(iqacId, iqacData[iqacId]);
         });
 
         document.getElementById('button1').addEventListener('click', () => toggleVisibility('button1', 'sub1'));
         document.getElementById('button2').addEventListener('click', () => toggleVisibility('button2', 'sub2'));
         document.getElementById('button3').addEventListener('click', () => toggleVisibility('button3', 'sub3'));
-        document.getElementById('button4').addEventListener('click', () => toggleVisibility('button4', 'sub4'));
 
         document.addEventListener('DOMContentLoaded', () => {
             toggleVisibility('button1', 'sub1');
