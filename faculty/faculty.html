@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Main</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <link rel="stylesheet" href="faculty.css">
     <style>
         * {
             margin: 0;
@@ -13,7 +16,8 @@
         }
         .faculty-main {
             height: 100vh;
-            width: 80%;
+            width: 90%;
+            justify-content: center;
             margin-left: 85px;
             position: relative;
         }
@@ -24,14 +28,15 @@
             font-size: 2.5em;
         }
         .faculty-main button {
-            height: 135px;
-            width: 400px;
+            /* height: 135px;
+            width: 400px; */
+            padding: 35px;
             background: transparent;
             border: 1px solid #22316D;
             color: #000000;
             font-weight: bolder;
             font-size: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-top: 30px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -39,6 +44,7 @@
         .faculty-main button:hover {
             background-color: #22316D;
             color: #ffffff;
+            background-position: right bottom;
             transform: translateY(-5px);
         }
         .top1, .top2 {
@@ -52,32 +58,78 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f1f1f1;
+            background-color: #f1f1f100;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            border-radius: 5px;
+            border-radius: 10px;
+            padding:3px;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        .dropdown-content a {
+        .dropdown-content .dropdown-item {
             color: black;
             padding: 12px 16px;
-            border: 1px solid #000000;
+            border: 0.5px solid #0000006e;
             border-radius: 5px;
             text-decoration: none;
             display: block;
-            width: 400px;
+            width: 330px;
+            margin-bottom: 1px;
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
-        .dropdown-content a:hover {
+            /* Basic styling for .item class */
+        .dropdown-content .item {
+            color: black;
+            padding: 12px 16px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 2%;
+            display: block;
+            width: 330px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover effect for .item class */
+        .dropdown-content .item:hover {
             background-color: #e0e0e0;
+            color: #22316D; /* Optional: Change text color on hover */
+        }
+
+        .sub-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease, display 0.3s ease;
+        }
+
+        .sub-content.open {
+            display: block;
+            opacity: 1;
+        }
+        .dropdown-content .dropdown-item:hover {
+            background-color: #e0e0e0;
+        }
+        /* .dropdown-content .sub-content {
+            position:relative;
+            left: 0;
+            top: 100%;
+            display: none;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1;
+        } */
+        .dropdown-content .has-sub:hover  {
+            display: block;
         }
         .dropdown:hover .dropdown-content {
             display: block;
             opacity: 1;
-            top: 100%; /* Ensure the dropdown opens below the button */
-            left: 0;   /* Align with the left edge of the button */
+            top: 100%;
+            left: 0;
         }
         .dropdown:hover .dropbtn {
             background-color: #22316C;
@@ -98,7 +150,7 @@
             margin-top: var(--dropdown-height);
             transform: scale(1.05);
         }
-
+        
         @media (max-width: 480px) {
             .faculty-main {
                 width: 95%;
@@ -114,7 +166,7 @@
                 height: auto;
                 padding: 10px 15px;
             }
-            .dropdown-content a {
+            .dropdown-content .dropdown-item {
                 font-size: 14px;
                 padding: 8px 10px;
             }
@@ -126,86 +178,232 @@
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    <div class="faculty-main">
-        <div class="aicte">
-            <h1>AITCE APPROVED</h1>
-            <div class="top1">
-                <div class="dropdown">
-                    <button class="dropbtn">POST GRADUATE</button>
-                    <div class="dropdown-content">
-                        <a href="./aicte_pg_ca.html" target="_top">COMPUTER APPLICATIONS</a>
-                        <a href="#">MANAGEMENT STUDIES</a>
+    <div id="content">
+        <div class="faculty-main">
+            <div class="aicte">
+                <h1>AITCE APPROVED</h1>
+                <div class="top1">
+                    <div class="dropdown">
+                        <button class="dropbtn">POST GRADUATE</button>
+                        <div class="dropdown-content">
+                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="COMPUTER APPLICATIONS">COMPUTER APPLICATIONS</p>
+                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="MANAGEMENT STUDIES">MANAGEMENT STUDIES</p>
+                        </div>
                     </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">UG-ENGINEERING</button>
+                        <div class="dropdown-content">
+                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="CIVIL ENGINEERING">CIVIL ENGINEERING</p>
+                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</p>
+                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="ELECTRONICS AND COMMUNICATION ENGINEERING">ELECTRONICS AND COMMUNICATION ENGINEERING</p>
+                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</p>
+                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="BASIC SCIENCES AND HUMANITY">BASIC SCIENCES AND HUMANITY</p>
+                        </div>
+                    </div>  
                 </div>
-                <div class="dropdown">
-                    <button class="dropbtn">UG-ENGINEERING</button>
-                    <div class="dropdown-content">
-                        <a href="#">CIVIL</a>
-                        <a href="#">CSE</a>
-                        <a href="#">ECE</a>
-                        <a href="#">MECH</a>
-                        <a href="#">BASIC SCIENCES & HUMANITIES</a>
+            </div>
+            <div class="university">
+                <h1>UNIVERSITY</h1>
+                <div class="top2">
+                    <div class="dropdown">
+                        <button class="dropbtn">POST GRADUATE</button>
+                        <div class="dropdown-content">
+                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="COMPUTER SCIENCE">COMPUTER SCIENCE</p> 
+                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="ORGANIC CHEMISTRY">ORGANIC CHEMISTRY</p>
+                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="HUMAN RESOURCE MANAGEMENT">HUMAN RESOURCE MANAGEMENT</p>
+                        </div>
                     </div>
-                </div>  
+                    <div class="dropdown">
+                        <button class="dropbtn">UNDERGRADUATE</button>
+                        <div class="dropdown-content">
+                            <div class="has-sub">
+                                <p class="item">DEPARTMENT OF SCIENCES</p>
+                                <div class="sub-content">
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF ENGLISH">DEPARTMENT OF ENGLISH</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF TELUGU/HINDI/SANSKRIT">DEPARTMENT OF TELUGU/HINDI/SANSKRIT</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF MATHEMATICS">DEPARTMENT OF MATHEMATICS</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF PHYSICS">DEPARTMENT OF PHYSICS</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF CHEMISTRY">DEPARTMENT OF CHEMISTRY</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF COMPUTER SCIENCE">DEPARTMENT OF COMPUTER SCIENCE</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF ELECTRONICS">DEPARTMENT OF ELECTRONICS</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF STATISTICS">DEPARTMENT OF STATISTICS</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.C.A">DEPARTMENT OF B.C.A</p>
+                                    <!-- <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.C.A DATA SCIENCE">DEPARTMENT OF B.C.A DATA SCIENCE</p> -->
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.Voc">DEPARTMENT OF B.Voc</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF MICROBIOLOGY">DEPARTMENT OF MICROBIOLOGY</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF BIOTECHNOLOGY">DEPARTMENT OF BIOTECHNOLOGY</p>
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF BIOCHEMISTRY">DEPARTMENT OF BIOCHEMISTRY</p>
+                                </div>
+                            </div>
+                            <div class="has-sub">
+                                <p class="item">DEPARTMENT OF COMMERCE</p>
+                                <div class="sub-content">
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.Com">DEPARTMENT OF B.Com</p>
+                                </div>
+                            </div>
+                            <div class="has-sub">
+                                <p class="item">DEPARTMENT OF MANAGEMENT STUDIES</p>
+                                <div class="sub-content">
+                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.B.A">DEPARTMENT OF B.B.A</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
             </div>
         </div>
-        <div class="university">
-            <h1>UNIVERSITY</h1>
-            <div class="top2">
-                <div class="dropdown">
-                    <button class="dropbtn">POST GRADUATE</button>
-                    <div class="dropdown-content">
-                        <a href="#">COMPUTER SCIENCE</a>
-                        <a href="#">ORGANIC CHEMISTRY</a>
-                        <a href="#">HRM</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">UNDERGRADUATE</button>
-                    <div class="dropdown-content">
-                        <a href="#">DEPARTMENT OF SCIENCES</a>
-                        <a href="#">DEPARTMENT OF COMMERCE</a>
-                        <a href="#">DEPARTMENT OF MANAGEMENT STUDIES</a>
-                    </div>
-                </div>  
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Footer Content</p>
             </div>
-        </div>
+        </footer>
     </div>
-    <div id="footer-placeholder"  class="footer"></div>
-
-    <script>
+    <script type="module">
+        import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
+    
         const aicteDropdowns = document.querySelectorAll('.aicte .dropdown');
         const universityDropdowns = document.querySelectorAll('.university .dropdown');
         const university = document.querySelector('.university');
         const footer = document.querySelector('.footer');
-
-        aicteDropdowns.forEach(dropdown => {
+    
+        const handleDropdownHover = (dropdown, target, className) => {
             const dropdownContent = dropdown.querySelector('.dropdown-content');
             dropdown.addEventListener('mouseover', () => {
                 const dropdownHeight = dropdownContent.offsetHeight;
-                university.style.setProperty('--dropdown-height', `${dropdownHeight + 20}px`);
-                university.classList.add('move-university');
+                target.style.setProperty('--dropdown-height', `${dropdownHeight + 20}px`);
+                target.classList.add(className);
             });
-
+    
             dropdown.addEventListener('mouseout', () => {
-                university.classList.remove('move-university');
+                target.classList.remove(className);
             });
+        };
+    
+        aicteDropdowns.forEach(dropdown => handleDropdownHover(dropdown, university, 'move-university'));
+        universityDropdowns.forEach(dropdown => handleDropdownHover(dropdown, footer, 'move-footer'));
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const handleSubContentHover = (subContent) => {
+                subContent.addEventListener('mouseover', () => {
+                    const subContentHeight = subContent.offsetHeight;
+                    footer.style.setProperty('--dropdown-height', `${subContentHeight + 20}px`);
+                    footer.classList.add('move-footer');
+                });
+    
+                subContent.addEventListener('mouseout', () => {
+                    footer.classList.remove('move-footer');
+                });
+            };
         });
 
-        universityDropdowns.forEach(dropdown => {
-            const dropdownContent = dropdown.querySelector('.dropdown-content');
-            dropdown.addEventListener('mouseover', () => {
-                const dropdownHeight = dropdownContent.offsetHeight;
-                footer.style.setProperty('--dropdown-height', `${dropdownHeight + 20}px`);
-                footer.classList.add('move-footer');
-            });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+    const itemsWithSubContent = document.querySelectorAll('.dropdown-content .item');
 
-            dropdown.addEventListener('mouseout', () => {
-                footer.classList.remove('move-footer');
+    // Function to toggle sub-content visibility
+    const toggleSubContent = (item) => {
+        const subContent = item.nextElementSibling;
+        if (subContent && subContent.classList.contains('sub-content')) {
+            subContent.classList.toggle('open');
+        }
+    };
+
+    // Close all open sub-content
+    const closeAllSubContent = () => {
+        document.querySelectorAll('.dropdown-content .sub-content.open').forEach(subContent => {
+            subContent.classList.remove('open');
+        });
+    };
+
+    // Add click event listener to items with sub-content
+    itemsWithSubContent.forEach(item => {
+        item.addEventListener('click', (event) => {
+            // Close all other sub-content dropdowns
+            closeAllSubContent();
+
+            // Toggle the clicked item’s sub-content
+            toggleSubContent(item);
+
+            // Stop propagation to prevent closing immediately
+            event.stopPropagation();
+        });
+    });
+
+    // Close sub-content when clicking outside
+    document.addEventListener('click', (event) => {
+        // Check if the click is outside any dropdown
+        if (!event.target.closest('.dropdown-content')) {
+            closeAllSubContent();
+        }
+    });
+
+        
+            document.querySelectorAll('.dropdown-content .dropdown-item').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    const category = event.target.dataset.category;
+                    const branch = event.target.dataset.branch;
+                    loadContentPage(category, branch);
+                });
             });
+    
+            function loadContentPage(category, branch) {
+                console.log(`Loading content for category: ${category}, branch: ${branch}`);
+    
+                const content = document.getElementById('content');
+                content.innerHTML = `
+                    <main>
+                        <button class="back-button"><a href="faculty.html"><i class="fa fa-arrow-circle-left" style="color:#000"></i></a></button> <br>
+                        <h1 class="heading">${branch}</h1>
+                        <div class="card-container" id="card-container"></div>
+                    </main>
+                `;
+    
+                function createCard(data) {
+                    console.log('Creating card for:', data);
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.dataset.id = data.id;
+                    card.innerHTML = `
+                        <div class="fac_card">
+                            <div class="fac_img">
+                                <img class="profile-image" src="${data.image}" alt="${data.name}">
+                                <a href="${data.viewprofile}"><button class="view-profile-btn">View Profile</button></a>
+                            </div>
+                            <div class="fac_title">
+                                <h1 class="name">${data.name}</h1>
+                                <p>${data.title}</p>
+                                <p class="designation">${data.designation}</p>
+                                <p>${data.email}</p>
+                                <div class="fac_details">
+                                    <p><span class="bold">Area of Specialization:</span> <span class="color">${data.areaOfSpecialisation}</span></p>
+                                    <p><span class="bold">Date of Joining:</span> <span class="color">${data.dateOfJoining}</span></p>
+                                    <p><span class="bold">Nature of Association:</span> <span class="color">${data.natureOfAssosiation}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    return card;
+                }
+    
+                const container = document.getElementById('card-container');
+                const filteredCardsData = cardsData.filter(cardData => 
+                    cardData.category === category && cardData.branch === branch
+                );
+                console.log(`Filtered cards data:`, filteredCardsData);
+    
+                filteredCardsData.forEach(cardData => {
+                    const card = createCard(cardData);
+                    container.appendChild(card);
+                });
+    
+                if (filteredCardsData.length === 0) {
+                    container.innerHTML = `<p>No data available for the selected category and branch.</p>`;
+                }
+            }
         });
     </script>
-    <script src="../templates/includeHTML.js" defer></script>
     
+    <footer id="footer-placeholder"></footer>
+    <script src="../templates/includeHTML.js" defer></script>
 </body>
 </html>

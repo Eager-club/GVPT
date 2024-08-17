@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINE PAYMENTS</title>
+    <style>
+        * {
+    margin: 0;
+    border: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+.title1 {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    color: #22316C;
+}
+.content {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.container {
+    height: 90vh;
+}
+.c1 {
+    position: relative;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 25%;
+    max-width: 400px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.3); /* Add blue shadow */
+}
+.c1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #344ba7bf; 
+    z-index: 0;
+    transition: left 0.5s ease; /* Adjust transition duration */
+}
+.c1:hover::before {
+    left: 0;
+}
+.c1 h1 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: color 0.4s ease;
+}
+.c1:hover h1 {
+    color: white;
+}
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .c1 {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .title {
+        padding: 20px;
+    }
+    .c1 {
+        height: auto;
+        padding: 20px;
+    }
+    .c1 h1 {
+        font-size: 1.2rem;
+    }
+}
+.box {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading {
+    background: #344ba7bf;
+    border: 2px solid rgb(8, 8, 8);  
+    color: white;
+    width: 1115px;
+    height: 75px;
+}
+.heading h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.file {
+    border: 2px solid black;
+    width: 1115px;
+    height: 75px;
+    margin-bottom: 10px;
+}
+.file:hover {
+    width: 1125px;
+    height: 85px;
+    background-color: #4966dabf;
+}
+.file h1:hover {
+    color: white;
+}
+.file h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.files {
+    padding: 20px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.c1 a:hover {
+    color: white;
+}
+.head {
+    display: flex;
+    justify-content: center;
+}
+.sub1 {
+    margin-top: 70px;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    margin-top: -300px;
+    display: block;
+}
+@media (max-width: 768px) {
+    .heading {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+    .file {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .file h1 {
+        font-size: 1rem;
+    }
+    .files {
+        padding: 10px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .heading {
+        width: 90%;
+        height: auto;
+    }
+    .file {
+        width: 100%;
+        height: auto;
+    }
+    .files {
+        padding: 15px;
+    }
+}
+.heading1 {
+    background: #344ba7bf;
+    border: 2px solid rgb(8, 8, 8);  
+    color: white;
+    width: 1115px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    justify-content: space-between;
+}
+.file1 {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    justify-content: space-between;
+    border: 2px solid black;
+    width: 1115px;
+    height: 75px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.c1:hover, .c1.active {
+     background-color: #22316DBF; 
+}
+.c1 h1:hover, .c1.active h1 {
+    color: white;
+}
+.file:hover, .file.active {
+    width: 1125px;
+    height: 85px;
+    background-color: #22316DBF;
+}
+.file h1:hover, .file.active h1 {
+    color: white;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 2px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #344ba7bf;
+    color: white;
+}
+tr:hover {
+    background-color: #4966dabf;
+}
+
+    </style>
+
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <div class="container">
+        <div class="title1">
+            <h1>ONLINE FEE PAYMENT</h1>
+        </div>
+        <div class="content">
+            <div class="c1" id="button1">
+                <a href="javascript:void(0)"><h1>ONLINE FEE PAYMENT</h1></a>
+            </div>
+            <div class="c1" id="button2">
+                <a href="javascript:void(0)"><h1>FEE STRUCTURE</h1></a>
+            </div>
+        </div>
+    </div>
+    <div id="sub1" class="hidden"></div>
+    <div id="sub2" class="hidden"></div>
+    
+    <script src="data.js"></script>
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+    // Load the data for online fee payment options
+    const onlineFeePaymentContainer = document.getElementById('sub1');
+    const feeStructureContainer = document.getElementById('sub2');
+
+    function createFileDiv(title, link) {
+        const div = document.createElement('div');
+        div.classList.add('file');
+        div.innerHTML = `<a href="${link}"><h1>${title}</h1></a>`;
+        return div;
+    }
+
+    function populateOnlineFeePayment() {
+        const heading = document.createElement('div');
+        heading.classList.add('heading');
+        heading.innerHTML = '<h1>ONLINE FEE PAYMENT</h1>';
+        onlineFeePaymentContainer.appendChild(heading);
+
+        const filesContainer = document.createElement('div');
+        filesContainer.classList.add('files');
+
+        data.onlineFeePayment.forEach(item => {
+            filesContainer.appendChild(createFileDiv(item.title, item.link));
+        });
+
+        onlineFeePaymentContainer.appendChild(filesContainer);
+    }
+
+    function populateFeeStructure() {
+        const table = document.createElement('table');
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Fee</th>
+                </tr>
+            </thead>
+        `;
+
+        const tbody = document.createElement('tbody');
+        data.feeStructure.forEach(item => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${item.course}</td><td>${item.fee}</td>`;
+            tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+        feeStructureContainer.appendChild(table);
+    }
+
+    populateOnlineFeePayment();
+    populateFeeStructure();
+
+    document.getElementById('button1').addEventListener('click', function() {
+        toggleVisibility('button1', 'sub1');
+    });
+
+    document.getElementById('button2').addEventListener('click', function() {
+        toggleVisibility('button2', 'sub2');
+    });
+
+    function toggleVisibility(buttonId, sectionId) {
+        var sections = ['sub1', 'sub2'];
+        var buttons = ['button1', 'button2'];
+
+        sections.forEach(function(id) {
+            var section = document.getElementById(id);
+            if (id === sectionId) {
+                section.classList.toggle('visible');
+                section.classList.toggle('hidden');
+            } else {
+                section.classList.remove('visible');
+                section.classList.add('hidden');
+            }
+        });
+
+        buttons.forEach(function(id) {
+            var button = document.getElementById(id);
+            if (id === buttonId) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+});
+
+    </script>
+</body>
+</html>
