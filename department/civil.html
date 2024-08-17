@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .vertical-nav {
+            width: 250px;
+            background-color: #22316c;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            position: relative;
+            transition: width 0.3s;
+        }
+
+        .vertical-nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .vertical-nav li {
+            margin: 10px 0;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .vertical-nav li.has-sublinks::after {
+            content: '+';
+            float: right;
+        }
+
+        .sublinks {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .sublinks li {
+            margin: 5px 0;
+        }
+
+        .vertical-nav .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .vertical-nav {
+                width: 100%;
+                height: 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+            }
+
+            .vertical-nav ul {
+                display: none;
+                position: fixed;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background-color: #22316c;
+                padding: 10px 0;
+                margin: 0;
+            }
+
+            .vertical-nav.active ul {
+                display: block;
+            }
+
+            .vertical-nav .menu-icon {
+                display: block;
+            }
+
+            .content-area {
+                margin-top: 50px;
+                padding-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Adjustable Vertical Navbar -->
+        <nav class="vertical-nav" id="navbar">
+            <div class="menu-icon" id="menuIcon">☰</div>
+            <ul id="navLinks">
+                <li id="aboutDeptLink" class="has-sublinks">About Department
+                    <ul class="sublinks">
+                        <li>Department of Civil Engineering</li>
+                        <li>Mission and Vision</li>
+                        <li>PEOs, PSOs, and POs</li>
+                    </ul>
+                </li>
+                <li id="visionMissionLink" class="has-sublinks">Vision & Mission / PEOs / PSOs / POs
+                    <ul class="sublinks">
+                        <li>Vision and Mission</li>
+                        <li>Program Educational Objectives (PEOs)</li>
+                        <li>Program Specific Outcomes (PSOs)</li>
+                        <li>Program Outcomes (POs)</li>
+                    </ul>
+                </li>
+                <li id="hodsMessageLink">HOD's Message</li>
+            </ul>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="content-area" id="contentArea">
+            <h2>About Department</h2>
+            <p>Department of Civil Engineering was started under Gayatri Vidya Parishad College for Degree & PG Courses during 2011. This department offers B.Tech in Civil Engineering course with a current intake of 60 students. The admission to the program is through EAPCET rankings.</p>
+            <p>M.Tech Structural Engineering course is introduced in the Department of Civil Engineering during the year 2020 with an intake of 18 students. The admission to the program is through PGECET/GATE rank.</p>
+            <p>Civil Engineering is a core engineering program which caters to the built environment needs of the common man. During the course of four years the students gain knowledge in design and construction of different types of buildings, bridges, roads, industries and irrigation projects. Apart from theoretical subjects the students work in Structural Engineering, Hydraulic Engineering and Material Testing laboratories to gain hands on experience.</p>
+            <p>Major Focus areas are Surveying, Structural Engineering, Fluid Mechanics, Geo-Technical Engineering, Environmental Engineering, Transportation Engineering, Remote sensing, GIS and Computer Aid Design (CAD).</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            document.getElementById('navbar').classList.toggle('active');
+            this.textContent = this.textContent === '☰' ? '✕' : '☰';
+        });
+
+        document.querySelectorAll('.vertical-nav li.has-sublinks').forEach(function(item) {
+            item.addEventListener('click', function() {
+                const sublinks = this.querySelector('.sublinks');
+                if (sublinks) {
+                    sublinks.style.display = sublinks.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+
+        document.getElementById('aboutDeptLink').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h2>About Department</h2>
+                <p>Department of Civil Engineering was started under Gayatri Vidya Parishad College for Degree & PG Courses during 2011. This department offers B.Tech in Civil Engineering course with a current intake of 60 students. The admission to the program is through EAPCET rankings.</p>
+                <p>M.Tech Structural Engineering course is introduced in the Department of Civil Engineering during the year 2020 with an intake of 18 students. The admission to the program is through PGECET/GATE rank.</p>
+                <p>Civil Engineering is a core engineering program which caters to the built environment needs of the common man. During the course of four years the students gain knowledge in design and construction of different types of buildings, bridges, roads, industries and irrigation projects. Apart from theoretical subjects the students work in Structural Engineering, Hydraulic Engineering and Material Testing laboratories to gain hands on experience.</p>
+                <p>Major Focus areas are Surveying, Structural Engineering, Fluid Mechanics, Geo-Technical Engineering, Environmental Engineering, Transportation Engineering, Remote sensing, GIS and Computer Aid Design (CAD).</p>
+            `;
+        });
+
+        document.getElementById('visionMissionLink').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h2>Vision & Mission / PEOs / PSOs / POs</h2>
+                <h3>Vision</h3>
+                <p>Empower civil engineers with high technical competence and social consciousness.</p>
+                <h3>Mission</h3>
+                <p>To inculcate fundamentals of Civil Engineering in design, construction and maintenance of projects at national and global level.</p>
+                <p>To excel in Design of economical and sustainable structures with due care for environment, public health and safety considering geo-technical bases and encourage in pursuing future careers.</p>
+                <p>To create conscientious engineers who would apply their knowledge critically and innovatively to solve professional and societal challenges.</p>
+                <h3>Program Educational Objectives (PEOs)</h3>
+                <p><strong>PEO1:</strong> IMPART: Application of Mathematical, physical, geotechnical, environmental, hydrological and structural knowledge for the formulation and framing of solution models in civil engineering.</p>
+                <p><strong>PEO2:</strong> COMPETENCE: Establish an understanding of theory and design practice in all disciplines of Civil Engineering.</p>
+                <p><strong>PEO3:</strong> DEVELOP: To enhance computer based knowledge for civil engineering applications and communication skills.</p>
+                <p><strong>PEO4:</strong> ADVANCE: Instill interest in lifelong learning and ethical thinking that cater the needs of the society.</p>
+                <h3>Program Specific Outcomes (PSOs)</h3>
+                <p><strong>PSO1:</strong> Graduates of Civil Engineering department should be able to identify, resolve and provide solutions for engineering problems.</p>
+                <p><strong>PSO2:</strong> Graduates should be able to communicate effectively, use modern tools for cost-effective solutions and have environmental consciousness.</p>
+                <p><strong>PSO3:</strong> Develop engineers with ability to work in multidisciplinary environment and have interest in life long learning.</p>
+                <h3>Program Outcomes (POs)</h3>
+                <p><strong>Engineering knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</p>
+                <p><strong>Problem analysis:</strong> Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</p>
+                <p><strong>Design/Development of solutions:</strong> Design
+                <p><strong>Design/Development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</p>
+                <p><strong>Conduct investigations of complex problems:</strong> Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</p>
+                <p><strong>Modern tool usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</p>
+                <p><strong>The engineer and society:</strong> Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</p>
+                <p><strong>Environment and sustainability:</strong> Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.</p>
+                <p><strong>Ethics:</strong> Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.</p>
+                <p><strong>Individual and team work:</strong> Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.</p>
+                <p><strong>Communication:</strong> Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.</p>
+                <p><strong>Project management and finance:</strong> Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.</p>
+                <p><strong>Life-long learning:</strong> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</p>
+            `;
+        });
+
+        document.getElementById('hodsMessageLink').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h2>HOD's Message</h2>
+                <p><img src="hod-image.jpg" alt="HOD Image" style="float: left; margin-right: 15px;">An affectionate welcome to the Civil Engineering discipline. Civil Engineering is considered to be the most versatile branch among all the engineering branches in the country. Being the oldest Engineering branch in the academic institutions in the world, it has a lot of diversity right from Geotechnical Engineering, Structural Engineering, Environmental Science, Transportation, Hydrology and Construction Engineering.</p>
+                <p>There are many career paths for civil engineers. Civil engineers are essential in government agencies, private and public sector industries, and consultancy firms. The opportunities are immense and it is always a challenge to meet the demands of this fast-growing sector.</p>
+                <p>We have a committed faculty team who are dedicated to imparting high-quality education. Our curriculum is designed to make the students industry-ready and aware of the recent advancements in the field.</p>
+                <p>I am confident that you will find the education imparted in this department both challenging and rewarding. We encourage all students to actively participate in various academic and extracurricular activities to enhance their learning experience.</p>
+                <p>Welcome aboard and I wish you all the best in your academic endeavors.</p>
+                <p>Dr. [HOD's Name]</p>
+            `;
+        });
+    </script>
+</body>
+</html>

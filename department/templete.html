@@ -1,0 +1,215 @@
+<style>body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+*{
+    color: #000000;
+}
+#wrapper {
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+#sidebar ul li:hover,
+#sidebar ul li a:hover {
+    background-color: #555;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#sidebar ul li .toggle {
+    float: right;
+}
+
+.submenu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#content {
+    margin-left: 260px;
+    padding: 20px;
+    flex: 1;
+}
+
+#menu-btn {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#mobile-menu {
+    background-color: blue;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+}
+
+#mobile-menu ul {
+    color: #fff;
+    list-style-type: none;
+    padding: 0;
+}
+
+#mobile-menu ul li {
+    padding: 10px 0;
+
+}
+
+#exit-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #sidebar {
+        display: none;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+}
+</style>
+<div id="wrapper">
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#about">About Department</a></li>
+            <li>
+                <a href="#vision">Vision & Mission</a>
+                <span class="toggle">+</span>
+                <ul class="submenu">
+                    <li><a href="#peos">PEOs</a></li>
+                    <li><a href="#psos">PSOs</a></li>
+                    <li><a href="#pos">POs</a></li>
+                </ul>
+            </li>
+            <li><a href="#hod">HOD's Message</a></li>
+            <!-- Add more links here as needed -->
+        </ul>
+    </nav>
+
+    <div id="content">
+        <div id="about">About Department Content</div>
+        <div id="vision" style="display:none;">Vision & Mission Content</div>
+        <div id="peos" style="display:none;">PEOs Content</div>
+        <div id="psos" style="display:none;">PSOs Content</div>
+        <div id="pos" style="display:none;">POs Content</div>
+        <div id="hod" style="display:none;">HOD's Message Content</div>
+    </div>
+
+    <button id="menu-btn">Menu</button>
+    <div id="mobile-menu" style="display:none;">
+        <button id="exit-btn">Exit</button>
+        <ul>
+            <li><a href="#about">About Department</a></li>
+            <li>
+                <a href="#vision">Vision & Mission</a>
+                <span class="toggle">+</span>
+                <ul class="submenu">
+                    <li><a href="#peos">PEOs</a></li>
+                    <li><a href="#psos">PSOs</a></li>
+                    <li><a href="#pos">POs</a></li>
+                </ul>
+            </li>
+            <li><a href="#hod">HOD's Message</a></li>
+            <!-- Add more links here as needed -->
+        </ul>
+    </div>
+</div>
+<script>
+    const toggles = document.querySelectorAll('.toggle');
+const submenu = document.querySelectorAll('.submenu');
+
+toggles.forEach((toggle, index) => {
+    toggle.addEventListener('click', () => {
+        const sub = submenu[index];
+        if (sub.style.display === 'none' || sub.style.display === '') {
+            sub.style.display = 'block';
+            toggle.textContent = '-';
+        } else {
+            sub.style.display = 'none';
+            toggle.textContent = '+';
+        }
+    });
+});
+
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const exitBtn = document.getElementById('exit-btn');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.style.display = 'flex';
+});
+
+exitBtn.addEventListener('click', () => {
+    mobileMenu.style.display = 'none';
+});
+
+const links = document.querySelectorAll('a');
+const contentDivs = document.querySelectorAll('#content > div');
+
+links.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        contentDivs.forEach(div => div.style.display = 'none');
+        target.style.display = 'block';
+        if (window.innerWidth <= 600) {
+            mobileMenu.style.display = 'none';
+        }
+    });
+});
+
+// Show the first content by default
+contentDivs[0].style.display = 'block';
+
+</script>
