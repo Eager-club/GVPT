@@ -38,7 +38,7 @@
     .container{
     width: 100%;
     margin: auto;
-    
+  
     }
     .card-container{
         /* width: 100%; */
@@ -51,7 +51,9 @@
     font-size: 2vw;
     padding: 10px;
     }
-    
+    .container section{
+        padding-top: 4%;
+    }
     
     
     .card{
@@ -234,7 +236,7 @@
     .profile-image {
         width: 100px; /* Adjust size as needed */
         height: auto;
-    }
+    }}
     
         /*
     .card {
