@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science and Engineering</title>
+    <!-- <script src="../templates/includeHTML.js" defer></script> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    background-image: url("../assects/home.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1001; /* Ensure header is above sidebar */
+}
+
+.header1 {
+    background-color: #f8f9fa;
+    color: #22316c;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure this header is above sidebar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header1 h1 {
+    font-size: 1.5rem;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dept-div {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.sidebar {
+    background-color: #eaecee;
+    color: #22316c;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    scrollbar-width: none;
+    z-index: 999; /* Ensure sidebar is below header */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 6px 20px;
+}
+
+.sidebar ul li a {
+    color: #22316c;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1b255334;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+}
+
+.sidebar ul li a.active {
+    background-color: #1b255334;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    color: #22316c;
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 50px;
+    flex-grow: 1;
+}
+
+.content > section {
+    display: none;
+}
+
+.content > section.active {
+    display: block;
+}
+
+h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.dept-img {
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: all 250ms;
+}
+
+.dept-con {
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: 999; /* Ensure sidebar does not overlap other content */
+    }
+
+    .dept-div {
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .dept-con {
+        width: 100%;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        padding-top: 70px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .dept-img {
+        display: none;
+    }
+}
+
+section {
+    text-align: justify;
+}
+
+    </style>
+</head>
+<body>
+<header id="nav-placeholder"></header>
+<div class="header1">
+    <div class="header-container">
+        <h1>Department of Computer Science and Engineering</h1>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="#" data-target="about-department">About Department</a></li>
+        <li><a href="#" data-target="vision-mission">Vision & Mission / PEOs / PSOs / POs</a></li>
+        <li><a href="#" data-target="hod-message">HOD's Message</a></li>
+        <li><a href="#" data-target="faculty">Faculty</a></li>
+        <li><a href="#" data-target="syllabus">Syllabus</a></li>
+        <li><a href="#" data-target="academic-calendar">Academic Calendar and Time Tables</a></li>
+        <li><a href="#" data-target="infrastructure">Infrastructure</a></li>
+        <li><a href="#" data-target="department-committees">Department Committees</a></li>
+        <li><a href="#" data-target="placements">Placements</a></li>
+        <li><a href="#" data-target="research-innovations">Research & Innovations</a></li>
+        <li><a href="#" data-target="activities">Activities</a></li>
+        <li><a href="#" data-target="student-corner">Student Corner</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section id="about-department" class="active">
+        <h2>About Department</h2>
+        <div class="dept-div">
+            <div class="dept-con">
+                <p>The Department of Computer Science and Engineering was established in 2011 at Gayatri Vidya Parishad College for Degree & PG Courses (A). It offers a B.Tech program with a maximum intake of 240 students (180 for CSE and 60 for AI & ML). The department is committed to providing students with both theoretical and practical foundations in Information Technology and Computation, equipped with modern labs and exposure to the latest trends in the field.</p>
+            </div>
+            <div>
+                <img src="../assects/dept/DALL·E 2024-08-24 22.19.06 - A classroom scene with a group of computer science students engaged in learning. The students are a diverse group, seated at desks with laptops, codin.webp" width="250" class="dept-img" alt="cse image">
+            </div>
+        </div>
+        <div>
+            <br><h2>About B.Tech Admission</h2>
+            <p><strong>EAPCET Counseling Code: <span>GVPT</span></strong><br><strong>Admissions under Category "A" (Convener’s Quota-70% of intake in each branch):</strong></p>
+            <p>A Candidate for admission to the four-year degree program in Engineering must have passed the Intermediate examination of the Board of Intermediate Education, Government of Andhra Pradesh with Mathematics, Physics and Chemistry as optional subjects. All the eligible applicants for admission into First Year shall have to qualify in the EAPCET Examination conducted by the Govt. of AP. The candidates will be admitted strictly in accordance with the merit secured at the Entrance Examination keeping in view the rules in force regarding the reservations of seats of various categories of candidates. The candidates should satisfy local/non-local status requirement as laid down in the AP Educational institutions (Regulation of Admissions) Order 1974 as amended from time to time.</p>
+            <p><strong>Admissions under Category "B" (30% of intake in each branch)</strong></p>
+            <p><strong>ECET Counseling Code: <span>GVPT</span></strong></p>
+            <p>The Engineering Diploma holders, based on their merit at ECET, are admitted into Lateral Entry (II year B. Tech Courses)</p>
+            <p><strong>The seats shall be filled as per the rules given by APSCHE.</strong></p>
+            <br>
+        </div>
+        <div>
+            <h2>About M.Tech Program</h2>
+            <p>MTech Computer Science & Technology Program started in the Academic Year 2020-21. It is a two-year Postgraduate program with four semesters. The main purpose behind crafting the M.Tech course is to equip students with the knowledge and abilities desirable to the modern computing industry. MTech in Computer Science & Technology have a wide range of job opportunities in sectors like Consultancy firms, IT companies, Corporate Industry, Multinational companies, Start ups, banking sectors etc.</p>
+            <br>
+            <h2>M.Tech Admission Procedure:</h2>
+            <p>A Candidate for admission to M.Tech Program by qualify in GATE/PGCET conducted by Govt. Total number of students Intake is 18 and Specialization is Computer Science & Technology.</p>
+        </div>
+    </section>
+
+    <section id="vision-mission">
+        <h2>Vision & Mission / PEOs / PSOs / POs</h2>
+        <p>Our vision is to develop competent professionals in the field of Computer Science and Engineering who are capable of leading and innovating in the global market. Our mission is to impart quality education, foster research, and promote industry collaboration to achieve academic excellence and societal impact.</p>
+        <p><strong>Program Educational Objectives (PEOs):</strong> Our graduates will excel in professional careers, pursue higher education, and contribute to society by applying their knowledge of Computer Science and Engineering.</p>
+        <p><strong>Program Specific Outcomes (PSOs):</strong> Graduates will be able to analyze, design, and develop software applications for real-world problems, leveraging their knowledge of algorithms, databases, and programming languages.</p>
+        <p><strong>Program Outcomes (POs):</strong> Graduates will demonstrate a strong foundation in computer science, the ability to work in teams, and the skill to communicate effectively and ethically in their professional careers.</p>
+    </section>
+
+    <section id="hod-message">
+        <h2>HOD's Message</h2>
+        <p>Welcome to the Department of Computer Science and Engineering. Our department is dedicated to providing a supportive learning environment that encourages innovation, critical thinking, and hands-on experience. We aim to equip our students with the skills needed to excel in the ever-evolving field of technology.</p>
+    </section>
+
+    <section id="faculty">
+        <h2>Faculty</h2>
+        <p>Our department is home to a team of highly qualified and experienced faculty members who are committed to teaching, research, and mentoring students. They bring a wealth of knowledge and industry experience to the classroom, ensuring that our students receive a comprehensive education.</p>
+    </section>
+
+    <section id="syllabus">
+        <h2>Syllabus</h2>
+        <p>The syllabus for our B.Tech and M.Tech programs is designed to cover a wide range of topics, including fundamental principles of computer science, advanced programming techniques, data structures, algorithms, artificial intelligence, and machine learning. The curriculum is regularly updated to reflect the latest advancements in the field.</p>
+    </section>
+
+    <section id="academic-calendar">
+        <h2>Academic Calendar and Time Tables</h2>
+        <p>The academic calendar and time tables are provided to help students stay organized and manage their time effectively. These documents outline important dates, such as the start and end of semesters, examination periods, and holidays.</p>
+    </section>
+
+    <section id="infrastructure">
+        <h2>Infrastructure</h2>
+        <p>Our department boasts state-of-the-art infrastructure, including well-equipped computer labs, modern classrooms, and a vast library. The facilities are designed to support both theoretical and practical learning, providing students with the resources they need to succeed.</p>
+    </section>
+
+    <section id="department-committees">
+        <h2>Department Committees</h2>
+        <p>Our department has various committees dedicated to different aspects of academic and administrative activities. These committees work together to ensure the smooth functioning of the department and the overall well-being of students and staff.</p>
+    </section>
+
+    <section id="placements">
+        <h2>Placements</h2>
+        <p>The placement cell of our department works tirelessly to ensure that our students are well-prepared for the job market. We have a strong track record of placing students in top companies, both in India and abroad. The cell organizes regular workshops, seminars, and mock interviews to help students develop the skills needed to secure their dream jobs.</p>
+    </section>
+
+    <section id="research-innovations">
+        <h2>Research & Innovations</h2>
+        <p>Our department is committed to fostering a culture of research and innovation. We encourage students and faculty to engage in cutting-edge research projects that address real-world challenges. Our research focuses on areas such as artificial intelligence, machine learning, data science, and cybersecurity.</p>
+    </section>
+
+    <section id="activities">
+        <h2>Activities</h2>
+        <p>We believe in the holistic development of our students. To this end, we organize a variety of extracurricular activities, including technical workshops, hackathons, coding competitions, and cultural events. These activities provide students with opportunities to showcase their talents and develop their leadership and teamwork skills.</p>
+    </section>
+
+    <section id="student-corner">
+        <h2>Student Corner</h2>
+        <p>The Student Corner is a dedicated space for students to access important resources, including study materials, project ideas, and career guidance. We also provide information on scholarships, internships, and job opportunities to help students achieve their academic and professional goals.</p>
+    </section>
+</main>
+
+<script>
+    function adjustSidebarPadding() {
+        const header = document.querySelector('.header1');
+        const sidebar = document.getElementById('sidebar');
+        const headerHeight = header.offsetHeight;
+        sidebar.style.paddingTop = `${headerHeight}px`;
+    }
+
+    window.addEventListener('load', adjustSidebarPadding);
+    window.addEventListener('resize', adjustSidebarPadding);
+
+    document.getElementById('menu-icon').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+        document.getElementById('menu-icon').innerHTML = sidebar.classList.contains('active') ? '&#10006;' : '&#9776;';
+    });
+
+    const links = document.querySelectorAll('.sidebar ul li a');
+    const sections = document.querySelectorAll('.content > section');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+            document.getElementById('menu-icon').innerHTML = sidebar.classList.contains('active') ? '&#10006;' : '&#9776;';
+            links.forEach(link => link.classList.remove('active'));
+            link.classList.add('active');
+            sections.forEach(section => section.classList.remove('active'));
+            const targetId = link.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+
+    document.querySelector('.sidebar ul li a').classList.add('active');
+</script>
+</body>
+</html>
