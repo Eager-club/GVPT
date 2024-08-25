@@ -123,25 +123,136 @@ header {
 h2 {
     color: #1b2553;
     margin-bottom: 10px;
+    text-rendering: geometricPrecision;
 }
 
 p {
     margin-bottom: 15px;
     line-height: 1.5;
 }
-
+section {
+    text-align: justify;
+}
 .dept-img {
     position: relative;
     border-radius: 20px;
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
-    transition: all 250ms;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.dept-img:hover{
+transform: translateY(-10px); /* Slightly raise the card */
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 }
 
 .dept-con {
     width: 60%;
 }
 
+.page2{
+      display: flex;
+    }
+    .mivison{
+      margin: 3vw;
+      padding: 2vw;
+      border: 2px solid transparent;
+      border-radius: 1vw;
+      font-size: 1.3vw;
+      text-align: justify;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .mivison:hover {
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+  section ul{
+    list-style: none;
+  }
+  section ul li{
+    margin-bottom: 20px;
+  }
+  section ul li strong{
+    border-bottom: 2px solid #22316cb0;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+  }
+
+  /* hod message */
+  .hod-img{
+    width:100%; 
+    max-width:400px;
+    display:block;
+    margin-bottom:20px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 25px; 
+    float: right;
+}
+    .hod-img:hover{
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+    /* faculty css  */
+    #faculty{
+        padding-left: 6%;
+    }
+    .container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* align-content: ; */
+        gap: 30px;
+    }
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        width: 250px;
+        max-height: 350px;
+        background: #eaecee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-10px); /* Slightly raise the card */
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .fac_img img {
+        width: 100%;
+        height: 150px;
+        object-fit: calc(100px - 200 * 3);
+    }
+    .fac_title {
+        width: 100%;
+        max-height: 200px;
+        padding: 10px;
+        word-break: break-all;
+        
+    }
+    .fac_title h3 {
+        font-size: 1em;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+    }
+    .fac_title p {
+        font-size: 10px;
+        margin: 5px 0;
+        font-weight: 500;
+        text-wrap: pretty;
+    }
+
 @media (max-width: 768px) {
+    h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    font-size: medium;
+    }
+
+    p ,strong{
+        font-size: small;
+    }
     .sidebar {
         transform: translateX(-100%);
         width: 100%;
@@ -173,12 +284,10 @@ p {
     .dept-img {
         display: none;
     }
+    .page2{
+     flex-direction: column;
+    }
 }
-
-section {
-    text-align: justify;
-}
-
     </style>
 </head>
 <body>
@@ -238,21 +347,118 @@ section {
     </section>
 
     <section id="vision-mission">
-        <h2>Vision & Mission / PEOs / PSOs / POs</h2>
-        <p>Our vision is to develop competent professionals in the field of Computer Science and Engineering who are capable of leading and innovating in the global market. Our mission is to impart quality education, foster research, and promote industry collaboration to achieve academic excellence and societal impact.</p>
-        <p><strong>Program Educational Objectives (PEOs):</strong> Our graduates will excel in professional careers, pursue higher education, and contribute to society by applying their knowledge of Computer Science and Engineering.</p>
-        <p><strong>Program Specific Outcomes (PSOs):</strong> Graduates will be able to analyze, design, and develop software applications for real-world problems, leveraging their knowledge of algorithms, databases, and programming languages.</p>
-        <p><strong>Program Outcomes (POs):</strong> Graduates will demonstrate a strong foundation in computer science, the ability to work in teams, and the skill to communicate effectively and ethically in their professional careers.</p>
+        <h2 style="text-align: center;">Our Mission And Vision</h2>
+        <div class="page2">
+            
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
+              <h2 style="color: white;padding-bottom: 3vh;">MISSION :</h2>
+              <p>The vision of the department is “Create and sustain as a Centre of excellence in Computer Science and Engineering and allied areas of research to pave the way for providing better technocrats to the society”.</p>
+            </div>
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 2.5%);">
+              <h2  style="color: #22316c;padding-bottom: 3vh;">VISION :</h2>
+              <p >The mission of the department is “To provide strong conceptual base (M1) for acquiring programming skills, to develop high computational innovative skills (M2) and to empower leadership qualities with strong ethical base (M3)”.</p>
+            </div>
+          </div>
+        <br>
+        <h2>B.Tech: Program Educational Objectives (PEOs)</h2>
+        <ul>
+            <li><strong>PEO1:</strong> Ability to develop hardware and software problem solving capabilities by inculcating strong fundamental, analytical, and communication skills.</li>
+            <li><strong>PEO2:</strong> Ability to build confidence to address the challenges in their work and to apply innovative technical tools through interaction with professional bodies.</li>
+            <li><strong>PEO3:</strong> Ability to gain sufficient depth of knowledge, Self-learning skills, technical skills and leadership qualities through participating in personality development activities, so as to sustain in multidisciplinary environment.</li>
+            <li><strong>PEO4:</strong> To be able to respond to societal needs in professional and ethical concerns.</li>
+        </ul>
+        <br>
+        <h2>Program Specific Outcomes (PSOs)</h2>
+        <ul>
+            <li><strong>PSO 1:</strong> System Inception and Elaboration: Conceptualize the software and/or hardware systems, system components and processes/procedures through requirement analysis, Modelling/Design of the system using various architectural/design patterns, Standard Notations, procedures and algorithms.</li>
+            <li><strong>PSO 2:</strong> System Construction: Implement the systems, Procedures and Processes using the state of the art technologies, standards, tools and Programming Paradigms.</li>
+            <li><strong>PSO 3:</strong> System Testing and Deployment: Verify and Validate the Systems, Procedures and Processes using various testing and verification techniques and tools.</li>
+            <li><strong>PSO 4:</strong> Quality and Maintenance: Manage the quality through various product development strategies under revision, transition and operation through maintainability, flexibility, testability, portability, reusability, interoperability, correctness, reliability, efficiency, integrity and usability to adapt the system to the changing structure and behavior of the systems/environments.</li>
+        </ul>
+        <br>
+        <h2>Program Outcomes (POs)</h2>
+        <ul>
+            <li><strong>Engineering knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
+            <li><strong>Problem analysis:</strong> Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
+            <li><strong>Design/development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
+            <li><strong>Conduct investigations of complex problems:</strong> Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
+            <li><strong>Modern tool usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</li>
+            <li><strong>The engineer and society:</strong> Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</li>
+            <li><strong>Environment and sustainability:</strong> Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.</li>
+            <li><strong>Ethics:</strong> Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.</li>
+            <li><strong>Individual and team work:</strong> Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.</li>
+            <li><strong>Communication:</strong> Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.</li>
+            <li><strong>Project management and finance:</strong> Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.</li>
+            <li><strong>Life-long learning:</strong> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</li>
+        </ul>
+        <br>
+        <h2>M.Tech: Program Educational Objectives (PEOs)</h2>
+        <ul>
+            <li><strong>PEO1:</strong> To motivate students in learning the advanced concepts to develop real world applications in the thrust areas of Computer Science and Technology.</li>
+            <li><strong>PEO2:</strong> To impart ethical practices in molding graduates to engage in research, leadership roles along diverse career paths and lifelong learning to adapt innovation.</li>
+        </ul>
+        <br>
+        <h2>Program Specific Outcomes (PSOs)</h2>
+        <ul>
+            <li><strong>PSO 1:</strong> Applying problem solving skills in a systematic way to Analyze software processes and employable in a product oriented Industry.</li>
+            <li><strong>PSO 2:</strong> Ability to publish research articles in the thrust areas of Computer Science and Technology in quality indexed journals.</li>
+        </ul>
+        <br>
+        <h2>Program Outcomes (POs)</h2>
+        <ul>
+            <li><strong>PO 1:</strong> An ability to independently carry out research /investigation and development work to solve practical problems.</li>
+            <li><strong>PO 2:</strong> An ability to write and present a substantial technical report/document.</li>
+            <li><strong>PO 3:</strong> Students should be able to demonstrate a degree of mastery over the area as per the specialization of the program. The mastery should be at a level higher than the requirements in the appropriate bachelor program.</li>
+        </ul>
+        
     </section>
 
     <section id="hod-message">
         <h2>HOD's Message</h2>
-        <p>Welcome to the Department of Computer Science and Engineering. Our department is dedicated to providing a supportive learning environment that encourages innovation, critical thinking, and hands-on experience. We aim to equip our students with the skills needed to excel in the ever-evolving field of technology.</p>
+        <img src="https://www.gvpcdpgc.edu.in/cse/images/Dr.GRS-hod.jpeg" alt="HOD Image" class="hod-img">
+
+        <p>Careers in the field of Computer Science and Engineering are in very high demand, offering not only the comfort of high-paying jobs but also the intellectual challenges of a creative and productive profession.</p>
+
+        <p>Welcome to the Department of Computer Science and Engineering at Gayatri Vidya Parishad College for Degree and PG Courses. Our B.Tech and M.Tech programs, which are at the forefront of technological advancements, are designed to empower you with the necessary proficiencies to succeed in the ever-changing tech industry. The department offers a regular four-year B.Tech in Computer Science and Engineering (CSE) course with an intake of 180 students and an M.Tech in Computer Science & Technology with an intake of 12 students. Both B.Tech and M.Tech programs are under the permanent affiliation of Andhra University.</p>
+
+        <p>Since 2011, the department has consistently strived to offer high-quality, state-of-the-art education in computer science and engineering, with well-established laboratories that cater to industry needs. The department is accredited by the NBA and NAAC for its quality education, and the institute is ISO certified. We are especially proud of the long and sustained placement records of our Bachelor's students in various multinational software companies, and our students are pursuing higher education at top international universities.</p>
+
+        <p>Here are some reasons that make CSE at Gayatri Vidya Parishad College exceptional:</p>
+
+        <ul>
+            <li><strong>Curriculum Aligned with Industry Needs:</strong> Our curriculum is meticulously crafted to meet the current IT industry's requirements. We consistently revise our courses to ensure that you are proficient in the most pertinent programming languages, software development practices, and technical skills.</li>
+            <li><strong>Learn from Experts:</strong> Our faculty members are knowledgeable, dedicated, and many hold Ph.D.s. They are actively engaged in research, allowing them to bring current, real-world insights into the classroom.</li>
+            <li><strong>Practical Experience:</strong> We prioritize hands-on learning in addition to theoretical knowledge. Our program incorporates projects, labs, and internships where you'll create real-world software applications, solve intricate problems, and acquire the practical experience that employers seek.</li>
+            <li><strong>Collaboration with Industry:</strong> We bridge the gap between academia and industry by offering internships with leading companies. These opportunities enable you to apply your knowledge in practical settings and establish valuable professional connections.</li>
+            <li><strong>Dynamic Learning Opportunities:</strong> Enhance your skills through various active learning avenues. Participate in coding competitions, hackathons, and student-led clubs like ACM (Association for Computing Machinery) to push your boundaries, collaborate with peers, and build an impressive technical portfolio.</li>
+            <li><strong>Innovation through Projects:</strong> Unlock your creativity by working on innovative projects under the guidance of our faculty. You'll address real-world issues in areas such as web development, mobile app creation, data science, and artificial intelligence.</li>
+            <li><strong>Stay Ahead of Tech Trends:</strong> Keep up-to-date with technological advancements through our workshops, guest lectures, and seminars featuring industry experts. These events will provide you with insights into the latest trends and emerging technologies in computer science.</li>
+            <li><strong>Holistic Growth:</strong> We foster holistic development by encouraging participation in co-curricular and extracurricular activities to enhance your communication, teamwork, and leadership skills.</li>
+        </ul>
+
+        <p>The Department of Computer Science and Engineering aims to create a Center of Excellence and prepare students to be skilled technologists and well-rounded individuals who positively impact society. This aligns with the college's mission of "Creating Human Excellence for a Better Society." The department believes that a strong foundation in computer science, critical thinking, and ethical practices will empower graduates to be future leaders and innovators.</p>
+
+        <p>I welcome all the aspirants to be a part of the CSE family and wish them a bright future!</p>
+
+        <p><strong>Dr. G.R.S. Murthy, M.Tech, Ph.D</strong><br>
+        Professor & HOD<br>
+        Contact: <a href="mailto:hodcse@gvpcdpgc.edu.in">hodcse@gvpcdpgc.edu.in</a></p>
+
+        <p><strong>Predecessors:</strong></p>
+        <ul >
+            <li><strong style="border: unset;">Dr. N.V. Ramana Murthy, Professor</strong><br>
+            Duration: 01/07/2021 to 01/05/2024</li>
+            <li><strong style="border: unset;">Dr. T.M.N. Vamsi, Professor</strong><br>
+            Duration: 11/01/2018 to 30/06/2021</li>
+        </ul>
     </section>
 
     <section id="faculty">
-        <h2>Faculty</h2>
-        <p>Our department is home to a team of highly qualified and experienced faculty members who are committed to teaching, research, and mentoring students. They bring a wealth of knowledge and industry experience to the classroom, ensuring that our students receive a comprehensive education.</p>
+        <h2 style="font-size: xx-large; text-align: center;">Faculty Members</h2>
+        <div class="container" id="card-container">
+            <!-- Cards will be inserted here by JavaScript -->
+        </div>
+
     </section>
 
     <section id="syllabus">
@@ -331,6 +537,52 @@ section {
     });
 
     document.querySelector('.sidebar ul li a').classList.add('active');
+</script>
+<!-- faculty scprit -->
+<script type="module">
+    import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
+
+    function createCard(data) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = data.id;
+        card.innerHTML = `
+            <div class="fac_img">
+                <img class="profile-image" src="${data.image}" alt="${data.name}">
+            </div>
+            <div class="fac_title">
+                <h3 class="name">${data.name}</h3>
+                <p>${data.title}</p>
+                <p class="designation">${data.designation}</p>
+                <p><a href="${data.email}">${data.email}</a></p>
+                <div class="fac_details">
+                    <p><strong>Area of Specialization:</strong> <span class="color">${data.areaOfSpecialisation}</span></p>
+                    <p><strong>Date of Joining:</strong> <span class="color">${data.dateOfJoining}</span></p>
+                    <p><strong>Nature of Association:</strong> <span class="color">${data.natureOfAssosiation}</span></p>
+                </div>
+            </div>
+        `;
+        return card;
+    }
+
+    function loadContentPage(category, branch) {
+        const container = document.getElementById('card-container');
+        const filteredCardsData = cardsData.filter(cardData => 
+            cardData.category === category && cardData.branch === branch
+        );
+
+        filteredCardsData.forEach(cardData => {
+            const card = createCard(cardData);
+            container.appendChild(card);
+        });
+
+        if (filteredCardsData.length === 0) {
+            container.innerHTML = `<p>No data available for the selected category and branch.</p>`;
+        }
+    }
+
+    // Load CSE faculty data
+    loadContentPage('AICTE APPROVED', 'COMPUTER SCIENCE AND ENGINEERING');
 </script>
 </body>
 </html>
