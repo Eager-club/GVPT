@@ -242,6 +242,51 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         font-weight: 500;
         text-wrap: pretty;
     }
+    /* syllabus */
+    .file {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 1.3%;
+        background-color: rgba(34, 49, 104, 0.25);
+        border: 0.17vw solid transparent;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .file:hover, .file.active {
+        background-color: rgba(34, 49, 104, 0.55);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .file p {
+        margin: unset;
+        display: flex;
+        justify-content: center;
+      
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .file button {
+        color: #22316C;
+        font-size: medium;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-wrap: pretty;
+    }
+    .file:hover button {
+        font-size: large;
+        color: #e78709;
+        text-decoration: underline;
+        text-underline-offset: calc(4px);
+    }
 
 @media (max-width: 768px) {
     h2 {
@@ -286,6 +331,28 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     }
     .page2{
      flex-direction: column;
+    }
+    #syllabus h3{
+        font-size: x-small;
+    }
+    .file p{
+        font-size: 2.5vw;
+    }
+    .file{
+        border-radius: 6px;
+    }
+    .file a{
+        padding-left: 15%;
+        align-content: center;
+    }
+    .file button{
+        font-size: 3vw;
+        text-align: center;
+        display: flex;
+        white-space: nowrap;
+    }
+    .file:hover button{
+        font-size: 3vw;
     }
 }
     </style>
@@ -462,8 +529,56 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     </section>
 
     <section id="syllabus">
-        <h2>Syllabus</h2>
-        <p>The syllabus for our B.Tech and M.Tech programs is designed to cover a wide range of topics, including fundamental principles of computer science, advanced programming techniques, data structures, algorithms, artificial intelligence, and machine learning. The curriculum is regularly updated to reflect the latest advancements in the field.</p>
+        <h2>M.Tech Syllabus</h2>
+        <div class="file">
+            <p>M.Tech Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
+            <a href="URL_TO_MTECH_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+        <br>
+        <h2>B.Tech Syllabus</h2>
+
+        <h3>B.TECH CSE-AIML R22 Regulation (From admitted batch 2022-2023)</h3>
+        <div class="file">
+            <p>B.Tech CSE-AIML R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_AIML_R22_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+            
+        <h3>B.TECH CSE R22 Regulation (From admitted batch 2022-2023)</h3>
+        <div class="file">
+            <p>B.Tech CSE R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_R22_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
+        <h3>B.TECH CSE R20 Regulation (From admitted batch 2020-2021)</h3>
+        <div class="file">
+            <p>B.Tech CSE R20 Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_R20_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
+        <h3>B.TECH CSE R19 Regulation (From admitted batch 2019-2020)</h3>
+        <div class="file">
+            <p>B.Tech CSE R19 Syllabus (With effect from 2019-2020 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_R19_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
+        <h3>B.TECH CSE AU Syllabus (From admitted batch 2015-2016)</h3>
+        <div class="file">
+            <p>CSE Syllabus (With effect from 2015-2016 admitted batch to 2018-19)</p>
+            <a href="URL_TO_CSE_AU_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
     </section>
 
     <section id="academic-calendar">
