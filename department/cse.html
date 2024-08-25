@@ -287,7 +287,55 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         text-decoration: underline;
         text-underline-offset: calc(4px);
     }
+    /* infrastructure */
+    table{
+        width: 100%;
+        max-width: 1200px;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        overflow: hidden; 
+        font-size: 1vw;
+    }
+    thead{
+        color: #22316C;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
 
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .nested-table {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nested-table th {
+        border: none;
+        background-color: transparent; /* Remove background color from nested-table th */
+        text-align: left;
+    }
+
+    .nested-table tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+    .nested-table td {
+        padding: 5px 10px;
+        border: none;
+    }
 @media (max-width: 768px) {
     h2 {
     color: #1b2553;
@@ -354,6 +402,14 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     .file:hover button{
         font-size: 3vw;
     }
+    table{
+        font-size: 2.5vw;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+    th, td {
+        padding: 4px;
+    }
 }
     </style>
 </head>
@@ -391,7 +447,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
                 <p>The Department of Computer Science and Engineering was established in 2011 at Gayatri Vidya Parishad College for Degree & PG Courses (A). It offers a B.Tech program with a maximum intake of 240 students (180 for CSE and 60 for AI & ML). The department is committed to providing students with both theoretical and practical foundations in Information Technology and Computation, equipped with modern labs and exposure to the latest trends in the field.</p>
             </div>
             <div>
-                <img src="../assects/dept/DALL·E 2024-08-24 22.19.06 - A classroom scene with a group of computer science students engaged in learning. The students are a diverse group, seated at desks with laptops, codin.webp" width="250" class="dept-img" alt="cse image">
+                <img src="../assects/dept/cse/DALL·E 2024-08-24 22.19.06 - A classroom scene with a group of computer science students engaged in learning. The students are a diverse group, seated at desks with laptops, codin.webp" width="250" class="dept-img" alt="cse image">
             </div>
         </div>
         <div>
@@ -582,13 +638,26 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     </section>
 
     <section id="academic-calendar">
-        <h2>Academic Calendar and Time Tables</h2>
-        <p>The academic calendar and time tables are provided to help students stay organized and manage their time effectively. These documents outline important dates, such as the start and end of semesters, examination periods, and holidays.</p>
+        <div id="academicCalendarSection"></div>
+        <div id="timeTablesSection"></div>
     </section>
 
     <section id="infrastructure">
-        <h2>Infrastructure</h2>
-        <p>Our department boasts state-of-the-art infrastructure, including well-equipped computer labs, modern classrooms, and a vast library. The facilities are designed to support both theoretical and practical learning, providing students with the resources they need to succeed.</p>
+        <div class="div1">
+            <h2>Lab Details</h2>
+            <table id="labTable">
+                <thead>
+                    <tr>
+                        <th>Lab Name</th>
+                        <th>Configuration</th>
+                        <th>Utilization</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <section id="department-committees">
@@ -698,6 +767,61 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 
     // Load CSE faculty data
     loadContentPage('AICTE APPROVED', 'COMPUTER SCIENCE AND ENGINEERING');
+</script>
+<!-- academic page scprit -->
+<script type="module">
+    import academicData from '../data/dept/cse/academic.js';
+    
+    function renderSection(sectionId, title, data) {
+        const sectionContainer = document.getElementById(sectionId);
+        sectionContainer.innerHTML = `
+            <h2>${title}</h2>
+            ${data.map(item => `
+                <div class="file">
+                    <p>${item.text}</p>
+                    <a href="${item.link}" target="_blank">
+                        <button>Click Here</button>
+                    </a>
+                </div>
+            `).join('')}
+        `;
+    }
+
+    renderSection('academicCalendarSection', 'Academic Calendar', academicData.academicCalendar);
+    renderSection('timeTablesSection', 'Time Tables', academicData.timeTables);
+</script>
+<!-- infrastructure scprit -->
+<script type="module">
+    import labDetails from '../data/dept/cse/labDetails.js';
+
+    function renderTable(data) {
+        const tableBody = document.querySelector('#labTable tbody');
+        tableBody.innerHTML = data.map(lab => `
+            <tr>
+                <td>${lab.labName}</td>
+                <td>
+                    <table class="nested-table">
+                        <tr><th>Total Systems</th><td>${lab.configuration.totalSystems}</td></tr>
+                        ${lab.configuration.systems.map(system => `
+                            <tr>
+                                <th>System Count</th>
+                                <td>${system.count} - ${system.specs}</td>
+                            </tr>
+                        `).join('')}
+                        ${lab.configuration.equippedWith ? `
+                            <tr><th>Equipped With</th><td>${lab.configuration.equippedWith}</td></tr>
+                        ` : ''}
+                    </table>
+                </td>
+                <td>
+                    ${lab.utilization ? lab.utilization.join('<br>') : 'N/A'}
+                </td>
+            </tr>
+        `).join('');
+    }
+
+    // Call renderTable function with labDetails data
+    renderTable(labDetails);
 </script>
 </body>
 </html>
