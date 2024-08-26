@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Department of Computer Science and Engineering</title>
     <!-- <script src="../templates/includeHTML.js" defer></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        margin: 0;
+        padding: 0;
+        font-family: "inter",sans-serif;
+        }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     line-height: 1.6;
     background-color: #f8f9fa;
     color: #333;
@@ -23,12 +24,13 @@ body {
 }
 
 header {
+    height: 45vh;
     background-image: url("../assects/home.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
-    z-index: 1001; /* Ensure header is above sidebar */
+    /* position: relative; */
+    /* z-index: 1001; Ensure header is above sidebar */
 }
 
 .header1 {
@@ -204,7 +206,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         /* align-content: ; */
         gap: 30px;
     }
-    .card {
+    #faculty .card {
         border: 1px solid #ddd;
         border-radius: 10px;
         overflow: hidden;
@@ -214,7 +216,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         background: #eaecee;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover {
+    #faculty .card:hover {
         transform: translateY(-10px); /* Slightly raise the card */
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     }
@@ -336,6 +338,164 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         padding: 5px 10px;
         border: none;
     }
+    /* committes css */
+    #department-committees .container-fluid {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+    }
+
+    #department-committees    .row {
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+    #department-committees    .col-sm-10 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    #department-committees    .col-sm-10 h2{
+            text-wrap: nowrap;
+        }
+
+
+    #department-committees   .accordion .card {
+            width: 100%;
+            height: min-content;
+            background-color: rgba(34, 49, 104, 0.1);
+            border: 0.17vw solid transparent;
+            border-radius: 10px;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+    #department-committees    .card-header {
+            width: 100%;
+            padding: 1.5px 0;
+            border-radius: 10px;
+            background-color: rgba(34, 49, 104, 0.2);
+        }
+
+    #department-committees   .card-header h3{
+            margin-left: 4px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    #department-committees    .card-header h3 span{
+            margin-right: 10px;
+        }
+    #department-committees    .btn-link {
+            background: none;
+            border: none;
+            /* color: #007bff; */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            cursor: pointer;
+            text-align: start;
+        }
+  
+    #department-committees    .button-container button {
+            padding: 10px 20px;
+            border: unset;
+            border-radius: 10px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 600;
+            font-size: 1.3vw;
+            box-shadow: 4px 8px 19px 3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
+            text-wrap: nowrap;
+            margin-top: 20px;
+        }
+    #department-committees   .button-container button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #22316C;
+            z-index: -1;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+        }
+    #department-committees   .button-container button:hover {
+            color: #e8e8e8;
+        }
+    #department-committees    .button-container button:hover::before {
+            width: 100%;
+        }
+
+    #department-committees    .card-body {
+            padding: 15px;
+        }
+
+    #department-committees    .card-body b {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    #department-committees    ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+    #department-committees    ul li {
+            list-style: circle;
+            margin-bottom: 3px;
+        }
+
+    #department-committees    .collapse {
+            display: none;
+        }
+
+    #department-committees .collapse.show {
+            display: block;
+            height: max-content;
+        }
+        
+        /* Icons for the accordion */
+    #department-committees    .card-header .icon {
+            font-size: 1.5rem;
+        }
+
+        /* research & development */
+        .pdf-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pdf-link a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .pdf-link a:hover {
+            text-decoration: underline;
+        }
+        #pdf-viewer {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
 @media (max-width: 768px) {
     h2 {
     color: #1b2553;
@@ -410,11 +570,29 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     th, td {
         padding: 4px;
     }
+    #department-committees .col-sm-10 {
+                flex: 0 0 100%;
+            }
+    #department-committees .button-container button {
+        margin-top: 0;
+        font-size: small;
+    }
+    #department-committees h2 ,#department-committees  h3,#department-committees .card-header button,#department-committees li{
+        font-size: small;
+    }
+    #pdf-viewer {
+        width: 100%; 
+        height: 300px;
+    }
+    canvas {
+        width: min-content;
+    }
 }
     </style>
 </head>
-<body>
 <header id="nav-placeholder"></header>
+<body>
+
 <div class="header1">
     <div class="header-container">
         <h1>Department of Computer Science and Engineering</h1>
@@ -661,23 +839,42 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     </section>
 
     <section id="department-committees">
-        <h2>Department Committees</h2>
-        <p>Our department has various committees dedicated to different aspects of academic and administrative activities. These committees work together to ensure the smooth functioning of the department and the overall well-being of students and staff.</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10">
+                    <div>
+                        <h2>List of Departmental Committees</h2>
+                    </div>
+                    <div class="button-container">
+                        <button id="view-all" class="expand">View All 	&#9660;</button>
+                        <button id="close-all" class="expand" style="display:none;">Close All &#128898;</button>
+                    </div>
+    
+                </div><br>
+                <div class="accordion" id="accordion">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="placements">
-        <h2>Placements</h2>
-        <p>The placement cell of our department works tirelessly to ensure that our students are well-prepared for the job market. We have a strong track record of placing students in top companies, both in India and abroad. The cell organizes regular workshops, seminars, and mock interviews to help students develop the skills needed to secure their dream jobs.</p>
+        <div id="PlacementsSection"></div>
     </section>
 
     <section id="research-innovations">
-        <h2>Research & Innovations</h2>
-        <p>Our department is committed to fostering a culture of research and innovation. We encourage students and faculty to engage in cutting-edge research projects that address real-world challenges. Our research focuses on areas such as artificial intelligence, machine learning, data science, and cybersecurity.</p>
+        <div class="container">
+            <h1>Research Publications</h1>
+            
+            <div id="pdf-viewer"></div>
+            <div class="pdf-link">
+                <p>Download the PDF: <a href="../data\dept\cse\pdf\CSE_Dept _ResearchPaperPublications.pdf" target="_blank">Click Here</a></p>
+            </div>
+        </div>
     </section>
 
     <section id="activities">
-        <h2>Activities</h2>
-        <p>We believe in the holistic development of our students. To this end, we organize a variety of extracurricular activities, including technical workshops, hackathons, coding competitions, and cultural events. These activities provide students with opportunities to showcase their talents and develop their leadership and teamwork skills.</p>
+        <div id="ActivitiesSection"></div>
     </section>
 
     <section id="student-corner">
@@ -717,6 +914,10 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
             sections.forEach(section => section.classList.remove('active'));
             const targetId = link.getAttribute('data-target');
             document.getElementById(targetId).classList.add('active');
+            window.scrollTo({
+                top: 0,
+                // behavior: 'smooth'
+            });
         });
     });
 
@@ -814,7 +1015,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
                     </table>
                 </td>
                 <td>
-                    ${lab.utilization ? lab.utilization.join('<br>') : 'N/A'}
+                    ${lab.utilization ? '&#8227; '+lab.utilization.join('<br>&#8227; ') : 'N/A'}
                 </td>
             </tr>
         `).join('');
@@ -822,6 +1023,188 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 
     // Call renderTable function with labDetails data
     renderTable(labDetails);
+</script>
+<!-- committes page -->
+<script type="module">
+    
+    // JavaScript object containing committee data
+    import committees from '../data/dept/cse/committees.js';
+    // Function to generate HTML for each committee card
+    function renderCommittees() {
+        const accordion = document.getElementById('accordion');
+        committees.forEach(committee => {
+            const cardHTML = `
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <button type="button" class="btn-link">
+                              ${committee.title}
+                            </button>
+                            <span class="icon">&#128899;</span>
+                        </h3>
+                    </div>
+                    <div class="collapse">
+                        <div class="card-body">
+                            <b>Objectives:</b>
+                            <ul> 
+                                ${committee.objectives.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                            <b>Members:</b>
+                            <ul>
+                                ${committee.members.map(member => `<li>${member}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+            accordion.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
+
+    // Event listeners and functionality
+document.addEventListener('DOMContentLoaded', function () {
+    renderCommittees();
+
+    const acc = document.querySelectorAll('.card-header');
+    const viewAllButton = document.getElementById('view-all');
+    const closeAllButton = document.getElementById('close-all');
+
+    // Function to update button display based on state
+    function updateButtonStates() {
+        const anyVisible = document.querySelectorAll('.collapse.show').length > 0;
+        viewAllButton.style.display = anyVisible ? 'none' : 'inline-block';
+        closeAllButton.style.display = anyVisible ? 'inline-block' : 'none';
+    }
+
+    // Add click event to each header
+    acc.forEach(function (header) {
+        header.addEventListener('click', function () {
+            const collapse = this.nextElementSibling;
+            const icon = this.querySelector('.icon');
+            const isShowing = collapse.classList.contains('show');
+            collapse.classList.toggle('show', !isShowing);
+            icon.innerHTML = isShowing ? '&#128899;' : '&#128898;';
+
+            // Update button states when any header is clicked
+            updateButtonStates();
+        });
+    });
+
+    // View All button click event
+    viewAllButton.addEventListener('click', function () {
+        document.querySelectorAll('.collapse').forEach(function (collapse) {
+            collapse.classList.add('show');
+        });
+        document.querySelectorAll('.card-header .icon').forEach(function (icon) {
+            icon.innerHTML = '&#128898;';
+        });
+        updateButtonStates(); // Update button states after opening all
+    });
+
+    // Close All button click event
+    closeAllButton.addEventListener('click', function () {
+        document.querySelectorAll('.collapse').forEach(function (collapse) {
+            collapse.classList.remove('show');
+        });
+        document.querySelectorAll('.card-header .icon').forEach(function (icon) {
+            icon.innerHTML = '&#128899;';
+        });
+        updateButtonStates(); // Update button states after closing all
+    });
+
+    // Initial button state update
+    updateButtonStates();
+});
+</script>
+<!-- placement -->
+<script type="module">
+    import Placements from '../data/dept/cse/Placement.js'; // Update the path as necessary
+
+    function renderData(containerId, data) {
+        const container = document.getElementById(containerId);
+        let htmlContent = '';
+
+        for (const [title, items] of Object.entries(data)) {
+            htmlContent += `
+                <h2>${title}</h2>
+                ${items.map(item => `
+                    <div class="file">
+                        <p>${item.text}</p>
+                        <a href="${item.link}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+
+    // Render the data section using the Placements object
+    renderData('PlacementsSection', Placements);
+</script>
+<!-- r&i -->
+<script>
+    const pdfViewer = document.getElementById('pdf-viewer');
+
+    // URL of the PDF
+    const url = '../data/dept/cse/pdf/CSE_Dept _ResearchPaperPublications.pdf';
+    
+    // Asynchronous download of PDF
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfViewer.innerHTML = ''; // Clear previous content
+        const pdfDoc = pdfDoc_;
+        const scale = 1.5;
+        const numPages = pdfDoc.numPages;
+
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+            pdfDoc.getPage(pageNum).then(function(page) {
+                const viewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Render PDF page into canvas context
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                page.render(renderContext).promise.then(function() {
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+        }
+    });
+</script>
+<!-- activities  -->
+<script type="module">
+    import Activities from '../data/dept/cse/Activities.js'; // Update the path as necessary
+
+    function renderData(containerId, data) {
+        const container = document.getElementById(containerId);
+        let htmlContent = '';
+
+        for (const [title, items] of Object.entries(data)) {
+            htmlContent += `
+                <h2>${title}</h2>
+                ${items.map(item => `
+                    <div class="file">
+                        <p>${item.text}</p>
+                        <a href="${item.link}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+
+    // Render the data section using the FacultyAndStudentActivities object
+    renderData('ActivitiesSection', Activities);
 </script>
 </body>
 </html>
