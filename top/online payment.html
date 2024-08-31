@@ -3,348 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLINE PAYMENTS</title>
-    
+    <title>NAAC</title>
+    <script src="../templates/includeHTML.js" defer></script>
     <style>
         * {
             margin: 0;
-            border: 0;
             font-family: "Inter", sans-serif;
-            box-sizing: border-box;
-            font-size:25px;
         }
-        .title1 {
-            display: flex;
-            justify-content: center;
-            padding: 40px;
+        header {
+            background-image: url("/assects/home.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-clip: content-box;
+            position: relative;
+        }
+        .container {
+            width: 100%;
+            position: relative;
+            /* padding-bottom: 1%; Enough space for the button at the bottom */
+        }
+        .container > .head {
+            text-align: center;
+            padding: 1.3vw; /* 40px */
             color: #22316C;
+            font-size: 6vw;
         }
         .content {
-            padding: 10px;
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .container
-        {
-            height: 90vh;
-        }
-        .c1 {
-            border: 2px solid black;
-            border-radius: 5px;
             width: 100%;
-            max-width: 400px;
-            height: 135px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 10px;
+            gap: 5%;
         }
-        .c1 h1 {
-            text-align: center;
+        .content button {
+            padding: 15px 25px;
+            border: unset;
+            border-radius: 15px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 700;
+            font-size: 1.3vw;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
         }
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                align-items: center;
-            }
-            .c1 {
-                width: 90%;
-                margin-bottom: 10px;
-            }
+        .content button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #22316C;
+            z-index: -1;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
         }
-        @media (max-width: 480px) {
-            .title {
-                padding: 20px;
-            }
-            .c1 {
-                height: auto;
-                padding: 20px;
-            }
-            .c1 h1 {
-                font-size: 1.2rem;
-            }
+        .content button:hover {
+            color: #e8e8e8;
         }
-        .c1:hover {
-            background-color: #344ba7bf;
-            color: white;
+        .content button:hover::before {
+            width: 100%;
         }
         .box {
-            margin-top: 30px;
+            margin-top: 2.5vw;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .heading {
-            background: #344ba7bf;
-            border: 2px solid rgb(8, 8, 8);  
+            background: #22316DBF;
             color: white;
-            width: 1115px;
-            height: 75px;
+            text-align: center;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .heading h1 {
-            display: flex;
+        .heading h6 {
+            font-size: 2vw;
             justify-content: center;
-            margin-top: 20px;
-        }
-        .file {
-            border: 2px solid black;
-            width: 1115px;
-            height: 75px;
-            margin-bottom: 10px;
-        }
-        .file:hover {
-            width: 1125px;
-            height: 85px;
-            background-color: #4966dabf;
-        }
-        .file h1:hover {
-            color: white;
-        }
-        .file h1 {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
+            margin-top: 0.01vw;
+            padding: 2%;
         }
         .files {
-            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .file {
+            width: 100%;
+            background-color: rgba(34, 49, 104, 0.25);
+            border: 0.17vw solid transparent;
+            border-radius: 10px;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .file:hover, .file.active {
+            background-color: rgba(34, 49, 104, 0.55);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+        }
+        .file h6:hover, .file.active h6 {
+            color: white;
+        }
+        .file h6 {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.67vw;
         }
         a {
             text-decoration: none;
             color: black;
         }
-        .c1 a:hover {
+        .c1.active {
+            background-color: #22316c;
             color: white;
         }
-        .head {
-            display: flex;
-            justify-content: center;
-        }
         .sub1 {
-            margin-top: 70px;
+            margin-top: 5.83vw;
         }
         .hidden {
             display: none;
         }
         .visible {
-            margin-top: -300px;
+            padding: 4vw;
             display: block;
         }
-        @media (max-width: 768px) {
-            .heading {
-                width: 100%;
-                height: auto;
-                padding: 10px;
-            }
-            .file {
-                width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-            }
-            .file h1 {
-                font-size: 1rem;
-            }
-            .files {
-                padding: 10px;
-            }
+        .file {
+            width: 97%;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            padding: 1.3%;
         }
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .heading {
-                width: 90%;
-                height: auto;
-            }
-            .file {
-                width: 100%;
-                height: auto;
-            }
-            .files {
-                padding: 15px;
-            }
+        .file button {
+            color: #22316C;
+            font-size: medium;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
         }
-        .heading1 {
-            background: #344ba7bf;
-            border: 2px solid rgb(8, 8, 8);  
+        .file:hover button {
+            font-size: large;
+            color: #e78709;
+            text-decoration: underline;
+            text-underline-offset: calc(4px);
+        }
+        .scroll-to-top {
+            position: fixed;
+            right: 20px;
+            background-color: #22316C;
             color: white;
-            width: 1115px;
-            height: 75px;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
             display: flex;
             align-items: center;
-            padding: 40px;
-            justify-content: space-between;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s ease; /* Smooth transition for both opacity and bottom */
+            z-index: 1000; /* Ensure it appears above other content */
         }
-        .file1 {
-            display: flex;
-            align-items: center;
-            padding: 40px;
-            justify-content: space-between;
-            border: 2px solid black;
-            width: 1115px;
-            height: 75px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .scroll-to-top.show {
+            opacity: 1;
+            box-shadow: 0 0 20px white;
         }
-        .c1:hover, .c1.active {
-            background-color: #22316DBF;
-        }
-        .c1 h1:hover, .c1.active h1 {
-            color: white;
-        }
-        .file:hover, .file.active {
-            width: 1125px;
-            height: 85px;
-            background-color: #22316DBF;
-        }
-        .file h1:hover, .file.active h1 {
-            color: white;
+        .scroll-to-top:hover {
+            background-color: #e78709;
         }
         table {
-            width: 100%;
-            border-collapse: collapse;
+                width: 100%;
+                border-collapse: collapse; /* Removes gaps between cells */
+                margin: 2vw auto; /* Centers the table and adds some space around it */
+                font-size: 1.2vw; /* Adjust font size according to your design */
+                max-width: 1200px; /* Ensures the table doesn't exceed this width */
+                background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+                border-radius: 15px;
+                overflow: hidden; /* Ensures border-radius works even if the content overflows */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+            }
+
+            thead {
+                background-color: #22316c; /* Background color for the header */
+                color: white; /* White text color for contrast */
+            }
+
+            thead th {
+                padding: 1vw; /* Adds padding to the header cells */
+                font-weight: bold; /* Makes the text bold */
+                text-align: left; /* Aligns text to the left */
+                font-size: 1.5vw;
+            }
+
+            tbody tr {
+                border-bottom: 1px solid #ddd; /* Adds a border between rows */
+            }
+
+            tbody tr:last-child {
+                border-bottom: none; /* Removes border from the last row */
+            }
+
+            tbody td {
+                padding: 1vw; /* Adds padding to the body cells */
+                text-align: left; /* Aligns text to the left */
+            }
+
+            tbody tr:hover {
+                background-color: rgba(34, 49, 104, 0.1); /* Adds a hover effect */
+            }
+
+            @media (max-width: 768px) {
+                table {
+                    font-size: 3vw; /* Increases font size on smaller screens */
+                    margin: 2vw auto;
+                }
+
+                thead th, tbody td {
+                    padding: 2vw; /* Increases padding on smaller screens */
+                }
+            }
+
+        @media (max-width: 768px) {
+            .content button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.6vw;}
+            .heading {
+                border-radius: 5px;
+            }
+            .file p{
+                font-size: 3vw;
+            }
+            .file{
+                border-radius: 6px;
+            }
+            .file button{
+                font-size: 3vw;
+                display: flex;
+                white-space: nowrap;
+            }
+            .scroll-to-top.show{
+                display: none;
+            }
         }
-        table, th, td {
-            border: 2px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #344ba7bf;
-            color: white;
-        }
-        tr:hover {
-            background-color: #4966dabf;
+        footer {
+            height: 200px; /* Adjust according to your footer height */
+            position: relative; /* Ensure footer has a relative position */
         }
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
+    <header id="nav-placeholder"></header>
+   
     <div class="container">
-        <div class="title1">
-            <h1>ONLINE FEE PAYMENT</h1>
+        <div class="head">
+            <h6>ONLINE FEE PAYMENT</h6>
         </div>
         <div class="content">
-            <div class="c1" id="button1">
-                <a href="javascript:void(0)"><h1>ONLINE FEE PAYMENT</h1></a>
-            </div>
-            <div class="c1" id="button2">
-                <a href="javascript:void(0)"><h1>FEE STRUCTURE</h1></a>
-            </div>
+            <a href="javascript:void(0)"><button class="c1" id="button1">ONLINE FEE PAYMENT</button></a>
+            <a href="javascript:void(0)"><button class="c1" id="button2">FEE STRUCTURE</button></a>
         </div>
-    </div>
-    <div id="sub1" class="hidden">
-        <div class="head">
-            <div class="heading">
-                <h1>ONLINE FEE PAYMENT</h1>
-            </div>
-        </div>
-        <div class="box">
-            <div class="files">
-                <div class="file">
-                    <a href=""><h1>DEGREE BSC FEE PAYMENT</h1></a>
-                </div>
-                <div class="file">
-                        <a href=""><h1>BBA,BCA,BCA(DATA SCIENCE)</h1></a>
-                </div>
-                <div class="file">
-                    <a href=""><h1>MSC & MHRM FEE PAYMENT</h1></a>
-            </div>
-            <div class="file">
-                <a href=""><h1>MBA FEE PAYMENT</h1></a>
-            </div>
-            <div class="file">
-                <a href=""><h1>MCA FEE PAYMENT</h1></a>
-            </div>
-                <div class="file">
-                    <a href=""><h1>ENGINEERING FEE PAYMENT</h1></a>
-                </div>
-                <div class="file">
-                    <a href=""><h1>TRANSPORT FEE PAYMENT</h1></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="sub2" class="hidden">
-       
-        <div class="box">
-            <div class="files">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Course</th>
-                            <th>Fee</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>M.B.A</td>
-                            <td>70,000/-</td>
-                        </tr>
-                        <tr>
-                            <td>M.C.A</td>
-                            <td>70,000/-</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">MTECH</th>
-                        </tr>
-                        <tr>
-                            <td>STRUCTURAL ENGINEERING</td>
-                            <td>63,000/-</td>
-                        </tr>
-                        <tr>
-                            <td>M.C.A</td>
-                            <td>63,000/-</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">BTECH</th>
-                        </tr>
-                        <tr>
-                            <td>CIVIL ENGINEERING</td>
-                            <td>63,000/-</td>
-                        </tr>
-                        <tr>
-                            <td>COMPUTER SCIENCE ENGINEERING</td>
-                            <td>63,000/-</td>
-                        </tr>
-                        <tr>
-                            <td>ELECTRONICS AND COMMUNICATION ENGINEERING</td>
-                            <td>63,000/-</td>
-                        </tr>
-                        <tr>
-                            <td>CIVIL ENGINEERING</td>
-                            <td>63,000/-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <script>
-        document.getElementById('button1').addEventListener('click', function() {
-            toggleVisibility('button1', 'sub1');
-        });
 
-        document.getElementById('button2').addEventListener('click', function() {
-            toggleVisibility('button2', 'sub2');
-        });
+    </div>
+
+    <div id="sub1" class="hidden"></div>
+    <div id="sub2" class="hidden"></div>
+    <button id="scrollToTop" class="scroll-to-top">
+        &#8593; <!-- Unicode character for up arrow -->
+    </button>
+    <footer id="footer-placeholder"></footer>
+    <script type="module">
+        import feePaymentData from '../data/topdata/fee.js';
+
+        function renderSection(feePaymentid, data) {
+    const container = document.getElementById(feePaymentid);
+    if (feePaymentid === 'sub2') {
+        container.innerHTML = `
+            <div class="head">
+                <div class="heading">
+                    <h6>${data.heading}</h6>
+                </div>
+            </div>
+            <div class="box">
+                <div class="files">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.files.map(file => `
+                                <tr>
+                                    <td>${file.course}</td>
+                                    <td>${file.fee}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+    } else {
+        container.innerHTML = `
+            <div class="head">
+                <div class="heading">
+                    <h6>${data.heading}</h6>
+                </div>
+            </div>
+            <div class="box">
+                <div class="files">
+                    ${data.files.map(file => `
+                        <div class="file">
+                            <p>${file.text}</p>
+                            <a href="${file.link}"><button>Click me</button></a>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+}
+
+
         function toggleVisibility(buttonId, sectionId) {
-            var sections = ['sub1', 'sub2'];
-            var buttons = ['button1', 'button2'];
+            const sections = ['sub1', 'sub2'];
+            const buttons = ['button1', 'button2'];
 
-            sections.forEach(function(id) {
-                var section = document.getElementById(id);
+            sections.forEach(id => {
+                const section = document.getElementById(id);
                 if (id === sectionId) {
-                    section.classList.toggle('visible');
-                    section.classList.toggle('hidden');
+                    section.classList.add('visible');
+                    section.classList.remove('hidden');
                 } else {
                     section.classList.remove('visible');
                     section.classList.add('hidden');
                 }
             });
 
-            buttons.forEach(function(id) {
-                var button = document.getElementById(id);
+            buttons.forEach(id => {
+                const button = document.getElementById(id);
                 if (id === buttonId) {
                     button.classList.add('active');
                 } else {
@@ -352,8 +361,69 @@
                 }
             });
         }
+
+        Object.keys(feePaymentData).forEach(feePaymentid => {
+            renderSection(feePaymentid, feePaymentData[feePaymentid]);
+        });
+
+        document.getElementById('button1').addEventListener('click', () => toggleVisibility('button1', 'sub1'));
+        document.getElementById('button2').addEventListener('click', () => toggleVisibility('button2', 'sub2'));
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleVisibility('button1', 'sub1');
+        });
+        
+        // Button for scrolling to the top
+
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        const footer = document.querySelector('footer');
+
+        // Function to handle scroll events
+        function handleScroll() {
+            // Show or hide the button based on scroll position
+            if (window.scrollY > 100) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+            updateScrollToTopButtonPosition();
+        }
+
+        // Function to update the button's position
+        function updateScrollToTopButtonPosition() {
+            const footerRect = footer.getBoundingClientRect();
+            const buttonRect = scrollToTopButton.getBoundingClientRect();
+
+            // Calculate the space between the button and the footer
+            const footerTop = footerRect.top;
+            const buttonHeight = buttonRect.height;
+            const viewportHeight = window.innerHeight;
+            const footerBuffer = 10; // Buffer to keep the button above the footer
+
+            if (footerTop < viewportHeight) {
+                // Adjust button position to stay above the footer
+                const bottomOffset = Math.average(footerTop - buttonHeight - footerBuffer, 20);
+                scrollToTopButton.style.bottom = `${bottomOffset}px`;
+            } else {
+                // Fixed position if not near footer
+                scrollToTopButton.style.bottom = '20px';
+            }
+        }
+
+        // Function to handle scroll-to-top button click
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add event listeners for scroll and resize events
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', updateScrollToTopButtonPosition);
+
+        // Initial position update
+        updateScrollToTopButtonPosition();
     </script>
-    <script src="./templates/includeHTML.js" defer></script>
-    <div id="footer-placeholder"></div>
+ 
 </body>
 </html>

@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science and Engineering</title>
+    <!-- <script src="../templates/includeHTML.js" defer></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        font-family: "inter",sans-serif;
+        }
+
+body {
+
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    height: 45vh;
+    background-image: url("../assects/home.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* position: relative; */
+    /* z-index: 1001; Ensure header is above sidebar */
+}
+
+.header1 {
+    background-color: #f8f9fa;
+    color: #22316c;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure this header is above sidebar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header1 h1 {
+    font-size: 1.5rem;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dept-div {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.sidebar {
+    background-color: #eaecee;
+    color: #22316c;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    scrollbar-width: none;
+    z-index: 999; /* Ensure sidebar is below header */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 6px 20px;
+}
+
+.sidebar ul li a {
+    color: #22316c;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1b255334;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+}
+
+.sidebar ul li a.active {
+    background-color: #1b255334;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    color: #22316c;
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 50px;
+    flex-grow: 1;
+}
+
+.content > section {
+    display: none;
+}
+
+.content > section.active {
+    display: block;
+}
+
+h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    text-rendering: geometricPrecision;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+section {
+    text-align: justify;
+}
+.dept-img {
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.dept-img:hover{
+transform: translateY(-10px); /* Slightly raise the card */
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.dept-con {
+    width: 60%;
+}
+
+.page2{
+      display: flex;
+    }
+    .mivison{
+      margin: 3vw;
+      padding: 2vw;
+      border: 2px solid transparent;
+      border-radius: 1vw;
+      font-size: 1.3vw;
+      text-align: justify;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .mivison:hover {
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+  section ul{
+    list-style: none;
+  }
+  section ul li{
+    margin-bottom: 20px;
+  }
+  section ul li strong{
+    border-bottom: 2px solid #22316cb0;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+  }
+
+  /* hod message */
+  .hod-img{
+    width:100%; 
+    max-width:400px;
+    display:block;
+    margin-bottom:20px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 25px; 
+    float: right;
+}
+    .hod-img:hover{
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+    /* faculty css  */
+    #faculty{
+        padding-left: 6%;
+    }
+    .container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* align-content: ; */
+        gap: 30px;
+    }
+    #faculty .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        width: 250px;
+        max-height: 350px;
+        background: #eaecee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #faculty .card:hover {
+        transform: translateY(-10px); /* Slightly raise the card */
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .fac_img img {
+        width: 100%;
+        height: 150px;
+        object-fit: calc(100px - 200 * 3);
+    }
+    .fac_title {
+        width: 100%;
+        max-height: 200px;
+        padding: 10px;
+        word-break: break-all;
+        
+    }
+    .fac_title h3 {
+        font-size: 1em;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+    }
+    .fac_title p {
+        font-size: 10px;
+        margin: 5px 0;
+        font-weight: 500;
+        text-wrap: pretty;
+    }
+    /* syllabus */
+    .file {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 1.3%;
+        background-color: rgba(34, 49, 104, 0.25);
+        border: 0.17vw solid transparent;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .file:hover, .file.active {
+        background-color: rgba(34, 49, 104, 0.55);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .file p {
+        margin: unset;
+        display: flex;
+        justify-content: center;
+      
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .file button {
+        color: #22316C;
+        font-size: medium;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-wrap: pretty;
+    }
+    .file:hover button {
+        font-size: large;
+        color: #e78709;
+        text-decoration: underline;
+        text-underline-offset: calc(4px);
+    }
+    /* infrastructure */
+    table{
+        width: 100%;
+        max-width: 1200px;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        overflow: hidden; 
+        font-size: 1vw;
+    }
+    thead{
+        color: #22316C;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .nested-table {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nested-table th {
+        border: none;
+        background-color: transparent; /* Remove background color from nested-table th */
+        text-align: left;
+    }
+
+    .nested-table tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+    .nested-table td {
+        padding: 5px 10px;
+        border: none;
+    }
+    /* committes css */
+    #department-committees .container-fluid {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+    }
+
+    #department-committees    .row {
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+    #department-committees    .col-sm-10 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    #department-committees    .col-sm-10 h2{
+            text-wrap: nowrap;
+        }
+
+
+    #department-committees   .accordion .card {
+            width: 100%;
+            height: min-content;
+            background-color: rgba(34, 49, 104, 0.1);
+            border: 0.17vw solid transparent;
+            border-radius: 10px;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+    #department-committees    .card-header {
+            width: 100%;
+            padding: 1.5px 0;
+            border-radius: 10px;
+            background-color: rgba(34, 49, 104, 0.2);
+        }
+
+    #department-committees   .card-header h3{
+            margin-left: 4px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    #department-committees    .card-header h3 span{
+            margin-right: 10px;
+        }
+    #department-committees    .btn-link {
+            background: none;
+            border: none;
+            /* color: #007bff; */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            cursor: pointer;
+            text-align: start;
+        }
+  
+    #department-committees    .button-container button {
+            padding: 10px 20px;
+            border: unset;
+            border-radius: 10px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 600;
+            font-size: 1.3vw;
+            box-shadow: 4px 8px 19px 3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
+            text-wrap: nowrap;
+            margin-top: 20px;
+        }
+    #department-committees   .button-container button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #22316C;
+            z-index: -1;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+        }
+    #department-committees   .button-container button:hover {
+            color: #e8e8e8;
+        }
+    #department-committees    .button-container button:hover::before {
+            width: 100%;
+        }
+
+    #department-committees    .card-body {
+            padding: 15px;
+        }
+
+    #department-committees    .card-body b {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    #department-committees    ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+    #department-committees    ul li {
+            list-style: circle;
+            margin-bottom: 3px;
+        }
+
+    #department-committees    .collapse {
+            display: none;
+        }
+
+    #department-committees .collapse.show {
+            display: block;
+            height: max-content;
+        }
+        
+        /* Icons for the accordion */
+    #department-committees    .card-header .icon {
+            font-size: 1.5rem;
+        }
+
+        /* research & development */
+        .pdf-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pdf-link a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .pdf-link a:hover {
+            text-decoration: underline;
+        }
+        #pdf-viewer {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+@media (max-width: 768px) {
+    h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    font-size: medium;
+    }
+
+    p ,strong{
+        font-size: small;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: 999; /* Ensure sidebar does not overlap other content */
+    }
+
+    .dept-div {
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .dept-con {
+        width: 100%;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        padding-top: 70px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .dept-img {
+        display: none;
+    }
+    .page2{
+     flex-direction: column;
+    }
+    #syllabus h3{
+        font-size: x-small;
+    }
+    .file p{
+        font-size: 2.5vw;
+    }
+    .file{
+        border-radius: 6px;
+    }
+    .file a{
+        padding-left: 15%;
+        align-content: center;
+    }
+    .file button{
+        font-size: 3vw;
+        text-align: center;
+        display: flex;
+        white-space: nowrap;
+    }
+    .file:hover button{
+        font-size: 3vw;
+    }
+    table{
+        font-size: 2.5vw;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+    th, td {
+        padding: 4px;
+    }
+    #department-committees .col-sm-10 {
+                flex: 0 0 100%;
+            }
+    #department-committees .button-container button {
+        margin-top: 0;
+        font-size: small;
+    }
+    #department-committees h2 ,#department-committees  h3,#department-committees .card-header button,#department-committees li{
+        font-size: small;
+    }
+    #pdf-viewer {
+        width: 100%; 
+        height: 300px;
+    }
+    canvas {
+        width: min-content;
+    }
+}
+    </style>
+</head>
+<!-- <header id="nav-placeholder"></header> -->
+<body>
+
+<div class="header1">
+    <div class="header-container">
+        <h1>Department of Computer Science and Engineering</h1>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="#" data-target="about-department">About Department</a></li>
+        <li><a href="#" data-target="vision-mission">Vision & Mission / PEOs / PSOs / POs</a></li>
+        <li><a href="#" data-target="hod-message">HOD's Message</a></li>
+        <li><a href="#" data-target="faculty">Faculty</a></li>
+        <li><a href="#" data-target="syllabus">Syllabus</a></li>
+        <li><a href="#" data-target="academic-calendar">Academic Calendar and Time Tables</a></li>
+        <li><a href="#" data-target="infrastructure">Infrastructure</a></li>
+        <li><a href="#" data-target="department-committees">Department Committees</a></li>
+        <li><a href="#" data-target="placements">Placements</a></li>
+        <li><a href="#" data-target="research-innovations">Research & Innovations</a></li>
+        <li><a href="#" data-target="activities">Activities</a></li>
+        <li><a href="#" data-target="student-corner">Student Corner</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section id="about-department" class="active">
+        <h2>About Department</h2>
+        <div class="dept-div">
+            <div class="dept-con">
+                <p>The Department of Computer Science and Engineering was established in 2011 at Gayatri Vidya Parishad College for Degree & PG Courses (A). It offers a B.Tech program with a maximum intake of 240 students (180 for CSE and 60 for AI & ML). The department is committed to providing students with both theoretical and practical foundations in Information Technology and Computation, equipped with modern labs and exposure to the latest trends in the field.</p>
+            </div>
+            <div>
+                <img src="../assects/dept/cse/DALL·E 2024-08-24 22.19.06 - A classroom scene with a group of computer science students engaged in learning. The students are a diverse group, seated at desks with laptops, codin.webp" width="250" class="dept-img" alt="cse image">
+            </div>
+        </div>
+        <div>
+            <br><h2>About B.Tech Admission</h2>
+            <p><strong>EAPCET Counseling Code: <span>GVPT</span></strong><br><strong>Admissions under Category "A" (Convener’s Quota-70% of intake in each branch):</strong></p>
+            <p>A Candidate for admission to the four-year degree program in Engineering must have passed the Intermediate examination of the Board of Intermediate Education, Government of Andhra Pradesh with Mathematics, Physics and Chemistry as optional subjects. All the eligible applicants for admission into First Year shall have to qualify in the EAPCET Examination conducted by the Govt. of AP. The candidates will be admitted strictly in accordance with the merit secured at the Entrance Examination keeping in view the rules in force regarding the reservations of seats of various categories of candidates. The candidates should satisfy local/non-local status requirement as laid down in the AP Educational institutions (Regulation of Admissions) Order 1974 as amended from time to time.</p>
+            <p><strong>Admissions under Category "B" (30% of intake in each branch)</strong></p>
+            <p><strong>ECET Counseling Code: <span>GVPT</span></strong></p>
+            <p>The Engineering Diploma holders, based on their merit at ECET, are admitted into Lateral Entry (II year B. Tech Courses)</p>
+            <p><strong>The seats shall be filled as per the rules given by APSCHE.</strong></p>
+            <br>
+        </div>
+        <div>
+            <h2>About M.Tech Program</h2>
+            <p>MTech Computer Science & Technology Program started in the Academic Year 2020-21. It is a two-year Postgraduate program with four semesters. The main purpose behind crafting the M.Tech course is to equip students with the knowledge and abilities desirable to the modern computing industry. MTech in Computer Science & Technology have a wide range of job opportunities in sectors like Consultancy firms, IT companies, Corporate Industry, Multinational companies, Start ups, banking sectors etc.</p>
+            <br>
+            <h2>M.Tech Admission Procedure:</h2>
+            <p>A Candidate for admission to M.Tech Program by qualify in GATE/PGCET conducted by Govt. Total number of students Intake is 18 and Specialization is Computer Science & Technology.</p>
+        </div>
+    </section>
+
+    <section id="vision-mission">
+        <h2 style="text-align: center;">Our Mission And Vision</h2>
+        <div class="page2">
+            
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
+              <h2 style="color: white;padding-bottom: 3vh;">MISSION :</h2>
+              <p>The vision of the department is “Create and sustain as a Centre of excellence in Computer Science and Engineering and allied areas of research to pave the way for providing better technocrats to the society”.</p>
+            </div>
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 2.5%);">
+              <h2  style="color: #22316c;padding-bottom: 3vh;">VISION :</h2>
+              <p >The mission of the department is “To provide strong conceptual base (M1) for acquiring programming skills, to develop high computational innovative skills (M2) and to empower leadership qualities with strong ethical base (M3)”.</p>
+            </div>
+          </div>
+        <br>
+        <h2>B.Tech: Program Educational Objectives (PEOs)</h2>
+        <ul>
+            <li><strong>PEO1:</strong> Ability to develop hardware and software problem solving capabilities by inculcating strong fundamental, analytical, and communication skills.</li>
+            <li><strong>PEO2:</strong> Ability to build confidence to address the challenges in their work and to apply innovative technical tools through interaction with professional bodies.</li>
+            <li><strong>PEO3:</strong> Ability to gain sufficient depth of knowledge, Self-learning skills, technical skills and leadership qualities through participating in personality development activities, so as to sustain in multidisciplinary environment.</li>
+            <li><strong>PEO4:</strong> To be able to respond to societal needs in professional and ethical concerns.</li>
+        </ul>
+        <br>
+        <h2>Program Specific Outcomes (PSOs)</h2>
+        <ul>
+            <li><strong>PSO 1:</strong> System Inception and Elaboration: Conceptualize the software and/or hardware systems, system components and processes/procedures through requirement analysis, Modelling/Design of the system using various architectural/design patterns, Standard Notations, procedures and algorithms.</li>
+            <li><strong>PSO 2:</strong> System Construction: Implement the systems, Procedures and Processes using the state of the art technologies, standards, tools and Programming Paradigms.</li>
+            <li><strong>PSO 3:</strong> System Testing and Deployment: Verify and Validate the Systems, Procedures and Processes using various testing and verification techniques and tools.</li>
+            <li><strong>PSO 4:</strong> Quality and Maintenance: Manage the quality through various product development strategies under revision, transition and operation through maintainability, flexibility, testability, portability, reusability, interoperability, correctness, reliability, efficiency, integrity and usability to adapt the system to the changing structure and behavior of the systems/environments.</li>
+        </ul>
+        <br>
+        <h2>Program Outcomes (POs)</h2>
+        <ul>
+            <li><strong>Engineering knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
+            <li><strong>Problem analysis:</strong> Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
+            <li><strong>Design/development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
+            <li><strong>Conduct investigations of complex problems:</strong> Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
+            <li><strong>Modern tool usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</li>
+            <li><strong>The engineer and society:</strong> Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</li>
+            <li><strong>Environment and sustainability:</strong> Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.</li>
+            <li><strong>Ethics:</strong> Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.</li>
+            <li><strong>Individual and team work:</strong> Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.</li>
+            <li><strong>Communication:</strong> Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.</li>
+            <li><strong>Project management and finance:</strong> Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.</li>
+            <li><strong>Life-long learning:</strong> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</li>
+        </ul>
+        <br>
+        <h2>M.Tech: Program Educational Objectives (PEOs)</h2>
+        <ul>
+            <li><strong>PEO1:</strong> To motivate students in learning the advanced concepts to develop real world applications in the thrust areas of Computer Science and Technology.</li>
+            <li><strong>PEO2:</strong> To impart ethical practices in molding graduates to engage in research, leadership roles along diverse career paths and lifelong learning to adapt innovation.</li>
+        </ul>
+        <br>
+        <h2>Program Specific Outcomes (PSOs)</h2>
+        <ul>
+            <li><strong>PSO 1:</strong> Applying problem solving skills in a systematic way to Analyze software processes and employable in a product oriented Industry.</li>
+            <li><strong>PSO 2:</strong> Ability to publish research articles in the thrust areas of Computer Science and Technology in quality indexed journals.</li>
+        </ul>
+        <br>
+        <h2>Program Outcomes (POs)</h2>
+        <ul>
+            <li><strong>PO 1:</strong> An ability to independently carry out research /investigation and development work to solve practical problems.</li>
+            <li><strong>PO 2:</strong> An ability to write and present a substantial technical report/document.</li>
+            <li><strong>PO 3:</strong> Students should be able to demonstrate a degree of mastery over the area as per the specialization of the program. The mastery should be at a level higher than the requirements in the appropriate bachelor program.</li>
+        </ul>
+        
+    </section>
+
+    <section id="hod-message">
+        <h2>HOD's Message</h2>
+        <img src="https://www.gvpcdpgc.edu.in/cse/images/Dr.GRS-hod.jpeg" alt="HOD Image" class="hod-img">
+
+        <p>Careers in the field of Computer Science and Engineering are in very high demand, offering not only the comfort of high-paying jobs but also the intellectual challenges of a creative and productive profession.</p>
+
+        <p>Welcome to the Department of Computer Science and Engineering at Gayatri Vidya Parishad College for Degree and PG Courses. Our B.Tech and M.Tech programs, which are at the forefront of technological advancements, are designed to empower you with the necessary proficiencies to succeed in the ever-changing tech industry. The department offers a regular four-year B.Tech in Computer Science and Engineering (CSE) course with an intake of 180 students and an M.Tech in Computer Science & Technology with an intake of 12 students. Both B.Tech and M.Tech programs are under the permanent affiliation of Andhra University.</p>
+
+        <p>Since 2011, the department has consistently strived to offer high-quality, state-of-the-art education in computer science and engineering, with well-established laboratories that cater to industry needs. The department is accredited by the NBA and NAAC for its quality education, and the institute is ISO certified. We are especially proud of the long and sustained placement records of our Bachelor's students in various multinational software companies, and our students are pursuing higher education at top international universities.</p>
+
+        <p>Here are some reasons that make CSE at Gayatri Vidya Parishad College exceptional:</p>
+
+        <ul>
+            <li><strong>Curriculum Aligned with Industry Needs:</strong> Our curriculum is meticulously crafted to meet the current IT industry's requirements. We consistently revise our courses to ensure that you are proficient in the most pertinent programming languages, software development practices, and technical skills.</li>
+            <li><strong>Learn from Experts:</strong> Our faculty members are knowledgeable, dedicated, and many hold Ph.D.s. They are actively engaged in research, allowing them to bring current, real-world insights into the classroom.</li>
+            <li><strong>Practical Experience:</strong> We prioritize hands-on learning in addition to theoretical knowledge. Our program incorporates projects, labs, and internships where you'll create real-world software applications, solve intricate problems, and acquire the practical experience that employers seek.</li>
+            <li><strong>Collaboration with Industry:</strong> We bridge the gap between academia and industry by offering internships with leading companies. These opportunities enable you to apply your knowledge in practical settings and establish valuable professional connections.</li>
+            <li><strong>Dynamic Learning Opportunities:</strong> Enhance your skills through various active learning avenues. Participate in coding competitions, hackathons, and student-led clubs like ACM (Association for Computing Machinery) to push your boundaries, collaborate with peers, and build an impressive technical portfolio.</li>
+            <li><strong>Innovation through Projects:</strong> Unlock your creativity by working on innovative projects under the guidance of our faculty. You'll address real-world issues in areas such as web development, mobile app creation, data science, and artificial intelligence.</li>
+            <li><strong>Stay Ahead of Tech Trends:</strong> Keep up-to-date with technological advancements through our workshops, guest lectures, and seminars featuring industry experts. These events will provide you with insights into the latest trends and emerging technologies in computer science.</li>
+            <li><strong>Holistic Growth:</strong> We foster holistic development by encouraging participation in co-curricular and extracurricular activities to enhance your communication, teamwork, and leadership skills.</li>
+        </ul>
+
+        <p>The Department of Computer Science and Engineering aims to create a Center of Excellence and prepare students to be skilled technologists and well-rounded individuals who positively impact society. This aligns with the college's mission of "Creating Human Excellence for a Better Society." The department believes that a strong foundation in computer science, critical thinking, and ethical practices will empower graduates to be future leaders and innovators.</p>
+
+        <p>I welcome all the aspirants to be a part of the CSE family and wish them a bright future!</p>
+
+        <p><strong>Dr. G.R.S. Murthy, M.Tech, Ph.D</strong><br>
+        Professor & HOD<br>
+        Contact: <a href="mailto:hodcse@gvpcdpgc.edu.in">hodcse@gvpcdpgc.edu.in</a></p>
+
+        <p><strong>Predecessors:</strong></p>
+        <ul >
+            <li><strong style="border: unset;">Dr. N.V. Ramana Murthy, Professor</strong><br>
+            Duration: 01/07/2021 to 01/05/2024</li>
+            <li><strong style="border: unset;">Dr. T.M.N. Vamsi, Professor</strong><br>
+            Duration: 11/01/2018 to 30/06/2021</li>
+        </ul>
+    </section>
+
+    <section id="faculty">
+        <h2 style="font-size: xx-large; text-align: center;">Faculty Members</h2>
+        <div class="container" id="card-container">
+            <!-- Cards will be inserted here by JavaScript -->
+        </div>
+
+    </section>
+
+    <section id="syllabus">
+        <h2>M.Tech Syllabus</h2>
+        <div class="file">
+            <p>M.Tech Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
+            <a href="URL_TO_MTECH_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+        <br>
+        <h2>B.Tech Syllabus</h2>
+
+        <h3>B.TECH CSE-AIML R22 Regulation (From admitted batch 2022-2023)</h3>
+        <div class="file">
+            <p>B.Tech CSE-AIML R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_AIML_R22_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+            
+        <h3>B.TECH CSE R22 Regulation (From admitted batch 2022-2023)</h3>
+        <div class="file">
+            <p>B.Tech CSE R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_R22_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
+        <h3>B.TECH CSE R20 Regulation (From admitted batch 2020-2021)</h3>
+        <div class="file">
+            <p>B.Tech CSE R20 Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_R20_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
+        <h3>B.TECH CSE R19 Regulation (From admitted batch 2019-2020)</h3>
+        <div class="file">
+            <p>B.Tech CSE R19 Syllabus (With effect from 2019-2020 admitted batch) Autonomous</p>
+            <a href="URL_TO_CSE_R19_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
+        <h3>B.TECH CSE AU Syllabus (From admitted batch 2015-2016)</h3>
+        <div class="file">
+            <p>CSE Syllabus (With effect from 2015-2016 admitted batch to 2018-19)</p>
+            <a href="URL_TO_CSE_AU_SYLLABUS" target="_blank">
+                <button>Click Here</button>
+            </a>
+        </div>
+
+    </section>
+
+    <section id="academic-calendar">
+        <div id="academicCalendarSection"></div>
+        <div id="timeTablesSection"></div>
+    </section>
+
+    <section id="infrastructure">
+        <div class="div1">
+            <h2>Lab Details</h2>
+            <table id="labTable">
+                <thead>
+                    <tr>
+                        <th>Lab Name</th>
+                        <th>Configuration</th>
+                        <th>Utilization</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="department-committees">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10">
+                    <div>
+                        <h2>List of Departmental Committees</h2>
+                    </div>
+                    <div class="button-container">
+                        <button id="view-all" class="expand">View All 	&#9660;</button>
+                        <button id="close-all" class="expand" style="display:none;">Close All &#128898;</button>
+                    </div>
+    
+                </div><br>
+                <div class="accordion" id="accordion">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="placements">
+        <div id="PlacementsSection"></div>
+    </section>
+
+    <section id="research-innovations">
+        <div class="container">
+            <h1>Research Publications</h1>
+            
+            <div id="pdf-viewer"></div>
+            <div class="pdf-link">
+                <p>Download the PDF: <a href="../data\dept\cse\pdf\CSE_Dept _ResearchPaperPublications.pdf" target="_blank">Click Here</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities">
+        <div id="ActivitiesSection"></div>
+    </section>
+
+    <section id="student-corner">
+        <h2>Student Corner</h2>
+        <p>The Student Corner is a dedicated space for students to access important resources, including study materials, project ideas, and career guidance. We also provide information on scholarships, internships, and job opportunities to help students achieve their academic and professional goals.</p>
+    </section>
+</main>
+
+<script>
+    function adjustSidebarPadding() {
+        const header = document.querySelector('.header1');
+        const sidebar = document.getElementById('sidebar');
+        const headerHeight = header.offsetHeight;
+        sidebar.style.paddingTop = `${headerHeight}px`;
+    }
+
+    window.addEventListener('load', adjustSidebarPadding);
+    window.addEventListener('resize', adjustSidebarPadding);
+
+    document.getElementById('menu-icon').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+        document.getElementById('menu-icon').innerHTML = sidebar.classList.contains('active') ? '&#10006;' : '&#9776;';
+    });
+
+    const links = document.querySelectorAll('.sidebar ul li a');
+    const sections = document.querySelectorAll('.content > section');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+            document.getElementById('menu-icon').innerHTML = sidebar.classList.contains('active') ? '&#10006;' : '&#9776;';
+            links.forEach(link => link.classList.remove('active'));
+            link.classList.add('active');
+            sections.forEach(section => section.classList.remove('active'));
+            const targetId = link.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+            window.scrollTo({
+                top: 0,
+                // behavior: 'smooth'
+            });
+        });
+    });
+
+    document.querySelector('.sidebar ul li a').classList.add('active');
+</script>
+<!-- faculty scprit -->
+<script type="module">
+    import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
+
+    function createCard(data) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = data.id;
+        card.innerHTML = `
+            <div class="fac_img">
+                <img class="profile-image" src="${data.image}" alt="${data.name}">
+            </div>
+            <div class="fac_title">
+                <h3 class="name">${data.name}</h3>
+                <p>${data.title}</p>
+                <p class="designation">${data.designation}</p>
+                <p><a href="${data.email}">${data.email}</a></p>
+                <div class="fac_details">
+                    <p><strong>Area of Specialization:</strong> <span class="color">${data.areaOfSpecialisation}</span></p>
+                    <p><strong>Date of Joining:</strong> <span class="color">${data.dateOfJoining}</span></p>
+                    <p><strong>Nature of Association:</strong> <span class="color">${data.natureOfAssosiation}</span></p>
+                </div>
+            </div>
+        `;
+        return card;
+    }
+
+    function loadContentPage(category, branch) {
+        const container = document.getElementById('card-container');
+        const filteredCardsData = cardsData.filter(cardData => 
+            cardData.category === category && cardData.branch === branch
+        );
+
+        filteredCardsData.forEach(cardData => {
+            const card = createCard(cardData);
+            container.appendChild(card);
+        });
+
+        if (filteredCardsData.length === 0) {
+            container.innerHTML = `<p>No data available for the selected category and branch.</p>`;
+        }
+    }
+
+    // Load CSE faculty data
+    loadContentPage('AICTE APPROVED', 'COMPUTER SCIENCE AND ENGINEERING');
+</script>
+<!-- academic page scprit -->
+<script type="module">
+    import academicData from '../data/dept/cse/academic.js';
+    
+    function renderSection(sectionId, title, data) {
+        const sectionContainer = document.getElementById(sectionId);
+        sectionContainer.innerHTML = `
+            <h2>${title}</h2>
+            ${data.map(item => `
+                <div class="file">
+                    <p>${item.text}</p>
+                    <a href="${item.link}" target="_blank">
+                        <button>Click Here</button>
+                    </a>
+                </div>
+            `).join('')}
+        `;
+    }
+
+    renderSection('academicCalendarSection', 'Academic Calendar', academicData.academicCalendar);
+    renderSection('timeTablesSection', 'Time Tables', academicData.timeTables);
+</script>
+<!-- infrastructure scprit -->
+<script type="module">
+    import labDetails from '../data/dept/cse/labDetails.js';
+
+    function renderTable(data) {
+        const tableBody = document.querySelector('#labTable tbody');
+        tableBody.innerHTML = data.map(lab => `
+            <tr>
+                <td>${lab.labName}</td>
+                <td>
+                    <table class="nested-table">
+                        <tr><th>Total Systems</th><td>${lab.configuration.totalSystems}</td></tr>
+                        ${lab.configuration.systems.map(system => `
+                            <tr>
+                                <th>System Count</th>
+                                <td>${system.count} - ${system.specs}</td>
+                            </tr>
+                        `).join('')}
+                        ${lab.configuration.equippedWith ? `
+                            <tr><th>Equipped With</th><td>${lab.configuration.equippedWith}</td></tr>
+                        ` : ''}
+                    </table>
+                </td>
+                <td>
+                    ${lab.utilization ? '&#8227; '+lab.utilization.join('<br>&#8227; ') : 'N/A'}
+                </td>
+            </tr>
+        `).join('');
+    }
+
+    // Call renderTable function with labDetails data
+    renderTable(labDetails);
+</script>
+<!-- committes page -->
+<script type="module">
+    
+    // JavaScript object containing committee data
+    import committees from '../data/dept/cse/committees.js';
+    // Function to generate HTML for each committee card
+    function renderCommittees() {
+        const accordion = document.getElementById('accordion');
+        committees.forEach(committee => {
+            const cardHTML = `
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <button type="button" class="btn-link">
+                              ${committee.title}
+                            </button>
+                            <span class="icon">&#128899;</span>
+                        </h3>
+                    </div>
+                    <div class="collapse">
+                        <div class="card-body">
+                            <b>Objectives:</b>
+                            <ul> 
+                                ${committee.objectives.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                            <b>Members:</b>
+                            <ul>
+                                ${committee.members.map(member => `<li>${member}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+            accordion.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
+
+    // Event listeners and functionality
+document.addEventListener('DOMContentLoaded', function () {
+    renderCommittees();
+
+    const acc = document.querySelectorAll('.card-header');
+    const viewAllButton = document.getElementById('view-all');
+    const closeAllButton = document.getElementById('close-all');
+
+    // Function to update button display based on state
+    function updateButtonStates() {
+        const anyVisible = document.querySelectorAll('.collapse.show').length > 0;
+        viewAllButton.style.display = anyVisible ? 'none' : 'inline-block';
+        closeAllButton.style.display = anyVisible ? 'inline-block' : 'none';
+    }
+
+    // Add click event to each header
+    acc.forEach(function (header) {
+        header.addEventListener('click', function () {
+            const collapse = this.nextElementSibling;
+            const icon = this.querySelector('.icon');
+            const isShowing = collapse.classList.contains('show');
+            collapse.classList.toggle('show', !isShowing);
+            icon.innerHTML = isShowing ? '&#128899;' : '&#128898;';
+
+            // Update button states when any header is clicked
+            updateButtonStates();
+        });
+    });
+
+    // View All button click event
+    viewAllButton.addEventListener('click', function () {
+        document.querySelectorAll('.collapse').forEach(function (collapse) {
+            collapse.classList.add('show');
+        });
+        document.querySelectorAll('.card-header .icon').forEach(function (icon) {
+            icon.innerHTML = '&#128898;';
+        });
+        updateButtonStates(); // Update button states after opening all
+    });
+
+    // Close All button click event
+    closeAllButton.addEventListener('click', function () {
+        document.querySelectorAll('.collapse').forEach(function (collapse) {
+            collapse.classList.remove('show');
+        });
+        document.querySelectorAll('.card-header .icon').forEach(function (icon) {
+            icon.innerHTML = '&#128899;';
+        });
+        updateButtonStates(); // Update button states after closing all
+    });
+
+    // Initial button state update
+    updateButtonStates();
+});
+</script>
+<!-- placement -->
+<script type="module">
+    import Placements from '../data/dept/cse/Placement.js'; // Update the path as necessary
+
+    function renderData(containerId, data) {
+        const container = document.getElementById(containerId);
+        let htmlContent = '';
+
+        for (const [title, items] of Object.entries(data)) {
+            htmlContent += `
+                <h2>${title}</h2>
+                ${items.map(item => `
+                    <div class="file">
+                        <p>${item.text}</p>
+                        <a href="${item.link}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+
+    // Render the data section using the Placements object
+    renderData('PlacementsSection', Placements);
+</script>
+<!-- r&i -->
+<script>
+    const pdfViewer = document.getElementById('pdf-viewer');
+
+    // URL of the PDF
+    const url = '../data/dept/cse/pdf/CSE_Dept _ResearchPaperPublications.pdf';
+    
+    // Asynchronous download of PDF
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfViewer.innerHTML = ''; // Clear previous content
+        const pdfDoc = pdfDoc_;
+        const scale = 1.5;
+        const numPages = pdfDoc.numPages;
+
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+            pdfDoc.getPage(pageNum).then(function(page) {
+                const viewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Render PDF page into canvas context
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                page.render(renderContext).promise.then(function() {
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+        }
+    });
+</script>
+<!-- activities  -->
+<script type="module">
+    import Activities from '../data/dept/cse/Activities.js'; // Update the path as necessary
+
+    function renderData(containerId, data) {
+        const container = document.getElementById(containerId);
+        let htmlContent = '';
+
+        for (const [title, items] of Object.entries(data)) {
+            htmlContent += `
+                <h2>${title}</h2>
+                ${items.map(item => `
+                    <div class="file">
+                        <p>${item.text}</p>
+                        <a href="${item.link}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+
+    // Render the data section using the FacultyAndStudentActivities object
+    renderData('ActivitiesSection', Activities);
+</script>
+</body>
+</html>
