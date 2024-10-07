@@ -18,6 +18,7 @@
     <style>
       *{
         font-family: "inter",sans-serif;
+       
       }
       .page1{
         width: 100%;
@@ -27,7 +28,7 @@
         background-clip: content-box;
         position: relative;
         background-size: cover;
-
+       
       }
       .knowmr{
       
@@ -275,7 +276,7 @@
 
   </head>
   <body>
-    <section id="preloader-placeholder"></section>
+    <!-- <section id="preloader-placeholder"></section> -->
     
 
       <main class="hidden" id="main-content" >
@@ -512,7 +513,9 @@
 
   updateCarousel();
 
-
+      if(openNav()){
+        document.getElementsByTagName("body").style.display = "block";
+      }
       </script>
       <script src="./templates/preloader.js"></script>
         <script src="./notfication.js"></script>
