@@ -100,7 +100,20 @@
 
   }
   /* notification */
-
+  .notifications{
+    background-color: #22316c;
+  }
+  .notifications a{
+    color: #e78709;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  .notifications a img{
+    padding-right: 8px;
+  }
+  .notifications a:hover{
+    color: #ff4c4c;
+  }
 /* page3 */
 .page3{
   width: 100%;
@@ -108,6 +121,9 @@
   justify-content: center;
   align-content: center;
   overflow: hidden;
+}
+.mblwel{
+  display: none;
 }
 .page3 .carousel-container {
       width: 80%;
@@ -172,8 +188,31 @@
       outline: none;
       margin: 0 5px;
     }
+    /* tablet  */
+    @media screen and (max-width: 1200px) {
+      .knowmr{
+        height: 20vh;
+      }
+    }
     /* Mobile Styles */
     @media screen and (max-width: 768px) {
+      .knowmr{
+        height: 40vh;
+        justify-content: end;
+        top: -150px;
+      }
+      .mblwel{
+        display: grid;
+        padding-top: 20%;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+      }
+      .btn button{
+        font-size: 3vw;
+      }
+
+      
       .page3 .carousel-item {
         display: block;
         text-align: center;
@@ -210,6 +249,7 @@
       height: 30vh;
       display: grid;
       place-items: center;
+      overflow-x: hidden;
     }
     .page4 .carousel {
       width: 100%;
@@ -282,13 +322,29 @@
       <main class="hidden" id="main-content" >
           <div class="page1">
             <header id="nav-placeholder"></header>
+            <div class="mblwel" style="color: white;">
+              <div><img src="../assects/gvplogorm.png" srcset alt="gayatri_logo" width="110px"></div>
+              <div class="title">
+              <h1>GAYATRI VIDYA PARISHAD <br/>COLLEGE FOR DEGREE AND PG COURSES (AUTONOMOUS)</h1>
+              <p class="para">
+                  Affiliated to Andhra University | Reaccredited by NAAC<br>
+                  PG-MBA and UG Engineering B.Tech(CE,CSE,ECE and ME) programs are Accredited by NBA
+                  <br>Visakhapatnam - 530045.
+              </p>
+          </div>
+            </div>
             <div class="knowmr">
-              <div class="dyn-div"> <h1 id="dynamic-heading"></h1></div>
+              
+              <div class="dyn-div"> <h1 id="dynamic-heading">Welcome to GVP</h1></div>
               <div ><a href="" class="btn">
                 <button>Know More</button>
               </a></div>
             </div>
           </div>
+          <div>
+            <marquee class="notifications"></marquee>
+          </div>
+          
           <div class="page2">
             <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
               <h1 style="color: white;padding-bottom: 3vh;">MISSION :</h1>
@@ -353,7 +409,7 @@
  
       <script>
         const heading = document.getElementById('dynamic-heading');
-        const texts = ["Welcome to GVP", "Gayatri Vidya Parishad"]; // Array of texts
+        const texts = ["Gayatri Vidya Parishad","Welcome to GVP"]; // Array of texts
         let currentText = 0;
         let index = 0;
       
@@ -368,7 +424,7 @@
               heading.textContent = ''; // Clear the heading for the next text
               currentText = (currentText + 1) % texts.length; // Move to the next text, loop back to the first text if at the end
               typeEffect(); // Start typing the next text
-            }, 7000); // Adjust pause duration between texts
+            }, 5000); // Adjust pause duration between texts
           }
         }
       
