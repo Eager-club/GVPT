@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .event-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+        }
+
+        .event-box {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+
+        .event-box img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .event-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+        }
+
+        .month-day {
+            font-weight: bold;
+        }
+
+        .year {
+            display: block;
+            font-size: 0.9em;
+        }
+
+        .arrow {
+            font-size: 1.5em;
+            float: right;
+            margin-left: auto;
+            color: #555;
+        }
+
+        .event-title {
+            font-size: 1.2em;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .event-title:hover {
+            background-color: #2231c6;
+            color: white;
+        }
+
+        address {
+            font-style: normal;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .view-all-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-all-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script defer src="../data/other/event.js"></script>
+    <script defer src="allEvents.js"></script>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search events...">
+    <select id="sortBy">
+        <option value="date">Sort by Date</option>
+        <option value="title">Sort by Title</option>
+    </select>
+
+    <div class="event-container" id="allEventsList"></div>
+
+    <!-- Modal for event details -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 id="modalEventTitle"></h2>
+            <img id="modalEventImage" src="" alt="" style="width: 100%; border-radius: 10px;">
+            <p id="modalEventDescription"></p>
+            <p><strong>Speaker:</strong> <span id="modalEventSpeaker"></span></p>
+            <p><strong>Department:</strong> <span id="modalEventDepartment"></span></p>
+            <p><strong>Date:</strong> <span id="modalEventDate"></span></p>
+            <p><strong>Video:</strong> <a id="modalEventVideo" href="" target="_blank">Watch here</a></p>
+            <p><strong>Location:</strong> <span id="modalEventLocation"></span></p>
+            <p><strong>Time:</strong> <span id="modalEventTime"></span></p>
+            <p><strong>Registration Link:</strong> <a id="modalEventRegistration" href="" target="_blank">Register here</a></p>
+        </div>
+    </div>
+
+    <script>
+        function renderEvents(events) {
+            const eventContainer = document.getElementById('allEventsList');
+            eventContainer.innerHTML = ''; // Clear container
+            events.forEach(event => {
+                const eventBox = document.createElement('div');
+                eventBox.classList.add('event-box');
+                eventBox.innerHTML = `
+                    <div class="event-date">
+                        <span class="month-day">${new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })},</span>
+                        <span class="year">${new Date(event.date).getFullYear()}</span>
+                        <span class="arrow">→</span>
+                    </div>
+                    <img src="${event.image}" alt="${event.title}" class="event-image">
+                    <a href="#" class="event-title" data-event='${JSON.stringify(event)}'>${event.title}</a>
+                    <address>by ${event.department}</address>
+                    <p>${event.description}</p>
+                `;
+                eventContainer.appendChild(eventBox);
+            });
+
+            // Attach click event for event titles
+            const eventTitles = document.querySelectorAll('.event-title');
+            eventTitles.forEach(title => {
+                title.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor click behavior
+                    const eventData = JSON.parse(title.getAttribute('data-event'));
+                    openModal(eventData);
+                });
+            });
+        }
+
+        function openModal(event) {
+            document.getElementById('modalEventTitle').innerText = event.title;
+            document.getElementById('modalEventImage').src = event.image;
+            document.getElementById('modalEventDescription').innerText = event.description;
+            document.getElementById('modalEventSpeaker').innerText = event.speaker || 'N/A';
+            document.getElementById('modalEventDepartment').innerText = event.department;
+            document.getElementById('modalEventDate').innerText = new Date(event.date).toLocaleDateString();
+            document.getElementById('modalEventLocation').innerText = event.location || 'N/A';
+            document.getElementById('modalEventTime').innerText = event.time || 'N/A';
+            document.getElementById('modalEventVideo').href = event.video || '#';
+            document.getElementById('modalEventRegistration').href = event.registrationLink || '#';
+
+            const modal = document.getElementById('eventModal');
+            modal.style.display = 'block';
+        }
+
+        // Close the modal when the user clicks on <span> (x)
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('eventModal').style.display = 'none';
+        }
+
+        // Close the modal when clicking anywhere outside of the modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('eventModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function loadAllEvents() {
+            let events = eventDatabase.sort((a, b) => new Date(b.date) - new Date(a.date)); // Descending order by default
+            renderEvents(events);
+
+            // Handle sorting and search functionality
+            const searchInput = document.getElementById('search');
+            const sortBy = document.getElementById('sortBy');
+
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase();
+                const filteredEvents = eventDatabase.filter(event => event.title.toLowerCase().includes(query));
+                renderEvents(filteredEvents);
+            });
+
+            sortBy.addEventListener('change', () => {
+                const sortValue = sortBy.value;
+                if (sortValue === 'title') {
+                    events = eventDatabase.sort((a, b) => a.title.localeCompare(b.title));
+                } else {
+                    events = eventDatabase.sort((a, b) => new Date(b.date) - new Date(a.date));
+                }
+                renderEvents(events);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadAllEvents);
+    </script>
+</body>
+</html>

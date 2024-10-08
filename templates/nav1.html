@@ -1,380 +1,351 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Navbar Example</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-        * {
-            margin: 0;
-            font-family: "Inter", sans-serif;
-        }
-        
-        nav {
-            width: 100%;
-            height: 45vh;
-            background-image: url("https://images.shiksha.com/mediadata/images/articles/1693247327php9Ixvyk.jpeg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: #fff;
-        }
-        
-        .nav1 {
-            width: 100%;
-            height: 28px * 100%;
-            background-color: #22316C;
-            display: flex;
-            justify-content: space-between;
-            align-content: space-between;
-        }
-        
-        .nav1 .right a {
-            text-decoration: none;
-            font-size: 10px;
-            font-weight: bold;
-            padding-left: 1%;
-            color: #fff;
-        }
-        
-        .nav1 .left a {
-            font-size: small;
-            text-decoration: none;
-            padding-left: 10%;
-            color: #fff;
-        }
-        
-        .title h1, .para {
-            text-shadow: 
-                1px 1px 0 #000,
-                -1px 1px 0 #000,
-                -1px -1px 0 #000,
-                1px -1px 0 #000;
-        }
-        .codes p{
-            font-size: 20px;
-            font-weight: bolder;
-        }
-        /* Main nav styles */
-        
-        .main-nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 7px 0;
-            background-color: transparent;
-            z-index: 1000;
-            position: relative; /* Start as relative to scroll normally */
-            transition: top 0.3s ease, background-color 0.3s ease;
-        }
-        .main-logo{
-            display: none;
-            margin:0% 0% 0px 6%;
-            position: absolute;
-            background: #22316c !important;
-            border-radius: 50% !important;
-            width: 80px !important;
-            height: 80px !important;
-            overflow: visible !important;
-            position: absolute !important;
-            top: 0px !important;
-            max-height: none !important;
-            padding: 7px !important;
-            transition: all .2s ease !important;
+<style>
+    .page3{
+  width: 100%;
+  background-color: rgba(217, 217,217,0.15);
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
 }
-        .main-nav.sticky {
-            position: fixed; /* Fixed position when sticky */
-            top: 0;
-            background-color: #22316C; /* Background color when sticky */
-        }
-        .main-logo.stick{
-            display: block;
-            transition:  1s ease;
-        }
-        .main-nav > ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            padding: 0;
-        }
-        
-        .main-nav > ul > li {
-            position: relative;
-            margin: 0 1px;
-        }
-        
-        .main-nav > ul > li > a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 10px 20px;
-            display: flex;
-        }
-        
-        .main-nav > ul > li > a:hover, .main-nav > ul > li:hover > a {
-            color: #e78709;
-            border-radius: 5px;
-            backdrop-filter: blur(5px); 
-        }
-        
-        .main-nav > ul > li > ul {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            display: none;
-            background-color: #ffffff;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            min-width: 200px;
-            z-index: 1;
-        }
-        
-        .main-nav > ul > li > ul > li > a {
-            padding: 10px;
-            color: #000000;
-            display: block;
-            text-decoration: none;
-        }
-        
-        .main-nav > ul > li > ul > li > a:hover {
-            background-color: #22316C;
-            color: #ffffff;
-        }
-        
-        .main-nav > ul > li:hover > ul {
-            display: block;
-        }
-        
-        .codes span {
-            color: #22316C;
-        }
-        
-        .material-symbols-outline {
-            margin-top: 20px;
-        }
+.mblwel{
+  display: none;
+}
+.page3 .carousel-container {
+      width: 80%;
+      height: max-content;
+      margin-left:10%;
+      position: relative;
+      overflow: hidden;
+      padding: 5% 0 5% 0;
+    }
+    .page3 .carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .page3 .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+    .page3 .carousel-item .content {
+      width: 50%;
+      padding: 20px;
+    }
+    .page3 .carousel-item img {
+      width: 50%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-left: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .page3 .carousel-item img:hover {
+      transform: translateY(-10px); 
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .page3  .carousel-item h2 {
+      margin-top: 0;
+      margin-bottom: 10%;
+      font-size: 1.5em;
+      color: #22316c;
+    }
+    .page3 .carousel-item p {
+      text-align: justify;
+      /* width: 80% ; */
+      margin-bottom: 0;
+    }
+    .page3  .carousel-controls {
+      position: relative;
+      bottom: 5px;
+      display: Start;
+      justify-content: center;
+      width: calc(100% - 20px);
+    }
 
-        @media only screen and (max-width: 1235px) {
-            .title h1, .title p,.codes p {
-                font-size: small;
-            }
-            .main-nav > ul {
-            display: ruby;
-            }
+    .page3  .carousel-controls button,.carousel-controls span {
+      font-size: 35px;
+      background-color: rgba(0, 0, 0, 0);
+      color: #22316c;
+      border: none;
+      cursor: pointer;
+      border-radius: 100%;
+      outline: none;
+      margin: 0 5px;
+    }
 
+    @media screen and (max-width: 768px) {
+        .page3 .carousel-item {
+        display: block;
+        text-align: center;
+      }
+      .page3 .carousel-item .content {
+        width: 90%;
+        padding: 10px;
+      }
+      .page3 .carousel-item img {
+        width: 100%;
+        margin-left:-7%;
+      }
+      .page3 .carousel-item p{
+        text-align: center;
+      }
+      .page3 .carousel-controls {
+        position: relative;
+        top: 40px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+
+      .page3 .carousel-controls button{
+          padding-bottom:25px;
         }
-       
-    </style>
-</head>
-<body>
-    <nav >
-        <!-- Your navigation content here -->
-        <div class="nav1" style="color: #fff;">
-            <div class="right" style="width: 60%;margin-left: 5%;">
-                <a href="">AICTE Mandatory Info</a>
-                <a href="">IQAC</a>
-                <a href="">IIPC</a>
-                <a href="">NAAC</a>
-                <a href="">ALUMNI</a>
-                <a href="">Online Payments</a>
-                <a href="">CAREERS</a>
-                <a href="">360 Virtual Tour</a>
+    }
+    /* added lines  */
+    /* General styling for the dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Styling for the dots */
+.carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: grey;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* For mobile: place dots between "Prev" and "Next" buttons */
+@media (max-width: 768px) {
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .carousel-dots {
+    order: 2; /* Ensure the dots are between the buttons */
+    position: absolute;
+    bottom: 50px;
+  }
+
+  #prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #prevBtn {
+    left: 10px;
+  }
+
+  #nextBtn {
+    right: 10px;
+  }
+}
+
+/* For larger screens: place dots below the image */
+@media (min-width: 769px) {
+  .carousel-dots {
+    position: relative;
+    margin-top: 15px;
+    bottom: 0;
+  }
+}
+
+</style>
+<div class="page3">
+    <div class="carousel-container">
+      <div class="carousel"></div>
+      <div class="carousel-controls">
+        <span><button id="prevBtn">&#9664;</button></span>
+         <!--  added line  -->
+        <span><button id="nextBtn">&#9654;</button></span>
+      </div><div class="carousel-dots"></div> 
+    </div>
+  </div>
+
+<script>
+    const carouselData = [
+      {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+       {
+        title: "Drug Abuse Day 2024",
+        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
+        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
+        imgAlt: "Event Image"
+      },
+      // Repeat for other items
+    ];
+
+
+  const carousel = document.querySelector('.carousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  
+//added lines
+  const dotContainer = document.createElement('div');
+dotContainer.classList.add('carousel-dots');
+document.querySelector('.carousel-container').appendChild(dotContainer); // Append to the container
+
+let index1 = 1;
+  let interval = 2000; // Auto-scroll interval
+  let autoScroll;
+
+  function renderCarousel() {
+    const isMobile = window.innerWidth <= 768;
+    carousel.innerHTML = carouselData.map(item => {
+      if (isMobile) {
+        return `
+          <div class="carousel-item">
+            <div class="content">
+              <h2>${item.title}</h2>
+              <img src="${item.imgSrc}" alt="${item.imgAlt}">
+              <p>${item.text}</p>
             </div>
-            <div class="left" style="margin-right: 5%;display:flex;">
-                <a href=""><span class="material-symbols-outlined">mail</span></a>
-                <a href="" style="padding-top: 5px;">Login</a>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="carousel-item">
+            <div class="content">
+              <h2>${item.title}</h2>
+              <p>${item.text}</p>
             </div>
-        </div>
-        <div class="block" style="display: flex; justify-content: space-around;padding-top: 1%;color: #fff;">
-            <div style="display: flex;">   
-                <div class="logo">
-                    <img src="../assects/gvplogorm.png" srcset alt="gayatri_logo" width="110px">
-                </div>
-                <div class="title">
-                    <h1>GAYATRI VIDYA PARISHAD <br/>COLLEGE FOR DEGREE AND PG COURSES (AUTONOMOUS)</h1>
-                    <p class="para">
-                        Affiliated to Andhra University | Reaccredited by NAAC<br>
-                        PG-MBA and UG Engineering B.Tech(CE,CSE,ECE and ME) programs are Accredited by NBA
-                        <br>Visakhapatnam - 530045.
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="codes">
-                    <p>
-                        AUCET CODE <span> - 112</span><br>
-                        ICET CODE <span>- GVPP</span><br>
-                        PGCET CODE <span>- GVPT1</span><br>
-                        EAPCET / ECET <span> GVPT</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="main-nav">
-            <div>
-                <img class="main-logo" src="../assects/gvplogorm.png" srcset alt="gayatri_logo" >
-            </div>
-            <ul>
-                
-                <li><a href="#"><span class="material-symbols-outlined">home</span></a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Administration<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
-                    <ul>
-                        <li><a href="#">Administrators</a></li>
-                        <li><a href="#">Directors</a></li>
-                        <li><a href="#">Deans</a></li>
-                        <li><a href="#">Controers</a></li>
-                        <li><a href="#">HOD's</a></li>
-                        <li><a href="#">Coordinators</a></li>
-                        <li><a href="#">Governing bodies</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Academics<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
-                    <ul>
-                        <li><a href="#">Programs</a></li>
-                        <li><a href="#">Academic calendar</a></li>
-                        <li><a href="#">Department</a></li>
-                        <li><a href="#">Syllabus</a></li>
-                        <li><a href="#">Regulations</a></li>
-                        <li><a href="#">Archives</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Admissions<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
-                    <ul>
-                        <li><a href="#">Undergraduate</a></li>
-                        <li><a href="#">Graduate</a></li>
-                        <li><a href="#">International</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Faculty</a>
-                    <ul>
-                        <li><a href="#">Profiles</a></li>
-                        <li><a href="#">Research</a></li>
-                        <li><a href="#">Publications</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Placements<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
-                    <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Recruiters</a></li>
-                        <li><a href="#">Alumni Success</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Research<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
-                    <ul>
-                        <li><a href="#">Centers</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Publications</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Others<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
-                    <ul>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <script>
-        // JavaScript to handle the sticky navigation effect
-        window.addEventListener('scroll', function() {
-            var mainNav = document.querySelector('.main-nav');
-            var navLogo = document.querySelector('.main-logo');
-            if (window.scrollY > 170) { // Adjust the scroll value as needed
-                mainNav.classList.add('sticky');
-                navLogo.classList.add('stick');
-            } else {
-                mainNav.classList.remove('sticky');
-                navLogo.classList.remove('stick');
-            }
-        });
-    </script>
-   Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quasi deleniti enim eum explicabo placeat corporis, illo quaerat incidunt minima ipsam, a voluptates amet autem asperiores, maxime nostrum fuga quam!
-   Quae error dicta officiis accusamus harum enim quis vero commodi repellendus iste tempore quibusdam recusandae nemo aperiam deserunt aspernatur blanditiis earum, cum, quidem molestias vel? Repellendus quae debitis commodi sunt.
-   Iste, aliquid cumque? Eum obcaecati, natus, aut perferendis, qui debitis iure inventore alias quaerat quas ab et tempore minus nulla dolor delectus vitae. Illo sapiente commodi ullam provident nulla cumque?
-   Labore impedit, doloribus illo provident asperiores eaque optio similique eligendi facilis, quos ipsam voluptatibus deserunt cumque et? Officia, similique vel. Exercitationem tempora ipsa obcaecati repellat est mollitia provident dolores libero.
-   Vel inventore aliquid eligendi reprehenderit consequatur, facilis tempora nesciunt sit fuga iusto praesentium ea iste repellat eaque, velit ipsa. In quam eum quis repellendus totam a, illo accusamus adipisci cum.
-   Quasi illum veritatis deserunt explicabo est voluptatem cumque nostrum aut quos repellendus eveniet, voluptate tenetur, soluta a accusantium facilis et quibusdam. Est ipsum et inventore repellat quos excepturi. Similique, dolorum!
-   Reprehenderit nihil non praesentium esse mollitia, aut quibusdam sunt iure cumque tempora. Ab sit perferendis rem, quas dolores ipsam, accusamus deserunt necessitatibus optio nihil dignissimos aperiam. Ipsam illum vitae praesentium?
-   Laboriosam saepe obcaecati placeat aliquid facere fuga dolorem recusandae aperiam animi eius nesciunt tempora id possimus adipisci, reiciendis enim quia voluptas repellendus ullam quos vitae temporibus mollitia dolor. Blanditiis, neque.
-   Delectus quaerat excepturi ipsa similique et exercitationem modi praesentium vero iste sapiente! Eum aliquam vero consectetur sunt! Aspernatur, sint asperiores ex laudantium dolorem tenetur vero possimus amet eum autem dignissimos!
-   Beatae cupiditate inventore iste molestiae distinctio sint ducimus dolores earum, quisquam, necessitatibus nemo rem blanditiis quos voluptatibus id dolorem iure sunt, asperiores consectetur accusamus? Cumque modi ipsa excepturi temporibus magnam?
-   A dolor quis quos eligendi modi in suscipit? Perspiciatis officiis provident quae tempora cupiditate aliquam labore sunt iure veniam blanditiis doloremque nihil nobis porro aspernatur, quos, dolore, libero adipisci perferendis?
-   Quas quidem similique a error deserunt tenetur sint cum laborum! Neque dolores officia delectus incidunt saepe ducimus deserunt tempore, facilis adipisci hic libero provident, nulla iure eveniet expedita ratione illo.
-   Obcaecati veritatis qui consectetur. Vel hic sit praesentium! Mollitia sunt nobis magnam inventore eveniet perspiciatis et ullam quaerat est voluptatum esse ex omnis voluptatibus animi excepturi debitis, corporis, aperiam harum.
-   Id rerum laborum et quam vero, voluptatum voluptate dolores dolore sed recusandae accusamus veritatis molestias dolorum, deserunt quos incidunt vitae sequi? At, aperiam molestias! Natus beatae labore velit culpa sequi.
-   Neque laboriosam architecto eaque! Non impedit in unde quasi corrupti voluptatem voluptates commodi quam amet sint odio voluptatum laboriosam suscipit natus debitis rem, numquam magni praesentium! Repellendus soluta officia quae.
-   Eius facilis sapiente animi non officia officiis neque ullam cum reiciendis veritatis dolorum enim, eveniet impedit, ipsum, dignissimos repudiandae nam voluptates quas doloremque. Repellat aspernatur sequi eaque voluptatem? Beatae, voluptatibus.
-   Totam labore dolor velit nulla. Eum optio quidem magni modi quisquam dolorem ducimus blanditiis eaque ex totam reiciendis, corporis quae culpa. Odio, officiis illum labore possimus rerum enim ut totam?
-   A in sequi ipsam vitae quibusdam non aspernatur ea! Sint et ipsum eligendi nihil eius, natus expedita, eaque in doloribus, aperiam nemo. Exercitationem consectetur nulla nihil cumque odio molestias eius!
-   Non repudiandae dolor sapiente iure amet explicabo, quisquam reprehenderit eius consequuntur eligendi. Illo, impedit placeat iure facilis sequi cupiditate molestias harum, numquam architecto, odio ab commodi fugit corporis? Sapiente, impedit.
-   Harum eos asperiores iusto, consectetur odio voluptate dolorem quae, quasi, veritatis dolorum consequatur nostrum. Repellendus, atque omnis? Natus totam necessitatibus labore cum perferendis, expedita exercitationem possimus quaerat consectetur quam officiis.
-   Possimus amet facilis fuga iste praesentium necessitatibus similique omnis dolorem laborum blanditiis quas, autem voluptate assumenda odit fugiat ducimus doloribus inventore enim a perspiciatis aliquid temporibus. Architecto omnis mollitia adipisci.
-   Modi ullam ipsa repellendus quasi quae nesciunt sed omnis fuga illum vitae quidem aut magnam vero soluta recusandae enim voluptatem eligendi provident illo iure non, cum consectetur! Praesentium, iure magnam?
-   Illo repudiandae, ut, odio deserunt aut recusandae saepe minus accusantium quis beatae modi itaque sequi aliquid officia quibusdam sunt tenetur ipsam consequatur eaque deleniti nemo exercitationem. Numquam error officia reprehenderit.
-   Quis explicabo velit eligendi magnam similique sit, earum, ipsum perferendis distinctio iste non saepe iusto, tempore dolorum dolore alias itaque sequi! Rem ut officiis tenetur error quos quis voluptatem quam.
-   Nemo corporis, culpa corrupti aut saepe possimus vel velit harum iste, dolore suscipit officia at cumque tenetur eveniet? Aliquid doloribus culpa, quo debitis magnam pariatur aperiam omnis id dolorum distinctio?
-   Quo ipsa minima sequi beatae labore optio quaerat unde aliquid saepe veniam dolorem repellendus, vel laboriosam ut asperiores dolore officiis harum quae tempore expedita eaque quia ab odio deserunt? Adipisci.
-   Itaque voluptatem asperiores perspiciatis accusantium autem nam dolorem laborum consequuntur aliquid quisquam. Sapiente maxime praesentium minus, labore, ab, autem illo animi totam unde possimus doloremque facere iste voluptate cupiditate officia.
-   Laudantium unde nisi autem debitis quaerat nihil perferendis eligendi quasi in fugit aspernatur reprehenderit inventore dolorum laborum optio, cumque voluptatum aliquam odio repellat minima ratione deleniti sit! Consectetur, magni ipsa?
-   Aspernatur pariatur, nesciunt minima totam libero perspiciatis. Esse saepe alias, nisi repellendus distinctio tempore. Omnis eaque iusto consequatur mollitia nemo corporis porro neque! Repudiandae atque excepturi fugit, incidunt totam maiores.
-   Animi nesciunt debitis quas, vel totam sint aspernatur quisquam optio nobis dolore non ut quo iste veritatis quis quam, nostrum earum consequatur iure inventore repellat dolor esse? Dolorum, ratione quas!
-   Error enim est nesciunt quaerat a delectus doloribus aspernatur. Totam, sunt. Laborum, nobis voluptates at magni ut, ducimus commodi animi molestiae quidem, culpa fugiat nostrum illum voluptate ipsa debitis provident.
-   Voluptate, molestias corporis! Porro quisquam nesciunt voluptatibus magnam iure in officia quas quam quasi magni expedita non eveniet omnis voluptates excepturi consequuntur recusandae hic nobis, doloremque ullam, animi perspiciatis atque?
-   Nisi nobis quae nostrum. Maxime impedit omnis eaque, asperiores repudiandae libero distinctio aliquam corrupti, reiciendis quas cum ullam debitis vero ipsa laborum laudantium doloremque. Magni sint autem voluptatum quae. Assumenda.
-   Ab molestias dolorem earum ipsa voluptatum. Sunt molestiae harum totam dicta labore illo culpa amet aperiam ea animi porro quos quae deserunt, sint similique, error reprehenderit? Ab illum distinctio ipsam.
-   Aperiam nihil inventore impedit est qui quidem itaque deserunt expedita ratione mollitia eum aspernatur nobis aut, eveniet quo tempora nesciunt neque, dolor voluptatibus at magnam cupiditate earum illum tempore? Id.
-   Eum cupiditate nostrum reiciendis voluptas reprehenderit iusto facilis. Hic quasi repellendus consectetur repellat fugit saepe quisquam autem sequi, ad sunt iure aperiam deserunt nulla harum vel exercitationem sit cumque accusantium.
-   Et voluptate magni deserunt cupiditate tempora aut dignissimos, dolores fuga iure illum iusto non quaerat temporibus corporis dolore minima quibusdam deleniti, repellendus asperiores possimus ab nihil expedita ipsam. Vitae, dolor.
-   Beatae amet aperiam adipisci maxime, ab perferendis dolor, placeat harum maiores illum corrupti quia corporis voluptates voluptas vel. Numquam hic natus omnis atque est eum adipisci placeat aperiam distinctio id.
-   Cupiditate ex temporibus labore vel voluptate quo recusandae aspernatur eligendi voluptatibus. Inventore, excepturi modi? Magni voluptates quasi nostrum esse maxime ab dolore iusto cumque fugit. Dolor delectus quasi nostrum hic?
-   Sed alias consequatur autem quae dolorem sunt quam corporis inventore quod libero ullam, unde odio voluptate ratione veniam accusantium debitis. Unde dicta nostrum harum praesentium quas quia quod magni inventore.
-   Velit quae quo dolore quod aliquam illum sunt nisi, iusto animi quaerat totam sint, repellat mollitia at corporis corrupti nesciunt eos saepe quidem. Explicabo velit eius ut perspiciatis reprehenderit ad?
-   Et accusantium voluptates, corrupti voluptatem ab vero delectus dolorem repellat maxime laudantium numquam molestias? Voluptates fugiat facilis minus doloremque culpa et tenetur provident dolorum ut nihil, ratione dolore aliquid nulla!
-   Earum expedita quo, maiores fugiat at molestias quasi doloribus quos tenetur, totam omnis! Pariatur, temporibus sit quo corporis magni quas maiores ab vero voluptatibus molestias optio voluptates expedita, cupiditate sint.
-   Nesciunt dolorem laboriosam est possimus quis pariatur quos saepe nobis, quidem eaque quam culpa sint rerum ratione dicta fugit nulla suscipit magni excepturi, laborum officia maiores? Ex ad animi consequatur!
-   Natus laboriosam doloribus, itaque minima magni tempora optio perferendis pariatur temporibus est dolorem aut ab dolore esse voluptatem modi quas aliquam facere ea enim? Repellat, delectus nostrum? Distinctio, delectus consectetur.
-   Mollitia vel vitae corporis iusto cupiditate, officiis necessitatibus doloribus architecto impedit dicta. Sint, officia eos impedit perspiciatis molestias iusto! Ut, quam cupiditate dolor hic velit consequatur deleniti in repellendus eveniet.
-   Optio minus earum nobis excepturi voluptas, consequuntur cum voluptatem minima molestiae ipsum dolor dicta iusto inventore ratione fuga enim numquam! Maiores repellat ad nostrum id, cupiditate aperiam unde quos voluptates?
-   Rerum optio doloribus aperiam porro quos aliquam nihil quia, explicabo repudiandae omnis, ipsa quo minus vero beatae nemo autem dolorum est officiis odit nesciunt quas aliquid magni! Amet, aspernatur aut.
-   Aut perspiciatis labore sunt quia? Beatae, quo accusamus. Ipsam architecto, fugit, magni voluptates pariatur accusamus maxime molestiae voluptas aspernatur, omnis ad alias iure? Iste saepe vel delectus quisquam dolorum repellat.
-   Numquam distinctio dolorum laborum ad veniam, eveniet, beatae incidunt nam earum, rerum eos vitae quos excepturi repellendus molestias ducimus repellat commodi voluptas enim consequuntur eum at aliquid? Neque, sint eveniet!
-   Exercitationem fugiat iusto quas neque qui. Laborum est ipsum sit, corporis odio voluptatem? Labore soluta illum voluptatum cum, est aliquam nisi voluptate obcaecati exercitationem adipisci eligendi blanditiis consequuntur fugiat sit?
-   Vitae atque quasi quisquam saepe? Quaerat, perspiciatis eius voluptate eos error a reprehenderit debitis assumenda optio, voluptatibus exercitationem nesciunt libero! Eius, officia. Deleniti, non illum veniam reiciendis iure ex hic!
-   Non eligendi sapiente delectus ad illo deleniti sunt ex, dolore hic blanditiis quod. Necessitatibus, cumque consequuntur mollitia asperiores illum quo tenetur exercitationem porro quam aperiam aut saepe modi? Blanditiis, neque!
-   Eius quaerat porro laboriosam ducimus beatae animi blanditiis aliquam laborum, eligendi labore quisquam perspiciatis mollitia unde facilis quo voluptates quia placeat amet! Quis eveniet inventore quasi, ratione mollitia nihil. Explicabo?
-   Vitae porro totam nulla atque, voluptas sed necessitatibus exercitationem corporis, blanditiis provident, eligendi praesentium deleniti distinctio nihil officiis alias consequuntur! Dolorem commodi unde rerum itaque. Quod quae illo aliquam iusto?
-   Odit pariatur repudiandae expedita aspernatur rem? Quaerat rem vitae cum est, omnis atque deleniti? At illum esse tempore a ipsa odit numquam ab incidunt adipisci, dolorum sit modi magni ea?
-   Illo, saepe mollitia? Quibusdam harum voluptatem iste in accusamus ipsam dolorum praesentium tenetur ducimus cumque, quisquam, vitae ullam odit. Unde commodi necessitatibus, esse iusto voluptatem provident labore corporis odio pariatur!
-   Totam numquam debitis repudiandae odio consectetur velit aperiam quasi. Vero rem ex, asperiores laudantium cum inventore iusto distinctio suscipit. Nisi ut quos odit, delectus ab omnis atque optio a esse!
-   At repudiandae quibusdam cum maxime adipisci id nisi provident, facilis doloremque eveniet, impedit dolorum obcaecati voluptatem pariatur aperiam accusantium magni laudantium, reiciendis sed ad? Nobis architecto iusto non nam nostrum?
-   Pariatur qui porro magni voluptate consequuntur iste vero accusantium provident eligendi. Voluptatum, nulla consequatur dolorem id quo praesentium a doloremque harum, placeat natus sapiente tenetur itaque, ea quis perferendis labore.
-   Ea exercitationem sapiente quia delectus placeat facilis laboriosam magni quaerat a doloremque illo eius nulla porro error vel, et maiores veritatis laborum omnis ipsam consequuntur quas? Voluptatem quis praesentium exercitationem!
-   Aliquid dolorem pariatur vero nobis id necessitatibus, eligendi asperiores repellendus, ipsum corrupti molestias? Beatae facere est vitae hic consequatur temporibus labore cupiditate officia debitis exercitationem laboriosam, accusamus rerum ratione eveniet.
-   Ducimus, sint. Iusto tenetur eligendi aspernatur, quod obcaecati ex alias fugiat perspiciatis excepturi et incidunt voluptatum recusandae molestiae nesciunt beatae deleniti natus tempora vero ipsa perferendis laborum hic provident. Deleniti?
-   Iusto dolore id maiores ex quas nihil porro, minima voluptatum repellendus, dicta facere error. Aliquid quae architecto dolores, inventore repudiandae est, maxime harum neque iusto error assumenda officiis repellendus consectetur.
-   Nulla veniam soluta pariatur quod beatae. Est, nihil dolores, tempore ex placeat voluptatum sunt quo exercitationem reprehenderit dolorum maiores amet rerum dolore qui magni commodi assumenda expedita. Ipsum, debitis consequatur!
-   Consequatur perspiciatis earum neque id beatae ipsum provident esse error vitae natus quod quasi eos recusandae dolore, voluptatem voluptate quisquam? Perferendis praesentium architecto totam voluptas esse deleniti minima distinctio reiciendis?
-   Perspiciatis animi et, modi labore recusandae quidem consequuntur mollitia? Illum nobis ullam expedita excepturi minima cum, sequi sit, explicabo voluptate nostrum deserunt? Ipsum quisquam totam at, odio veritatis ratione pariatur!
-   Sint autem dolorem nihil ipsa aperiam iusto officiis inventore. Est earum provident voluptas consequatur, pariatur doloribus ullam in modi error. Tempora reiciendis eveniet consequatur dolores quis, possimus incidunt qui vero.
-   Ullam blanditiis, soluta suscipit ipsa voluptatem sint. Quaerat aut ratione distinctio asperiores provident dignissimos, blanditiis dolorem quae neque exercitationem dicta porro in qui, nam odio suscipit nemo eos vitae tempore.
-   Aliquam asperiores hic perspiciatis autem consequuntur voluptatibus dolor iusto nostrum molestias nulla, incidunt, veniam minima nesciunt illo ipsum quia veritatis molestiae quaerat eius alias id! Sit culpa optio accusantium alias.
-   Voluptatem sit architecto asperiores dolore a veritatis quasi natus minus modi quia voluptas optio minima ipsam eum amet ratione, porro obcaecati provident numquam dolor totam quae alias officiis atque. Cum.
-   Autem ut sunt a accusantium, corporis ipsam corrupti repellat sequi minus tempora dolor! Quam unde, sapiente doloremque iure, error assumenda commodi illum voluptatibus alias minus ab blanditiis suscipit ad sit.
-   Dolor veritatis quaerat debitis voluptatem ab. Excepturi ipsum explicabo optio. Quaerat autem, animi maxime quas magni aut modi neque odio at, maiores minus nesciunt accusantium corporis, velit iure ut consequatur?
-   Eos est, tempore asperiores debitis temporibus labore? Ipsum, ab? Accusamus ex laboriosam atque nostrum commodi nulla asperiores obcaecati ea, quaerat sint facere esse voluptatum ipsum accusantium vero? Recusandae, vitae ab.
-   Deleniti et officia repellat fuga harum perspiciatis accusantium nulla nemo similique? Placeat sequi rerum consequuntur accusantium distinctio perferendis consectetur accusamus vel at quidem hic, aperiam unde tenetur a tempore quisquam?
-   Ex mollitia corrupti autem quam, possimus harum, ut saepe laboriosam perspiciatis quas sed. Incidunt, corporis dignissimos! Omnis hic repellat magnam! Voluptate repellat illum possimus molestiae perferendis consequuntur officia aut maiores!
-   Tenetur illum magnam ab perferendis animi perspiciatis nihil harum. Fugiat esse labore sapiente tempore, necessitatibus corrupti, error eum voluptate nobis mollitia exercitationem consequuntur adipisci repellendus debitis. Molestiae impedit quos quia?
-   Fugiat voluptatibus magni veritatis libero eius, fugit ex id facilis! Rem velit voluptas, consectetur iste et, facilis ipsum perferendis totam illo iure eius numquam similique reprehenderit id officia commodi maxime.
-   Molestiae quos tempora unde praesentium beatae laboriosam et doloremque! Consequuntur sequi quae, deserunt nam architecto soluta non fugiat doloremque quibusdam quis rem, reiciendis rerum consectetur repellendus voluptate quia quam voluptas.
-   Enim officiis recusandae est veritatis vel accusamus quod nesciunt voluptates omnis totam sed ex nostrum eius sint molestias laborum aliquid iure repellat assumenda consequuntur blanditiis, sit sequi alias? Voluptate, doloremque?
-</body>
-</html>
+            <img src="${item.imgSrc}" alt="${item.imgAlt}">
+          </div>
+        `;
+      }
+    }).join('');
+
+    //added lines
+    // Highlight: Render dots based on the number of items
+  dotContainer.innerHTML = carouselData.map((_, idx) => `
+    <span class="dot" data-index="${idx}"></span>
+  `).join('');
+  
+  updateDots(); // Highlight:
+  }
+
+
+  function updateCarousel() {
+    renderCarousel();
+    window.addEventListener('resize', renderCarousel);
+    startAutoScroll(); // Start auto-scroll on desktop
+  }
+
+  function startAutoScroll() {
+
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+      autoScroll = setInterval(nextSlide, interval);
+    }
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
+  }
+
+  function showSlide(i) {
+    const items = document.querySelectorAll('.carousel-item');
+    index1 = (i + items.length) % items.length;
+    carousel.style.transition = 'transform 0.5s ease';
+    carousel.style.transform = `translateX(${-index1 * 100}%)`;
+
+     // Highlight: Update dots when the slide changes
+    updateDots();
+
+    if (index1 === 0) {
+      setTimeout(() => {
+        carousel.style.transition = 'none';
+        index1 = items.length - 2;
+        carousel.style.transform = `translateX(${-index1 * 100}%)`;
+      }, 500);
+    } else if (index1 === items.length - 1) {
+      setTimeout(() => {
+        carousel.style.transition = 'none';
+        index1 = 1;
+        carousel.style.transform = `translateX(${-index1 * 100}%)`;
+      }, 500);
+    }
+  }
+
+  function nextSlide() {
+    showSlide(index1 + 1);
+     interval = 20000;
+  }
+
+  function prevSlide() {
+    showSlide(index1 - 1);
+  }
+
+  function resetAutoScroll() {
+    stopAutoScroll();
+    startAutoScroll();
+  }
+
+  // Highlight: Function to update dot active status
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, idx) => {
+    if (idx === index1) {
+      dot.style.backgroundColor = '#e78709'; // Active dot color
+    } else {
+      dot.style.backgroundColor = 'grey'; // Inactive dot color
+    }
+  });
+}
+// Highlight: Add event listeners to dots for manual navigation
+dotContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('dot')) {
+    const targetIndex = parseInt(e.target.getAttribute('data-index'), 10);
+    resetAutoScroll();
+    showSlide(targetIndex);
+  }
+})
+
+  prevBtn.addEventListener('click', () => {
+    resetAutoScroll();
+    prevSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    resetAutoScroll();
+    nextSlide();
+  });
+
+  document.querySelector('.carousel-container').addEventListener('mouseover', stopAutoScroll);
+  document.querySelector('.carousel-container').addEventListener('mouseout', resetAutoScroll);
+
+  updateCarousel();
+</script>
