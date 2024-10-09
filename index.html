@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/htmx.org@1.6.1"></script>
     <title>GVPCDPGC</title>
     <script src="./templates/includeHTML.js" defer></script>
+    <script defer src="../data/other/event.js"></script>
     <style>
       *{
         font-family: "inter",sans-serif;
@@ -291,6 +292,62 @@
       transition: background-color 0.3s;
     }
 
+    /* event */
+              .events-container {
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                margin: 20px 0;
+              }
+
+              .events-box {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+                gap: 40px;
+              }
+              
+              .event {
+                background-color: white;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              }
+              .event:hover {
+                background-color: #22316c;
+                color: white;
+              }
+
+              .event:hover .eventTitle {
+                padding-top: 15%;
+                text-align: center;
+                align-content: center;
+                
+              }
+  
+              .event:hover p{
+                display: none;
+              }
+              
+
+              .view-all-container {
+                text-align: right;
+                margin-top: 10px;
+              }
+
+              .view-all-btn {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #22316c;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+              }
+
+              .view-all-btn:hover {
+                background-color: #1a254f;
+              }
+            
+
 /* For mobile: place dots between "Prev" and "Next" buttons */
 @media (max-width: 768px) {
   
@@ -364,12 +421,20 @@
         align-items: center;
         /* justify-content: space-between; */
       }
-
+      
+      
       .carousel-dots {
         order: 2; /* Ensure the dots are between the buttons */
         position: relative;
         bottom: 70px;
       }
+      .events-box {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                font-size: 3vw;
+      }
+      .event:hover .eventTitle {
+        padding-top: 50%;}
     }
     
   /* page4 */
@@ -449,7 +514,7 @@
 
   </head>
   <body>
-    <section id="preloader-placeholder"></section>
+    <!-- <section id="preloader-placeholder"></section> -->
     
 
       <main class="hidden" id="main-content" >
@@ -516,6 +581,40 @@
               </div>
               <div class="carousel-dots"></div>
             </div>
+          </div>
+          <div class="pageEvent" style="margin: 20px;">
+            <div class="events-container">
+              <h2 style="margin-bottom: 15px;">Latest Events</h2>
+              <div id="events-box" class="events-box">
+                <!-- Events will be dynamically injected here -->
+              </div>
+              <div class="view-all-container">
+                <a href=".\others\event.html" class="view-all-btn">View All Events</a>
+              </div>
+            </div>
+
+            <script type="module">
+                function renderEvents(events) {
+                  const eventsBox = document.getElementById('events-box');
+                  const latestEvents = events.slice(0, 4); // Get the latest 4 events
+
+                  latestEvents.forEach(event => {
+                  const eventElement = document.createElement('div');
+                  eventElement.className = 'event';
+                  eventElement.innerHTML = `
+                  <h3 class='eventTitle' style="margin-bottom:5px;">${event.title}</h3>
+                  <p style="margin-bottom:5px;">${event.date}</p>
+                  <p style="margin-bottom:5px;">${event.description}</p>
+                  `;
+                  eventsBox.appendChild(eventElement);
+                  });
+                }
+
+                
+                renderEvents(eventDatabase);
+                </script>
+
+           
           </div>
           <div class="page4" style="justify-content: center;">
             <div><h3>OUR RECRUITERS</h3></div>
