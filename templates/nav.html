@@ -4,16 +4,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <style>
     * {
-        margin: 0;
         font-family: "Inter", sans-serif;
     }
+    .mbl{
+        display: none;
+    }
     
-    nav {
+    .desk {
         width: 100%;
         height: 45vh;
         background-repeat: no-repeat;
         background-size: cover;
-
     }
     
     .nav1 {
@@ -155,7 +156,139 @@
     .material-symbols-outline {
         margin-top: 20px;
     }
+    .mbl{
+        width: 100%;
+        padding: 10px;
+        background-color: #22316C;
+        z-index: 1010;
+    }
+    .mbl .left{
+        width: 70%;
+        display: flex;
+    }
+    .mbl .left p{
+        padding-left: 2px;
+        font-size: smaller;
+        font-weight: bold;
+        color: white;
+        align-content: center;
+    }
+    .mbl .right{
+        width: 25%;
+        display: flex;
+        justify-content: end;
+    }
 
+    .mbl .right span{
+        color: white;
+        font-size:30px;
+        cursor:pointer;
+        
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: #22316C;
+        overflow-x: hidden;
+        transition: 0.5s;
+        }
+
+        .overlay-content {
+        background-color: #22316C;
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: left;
+        margin-top: 30px;
+        }
+
+    .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    }
+
+    .nav-left{
+        color: white;
+        display: flex;
+        position: absolute;
+        padding: 4px;
+    }
+    .overlay a:hover, .overlay a:focus {
+    color: #e78709;
+    }
+
+    .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+    @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+    }
     @media only screen and (max-width: 1235px) {
         .title h1, .title p,.codes p {
             font-size: small;
@@ -165,11 +298,146 @@
         }
 
     }
+    @media only screen and (max-width: 768px) {
+        .mbl{
+            display: flex;
+        }
+        .desk{
+            display: none;
+        }
+        .dropdown {float: none;}
+        .dropdown-content {position: relative;}
+        .dropdown .dropbtn {
+            display: flex;
+            width: 100%;
+            text-align: left;
+  }
+    }
    
 </style>
 </head>
 <body>
-<nav >
+<nav class="mbl">
+    <div class="left">
+        <a href="../index.html"><img src="../assects/gvplogorm.png" alt="GVPT" width="40px"></a>
+        <P>GAYATRI VIDYA PARISHAD COLLEGE
+        FOR DEGREE AND PG COURSES(A)</P>
+    </div>
+    <div class="right">
+        <div id="myNav" class="overlay">
+            <div>
+                <div class="nav-left">
+                    <img src="../assects/gvplogorm.png" alt="GVPT" width="40px">
+                    <P>GAYATRI VIDYA PARISHAD COLLEGE
+                    FOR DEGREE AND PG COURSES(A)</P>
+                </div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+            <div class="overlay-content">
+              <a href="../index.html"><div class="dropdown">
+                <button class="dropbtn">home
+                </button>
+                <div class="dropdown-content"></div>
+              </div> </a>
+
+              <div class="dropdown">
+                <button class="dropbtn"><a href="../Adminstration/administration.html">Administration</a> 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                                      <a href="../Adminstration/administration.html">Administrators</a>
+                    <a href="../Adminstration/administration.html#director">Directors</a>
+                    <a href="../Adminstration/administration.html#deans">Deans</a>
+                    <a href="../Adminstration/administration.html#controllers">Controllers</a>
+                    <a href="../Adminstration/administration.html#hod-pg">PG HOD's</a>
+                    <a href="../Adminstration/administration.html#hod-ET">E&T HOD's</a>
+                    <a href="../Adminstration/administration.html#hod-ug">UG HOD's</a>
+                    <a href="../Adminstration/administration.html#COORDINATORS">Coordinators</a>
+                    <a href="../Adminstration/administration.html">Governing bodies</a>
+                </div>
+              </div> 
+
+              <div class="dropdown">
+                <button class="dropbtn"><a href="../Academics/">Academics</a>
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../Academics/programs.html">Programs</a>
+                    <a href="../Academics/Academic calender.html">Academic calendar</a>
+                    <a href="../Academics/Departments.html">Department</a>
+                    <a href="../Academics/syllabus.html">Syllabus</a>
+                    <a href="../Academics/Regulations.html">Regulations</a>
+                    <a href="../Academics/Archives.html">Archives</a>
+                </div>
+              </div> 
+
+              <div class="dropdown">
+                <button class="dropbtn"><a href="../admissions/">Admissions</a>
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../Academics/engeenering.html">Undergraduate</a>
+                    <a href="../Academics/undergraduate.html">Graduate</a>
+                    <a href="../Academics/pg.html">International</a>
+                </div>
+              </div> 
+
+              <div class="dropdown">
+                <a href="../faculty/faculty.html">
+                <button class="dropbtn">Faculty
+                </button>
+                <div class="dropdown-content"></div></a>
+                
+              </div> 
+
+              <div class="dropdown">
+                <button class="dropbtn"><a href="../placements/">Placements</a>
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../placements/about-placements.html">About Placements</a>
+                    <a href="../placements/traningplacements.html">Training & Placements</a>
+                    <a href="../placements/placementteam.html">Placements Team</a>
+                    <a href="../placements/placements-activities.html">Placements Activities</a>
+                </div>
+              </div> 
+
+              <div class="dropdown">
+                <button class="dropbtn"><a href="#">Research</a>
+                  <i class="fa fa-caret-down"></i>
+                </button>
+              </div> 
+
+              <div class="dropdown">
+                <button class="dropbtn">  other
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../others/examination-archives.html">Examination</a>
+                    <a href="../others/Results.html">Results</a>
+                    <a href="../others/clubs.html">Clubs</a>
+                    <a href="#">Campus Life</a>
+                    <a href="#">Transportation</a>
+                    <a href="#">Events</a>
+                    <a href="#">Code of Conduct</a>
+                    <a href="../top/aicte.html">AICTE Mandatory Info</a>
+                    <a href="../top/iqac.html">IQAC</a>
+                    <a href="../top/iipc.html">IIPC</a>
+                    <a href="../top/naac.html">NAAC</a>
+                    <a href="##">ALUMNI</a>
+                    <a href="../top/online payment.html">Online Payments</a>
+                    <a href="##">CAREERS</a>
+                    <a href="##">360 Virtual Tour</a>
+                </div>
+              </div> 
+
+            </div>
+          </div>
+    
+        <span  onclick="openNav()">&#9776; </span>
+    </div>
+</nav>
+<nav class="desk">
     <!-- Your navigation content here -->
     <div class="nav1" style="color: #fff;">
         <div class="right" style="width: 60%;margin-left: 5%;">
@@ -220,7 +488,7 @@
             
             <li><a href="../index.html"><span class="material-symbols-outlined">home</span></a></li>
             <li><a href="./404">About</a></li>
-            <li><a href="../Adminstration/administration.html">Administration<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
+            <li><a href="../Adminstration/administration.html">Administration <span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="../Adminstration/administration.html">Administrators</a></li>
                     <li><a href="../Adminstration/administration.html#director">Directors</a></li>
@@ -292,5 +560,18 @@
             navLink.classList.remove('stic');
         }
     });
+
+    
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+  
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+
 </script>
+
 

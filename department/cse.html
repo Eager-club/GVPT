@@ -32,21 +32,78 @@ header {
     /* position: relative; */
     /* z-index: 1001; Ensure header is above sidebar */
 }
-
+/* nav bar */
+.nav{
+    background-color: #22316C;
+    color: white;
+}
 .header1 {
-    background-color: #f8f9fa;
+    width: 100%;
+    background-color: #559ee7;
     color: #22316c;
-    padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensure this header is above sidebar */
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
 }
-
+.header-container{
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    color: #22316c;
+}
 .header1 h1 {
     font-size: 1.5rem;
+}
+  /* burger  */
+
+  .burger {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: all .5s ease;
+    /* margin: 1em; */
+}
+.burger:hover {
+    background: rgb(56 56 56);
+}
+.burger-strip {
+    transition: all .5s ease;
+}
+.strip div {
+    height: 3px;
+    border-radius: 2px;
+    background: rgb(56 56 56);
+    margin: 5px;
+    transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 22.5px;
+}
+.burger:hover .strip div {
+    background: white;
+}
+/* BURGER 1 */
+.burger-strip div:first-child {
+    width: 8px;
+}
+.burger-strip div:last-child {
+    width: 15px;
+}
+.burger.active .burger-strip div:first-child {
+    transform: rotate(46deg) translateY(-0.2px) translateX(4px);
+}
+.burger.active .burger-strip div:nth-child(2) {
+    transform: rotate(-45deg);
+}
+.burger.active .burger-strip div:last-child {
+    transform: rotate(45deg) translateY(-9px) translateX(1px);
 }
 
 .menu-icon {
@@ -74,6 +131,7 @@ header {
     transform: translateX(0);
     scrollbar-width: none;
     z-index: 999; /* Ensure sidebar is below header */
+    padding-bottom: 30px;
 }
 
 .sidebar ul {
@@ -516,7 +574,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         width: 100%;
     }
 
-    .menu-icon {
+    .burger {
         display: block;
     }
 
@@ -594,9 +652,22 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 <body>
 
 <div class="header1">
+    <div>
+        <div class="nav">
+            <div class="right"></div>
+            <div class="left">orange</div>
+        </div>
+    </div>
     <div class="header-container">
         <h1>Department of Computer Science and Engineering</h1>
-        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <!-- <div class="menu-icon" id="menu-icon">&#9776;</div> -->
+        <div class="burger" id="menu-icon">
+            <div class="strip burger-strip">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -897,7 +968,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     document.getElementById('menu-icon').addEventListener('click', function() {
         const sidebar = document.getElementById('sidebar');
         sidebar.classList.toggle('active');
-        document.getElementById('menu-icon').innerHTML = sidebar.classList.contains('active') ? '&#10006;' : '&#9776;';
+        document.getElementById('menu-icon').classList.toggle('active') ;
     });
 
     const links = document.querySelectorAll('.sidebar ul li a');

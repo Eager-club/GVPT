@@ -18,6 +18,7 @@
     <style>
       *{
         font-family: "inter",sans-serif;
+       
       }
       .page1{
         width: 100%;
@@ -27,7 +28,7 @@
         background-clip: content-box;
         position: relative;
         background-size: cover;
-
+       
       }
       .knowmr{
       
@@ -99,6 +100,105 @@
 
   }
   /* notification */
+  .notifications{
+    background-color: #22316c;
+  }
+  .notifications a{
+    color: #e78709;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  .notifications a img{
+    padding-right: 8px;
+  }
+  .notifications a:hover{
+    color: #ff4c4c;
+  }
+  /* notification pop */
+  /* Position bell in the bottom-right corner */
+.notification-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Bell Icon */
+.notification-bell {
+    background-color: #22316c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Notification Popup */
+.notification-popup {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Popup Title with Close Button */
+.notification-title {
+    padding: 10px;
+    background-color: #22316c;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Notification List */
+.notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.notification-item:hover {
+    background-color: rgba(217, 217, 217, 0.5);
+}
+
+/* When the popup is visible */
+.show {
+    display: block;
+}
+
+/* Change bell to cancel button */
+.cancel-btn {
+    content: "\00D7"; /* Unicode for '×' symbol */
+    font-size: 24px;
+    transform: rotate(180deg);
+    background-color: red;
+}
 
 /* page3 */
 .page3{
@@ -107,6 +207,9 @@
   justify-content: center;
   align-content: center;
   overflow: hidden;
+}
+.mblwel{
+  display: none;
 }
 .page3 .carousel-container {
       width: 80%;
@@ -171,14 +274,72 @@
       outline: none;
       margin: 0 5px;
     }
+
+    /* page3 dot nav */
+    /* General styling for the dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+/* Styling for the dots */
+    .carousel-dots .dot {
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background-color: grey;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+/* For mobile: place dots between "Prev" and "Next" buttons */
+@media (max-width: 768px) {
+  
+}
+
+/* For larger screens: place dots below the image */
+@media (min-width: 769px) {
+  .carousel-dots {
+    position: relative;
+    margin-top: 15px;
+    bottom: 0;
+  }
+}
+
+
+    /* tablet  */
+    @media screen and (max-width: 1200px) {
+      .knowmr{
+        height: 20vh;
+      }
+    }
     /* Mobile Styles */
     @media screen and (max-width: 768px) {
+      .knowmr{
+        height: 40vh;
+        justify-content: end;
+        top: -150px;
+      }
+      .mblwel{
+        display: grid;
+        padding-top: 20%;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+      }
+      .btn button{
+        font-size: 3vw;
+      }
+
+      
       .page3 .carousel-item {
         display: block;
         text-align: center;
       }
       .page3 .carousel-item .content {
-        width: 100%;
+        width: 90%;
         padding: 10px;
       }
       .page3 .carousel-item img {
@@ -190,7 +351,7 @@
       }
       .page3 .carousel-controls {
         position: relative;
-        /*top: 20%;*/
+        top: 40px;
         left: 0;
         right: 0;
         display: flex;
@@ -201,14 +362,25 @@
       .page3 .carousel-controls button{
           padding-bottom:25px;
         }
-        
-    }
+      .carousel-container {
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: space-between; */
+      }
 
+      .carousel-dots {
+        order: 2; /* Ensure the dots are between the buttons */
+        position: relative;
+        bottom: 70px;
+      }
+    }
+    
   /* page4 */
 .page4 {
       height: 30vh;
       display: grid;
       place-items: center;
+      overflow-x: hidden;
     }
     .page4 .carousel {
       width: 100%;
@@ -238,6 +410,9 @@
     .page4 .carousel[reverse="true"] .carousel__item {
       animation: slideReverse var(--duration) linear infinite;
     }
+
+    /* page 3 nav */
+    
     @keyframes slide {
       from {
         left: 100%;
@@ -271,6 +446,8 @@
     left: 100%;
   }
 }
+/* page3  */
+
     </style>
 
   </head>
@@ -281,13 +458,45 @@
       <main class="hidden" id="main-content" >
           <div class="page1">
             <header id="nav-placeholder"></header>
+            <div class="mblwel" style="color: white;">
+              <div><img src="../assects/gvplogorm.png" srcset alt="gayatri_logo" width="110px"></div>
+              <div class="title">
+              <h1>GAYATRI VIDYA PARISHAD <br/>COLLEGE FOR DEGREE AND PG COURSES (AUTONOMOUS)</h1>
+              <p class="para">
+                  Affiliated to Andhra University | Reaccredited by NAAC<br>
+                  PG-MBA and UG Engineering B.Tech(CE,CSE,ECE and ME) programs are Accredited by NBA
+                  <br>Visakhapatnam - 530045.
+              </p>
+          </div>
+            </div>
             <div class="knowmr">
-              <div class="dyn-div"> <h1 id="dynamic-heading"></h1></div>
+              
+              <div class="dyn-div"> <h1 id="dynamic-heading">Welcome to GVP</h1></div>
               <div ><a href="" class="btn">
                 <button>Know More</button>
               </a></div>
             </div>
           </div>
+          <div>
+            <marquee class="notifications"></marquee>
+          </div>
+          <!-- notification pop up -->
+          <div class="notification-container">
+            <button id="notificationBell" class="notification-bell">
+                &#128276; <!-- Notification bell icon -->
+            </button>
+            <div id="notificationPopup" class="notification-popup">
+                <div class="notification-title">
+                    Notifications
+                    <button id="closePopup" class="close-btn">&times;</button>
+                </div>
+                <ul id="notificationList" class="notification-list">
+                    <!-- Notifications will be injected dynamically here -->
+                </ul>
+            </div>
+        </div>
+        
+        
           <div class="page2">
             <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
               <h1 style="color: white;padding-bottom: 3vh;">MISSION :</h1>
@@ -308,6 +517,7 @@
                 <span><button id="prevBtn">&#9664;</button></span>
                 <span><button id="nextBtn">&#9654;</button></span>
               </div>
+              <div class="carousel-dots"></div>
             </div>
           </div>
           <div class="page4" style="justify-content: center;">
@@ -352,7 +562,7 @@
  
       <script>
         const heading = document.getElementById('dynamic-heading');
-        const texts = ["Welcome to GVP", "Gayatri Vidya Parishad"]; // Array of texts
+        const texts = ["Gayatri Vidya Parishad","Welcome to GVP"]; // Array of texts
         let currentText = 0;
         let index = 0;
       
@@ -367,13 +577,93 @@
               heading.textContent = ''; // Clear the heading for the next text
               currentText = (currentText + 1) % texts.length; // Move to the next text, loop back to the first text if at the end
               typeEffect(); // Start typing the next text
-            }, 7000); // Adjust pause duration between texts
+            }, 5000); // Adjust pause duration between texts
           }
         }
       
         window.onload =  function() {
   setTimeout(typeEffect, 5000); // Start typeEffect after 5 seconds
-};
+}; 
+      // notification popup
+     // Sample notifications data (could be fetched from an API in a real-world scenario)
+// Updated notifications data with optional link field
+let notifications = [
+    { id: 1, message: 'New event update at 10 AM', link: '' },
+    { id: 2, message: 'New message received from your mentor', link: '' },
+    { id: 3, message: 'Assignment deadline tomorrow at 5 PM', link: '' },
+    { id: 4, message: 'Reminder for project submission next week', link: '' },
+    { id: 5, message: 'Read the latest blog post', link: 'https://example.com/blog' }, // Message with a link
+    { id: 6, message: 'View details', link: 'https://example.com/details' }  // Another message with a link
+];
+
+
+// Select elements
+const notificationBell = document.getElementById('notificationBell');
+const notificationPopup = document.getElementById('notificationPopup');
+const closePopup = document.getElementById('closePopup');
+const notificationList = document.getElementById('notificationList');
+
+// Function to render notifications dynamically
+function renderNotifications() {
+    // Clear existing notifications
+    notificationList.innerHTML = '';
+
+    // Loop through the notifications array and add each notification to the list
+    notifications.forEach((notification) => {
+        const li = document.createElement('li');
+        li.classList.add('notification-item');
+        
+        if (notification.link) {
+            // If the notification has a link, render it as an anchor tag
+            li.innerHTML = `${notification.message} <a href="${notification.link}" target="_blank">Read more</a>`;
+        } else {
+            // Otherwise, just render the message as plain text
+            li.textContent = notification.message;
+        }
+
+        notificationList.appendChild(li);
+    });
+}
+
+
+// Show the notification popup and render the notifications
+notificationBell.addEventListener('click', function () {
+    if (!notificationPopup.classList.contains('show')) {
+        notificationPopup.classList.add('show');
+        notificationBell.classList.add('cancel-btn');
+        notificationBell.innerHTML = '&times;'; // Change bell icon to cancel '×'
+
+        // Render the notifications dynamically when the popup opens
+        renderNotifications();
+    } else {
+        notificationPopup.classList.remove('show');
+        notificationBell.classList.remove('cancel-btn');
+        notificationBell.innerHTML = '&#128276;'; // Change cancel back to bell icon
+    }
+});
+
+// Close the popup using the close button inside the popup
+closePopup.addEventListener('click', function () {
+    notificationPopup.classList.remove('show');
+    notificationBell.classList.remove('cancel-btn');
+    notificationBell.innerHTML = '&#128276;'; // Change cancel back to bell icon
+});
+
+// Example of how you might dynamically add a new notification
+// This could be triggered by an API response or some other event
+function addNewNotification(message) {
+    const newNotification = { id: notifications.length + 1, message: message };
+    notifications.push(newNotification);
+
+    // Optionally, render notifications again to reflect new changes immediately
+    renderNotifications();
+}
+
+// Example: Dynamically adding a new notification after 5 seconds (could be any trigger)
+setTimeout(() => {
+    addNewNotification('New friend request received');
+}, 5000);
+
         // page3 events carsouel
         const carouselData = [
       {
@@ -413,7 +703,13 @@
   const carousel = document.querySelector('.carousel');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
-  let index1 = 1;
+  
+//added lines
+  const dotContainer = document.createElement('div');
+dotContainer.classList.add('carousel-dots');
+document.querySelector('.carousel-container').appendChild(dotContainer); // Append to the container
+
+let index1 = 1;
   let interval = 2000; // Auto-scroll interval
   let autoScroll;
 
@@ -442,7 +738,16 @@
         `;
       }
     }).join('');
+
+    //added lines
+    // Highlight: Render dots based on the number of items
+  dotContainer.innerHTML = carouselData.map((_, idx) => `
+    <span class="dot" data-index="${idx}"></span>
+  `).join('');
+  
+  updateDots(); // Highlight:
   }
+
 
   function updateCarousel() {
     renderCarousel();
@@ -467,6 +772,9 @@
     index1 = (i + items.length) % items.length;
     carousel.style.transition = 'transform 0.5s ease';
     carousel.style.transform = `translateX(${-index1 * 100}%)`;
+
+     // Highlight: Update dots when the slide changes
+    updateDots();
 
     if (index1 === 0) {
       setTimeout(() => {
@@ -497,6 +805,26 @@
     startAutoScroll();
   }
 
+  // Highlight: Function to update dot active status
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, idx) => {
+    if (idx === index1) {
+      dot.style.backgroundColor = '#e78709'; // Active dot color
+    } else {
+      dot.style.backgroundColor = 'grey'; // Inactive dot color
+    }
+  });
+}
+// Highlight: Add event listeners to dots for manual navigation
+dotContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('dot')) {
+    const targetIndex = parseInt(e.target.getAttribute('data-index'), 10);
+    resetAutoScroll();
+    showSlide(targetIndex);
+  }
+})
+
   prevBtn.addEventListener('click', () => {
     resetAutoScroll();
     prevSlide();
@@ -512,7 +840,9 @@
 
   updateCarousel();
 
-
+      if(openNav()){
+        document.getElementsByTagName("body").style.display = "block";
+      }
       </script>
       <script src="./templates/preloader.js"></script>
         <script src="./notfication.js"></script>

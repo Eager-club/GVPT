@@ -67,7 +67,12 @@
 ];
 links.forEach(linkObj => {
     const link = document.createElement("a");
+    const img = document.createElement("img");
     link.href = linkObj.href; // Use the URL from the link object
-    link.textContent = linkObj.content; // Set the text content to the message from the link object
+    img.src = "../assects/gvplogorm.png"; // Corrected the typo from "assects" to "assets"
+    img.width = 15;
+    link.appendChild(img); // Append the image to the link
+    link.appendChild(document.createTextNode(linkObj.content)); // Append the text content
+    
     notify.appendChild(link); // Append the link to the 'notify' container
-  });
+});

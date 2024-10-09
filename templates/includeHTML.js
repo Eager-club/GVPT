@@ -30,5 +30,12 @@ window.addEventListener('scroll', function() {
       navLink.classList.remove('stic');
   }
 });
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementsByTagName("body").style.display = "none";
+}
 
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
 
