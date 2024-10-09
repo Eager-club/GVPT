@@ -1,351 +1,359 @@
-<style>
-    .page3{
-  width: 100%;
-  background-color: rgba(217, 217,217,0.15);
-  justify-content: center;
-  align-content: center;
-  overflow: hidden;
-}
-.mblwel{
-  display: none;
-}
-.page3 .carousel-container {
-      width: 80%;
-      height: max-content;
-      margin-left:10%;
-      position: relative;
-      overflow: hidden;
-      padding: 5% 0 5% 0;
-    }
-    .page3 .carousel {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    .page3 .carousel-item {
-      min-width: 100%;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-    }
-    .page3 .carousel-item .content {
-      width: 50%;
-      padding: 20px;
-    }
-    .page3 .carousel-item img {
-      width: 50%;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      margin-left: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    }
-    .page3 .carousel-item img:hover {
-      transform: translateY(-10px); 
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
-    }
-    .page3  .carousel-item h2 {
-      margin-top: 0;
-      margin-bottom: 10%;
-      font-size: 1.5em;
-      color: #22316c;
-    }
-    .page3 .carousel-item p {
-      text-align: justify;
-      /* width: 80% ; */
-      margin-bottom: 0;
-    }
-    .page3  .carousel-controls {
-      position: relative;
-      bottom: 5px;
-      display: Start;
-      justify-content: center;
-      width: calc(100% - 20px);
-    }
-
-    .page3  .carousel-controls button,.carousel-controls span {
-      font-size: 35px;
-      background-color: rgba(0, 0, 0, 0);
-      color: #22316c;
-      border: none;
-      cursor: pointer;
-      border-radius: 100%;
-      outline: none;
-      margin: 0 5px;
-    }
-
-    @media screen and (max-width: 768px) {
-        .page3 .carousel-item {
-        display: block;
-        text-align: center;
-      }
-      .page3 .carousel-item .content {
-        width: 90%;
-        padding: 10px;
-      }
-      .page3 .carousel-item img {
-        width: 100%;
-        margin-left:-7%;
-      }
-      .page3 .carousel-item p{
-        text-align: center;
-      }
-      .page3 .carousel-controls {
-        position: relative;
-        top: 40px;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-      }
-
-      .page3 .carousel-controls button{
-          padding-bottom:25px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GVPCDPGC | Events</title>
+    <script src="../templates/includeHTML.js" defer></script>
+    <style>
+        body {
+            font-family: "inter",sans-serif;
+            
         }
-    }
-    /* added lines  */
-    /* General styling for the dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-}
+        .page1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px ;
+        }
+        .page1 h1 {
+            font-size: 2em;
+            color: #22316c;
+            margin: 0;
+        }
+        .search{
+            display: flex;
+            justify-content: end;
+            width: 40%;
+        }
+        .search input,select {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 70%;
+        }
+        .search select {
+            width: 30%;
+            margin-left: 10px;
+        }
+        .event-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+        }
 
-/* Styling for the dots */
-.carousel-dots .dot {
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background-color: grey;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+        .event-box {
+            background-color: rgba(34, 49, 104, .03);;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
 
-/* For mobile: place dots between "Prev" and "Next" buttons */
-@media (max-width: 768px) {
-  .carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+        .event-box img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .event-box:hover{
+            background-color: rgba(34, 49, 104, .1);
+        }
+        .event-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+        }
 
-  .carousel-dots {
-    order: 2; /* Ensure the dots are between the buttons */
-    position: absolute;
-    bottom: 50px;
-  }
+        .month-day {
+            font-weight: bold;
+        }
 
-  #prevBtn, #nextBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+        .year {
+            font-weight: bold;
+            display: block;
+            font-size: 0.9em;
+        }
 
-  #prevBtn {
-    left: 10px;
-  }
+        .arrow {
+            font-size: 1.5em;
+            float: right;
+            margin-left: auto;
+            color: #555;
+            font-weight: bolder;
+        }
 
-  #nextBtn {
-    right: 10px;
-  }
-}
+        .event-title {
+            font-size: 1.2em;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
 
-/* For larger screens: place dots below the image */
-@media (min-width: 769px) {
-  .carousel-dots {
-    position: relative;
-    margin-top: 15px;
-    bottom: 0;
-  }
-}
+        .event-box:hover .event-title {
+            color: #22316c;
+            
+        }
+        
 
-</style>
-<div class="page3">
-    <div class="carousel-container">
-      <div class="carousel"></div>
-      <div class="carousel-controls">
-        <span><button id="prevBtn">&#9664;</button></span>
-         <!--  added line  -->
-        <span><button id="nextBtn">&#9654;</button></span>
-      </div><div class="carousel-dots"></div> 
+        address {
+            font-style: normal;
+            color: #666;
+            font-size: 0.8em;
+        }
+        
+        .arrow{
+            cursor: pointer;
+        }
+        .view-all-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-all-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .event-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            .page1{
+                display: grid;
+                margin: 0 0 20px 0;
+            }
+            .search{
+                width: 100%;
+                font-size: small;
+            }
+            .search input,select {
+            padding: 7px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 70%;
+        }
+        }
+
+    </style>
+    
+    <script defer src="../data/other/event.js"></script>
+</head>
+<body>
+    <header id="nav-placeholder"></header>
+    <div>
+        <div class="page1">
+            <h1>Events</h1>
+            <div class="search">
+                <input type="text" id="search" placeholder="Search events...">
+                <select id="sortBy">
+                    <option value="date">Sort by Date</option>
+                    <option value="title">Sort by Title</option>
+                </select>
+            </div>
+        </div>
+        
+        
+        <div class="event-container" id="allEventsList"></div>
+
+        <!-- Modal for event details -->
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2 id="modalEventTitle"></h2>
+                <img id="modalEventImage" src="" alt="" style="width: 100%; border-radius: 10px;">
+                <p id="modalEventDescription"></p>
+                <p><strong>Speaker:</strong> <span id="modalEventSpeaker"></span></p>
+                <p><strong>Department:</strong> <span id="modalEventDepartment"></span></p>
+                <p><strong>Date:</strong> <span id="modalEventDate"></span></p>
+                <p><strong>Video:</strong> <a id="modalEventVideo" href="" target="_blank">Watch here</a></p>
+                <p><strong>Location:</strong> <span id="modalEventLocation"></span></p>
+                <p><strong>Time:</strong> <span id="modalEventTime"></span></p>
+                <p><strong>Registration Link:</strong> <a id="modalEventRegistration" href="" target="_blank">Register here</a></p>
+            </div>
+        </div>
     </div>
-  </div>
+    <script>
+        function renderEvents(events) {
+            const eventContainer = document.getElementById('allEventsList');
+            eventContainer.innerHTML = ''; // Clear container
+            events.forEach(event => {
+                const eventBox = document.createElement('div');
+                eventBox.classList.add('event-box');
+                eventBox.innerHTML = `
+                    <div class="event-date">
+                        <span class="month-day">${new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })},</span>
+                        <span class="year">${new Date(event.date).getFullYear()}</span>
+                        <span class="arrow">→</span>
+                    </div>
+                    <img src="${Array.isArray(event.image) ? event.image[0] : event.image}" alt="${event.title}" class="event-image">
+                    <a href="#" class="event-title" data-event='${JSON.stringify(event)}'>${event.title}</a>
+                    <address>by ${event.department}</address>
+                    <p>${event.description}</p>
+                `;
+                eventContainer.appendChild(eventBox);
+            });
 
-<script>
-    const carouselData = [
-      {
-        title: "Drug Abuse Day 2024",
-        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
-        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
-        imgAlt: "Event Image"
-      },
-       {
-        title: "Drug Abuse Day 2024",
-        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
-        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
-        imgAlt: "Event Image"
-      },
-       {
-        title: "Drug Abuse Day 2024",
-        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
-        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
-        imgAlt: "Event Image"
-      },
-       {
-        title: "Drug Abuse Day 2024",
-        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
-        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
-        imgAlt: "Event Image"
-      },
-       {
-        title: "Drug Abuse Day 2024",
-        text: "On June 26, 2024, the National Cadet Corps (NCC) of Gayatri Vidya Parishad College for Degree and PG Courses organized an impactful event to commemorate the International Day Against Drug Abuse and Illicit Trafficking. This year's theme, 'People First: Stop Stigma and Discrimination, Strengthen Prevention,' set the tone for the day's activities.",
-        imgSrc: "https://www.gvpcdpgc.edu.in/latest_images/Drug_abuse_day.jpeg",
-        imgAlt: "Event Image"
-      },
-      // Repeat for other items
-    ];
+            // Attach click event for event titles
+            const eventTitles = document.querySelectorAll('.event-title');
+            eventTitles.forEach(title => {
+                title.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor click behavior
+                    const eventData = JSON.parse(title.getAttribute('data-event'));
+                    openModal(eventData);
+                });
+            });
+            // Attach click event for event arrow
+            const eventArrow = document.querySelectorAll('.arrow');
+            eventArrow.forEach(arrow => {
+                arrow.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor click behavior
+                    const eventData = JSON.parse(arrow.closest('.event-box').querySelector('.event-title').getAttribute('data-event'));
+                    openModal(eventData);
+                });
+            });
+            
+        }
+        
+        function openModal(event) {
+            document.getElementById('modalEventTitle').innerText = event.title;
+            const modalEventImage = document.getElementById('modalEventImage');
+            if (Array.isArray(event.image) && event.image.length > 1) {
+                const carouselContainer = document.createElement('div');
+                carouselContainer.classList.add('carousel-container');
+                
+                event.image.forEach((imgSrc, index) => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imgSrc;
+                    imgElement.classList.add('carousel-image');
+                    if (index === 0) imgElement.classList.add('active'); // Show first image by default
+                    carouselContainer.appendChild(imgElement);
+                });
 
+                modalEventImage.style.display = 'none'; // Hide the original image element
+                modalEventImage.parentNode.insertBefore(carouselContainer, modalEventImage.nextSibling);
+                initializeCarousel(carouselContainer);
+            } else {
+                modalEventImage.src = Array.isArray(event.image) ? event.image[0] : event.image;
+                modalEventImage.style.display = 'block'; // Ensure the original image element is visible
+            }
+            document.getElementById('modalEventDescription').innerText = event.description;
+            document.getElementById('modalEventSpeaker').innerHTML = event.speakers && Array.isArray(event.speakers) && event.speakers.length > 0 ? event.speakers.map(s => `${s.name}, ${s.designation}`).join('<br>') : 'N/A';
+            document.getElementById('modalEventDepartment').innerText = event.department;
+            document.getElementById('modalEventDate').innerText = new Date(event.date).toLocaleDateString();
+            document.getElementById('modalEventLocation').innerText = event.location || 'N/A';
+            document.getElementById('modalEventTime').innerText = event.time || 'N/A';
+            document.getElementById('modalEventVideo').href = event.video || '#';
+            document.getElementById('modalEventRegistration').href = event.registrationLink || '#';
 
-  const carousel = document.querySelector('.carousel');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  
-//added lines
-  const dotContainer = document.createElement('div');
-dotContainer.classList.add('carousel-dots');
-document.querySelector('.carousel-container').appendChild(dotContainer); // Append to the container
+            const modal = document.getElementById('eventModal');
+            modal.style.display = 'block';
+        }
 
-let index1 = 1;
-  let interval = 2000; // Auto-scroll interval
-  let autoScroll;
+        // Close the modal when the user clicks on <span> (x)
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('eventModal').style.display = 'none';
+        }
 
-  function renderCarousel() {
-    const isMobile = window.innerWidth <= 768;
-    carousel.innerHTML = carouselData.map(item => {
-      if (isMobile) {
-        return `
-          <div class="carousel-item">
-            <div class="content">
-              <h2>${item.title}</h2>
-              <img src="${item.imgSrc}" alt="${item.imgAlt}">
-              <p>${item.text}</p>
-            </div>
-          </div>
-        `;
-      } else {
-        return `
-          <div class="carousel-item">
-            <div class="content">
-              <h2>${item.title}</h2>
-              <p>${item.text}</p>
-            </div>
-            <img src="${item.imgSrc}" alt="${item.imgAlt}">
-          </div>
-        `;
-      }
-    }).join('');
+        // Close the modal when clicking anywhere outside of the modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('eventModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
 
-    //added lines
-    // Highlight: Render dots based on the number of items
-  dotContainer.innerHTML = carouselData.map((_, idx) => `
-    <span class="dot" data-index="${idx}"></span>
-  `).join('');
-  
-  updateDots(); // Highlight:
-  }
+        function loadAllEvents() {
+            let events = eventDatabase.sort((a, b) => new Date(b.date) - new Date(a.date)); // Descending order by default
+            renderEvents(events);
 
+            // Handle sorting and search functionality
+            const searchInput = document.getElementById('search');
+            const sortBy = document.getElementById('sortBy');
 
-  function updateCarousel() {
-    renderCarousel();
-    window.addEventListener('resize', renderCarousel);
-    startAutoScroll(); // Start auto-scroll on desktop
-  }
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase();
+                const filteredEvents = eventDatabase.filter(event => 
+                    event.title.toLowerCase().includes(query) ||
+                    event.description.toLowerCase().includes(query) ||
+                    (event.speakers && event.speakers.some(speaker => speaker.name.toLowerCase().includes(query))) ||
+                    event.department.toLowerCase().includes(query) ||
+                    event.location.toLowerCase().includes(query) ||
+                    new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toLowerCase().includes(query) ||
+                    new Date(event.date).toLocaleDateString('en-US', { day: 'numeric' }).includes(query) ||
+                    new Date(event.date).toLocaleDateString('en-US', { month: 'short' }).toLowerCase().includes(query) ||
+                    new Date(event.date).getFullYear().toString().includes(query)
+                );
+                renderEvents(filteredEvents);
+            });
 
-  function startAutoScroll() {
+            sortBy.addEventListener('change', () => {
+                const sortValue = sortBy.value;
+                if (sortValue === 'title') {
+                    events = eventDatabase.sort((a, b) => a.title.localeCompare(b.title));
+                } else {
+                    events = eventDatabase.sort((a, b) => new Date(b.date) - new Date(a.date));
+                }
+                renderEvents(events);
+            });
+            
+        }
 
-    const isMobile = window.innerWidth <= 768;
-    if (!isMobile) {
-      autoScroll = setInterval(nextSlide, interval);
-    }
-  }
+        document.addEventListener('DOMContentLoaded', loadAllEvents);
 
-  function stopAutoScroll() {
-    clearInterval(autoScroll);
-  }
-
-  function showSlide(i) {
-    const items = document.querySelectorAll('.carousel-item');
-    index1 = (i + items.length) % items.length;
-    carousel.style.transition = 'transform 0.5s ease';
-    carousel.style.transform = `translateX(${-index1 * 100}%)`;
-
-     // Highlight: Update dots when the slide changes
-    updateDots();
-
-    if (index1 === 0) {
-      setTimeout(() => {
-        carousel.style.transition = 'none';
-        index1 = items.length - 2;
-        carousel.style.transform = `translateX(${-index1 * 100}%)`;
-      }, 500);
-    } else if (index1 === items.length - 1) {
-      setTimeout(() => {
-        carousel.style.transition = 'none';
-        index1 = 1;
-        carousel.style.transform = `translateX(${-index1 * 100}%)`;
-      }, 500);
-    }
-  }
-
-  function nextSlide() {
-    showSlide(index1 + 1);
-     interval = 20000;
-  }
-
-  function prevSlide() {
-    showSlide(index1 - 1);
-  }
-
-  function resetAutoScroll() {
-    stopAutoScroll();
-    startAutoScroll();
-  }
-
-  // Highlight: Function to update dot active status
-function updateDots() {
-  const dots = document.querySelectorAll('.dot');
-  dots.forEach((dot, idx) => {
-    if (idx === index1) {
-      dot.style.backgroundColor = '#e78709'; // Active dot color
-    } else {
-      dot.style.backgroundColor = 'grey'; // Inactive dot color
-    }
-  });
-}
-// Highlight: Add event listeners to dots for manual navigation
-dotContainer.addEventListener('click', (e) => {
-  if (e.target.classList.contains('dot')) {
-    const targetIndex = parseInt(e.target.getAttribute('data-index'), 10);
-    resetAutoScroll();
-    showSlide(targetIndex);
-  }
-})
-
-  prevBtn.addEventListener('click', () => {
-    resetAutoScroll();
-    prevSlide();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    resetAutoScroll();
-    nextSlide();
-  });
-
-  document.querySelector('.carousel-container').addEventListener('mouseover', stopAutoScroll);
-  document.querySelector('.carousel-container').addEventListener('mouseout', resetAutoScroll);
-
-  updateCarousel();
-</script>
+        
+    </script>
+    <footer id="footer-placeholder"></footer>
+    
+</body>
+</html>

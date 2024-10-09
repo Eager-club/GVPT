@@ -11,7 +11,7 @@ const eventDatabase = [
             { name: "Dr. John Doe", designation: "AI Researcher, Google" },
             { name: "Prof. Jane Smith", designation: "Professor, MIT" }
         ],
-        image: "../assects/event.jpg",
+        image: ["../assects/event.jpg","../assects/home.png","../assects/event.jpg","../assects/event.jpg"],
         video: "https://www.youtube.com/embed/sample-video1",
         link: "event-details.html?id=1"
     },
@@ -206,7 +206,7 @@ const eventDatabase = [
             { name: "Mr. Jeff Bezos", designation: "Founder, Amazon" },
             { name: "Ms. Satya Nadella", designation: "CEO, Microsoft" }
         ],
-        image: "../assects/event.jpg",
+        image: ["../assects/event.jpg","../assects/event.jpg","../assects/event.jpg","../assects/event.jpg"],
         video: "https://www.youtube.com/embed/sample-video14",
         link: "event-details.html?id=14"
     }
