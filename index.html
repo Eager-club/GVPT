@@ -295,8 +295,6 @@
     /* event */
               .events-container {
                 padding: 20px;
-                background-color: #f9f9f9;
-                border-radius: 10px;
                 margin: 20px 0;
               }
 
@@ -318,9 +316,9 @@
               }
 
               .event:hover .eventTitle {
-                padding-top: 15%;
+                align-items: center;
                 text-align: center;
-                align-content: center;
+                /* align-content: center; */
                 
               }
   
@@ -346,12 +344,349 @@
               .view-all-btn:hover {
                 background-color: #1a254f;
               }
-            
-
-/* For mobile: place dots between "Prev" and "Next" buttons */
-@media (max-width: 768px) {
-  
+            /* news updates */
+              .newsContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.newsContainer .news, .newsContainer .events {
+  width: 48%;
+}
+
+
+.newsContainer h2 {
+  font-size: 1.5em;
+  color: #22316c;
+  border-bottom: 2px solid #22316c;
+  padding-bottom: 10px;
+}
+
+.newsContainer .section-subtitle {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.newsContainer .news-item, .newsContainer .event-item {
+  margin-bottom: 30px;
+}
+
+.newsContainer h3 {
+  font-size: 1em;
+  margin: 0 0 10px 0;
+}
+
+.newsContainer p {
+  font-size: 0.8em;
+  color: #333;
+}
+
+.newsContainer .read-more {
+  text-decoration: none;
+  color: #22316c;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.newsContainer .read-more:hover {
+  color: #1b2859;
+}
+    
+  /* page4 */
+.page4 {
+      height: 30vh;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+    }
+    .page4 .carousel {
+      width: 100%;
+      height: var(--height);
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, #000 10%, 90%, transparent);
+    }
+    .page4 .carousel:hover .carousel__item {
+      animation-play-state: paused !important;
+    }
+    .page4 .carousel__list {
+      display: flex;
+      width: 100%;
+      min-width: calc(var(--width) * var(--quantity));
+      position: relative;
+    }
+    .page4 .carousel__item {
+      width: var(--width);
+      height: var(--height);
+      position: absolute;
+      left: 100%;
+      text-align: center;
+      font-size: 45px;
+      animation: slide var(--duration) linear infinite;
+      animation-delay: calc((var(--duration) / var(--quantity)) * (var(--position) - var(--quantity))) !important;
+    }
+    .page4 .carousel[reverse="true"] .carousel__item {
+      animation: slideReverse var(--duration) linear infinite;
+    }
+
+    /* page 3 nav */
+    
+    @keyframes slide {
+      from {
+        left: 100%;
+      }
+      to {
+        left: calc(var(--width) * -1);
+      }
+    }
+    @keyframes slideReverse {
+      from {
+        left: calc(var(--width) * -1);
+      }
+      to {
+        left: 100%;
+      }
+    }
+@keyframes slide {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+
+@keyframes slideReverse {
+  from {
+    left: calc(var(--width) * -1);
+  }
+  to {
+    left: 100%;
+  }
+}
+/* page5  */
+.page5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+
+.photo-gallery h2 {
+    font-size: 28px;
+    color: #d90000;
+    margin-bottom: 10px;
+}
+
+.view-all-btn {
+    background-color: #d90000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+/*mobile gallery*/
+#mobile-gallery{
+  display:none;
+}
+#mobile-gallery .container {
+  position: relative;
+  width: 150px;
+  max-width: 150px;
+}
+
+#mobile-gallery .image {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
+
+#mobile-gallery .overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 150px;
+  height:150px;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  align-content: center;
+  border-radius: 10px;
+}
+/* FAQ Section */
+.faq-section {
+    width: 45%;
+    margin-left: 20px;
+}
+
+.faq-header,.Photo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.faq-header h2 {
+    display: flex;
+    align-items: center;
+    color: #c41230;
+}
+
+.faq-header img {
+    width: 20px;
+    margin-left: 10px;
+}
+
+.view-all {
+    background-color: #c41230;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.faq-section h3 {
+    color: #c41230;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.faq-section ul {
+    list-style: none;
+    padding: 0;
+    border-left: 2px dashed #c41230;
+    padding-left: 20px;
+}
+
+.faq-section ul li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 30px;
+}
+
+.faq-section ul li .plus-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #c41230;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.faq-section ul li button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.faq-section ul li button:hover {
+    color: #c41230;
+}
+
+.faq-answer {
+    display: none; /* Hidden by default */
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: #555;
+}
+
+
+@media (max-width: 1200px) {
+      .page5 {
+        flex-direction: column;
+        align-items: center; /* Center items */
+        padding: 10px;
+    }
+
+    .photo-gallery {
+        margin-bottom: 20px; /* Space from FAQ on mobile */
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr); /* Two images in grid */
+    }
+    .faq-section {
+    width: 80%;
+    margin-left: 0;
+    margin: 10px;
+}
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .page5 {
+        flex-direction: column;
+        align-items: center; /* Center items */
+        padding: 10px;
+    }
+    #mobile-gallery{
+  display:grid;
+}
+    .photo-gallery {
+        margin-bottom: 20px; /* Space from FAQ on mobile */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two images in grid */
+    }
+    #gallery-grid {
+        display: none;
+    }
+    .faq-section {
+    width: 80%;
+    margin-left: 0;
+    margin: 10px;
+}
+.Photo-header .view-all{
+      display: none;
+    }
+}
+
+/* responsive */
 
 /* For larger screens: place dots below the image */
 @media (min-width: 769px) {
@@ -431,85 +766,22 @@
       .events-box {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-                font-size: 3vw;
+                font-size: 2.5vw;
       }
       .event:hover .eventTitle {
         padding-top: 50%;}
-    }
-    
-  /* page4 */
-.page4 {
-      height: 30vh;
-      display: grid;
-      place-items: center;
-      overflow-x: hidden;
-    }
-    .page4 .carousel {
-      width: 100%;
-      height: var(--height);
-      overflow: hidden;
-      mask-image: linear-gradient(to right, transparent, #000 10%, 90%, transparent);
-    }
-    .page4 .carousel:hover .carousel__item {
-      animation-play-state: paused !important;
-    }
-    .page4 .carousel__list {
-      display: flex;
-      width: 100%;
-      min-width: calc(var(--width) * var(--quantity));
-      position: relative;
-    }
-    .page4 .carousel__item {
-      width: var(--width);
-      height: var(--height);
-      position: absolute;
-      left: 100%;
-      text-align: center;
-      font-size: 45px;
-      animation: slide var(--duration) linear infinite;
-      animation-delay: calc((var(--duration) / var(--quantity)) * (var(--position) - var(--quantity))) !important;
-    }
-    .page4 .carousel[reverse="true"] .carousel__item {
-      animation: slideReverse var(--duration) linear infinite;
-    }
+  /* news updates */
+        .newsContainer {
+    flex-direction: column;
+    padding: 20px;
+  }
 
-    /* page 3 nav */
-    
-    @keyframes slide {
-      from {
-        left: 100%;
-      }
-      to {
-        left: calc(var(--width) * -1);
-      }
-    }
-    @keyframes slideReverse {
-      from {
-        left: calc(var(--width) * -1);
-      }
-      to {
-        left: 100%;
-      }
-    }
-@keyframes slide {
-  from {
-    left: 100%;
+  .newsContainer .news, .newsContainer .events {
+    width: 100%;
+    margin-bottom: 30px;
   }
-  to {
-    left: calc(var(--width) * -1);
-  }
-}
 
-@keyframes slideReverse {
-  from {
-    left: calc(var(--width) * -1);
-  }
-  to {
-    left: 100%;
-  }
-}
-/* page3  */
-
+    }
     </style>
 
   </head>
@@ -616,6 +888,71 @@
 
            
           </div>
+          <div style="background-color: rgba(217, 217,217,0.15);">
+            <div class="newsContainer">
+              <section class="news">
+                <h2>📰 Latest News</h2>
+                <p class="section-subtitle">Campus Bulletin</p>
+                <div class="news-section"></div> <!-- Added this section for news items -->
+              </section>
+            
+              <section class="events">
+                <h2>⚡ Upcoming Events</h2>
+                <p class="section-subtitle">Programs on Platter</p>
+                <div class="events-section"></div> <!-- Added this section for event items -->
+              </section>
+            </div>
+            
+            <script type="module">
+            import newsData from './data/index/newsData.js';
+            
+            // Function to dynamically update the news section
+            function updateNews() {
+              const newsSection = document.querySelector('.news-section');
+              newsSection.innerHTML = ''; // Clear any existing content
+            
+              newsData.news.forEach((newsItem) => {
+                const newsEntry = `
+                  <div class="news-item">
+                    <h3>${newsItem.title}</h3>
+                    <p><strong>Date:</strong> ${newsItem.date}</p>
+                    <p>${newsItem.description}</p>
+                    <a href="${newsItem.link}" class="read-more">Read more</a>
+                  </div>
+                  <hr>
+                `;
+                newsSection.innerHTML += newsEntry;
+              });
+            }
+            
+            // Function to dynamically update the upcoming events section
+            function updateUpcomingEvents() {
+              const eventsSection = document.querySelector('.events-section');
+              eventsSection.innerHTML = ''; // Clear any existing content
+            
+              newsData.upcomingEvents.forEach((eventItem) => {
+                const eventEntry = `
+                  <div class="event-item">
+                    <h3>${eventItem.title}</h3>
+                    <p><strong>Date:</strong> ${eventItem.date}</p>
+                    <p>${eventItem.description}</p>
+                    <a href="${eventItem.link}" class="read-more">Learn more</a>
+                  </div>
+                  <hr>
+                `;
+                eventsSection.innerHTML += eventEntry;
+              });
+            }
+            
+            // Call the functions on page load or dynamically
+            document.addEventListener('DOMContentLoaded', () => {
+              updateNews();
+              updateUpcomingEvents();
+            });
+            </script>
+          </div>
+ 
+          
           <div class="page4" style="justify-content: center;">
             <div><h3>OUR RECRUITERS</h3></div>
             <div class="carousel-container">
@@ -652,7 +989,166 @@
               </div>
             </div>
           </div>
-      
+          <section class="page5"  style="background-color: rgba(217, 217,217,0.15);">
+            <!-- Photo Gallery Section -->
+           <div class="photo-gallery">
+             <div class="Photo-header">
+                 <h2>PHOTO GALLERY</h2>
+                <button class="view-all">View All</button>
+             </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 1">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 2">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 3">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 4">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 5">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 6">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 7">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 8">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 9">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 7">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 8">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 9">
+            </div>
+            <div class="gallery-grid" id="mobile-gallery">
+              <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 1">
+              <div class="container">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Avatar" class="image">
+                <div class="overlay">View all</div>
+            </div>
+        </div>
+    </div>
+    
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <div class="faq-header">
+                    <h2>FAQs <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/faq-80-704013.png?f=webp&w=256" alt="FAQ Icon"></h2>
+                    <button class="view-all" id="view-all-faq">View all</button>
+                </div>
+                <h3>FREQUENTLY ASKED QUESTIONS</h3>
+                <ul>
+                    <li>
+                        <span class="plus-icon">+</span>
+                        <button class="faq-question">What will the newly created Dean, Diversity and Inclusion work on?</button>
+                        <p class="faq-answer">The Dean will work on fostering an inclusive culture and diversity programs at the institution.</p>
+                    </li>
+                    <li>
+                        <span class="plus-icon">+</span>
+                        <button class="faq-question">Whom to contact for Postgraduate admissions?</button>
+                        <p class="faq-answer">Office of Academics (PG), Phone: +91-11-2659-1737, Email: drpgsr@admin.iitd.ac.in</p>
+                    </li>
+                    <li>
+                        <span class="plus-icon">+</span>
+                        <button class="faq-question">Whom to contact for Undergraduate admissions?</button>
+                        <p class="faq-answer">Undergraduate Admissions Office, Email: ugadmissions@iitd.ac.in</p>
+                    </li>
+                    <li>
+                        <span class="plus-icon">+</span>
+                        <button class="faq-question">Whom to contact for queries related to GATE?</button>
+                        <p class="faq-answer">Contact the GATE office at gateoffice@iitd.ac.in for any related queries.</p>
+                    </li>
+                    <li>
+                        <span class="plus-icon">+</span>
+                        <button class="faq-question">How to pay fees online?</button>
+                        <p class="faq-answer">You can pay fees online via the student portal under the 'Fee Payment' section.</p>
+                    </li>
+                    <li>
+                        <span class="plus-icon">+</span>
+                        <button class="faq-question">Whom to contact for Faculty Recruitment?</button>
+                        <p class="faq-answer">Faculty recruitment inquiries can be directed to facultyrecruitment@iitd.ac.in</p>
+                    </li>
+                </ul>
+            </div>
+            <script>
+              // Toggle individual FAQ answer visibility
+document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const icon = this.previousElementSibling;
+
+        // If the clicked answer is already open, close it
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+            icon.textContent = "+";
+        } else {
+            // First close any open answer
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.style.display = "none";
+            });
+            document.querySelectorAll('.plus-icon').forEach(icn => {
+                icn.textContent = "+";
+            });
+
+            // Open the clicked answer
+            answer.style.display = "block";
+            icon.textContent = "-";
+        }
+    });
+});
+
+// Toggle individual FAQ answer via plus icon
+document.querySelectorAll('.plus-icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+        const answer = this.nextElementSibling.nextElementSibling;
+        const questionIcon = this;
+
+        // If the clicked answer is already open, close it
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+            questionIcon.textContent = "+";
+        } else {
+            // First close any open answer
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.style.display = "none";
+            });
+            document.querySelectorAll('.plus-icon').forEach(icn => {
+                icn.textContent = "+";
+            });
+
+            // Open the clicked answer
+            answer.style.display = "block";
+            questionIcon.textContent = "-";
+        }
+    });
+});
+
+// View All button functionality
+document.querySelector('#view-all-faq').addEventListener('click', function() {
+    const allAnswers = document.querySelectorAll('.faq-answer');
+    const allIcons = document.querySelectorAll('.plus-icon');
+    const viewAllButton = document.querySelector('.view-all-btn');
+    
+    // Check if all answers are already open
+    let allOpen = true;
+    allAnswers.forEach(answer => {
+        if (answer.style.display !== "block") {
+            allOpen = false;
+        }
+    });
+
+    // If all answers are open, close them and change button text to "View All"
+    if (allOpen) {
+        allAnswers.forEach(answer => {
+            answer.style.display = "none";
+        });
+        allIcons.forEach(icon => {
+            icon.textContent = "+";
+        });
+        viewAllButton.textContent = "View All"; // Change button text to "View All"
+    } else {
+        // Otherwise, open all answers and change button text to "Close All"
+        allAnswers.forEach(answer => {
+            answer.style.display = "block";
+        });
+        allIcons.forEach(icon => {
+            icon.textContent = "-";
+        });
+        viewAllButton.textContent = "Close All"; // Change button text to "Close All"
+    }
+});
+
+            </script>
+        </section>
           <footer id="footer-placeholder"><footer>
       </main>
  
@@ -939,7 +1435,7 @@ dotContainer.addEventListener('click', (e) => {
       if(openNav()){
         document.getElementsByTagName("body").style.display = "block";
       }
-      </script>
+  </script>
       <script src="./templates/preloader.js"></script>
         <script src="./notfication.js"></script>
         
