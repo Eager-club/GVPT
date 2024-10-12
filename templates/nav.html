@@ -165,6 +165,7 @@
         padding: 10px;
         background-color: #22316C;
         z-index: 1010;
+        overflow: hidden;
     }
     .mbl .left{
         width: 70%;
@@ -208,7 +209,7 @@
         top: 25%;
         width: 100%;
         text-align: left;
-        margin-top: 30px;
+        margin-top: 10px;
         }
 
     .overlay a {
@@ -219,7 +220,9 @@
     display: block;
     transition: 0.3s;
     }
-
+    .singleLink{
+        margin-left: 7px;
+    }
     .nav-left{
         color: white;
         display: flex;
@@ -232,9 +235,9 @@
 
     .overlay .closebtn {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 45px;
-    font-size: 60px;
+    font-size: 50px;
     }
 .dropdown {
   float: left;
@@ -288,7 +291,7 @@
     @media screen and (max-height: 450px) {
     .overlay a {font-size: 20px}
     .overlay .closebtn {
-    font-size: 40px;
+    font-size: 20px;
     top: 15px;
     right: 35px;
     }
@@ -303,6 +306,9 @@
 
     }
     @media only screen and (max-width: 768px) {
+        .main-nav{
+            display: none;
+        }
         .mbl{
             display: flex;
         }
@@ -331,108 +337,94 @@
         <div id="myNav" class="overlay">
             <div>
                 <div class="nav-left">
-                    <img src="../assects/gvplogorm.png" alt="GVPT" width="40px">
+                    <img src="../assects/gvplogorm.png" alt="GVPT" width="40px" height="40px">
                     <P>GAYATRI VIDYA PARISHAD COLLEGE
                     FOR DEGREE AND PG COURSES(A)</P>
                 </div>
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             </div>
             <div class="overlay-content">
-              <a href="../index.html"><div class="dropdown">
-                <button class="dropbtn">home
-                </button>
-                <div class="dropdown-content"></div>
-              </div> </a>
-
-              <div class="dropdown">
-                <button class="dropbtn"><a href="../Adminstration/administration.html">Administration</a> 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                                      <a href="../Adminstration/administration.html">Administrators</a>
-                    <a href="../Adminstration/administration.html#director">Directors</a>
-                    <a href="../Adminstration/administration.html#deans">Deans</a>
-                    <a href="../Adminstration/administration.html#controllers">Controllers</a>
-                    <a href="../Adminstration/administration.html#hod-pg">PG HOD's</a>
-                    <a href="../Adminstration/administration.html#hod-ET">E&T HOD's</a>
-                    <a href="../Adminstration/administration.html#hod-ug">UG HOD's</a>
-                    <a href="../Adminstration/administration.html#COORDINATORS">Coordinators</a>
-                    <a href="../Adminstration/administration.html">Governing bodies</a>
-                </div>
-              </div> 
-
-              <div class="dropdown">
-                <button class="dropbtn"><a href="../Academics/">Academics</a>
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="../Academics/programs.html">Programs</a>
-                    <a href="../Academics/Academic calender.html">Academic calendar</a>
-                    <a href="../Academics/Departments.html">Department</a>
-                    <a href="../Academics/syllabus.html">Syllabus</a>
-                    <a href="../Academics/Regulations.html">Regulations</a>
-                    <a href="../Academics/Archives.html">Archives</a>
-                </div>
-              </div> 
-
-              <div class="dropdown">
-                <button class="dropbtn"><a href="../admissions/">Admissions</a>
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="../Academics/engeenering.html">Undergraduate</a>
-                    <a href="../Academics/undergraduate.html">Graduate</a>
-                    <a href="../Academics/pg.html">International</a>
-                </div>
-              </div> 
-
-              <div class="dropdown">
-                <a href="../faculty/faculty.html">
-                <button class="dropbtn">Faculty
-                </button>
-                <div class="dropdown-content"></div></a>
-                
-              </div> 
-
-              <div class="dropdown">
-                <button class="dropbtn"><a href="../placements/">Placements</a>
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="../placements/about-placements.html">About Placements</a>
-                    <a href="../placements/traningplacements.html">Training & Placements</a>
-                    <a href="../placements/placementteam.html">Placements Team</a>
-                    <a href="../placements/placements-activities.html">Placements Activities</a>
-                </div>
-              </div> 
-
-              <div class="dropdown">
-                <button class="dropbtn"><a href="#">Research</a>
-                  <i class="fa fa-caret-down"></i>
-                </button>
-              </div> 
-
-              <div class="dropdown">
-                <button class="dropbtn">  other
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="../others/examination-archives.html">Examination</a>
-                    <a href="../others/Results.html">Results</a>
-                    <a href="../others/clubs.html">Clubs</a>
-                    <a href="#">Campus Life</a>
-                    <a href="#">Transportation</a>
-                    <a href="#">Events</a>
-                    <a href="#">Code of Conduct</a>
-                    <a href="../top/aicte.html">AICTE Mandatory Info</a>
-                    <a href="../top/iqac.html">IQAC</a>
-                    <a href="../top/iipc.html">IIPC</a>
-                    <a href="../top/naac.html">NAAC</a>
-                    <a href="##">ALUMNI</a>
-                    <a href="../top/online payment.html">Online Payments</a>
-                    <a href="##">CAREERS</a>
-                    <a href="##">360 Virtual Tour</a>
-                </div>
+                <a href="../index.html" class="singleLink">Home</a>
+               <div class="dropdown">
+                 <button class="dropbtn">Administration
+                   <i class="fa fa-caret-down"></i>
+                 </button>
+                 <div class="dropdown-content">
+                                       <a href="../Adminstration/administration.html">Administrators</a>
+                     <a href="../Adminstration/administration.html#director">Directors</a>
+                     <a href="../Adminstration/administration.html#deans">Deans</a>
+                     <a href="../Adminstration/administration.html#controllers">Controllers</a>
+                     <a href="../Adminstration/administration.html#hod-pg">PG HOD's</a>
+                     <a href="../Adminstration/administration.html#hod-ET">E&T HOD's</a>
+                     <a href="../Adminstration/administration.html#hod-ug">UG HOD's</a>
+                     <a href="../Adminstration/administration.html#COORDINATORS">Coordinators</a>
+                     <a href="../Adminstration/administration.html">Governing bodies</a>
+                 </div>
+               </div> 
+   
+               <div class="dropdown">
+                 <button class="dropbtn">Academics
+                   <i class="fa fa-caret-down"></i>
+                 </button>
+                 <div class="dropdown-content">
+                   <a href="../Academics/">Academics</a>
+                     <a href="../Academics/programs.html">Programs</a>
+                     <a href="../Academics/Academic calender.html">Academic calendar</a>
+                     <a href="../Academics/Departments.html">Department</a>
+                     <a href="../Academics/syllabus.html">Syllabus</a>
+                     <a href="../Academics/Regulations.html">Regulations</a>
+                     <a href="../Academics/Archives.html">Archives</a>
+                 </div>
+               </div> 
+   
+               <div class="dropdown">
+                 <button class="dropbtn">Admissions</a>
+                   <i class="fa fa-caret-down"></i>
+                 </button>
+                 <div class="dropdown-content">
+                   <a href="../admissions/">Admissions</a>
+                     <a href="../Academics/engeenering.html">Undergraduate</a>
+                     <a href="../Academics/undergraduate.html">Graduate</a>
+                     <a href="../Academics/pg.html">International</a>
+                 </div>
+               </div> 
+   
+   
+               <a href="../faculty/faculty.html" class="singleLink">Faculty</a>
+               <div class="dropdown">
+                 <button class="dropbtn">Placements
+                   <i class="fa fa-caret-down"></i>
+                 </button>
+                 <div class="dropdown-content">
+                     <a href="../placements/">Placements</a>
+                     <a href="../placements/about-placements.html">About Placements</a>
+                     <a href="../placements/traningplacements.html">Training & Placements</a>
+                     <a href="../placements/placementteam.html">Placements Team</a>
+                     <a href="../placements/placements-activities.html">Placements Activities</a>
+                 </div>
+               </div> 
+               <a href="#" class="singleLink">Research</a>
+               <div class="dropdown">
+                 <button class="dropbtn">  other
+                   <i class="fa fa-caret-down"></i>
+                 </button>
+                 <div class="dropdown-content">
+                     <a href="../others/examination-archives.html">Examination</a>
+                     <a href="../others/Results.html">Results</a>
+                     <a href="../others/clubs.html">Clubs</a>
+                     <a href="#">Campus Life</a>
+                     <a href="#">Transportation</a>
+                     <a href="#">Events</a>
+                     <a href="#">Code of Conduct</a>
+                     <a href="../top/aicte.html">AICTE Mandatory Info</a>
+                     <a href="../top/iqac.html">IQAC</a>
+                     <a href="../top/iipc.html">IIPC</a>
+                     <a href="../top/naac.html">NAAC</a>
+                     <a href="##">ALUMNI</a>
+                     <a href="../top/online payment.html">Online Payments</a>
+                     <a href="##">CAREERS</a>
+                     <a href="##">360 Virtual Tour</a>
+                 </div>
               </div> 
 
             </div>
