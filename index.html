@@ -198,6 +198,69 @@
     background-color: red;
 }
 
+
+.courses-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.courses-section h2 {
+    font-size: 2.5rem;
+    color: #22316c;
+    margin-bottom: 40px;
+}
+
+.courses-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.course-box {
+    background-color: #22316c;
+    color: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.course-box p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.explore-btn {
+    padding: 10px 20px;
+    background-color: #b64b2e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #933824;
+}
+
+.course-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
 /* page3 */
 .page3{
   width: 100%;
@@ -477,12 +540,12 @@
 
 .photo-gallery h2 {
     font-size: 28px;
-    color: #d90000;
+    color: #22316c;
     margin-bottom: 10px;
 }
 
 .view-all-btn {
-    background-color: #d90000;
+    background-color: #22316c;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -500,6 +563,7 @@
 .gallery-grid img {
     width: 150px;
     height: 150px;
+    object-fit: cover;
     border: 2px solid #fff;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -551,13 +615,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .faq-header h2 {
     display: flex;
     align-items: center;
-    color: #c41230;
+    color: #22316c;
 }
 
 .faq-header img {
@@ -566,7 +630,7 @@
 }
 
 .view-all {
-    background-color: #c41230;
+    background-color: #22316c;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -575,7 +639,7 @@
 }
 
 .faq-section h3 {
-    color: #c41230;
+    color: #22316c;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -583,13 +647,13 @@
 .faq-section ul {
     list-style: none;
     padding: 0;
-    border-left: 2px dashed #c41230;
+    border-left: 2px dashed #22316c;
     padding-left: 20px;
 }
 
 .faq-section ul li {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     padding-left: 30px;
 }
 
@@ -597,7 +661,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #c41230;
+    background-color: #22316c;
     color: white;
     width: 20px;
     height: 20px;
@@ -622,7 +686,7 @@
 }
 
 .faq-section ul li button:hover {
-    color: #c41230;
+    color: #22316c;
 }
 
 .faq-answer {
@@ -706,6 +770,9 @@
     }
     /* Mobile Styles */
     @media screen and (max-width: 768px) {
+      .page1,.page2,.page3,.page4,.page5{
+        width: 100%;
+      }
       .knowmr{
         height: 40vh;
         justify-content: end;
@@ -780,6 +847,19 @@
     width: 100%;
     margin-bottom: 30px;
   }
+  .faq-section ul li {
+    margin-bottom: 15px;
+}
+  .courses-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-box {
+        width: 100%;
+        max-width: 250px;
+    }
+
 
     }
     </style>
@@ -844,6 +924,29 @@
                 base</p>
             </div>
           </div>
+          <section class="courses-section">
+            <h2>Courses We Offer</h2>
+            <div class="courses-container">
+                <!-- Engineering Box -->
+                <div class="course-box engineering">
+                    <h3>Engineering</h3>
+                    <p>Explore a wide range of B.Tech courses that shape the future of technology and innovation.</p>
+                    <button class="explore-btn">Explore Engineering</button>
+                </div>
+                <!-- UG Box -->
+                <div class="course-box ug">
+                    <h3>Undergraduate (UG)</h3>
+                    <p>Dive into undergraduate programs across various streams designed to give you a strong foundation.</p>
+                    <button class="explore-btn">Explore UG Programs</button>
+                </div>
+                <!-- PG Box -->
+                <div class="course-box pg">
+                    <h3>Postgraduate (PG)</h3>
+                    <p>Pursue advanced knowledge and research opportunities with our range of postgraduate courses.</p>
+                    <button class="explore-btn">Explore PG Programs</button>
+                </div>
+            </div>
+        </section>
           <div class="page3">
             <div class="carousel-container">
               <div class="carousel"></div>
@@ -997,7 +1100,7 @@
                 <button class="view-all">View All</button>
              </div>
             <div class="gallery-grid" id="gallery-grid">
-                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 1">
+                <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 1" >
                 <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 2">
                 <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 3">
                 <img src="https://www.gvpcdpgc.edu.in/facilities/Transport-2.jpg" alt="Photo 4">
@@ -1027,32 +1130,32 @@
                 </div>
                 <h3>FREQUENTLY ASKED QUESTIONS</h3>
                 <ul>
-                    <li>
+                    <li class="faq-li">
                         <span class="plus-icon">+</span>
                         <button class="faq-question">What will the newly created Dean, Diversity and Inclusion work on?</button>
                         <p class="faq-answer">The Dean will work on fostering an inclusive culture and diversity programs at the institution.</p>
                     </li>
-                    <li>
+                    <li class="faq-li">
                         <span class="plus-icon">+</span>
                         <button class="faq-question">Whom to contact for Postgraduate admissions?</button>
                         <p class="faq-answer">Office of Academics (PG), Phone: +91-11-2659-1737, Email: drpgsr@admin.iitd.ac.in</p>
                     </li>
-                    <li>
+                    <li class="faq-li">
                         <span class="plus-icon">+</span>
                         <button class="faq-question">Whom to contact for Undergraduate admissions?</button>
                         <p class="faq-answer">Undergraduate Admissions Office, Email: ugadmissions@iitd.ac.in</p>
                     </li>
-                    <li>
+                    <li class="faq-li">
                         <span class="plus-icon">+</span>
                         <button class="faq-question">Whom to contact for queries related to GATE?</button>
                         <p class="faq-answer">Contact the GATE office at gateoffice@iitd.ac.in for any related queries.</p>
                     </li>
-                    <li>
+                    <li class="faq-li">
                         <span class="plus-icon">+</span>
                         <button class="faq-question">How to pay fees online?</button>
                         <p class="faq-answer">You can pay fees online via the student portal under the 'Fee Payment' section.</p>
                     </li>
-                    <li>
+                    <li class="faq-li"> 
                         <span class="plus-icon">+</span>
                         <button class="faq-question">Whom to contact for Faculty Recruitment?</button>
                         <p class="faq-answer">Faculty recruitment inquiries can be directed to facultyrecruitment@iitd.ac.in</p>
@@ -1117,7 +1220,7 @@ document.querySelector('#view-all-faq').addEventListener('click', function() {
     const allAnswers = document.querySelectorAll('.faq-answer');
     const allIcons = document.querySelectorAll('.plus-icon');
     const viewAllButton = document.querySelector('.view-all-btn');
-    
+    const li = document.querySelectorAll('.faq-li');
     // Check if all answers are already open
     let allOpen = true;
     allAnswers.forEach(answer => {
@@ -1134,6 +1237,9 @@ document.querySelector('#view-all-faq').addEventListener('click', function() {
         allIcons.forEach(icon => {
             icon.textContent = "+";
         });
+        li.forEach(item => {
+            item.style.marginBottom = '30px';
+        });
         viewAllButton.textContent = "View All"; // Change button text to "View All"
     } else {
         // Otherwise, open all answers and change button text to "Close All"
@@ -1142,6 +1248,9 @@ document.querySelector('#view-all-faq').addEventListener('click', function() {
         });
         allIcons.forEach(icon => {
             icon.textContent = "-";
+        });
+        li.forEach(item => {
+            item.style.marginBottom = '15px';
         });
         viewAllButton.textContent = "Close All"; // Change button text to "Close All"
     }
