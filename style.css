@@ -1,106 +1,102 @@
-nav{
-    width:100%;
-    height: 45vh;
-    background-image: url("https://images.shiksha.com/mediadata/images/articles/1693247327php9Ixvyk.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.nav1{
-    width: 100%;
-    height: 28px * 100%;
-    background-color: #22316C;
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-}
-.nav1 .right a{
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: bold;
-    padding-left: 1%;
-}
-.nav1 .left a{
-    font-size: small;
-    text-decoration: none;
-    padding-left: 10%;
-}
-.title h1,.para{
-   text-shadow: 
-   1px 1px 0 #000,
-   -1px 1px 0 #000,
-   -1px -1px 0 #000,
-   1px -1px 0 #000;
-}
-.title 
-/* Main nav */
-.main-nav {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2.5%;
-        padding: 7px 0;
-    }
-    .main-nav > ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 0;
-    }
-    .main-nav > ul > li {
+*{
+    font-family: "inter",sans-serif;
+  }
+              header {
+        background-image: url("./assects/home.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-clip: content-box;
+        background-size: cover;
         position: relative;
-        margin: 0 1px;
     }
-    .main-nav > ul > li > a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        padding: 10px 20px;
+    .page1{
+        width: 100%;
         display: flex;
     }
-    .main-nav > ul > li > a:hover, .main-nav > ul > li:hover > a {
-        color: #22316C;
-        border-radius: 5px;
-        backdrop-filter: blur(5px); 
-        /* text-shadow: 
-            1px 1px 20PX #FFF,
-            1px 1px 20PX #FFF,
-            1px 1px 20PX #FFF,  //REPATI KOSAM                1px 1px 20PX #FFF; */
+    .page1 .left{
+        width: 50%;
+        padding: 5%;
     }
-    .main-nav > ul > li > ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: none;
-        background-color: #ffffff;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        min-width: 200px;
-        z-index: 1;
+    .gvp-summary{
+        font-size: 1rem;
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 1rem;
+        margin-top: 4rem;
+        text-align: justify;
     }
-    .main-nav > ul > li > ul > li > a {
-        padding: 10px;
-        color: #000000;
-        display: block;
-        text-decoration: none;
+    .gvp-summary h2{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
     }
-    .main-nav > ul > li > ul > li > a:hover {
-        background-color: #22316C;
-        color: #ffffff;
+    .gvp-summary p{
+        margin-bottom: 1rem;
+        text-align: justify;
     }
-    .main-nav > ul > li:hover > ul {
-        display: block;
+    .page1 .right{
+        width: 50%;
+        padding: 5%;
     }
-    .codes span{
-        color: #22316C;
+    .page1 .right .grid{
+        display: flex;
     }
-    .material-symbols-outline{
-        margin-top: 20px;
+    .page1 .right img{
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s ease;
+        margin: 4px;
     }
-@media only screen and (max-width:1235px){
-    .title h1,p{
-        font-size: small;
+    .dia-img{
+    height: 150px;
+     width:300px; }
+
+     #gridImg2{
+        margin-left: 50px;
+     }
+     .view-more-btn{
+        border: none;
+        background-color: transparent;
+        color: #22316c;
+        font-weight: bolder;
+     }
+     .view-more-btn:hover{
+        color: #f00;
+     }
+
+     @media screen and (max-width: 768px){
+        .page1{
+            flex-direction: column;
+        }
+        .page1 .left{
+            width: 100%;
+            padding: 0;
+        }
+        .page1 .right{
+            width: 100%;
+            order: -1;
+            padding: 0;
+        }
+        .gridDiv1{
+            display: flex;
+            flex-direction: column;
+        }
+        #gridImg1,#gridImg4{
+            width: 150px;
+            height: 100px;
+        }
+        #gridImg2,#gridImg3{
+            width: 100px;
+            height: 150px;
+        }
+        #gridImg2{margin-left: 0;}
+        #gridImg4{margin-left: -50px;}
+         /* .page1 .right .grid{
+            flex-direction: column;
+        } */
+        /* .page1 .right img{
+            margin: 4px 0;
+        }
+        #gridImg2{
+            margin-left: 0;
+        } */
     }
-}

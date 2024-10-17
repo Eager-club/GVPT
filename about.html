@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GVPCDPGC | ABOUT</title>
+    <section id="preloader-placeholder"></section>
+    <link rel="stylesheet" href="./style.css" />
+    <style></style>
+    <script src="./templates/includeHTML.js" defer></script>
+  </head>
+  <body>
+    <header id="nav-placeholder"></header>
+    <main>
+      <div class="page1">
+        <div class="left">
+          <div class="gvp-summary">
+            <h2>About Gayatri Vidya Parishad</h2>
+            <p>
+                Gayatri Vidya Parishad (GVP) is an Educational Society established in 1988 by a group of academicians from Visakhapatnam, supported by industrialists and philanthropists.
+            </p>
+            <p>
+                The Society started its activities on 28th September 1988, with a mission to promote, establish, and maintain educational institutions. It focuses on imparting education in various fields, especially advanced technology, management, and science, aiming to provide gainful employment opportunities to the youth.
+            </p>
+            <p class="more-text" style="display: none;">
+                GVP is guided by its founding visionaries, whose wisdom influences the quality of its curriculum. The Governing Body includes distinguished academicians and social workers who have established a foundation of professional, ethical, and human values, guiding the institution to new heights for over three decades.
+            </p>
+            <p class="more-text" style="display: none;">
+                Over the years, GVP has continuously evolved, enriching the academic environment and fostering a culture of innovation and research. It remains committed to nurturing the holistic development of its students.
+            </p>
+            <button class="view-more-btn" onclick="toggleText()">View More &#8594;</button>
+        </div>
+        
+        
+          <script>
+            function toggleText() {
+              const moreText = document.querySelectorAll(".more-text");
+              const button = document.querySelector(".view-more-btn");
+              const gvpSummary = document.querySelector(".gvp-summary");
+              gvpSummary.style.marginTop =
+                gvpSummary.style.marginTop === "0rem" ? "4rem" : "0rem";
+              moreText.forEach((p) => {
+                p.style.display = p.style.display === "none" ? "block" : "none";
+              });
+              button.textContent =
+                button.textContent === "View More →" ? "View Less ←" : "View More →";
+            }
+          </script>
+        </div>
+        <div class="right">
+          <div class="grid">
+            <div class="gridDiv1">
+              <img
+                src="./assects/home.png"
+                class="dia-img"
+                id="gridImg1"
+                alt="GVP"
+              />
+              <img
+                src="./assects/engeneering.png"
+                id="gridImg2"
+                width="250px;"
+                alt="GVP"
+              />
+            </div>
+            <img src="./assects/gvplogorm.png" width="50px" style="" alt="">
+            <div class="gridDiv1">
+              <img
+                src="./assects/engeneering.png"
+                width="250px;"
+                id="gridImg3"
+                alt="GVP"
+              />
+              <img
+                src="./assects/home.png"
+                class="dia-img"
+                id="gridImg4"
+                alt="GVP"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+  </body>
 </html>
