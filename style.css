@@ -68,6 +68,9 @@
         display: none;
      }
      @media screen and (max-width: 768px){
+        body{
+            overflow-x: hidden;
+        }
         .page1{
             display: flex;
             flex-direction: column;
@@ -109,13 +112,4 @@
             top: 190px;
             left: 170px;
          }
-         /* .page1 .right .grid{
-            flex-direction: column;
-        } */
-        /* .page1 .right img{
-            margin: 4px 0;
-        }
-        #gridImg2{
-            margin-left: 0;
-        } */
     }
