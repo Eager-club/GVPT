@@ -67,9 +67,137 @@
      #centerImg{
         display: none;
      }
+     /* page2 */
+     
+    .page2{
+        display: flex;
+        background-color: rgba(217, 217,217,0.15);
+
+      }
+      .mivison{
+        width: 50%;
+        margin: 4vw;
+        padding: 4vw;
+        border: 2px solid transparent;
+        border-radius: 1vw;
+        font-size: 1.3vw;
+        text-align: justify;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */ 
+      }
+      .mivison:hover {
+      transform: translateY(-10px); /* Slightly raise the card */
+  
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+       /* Add shadow for depth */
+      /* border-color:5px solid #000000;  */
+  
+    }
+    /* page3 */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+ .page3 {
+     text-align: center;
+     justify-content: center;
+        align-items: center;
+ }
+ .admins{
+    font-size: 3vw;
+    font-weight: 700;
+    margin-top: 20px;
+ }
+ .profile-cards {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 /* flex-wrap: wrap; */
+	 gap: 50px;
+	 margin: 30px;
+	 color: black;
+}
+ .profile-cards .card {
+	 width: 250px;
+	 height: 333px;
+	 position: relative;
+     border-radius: 15px;
+	 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	 overflow: hidden;
+}
+ .profile-cards .card:hover .card-details, .profile-cards .card:hover .card-details-social a {
+	 transform: none;
+}
+ .profile-cards .card:hover img {
+	 filter: blur(1.5px);
+	 transform: scale(1.2);
+}
+ .profile-cards .card img {
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+	 transition: all 0.3s;
+}
+ .profile-cards .card .card-details {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 flex-direction: column;
+	 gap: 15px;
+	 padding: 20px 10px;
+	 width: 100%;
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
+	 background-color: white;
+	 transform: translateY(100%);
+	 transition: all 0.3s;
+     text-align: center;
+}
+ .profile-cards .card .card-details-title {
+	 font-size: 18px;
+}
+ .profile-cards .card .card-details-social {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .profile-cards .card .card-details-social ul, .profile-cards .card .card-details-social ul li a {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .profile-cards .card .card-details-social ul li {
+	 list-style-type: none;
+}
+ .profile-cards .card .card-details-social ul li:nth-child(1) a {
+	 transition-delay: 0.1s;
+}
+ .profile-cards .card .card-details-social ul li:nth-child(2) a {
+	 transition-delay: 0.2s;
+}
+ .profile-cards .card .card-details-social ul li:nth-child(3) a {
+	 transition-delay: 0.3s;
+}
+ .profile-cards .card .card-details-social ul li:not(:last-child) {
+	 margin-right: 15px;
+}
+ .profile-cards .card .card-details-social ul li a {
+	 width: 35px;
+	 height: 35px;
+	 color: #272727;
+	 background-color: white;
+	 border-radius: 50px;
+	 box-shadow: 0 5px 4px grey;
+	 cursor: pointer;
+	 transform: translateY(50px);
+	 transition: all 0.3s;
+}
+ .profile-cards .card .card-details-social ul li a svg {
+	 width: 20px;
+	 height: 20px;
+}
+ 
      @media screen and (max-width: 768px){
         body{
             overflow-x: hidden;
+    
         }
         .page1{
             display: flex;
@@ -112,4 +240,40 @@
             top: 190px;
             left: 170px;
          }
+         .page2{
+            width: 100%;
+            display: grid;
+            padding: 20px;
+          }
+          .mivison{
+            width: 75%;
+          }
+          .profile-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+          }
+            .profile-cards .card {
+                width: 100%;
+                height: 150px;
+            }
+            .profile-cards .card img {
+                height: 100%;
+            }
+            .profile-cards .card .card-details {
+                padding: 10px;
+            }
+            .profile-cards .card .card-details-title {
+                font-size: 14px;
+            }
+            .profile-cards .card .card-details-social ul li a {
+                width: 30px;
+                height: 30px;
+            }
+            .profile-cards .card .card-details-social ul li a svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+          
+
     }
