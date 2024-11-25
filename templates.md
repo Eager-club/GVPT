@@ -14,6 +14,7 @@
 ## using preloader 
 ```
     <section id="preloader-placeholder"></section>
+      <script src="./templates/preloader.js"></script>
 
 ```
 # in head linking
@@ -46,7 +47,8 @@
           
       </main>
       <footer id="footer-placeholder"></footer>
-      <script src="script.js"></script>
+      <script src="./templates/preloader.js"></script>
+
 
     </div>
   </body>

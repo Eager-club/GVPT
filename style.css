@@ -212,6 +212,26 @@ g:hover .image-mapper-shape {
 .page5{
     height: 100vh;
 }
+.page6{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+.link-box {
+    background-color: #22316c;
+    color: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
      @media screen and (max-width: 768px){
         body{
             overflow-x: hidden;

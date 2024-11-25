@@ -5,13 +5,340 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GVPCDPGC | ABOUT</title>
     <section id="preloader-placeholder"></section>
-    <link rel="stylesheet" href="./style.css" />
-    
     <script src="./templates/includeHTML.js" defer></script>
+    <link rel="stylesheet" href="./templates/preloder.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+ 
+    <style>
+      *{
+    font-family: "inter",sans-serif;
+  }
+              header {
+        background-image: url("./assects/home.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-clip: content-box;
+        background-size: cover;
+        position: relative;
+    }
+    body,main{
+        overflow-x: hidden;
+    }
+    .page1{
+        width: 100%;
+        display: flex;
+    }
+    .page1 .left{
+        width: 50%;
+        padding: 5%;
+    }
+    .gvp-summary{
+        font-size: 1rem;
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 1rem;
+        margin-top: 4rem;
+        text-align: justify;
+    }
+    .gvp-summary h2{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .gvp-summary p{
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+    .page1 .right{
+        width: 50%;
+        padding: 5%;
+    }
+    .page1 .right .grid{
+        display: flex;
+    }
+    .page1 .right img{
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s ease;
+        margin: 4px;
+        object-fit: cover;
+    }
+    .dia-img{
+    height: 150px;
+     width:300px; }
+
+     #gridImg2{
+        margin-left: 50px;
+     }
+     .view-more-btn{
+        border: none;
+        background-color: transparent;
+        color: #22316c;
+        font-weight: bolder;
+     }
+     .view-more-btn:hover{
+        color: #f00;
+     }
+        
+     #centerImg{
+        display: none;
+     }
+     /* page2 */
+     
+    .page2{
+        display: flex;
+        background-color: rgba(217, 217,217,0.15);
+
+      }
+      .mivison{
+        width: 50%;
+        margin: 4vw;
+        padding: 4vw;
+        border: 2px solid transparent;
+        border-radius: 1vw;
+        font-size: 1.3vw;
+        text-align: justify;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */ 
+      }
+      .mivison:hover {
+      transform: translateY(-10px); /* Slightly raise the card */
+  
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+       /* Add shadow for depth */
+      /* border-color:5px solid #000000;  */
+  
+    }
+    /* page3 */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+ .page3 {
+     text-align: center;
+     justify-content: center;
+        align-items: center;
+ }
+ .admins{
+    font-size: 3vw;
+    font-weight: 700;
+    margin-top: 20px;
+ }
+ .profile-cards {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 /* flex-wrap: wrap; */
+	 gap: 50px;
+	 margin: 30px;
+	 color: black;
+}
+ .profile-cards .card {
+	 width: 250px;
+	 height: 333px;
+	 position: relative;
+     border-radius: 15px;
+	 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	 overflow: hidden;
+}
+ .profile-cards .card:hover .card-details, .profile-cards .card:hover .card-details-social a {
+	 transform: none;
+}
+ .profile-cards .card:hover img {
+	 filter: blur(1.5px);
+	 transform: scale(1.2);
+}
+ .profile-cards .card img {
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+	 transition: all 0.3s;
+}
+ .profile-cards .card .card-details {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 flex-direction: column;
+	 gap: 15px;
+	 padding: 20px 10px;
+	 width: 100%;
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
+	 background-color: white;
+	 transform: translateY(100%);
+	 transition: all 0.3s;
+     text-align: center;
+}
+ .profile-cards .card .card-details-title {
+	 font-size: 18px;
+}
+ .profile-cards .card .card-details-social {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .profile-cards .card .card-details-social ul, .profile-cards .card .card-details-social ul li a {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .profile-cards .card .card-details-social ul li {
+	 list-style-type: none;
+}
+ .profile-cards .card .card-details-social ul li:nth-child(1) a {
+	 transition-delay: 0.1s;
+}
+ .profile-cards .card .card-details-social ul li:nth-child(2) a {
+	 transition-delay: 0.2s;
+}
+ .profile-cards .card .card-details-social ul li:nth-child(3) a {
+	 transition-delay: 0.3s;
+}
+ .profile-cards .card .card-details-social ul li:not(:last-child) {
+	 margin-right: 15px;
+}
+ .profile-cards .card .card-details-social ul li a {
+	 width: 35px;
+	 height: 35px;
+	 color: #272727;
+	 background-color: white;
+	 border-radius: 50px;
+	 box-shadow: 0 5px 4px grey;
+	 cursor: pointer;
+	 transform: translateY(50px);
+	 transition: all 0.3s;
+}
+ .profile-cards .card .card-details-social ul li a svg {
+	 width: 20px;
+	 height: 20px;
+}
+/* .page4{
+    background-color: #fff;
+} */
+.image-mapper-shape {
+    fill: rgba(0, 0, 0, 0);
+}
+g:hover .image-mapper-shape {
+    stroke: #22316c;
+    stroke-width: 15px;
+    opacity: 15%;
+    
+}
+ 
+.page5{
+    height: 100vh;
+}
+.page6{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+.link-box {
+    background-color: #22316c;
+    color: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+     @media screen and (max-width: 768px){
+        body{
+            overflow-x: hidden;
+    
+        }
+        .page1{
+            display: flex;
+            flex-direction: column;
+           justify-content: center;
+           align-content: center;
+            
+        }
+        .page1 .left{
+            width: 90%;
+            padding: 0;
+            margin: -30px auto 0 20px;
+        }
+        .page1 .right{
+            width: 100%;
+            order: -1;
+            padding: 0;
+            margin: 20px auto 0 70px;
+        }
+        .gridDiv1{
+            display: flex;
+            flex-direction: column;
+        }
+        #gridImg1,#gridImg4{
+            width: 150px;
+            height: 100px;
+        }
+        #gridImg2,#gridImg3{
+            width: 100px;
+            height: 150px;
+        }
+        #gridImg2{margin-left: 0;}
+        #gridImg4{margin-left: -50px;}
+        #centerImg{
+            /* all:unset; */
+            box-shadow:none;
+            position: absolute;
+            background: transparent;
+            display: block;
+            top: 190px;
+            left: 170px;
+         }
+         .page2{
+            width: 100%;
+            display: grid;
+            padding: 20px;
+          }
+          .mivison{
+            width: 75%;
+          }
+          .profile-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+          }
+            .profile-cards .card {
+                width: 100%;
+                height: 150px;
+            }
+            .profile-cards .card img {
+                height: 100%;
+            }
+            .profile-cards .card .card-details {
+                padding: 10px;
+            }
+            .profile-cards .card .card-details-title {
+                font-size: 14px;
+            }
+            .profile-cards .card .card-details-social ul li a {
+                width: 30px;
+                height: 30px;
+            }
+            .profile-cards .card .card-details-social ul li a svg {
+                width: 15px;
+                height: 15px;
+            }
+            /* .page4 img{
+                width:100%;
+            }
+          #gvpmap{
+            display: none;
+          } */
+
+    }
+    </style>
   </head>
   <body>
+    <section id="preloader-placeholder"></section>
     <header id="nav-placeholder"></header>
-    <main>
+    <main >
       <div class="page1">
         <div class="left">
           <div class="gvp-summary">
@@ -224,7 +551,20 @@
         </svg>
       </div>
       <iframe src="./templates/desk.html" frameborder="0" class=".page5" height="700" width="100%"></iframe>
-    </main>
+      <div class="page6">
+        <a href="./gvp.html?page=Institute_Distinctiveness" class="link-box"> Institute Distinctiveness</a>
+        <a href="./gvp.html?page=Genesis_of_GVP" class="link-box"> Genesis of GVP </a>
+        <a href="" class="link-box"> Governing Body</a>
+        <a href="" class="link-box"> Administration</a>
+        <a href="" class="link-box"> Academic Council</a>
+        <a href="" class="link-box"> Strategic Plan</a>
+        <a href="" class="link-box"> Organizational Structure</a>
+        <a href="" class="link-box"> Governance and Policies</a>
+        <a href="" class="link-box"> Committees</a>
+      </div>
+  </main>
     <footer id="footer-placeholder"></footer>
+    <script src="./templates/preloader.js"></script>
   </body>
 </html>
+
