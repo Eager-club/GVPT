@@ -670,6 +670,193 @@
 </main>
 `;
             }
+            else if(page === 'Strategic_Plan'){
+                contentDiv.innerHTML = `     
+
+    <title>Strategic Plan</title>
+    <style>
+        .sp {
+        background-color: white;
+        color: #22316c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .plan-link {
+        width: 700px;
+        display: block;
+        background-color: rgba(34, 49, 104, 0.25);
+        margin: 10px auto;
+        padding: 10px;
+        border: 0.17vw solid transparent;
+        border-radius: 10px;
+        max-width: 700px;
+        text-decoration: none;
+        color: #22316c;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 0.83vw;
+    }
+
+    .plan-link:hover {
+        background-color: rgba(34, 49, 104, 0.55);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    @media screen and (max-width: 768px) {
+        .plan-link {
+            width: 90%;
+        }
+        
+    }
+    </style>
+
+<main class=".sp">
+    <div class="content">
+        <h1>Strategic Plan</h1>
+        <div class="strategic-plan">
+            <a href="#" class="plan-link">Strategic Plan 2021-2026</a>
+            <a href="#" class="plan-link">Strategic Plan 2015-2020</a>
+        </div>
+    </div>
+</main>
+`;}
+            else if(page === 'Governance_and_Policies'){
+                contentDiv.innerHTML = `     <title>List of Policies</title>
+    <style>
+        .lop {
+            color: #22316c;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 0 0 0 5%;
+            margin: 0; /* Remove default margin */
+        
+        h1 {
+            color: #22316c;
+            margin-bottom: 20px; /* Add spacing below the heading */
+        }
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0 0 0 20px; /* Remove default padding */
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            list-style-type: "- ";
+        }
+        li {
+            margin: 10px 0; /* Add spacing between list items */
+            font-size: 18px; /* Increase font size for readability */
+        }
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: #22316c; /* Link color */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+    }}
+    </style>
+</head>
+<main class="lop">
+    <div class="content">
+        <h1>List of Policies</h1>
+        <ul>
+            <li><a href="#" target="_blank">Governance ↗</a></li>
+            <li><a href="#" target="_blank">Service Rules ↗</a></li>
+            <li><a href="#" target="_blank">Reimbursement Policy ↗</a></li>
+            <li><a href="#" target="_blank">Policies and Procedures ↗</a></li>
+            <li><a href="#" target="_blank">IQAC Policy ↗</a></li>
+            <li><a href="#" target="_blank">Consultancy Policy ↗</a></li>
+            <li><a href="#" target="_blank">Research Policy ↗</a></li>
+            <li><a href="#" target="_blank">Seed Money Policy ↗</a></li>
+            <li><a href="#" target="_blank">Policy on Plastic Free Campus ↗</a></li>
+            <li><a href="#" target="_blank">Policy on Vehicle Entry into Campus ↗</a></li>
+            <li><a href="#" target="_blank">Green Campus and Environment Policy ↗</a></li>
+            <li><a href="#" target="_blank">Funds Mobilization Policy ↗</a></li>
+        </ul>
+    </div>
+</main>
+`;}
+            else if(page === 'Committees'){
+                contentDiv.innerHTML = `<title>List of Policies</title>
+    <style>
+        .loc {
+            color: #22316c;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 0 0 0 5%;
+            margin: 0; /* Remove default margin */
+        
+        h1 {
+            color: #22316c;
+            margin-bottom: 20px; /* Add spacing below the heading */
+        }
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            list-style-type: "- ";
+        }
+        li {
+            margin: 10px 0; /* Add spacing between list items */
+            font-size: 18px; /* Increase font size for readability */
+        }
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: #22316c; /* Link color */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }}
+    </style>
+</head>
+<main class="loc">
+    <div class="content">
+        <h1>LIST OF COMMITTEES</h1>
+        <ul>
+            <li><a href="#" target="_blank">Academic Planning Committee ↗</a></li>
+            <li><a href="#" target="_blank">Training Placement Career Guidance Committee ↗</a></li>
+            <li><a href="#" target="_blank">Research Development Committee ↗</a></li>
+            <li><a href="#" target="_blank">Library Committee ↗</a></li>
+            <li><a href="#" target="_blank">Alumni Committee ↗</a></li>
+            <li><a href="#" target="_blank">Capacity Building Among SC-ST Students ↗</a></li>
+            <li><a href="#" target="_blank">Grievance Redressal Committee ↗</a></li>
+            <li><a href="#" target="_blank">Internal Complaints Committee (ICC) ↗</a></li>
+            <li><a href="#" target="_blank">IQAC Committee ↗</a></li>
+            <li><a href="#" target="_blank">Anti Ragging Committee ↗</a></li>
+            <li><a href="#" target="_blank">IIC (Institution Innovation Council) ↗</a></li>
+            <li><a href="#" target="_blank">Finance Committee ↗</a></li>
+            <li><a href="#" target="_blank">Canteen Committee ↗</a></li>
+            <li><a href="#" target="_blank">Minority Cell ↗</a></li>
+            <li><a href="#" target="_blank">OBC Cell ↗</a></li>
+            <li><a href="#" target="_blank">Intellectual Property Rights Cell ↗</a></li>
+            <li><a href="#" target="_blank">Sports Committee ↗</a></li>
+            <li><a href="#" target="_blank">Extension Activities Committee ↗</a></li>
+            <li><a href="#" target="_blank">Industry Institute Partnership Cell (IIPC) Committee ↗</a></li>
+            <li><a href="#" target="_blank">Website Development and Maintenance Committee ↗</a></li>
+            <li><a href="#" target="_blank">Entrepreneurship Committee ↗</a></li>
+            <li><a href="#" target="_blank">Disciplinary Committee ↗</a></li>
+            <li><a href="#" target="_blank">Academic Bank of Credits Committee ↗</a></li>
+            <li><a href="#" target="_blank">Literary and Cultural Committee ↗</a></li>
+            <li><a href="#" target="_blank">Admission Committee ↗</a></li>
+            <li><a href="#" target="_blank">Examination Committee ↗</a></li>
+            <li><a href="#" target="_blank">Civil Works and Maintenance Committee ↗</a></li>
+        </ul>
+    </div>
+</main>
+`;
+            }
              else {
                 contentDiv.innerHTML = '<h1>Welcome to GVP</h1><p>Please select a valid section.</p>';
             }
