@@ -6,7 +6,6 @@
     }
     .cards{
         width: 100%;
-    
         overflow-x: hidden;
         justify-content: center;
         align-items: center;
@@ -19,12 +18,10 @@
     flex-wrap: wrap;
     margin: auto;
     gap: 3rem;
-    margin-left: 2vw;
-    margin-bottom: 20px;
+    margin-left: 1.5vw;
+    margin-bottom: 15px;
     
     }
-    
-    
     header{
         background-image: url("https://www.gvpcdpgc.edu.in/latest_images/21.jpeg");
         width: 100%;
@@ -49,10 +46,10 @@
     .heading{
     color: #22316C;
     font-size: 2vw;
-    padding: 10px;
+    padding: 5px;
     }
     .container section{
-        padding-top: 4%;
+        padding-top: 5%;
     }
     
     
