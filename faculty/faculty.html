@@ -6,12 +6,10 @@
     <title>Faculty</title>
     <script src="../templates/includeHTML.js" defer></script>
     <style>
-        header,footer{
-            overflow-x: hidden;
-        }
          body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    overflow-x: hidden;
     
 }
 
@@ -27,6 +25,12 @@ header {
 .container {
     max-width: 1000px;
     margin: 0 auto;
+    overflow-x: hidden;
+}
+.table-wrapper {
+    overflow-x: auto; /* Enables horizontal scrolling for the table */
+    margin: 0 auto;
+    width: 100%;
 }
 
 .controls {
@@ -225,7 +229,7 @@ th, td {
                 <option value="all">All items</option>
             </select>
         </div>
-
+        <div class="table-wrapper">
         <table>
             <thead>
                 <tr>
@@ -242,7 +246,7 @@ th, td {
                 <!-- Data rows will be dynamically inserted here -->
             </tbody>
         </table>
-
+    </div>
         <div class="pagination">
             <button id="prev-page" class="page-btn">Previous</button>
             <span id="page-numbers"></span>
