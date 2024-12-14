@@ -3,407 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Main</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-    <link rel="stylesheet" href="faculty.css">
+    <title>Faculty Directory</title>
+    <script src="../templates/includeHTML.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+
+        :root {
+            --primary-color: #22316D;
+            --secondary-color: #4A5CB5;
+            --background-color: #F4F6F9;
+            --text-color: #333;
+            --white: #FFFFFF;
+            --transition-speed: 0.3s;
+        }
+        header {
+            background-image: url("../assects/faculty.webp");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-clip: content-box;
+            background-size: cover;
+            position: relative;
+        }
+
         * {
             margin: 0;
-            border: 0;
+            padding: 0;
             box-sizing: border-box;
-            font-family: "Inter", sans-serif;
+            font-family: 'Inter', sans-serif;
         }
-        .faculty-main {
-            height: 100vh;
-            width: 90%;
-            justify-content: center;
-            margin-left: 85px;
-            position: relative;
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        .faculty-main h1 {
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .faculty-header {
             text-align: center;
-            color: #22316D;
-            padding: 50px 0 0 50px;
-            font-size: 2.5em;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
         }
-        .faculty-main button {
-            /* height: 135px;
-            width: 400px; */
-            padding: 35px;
-            background: transparent;
-            border: 1px solid #22316D;
-            color: #000000;
-            font-weight: bolder;
-            font-size: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+
+        .faculty-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
-        .faculty-main button:hover {
-            background-color: #22316D;
-            color: #ffffff;
-            background-position: right bottom;
+
+        .faculty-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .faculty-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .faculty-section:hover {
             transform: translateY(-5px);
         }
-        .top1, .top2 {
-            display: flex;
-            justify-content: space-around;
+
+        .faculty-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--background-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        .dropdown {
-            position: relative;
-            display: inline-block;
+
+        .program-categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f100;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 10px;
-            padding:3px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .dropdown-content .dropdown-item {
-            color: black;
-            padding: 12px 16px;
-            border: 0.5px solid #0000006e;
-            border-radius: 5px;
-            text-decoration: none;
-            display: block;
-            width: 330px;
-            margin-bottom: 1px;
-            transition: background-color 0.3s ease;
+
+        .program-category {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
             cursor: pointer;
-        }
-            /* Basic styling for .item class */
-        .dropdown-content .item {
-            color: black;
-            padding: 12px 16px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-bottom: 2%;
-            display: block;
-            width: 330px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: all var(--transition-speed) ease;
         }
 
-        /* Hover effect for .item class */
-        .dropdown-content .item:hover {
-            background-color: #e0e0e0;
-            color: #22316D; /* Optional: Change text color on hover */
-        }
-
-        .sub-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease, display 0.3s ease;
-        }
-
-        .sub-content.open {
-            display: block;
-            opacity: 1;
-        }
-        .dropdown-content .dropdown-item:hover {
-            background-color: #e0e0e0;
-        }
-        /* .dropdown-content .sub-content {
-            position:relative;
-            left: 0;
-            top: 100%;
-            display: none;
-            background-color: #f9f9f9;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            border-radius: 5px;
-            z-index: 1;
-        } */
-        .dropdown-content .has-sub:hover  {
-            display: block;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-            opacity: 1;
-            top: 100%;
-            left: 0;
-        }
-        .dropdown:hover .dropbtn {
-            background-color: #22316C;
-            color: #ffffff;
-        }
-        .university {
-            transition: margin-top 0.5s ease, transform 0.5s ease;
-        }
-        .move-university {
-            margin-top: var(--dropdown-height);
+        .program-category:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
             transform: scale(1.05);
         }
-        .footer {
-            position: relative;
-            transition: margin-top 0.5s ease, transform 0.5s ease;
+
+        .program-dropdown {
+            display: none;
+            margin-top: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .move-footer {
-            margin-top: var(--dropdown-height);
-            transform: scale(1.05);
+
+        .program-item {
+            color: #22316C;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--background-color);
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease;
         }
-        
-        @media (max-width: 480px) {
-            .faculty-main {
-                width: 95%;
-                margin: 0 auto;
-                padding: 10px;
+
+        .program-item:last-child {
+            border-bottom: none;
+        }
+
+        .program-item:hover {
+            color: #22316C;
+            background-color: var(--background-color);
+        }
+
+        @media (max-width: 768px) {
+            .faculty-sections {
+                grid-template-columns: 1fr;
             }
-            .faculty-main h1 {
-                font-size: 1.5em;
-                padding: 20px 0;
-            }
-            .faculty-main button {
-                font-size: 18px;
-                height: auto;
-                padding: 10px 15px;
-            }
-            .dropdown-content .dropdown-item {
-                font-size: 14px;
-                padding: 8px 10px;
-            }
-            .top1, .top2 {
-                flex-direction: column;
+
+            .program-categories {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <div id="content">
-        <div class="faculty-main">
-            <div class="aicte">
-                <h1>AITCE APPROVED</h1>
-                <div class="top1">
-                    <div class="dropdown">
-                        <button class="dropbtn">POST GRADUATE</button>
-                        <div class="dropdown-content">
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="COMPUTER APPLICATIONS">COMPUTER APPLICATIONS</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="MANAGEMENT STUDIES">MANAGEMENT STUDIES</p>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <div class="faculty-header">
+            <h1>Faculty Directory</h1>
+            <p>Explore Our Academic Programs and Faculty</p>
+        </div>
+
+        <div class="faculty-sections">
+            <div class="faculty-section">
+                <h2>AICTE Approved Programs</h2>
+                <div class="program-categories">
+                    <div class="program-category">
+                        Post Graduate
+                        <div class="program-dropdown">
+                            <div class="program-item">Computer Applications</div>
+                            <div class="program-item">Management Studies</div>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">UG-ENGINEERING</button>
-                        <div class="dropdown-content">
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="CIVIL ENGINEERING">CIVIL ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="ELECTRONICS AND COMMUNICATION ENGINEERING">ELECTRONICS AND COMMUNICATION ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="BASIC SCIENCES AND HUMANITY">BASIC SCIENCES AND HUMANITY</p>
+                    <div class="program-category">
+                        UG Engineering
+                        <div class="program-dropdown">
+                            <div class="program-item">Civil Engineering</div>
+                            <div class="program-item">Computer Science and Engineering</div>
+                            <div class="program-item">Electronics and Communication Engineering</div>
+                            <div class="program-item">Mechanical Engineering</div>
+                            <div class="program-item">Basic Sciences and Humanity</div>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
-            <div class="university">
-                <h1>UNIVERSITY</h1>
-                <div class="top2">
-                    <div class="dropdown">
-                        <button class="dropbtn">POST GRADUATE</button>
-                        <div class="dropdown-content">
-                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="COMPUTER SCIENCE">COMPUTER SCIENCE</p> 
-                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="ORGANIC CHEMISTRY">ORGANIC CHEMISTRY</p>
-                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="HUMAN RESOURCE MANAGEMENT">HUMAN RESOURCE MANAGEMENT</p>
+
+            <div class="faculty-section">
+                <h2>University Programs</h2>
+                <div class="program-categories">
+                    <div class="program-category">
+                        Post Graduate
+                        <div class="program-dropdown">
+                            <div class="program-item">Computer Science</div>
+                            <div class="program-item">Organic Chemistry</div>
+                            <div class="program-item">Human Resource Management</div>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">UNDERGRADUATE</button>
-                        <div class="dropdown-content">
-                            <div class="has-sub">
-                                <p class="item">DEPARTMENT OF SCIENCES</p>
-                                <div class="sub-content">
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF ENGLISH">DEPARTMENT OF ENGLISH</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF TELUGU/HINDI/SANSKRIT">DEPARTMENT OF TELUGU/HINDI/SANSKRIT</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF MATHEMATICS">DEPARTMENT OF MATHEMATICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF PHYSICS">DEPARTMENT OF PHYSICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF CHEMISTRY">DEPARTMENT OF CHEMISTRY</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF COMPUTER SCIENCE">DEPARTMENT OF COMPUTER SCIENCE</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF ELECTRONICS">DEPARTMENT OF ELECTRONICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF STATISTICS">DEPARTMENT OF STATISTICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.C.A">DEPARTMENT OF B.C.A</p>
-                                    <!-- <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.C.A DATA SCIENCE">DEPARTMENT OF B.C.A DATA SCIENCE</p> -->
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.Voc">DEPARTMENT OF B.Voc</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF MICROBIOLOGY">DEPARTMENT OF MICROBIOLOGY</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF BIOTECHNOLOGY">DEPARTMENT OF BIOTECHNOLOGY</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF BIOCHEMISTRY">DEPARTMENT OF BIOCHEMISTRY</p>
+                    <div class="program-category">
+                        Undergraduate
+                        <div class="program-dropdown">
+                            <div class="program-category">Department of Sciences
+                                <div class="program-dropdown">
+                                    <div class="program-item">DEPARTMENT OF ENGLISH</div>
+                                    <div class="program-item">DEPARTMENT OF TELUGU/HINDI/SANSKRIT</div>
+                                    <div class="program-item">DEPARTMENT OF MATHEMATICS</div>
+                                    <div class="program-item">DEPARTMENT OF PHYSICS</div>
+                                    <div class="program-item">DEPARTMENT OF CHEMISTRY</div>
+                                    <div class="program-item">DEPARTMENT OF COMPUTER SCIENCE</div>
+                                    <div class="program-item">DEPARTMENT OF ELECTRONICS</div>
+                                    <div class="program-item">DEPARTMENT OF STATISTICS</div>
+                                    <div class="program-item">DEPARTMENT OF B.C.A</div>
+                                    <div class="program-item">DEPARTMENT OF B.C.A DATA SCIENCE</div>
+                                    <div class="program-item">DEPARTMENT OF B.Voc</div>
+                                    <div class="program-item">DEPARTMENT OF MICROBIOLOGY</div>
+                                    <div class="program-item">DEPARTMENT OF BIOTECHNOLOGY</div>
+                                    <div class="program-item">DEPARTMENT OF BIOCHEMISTRY</div>
                                 </div>
                             </div>
-                            <div class="has-sub">
-                                <p class="item">DEPARTMENT OF COMMERCE</p>
-                                <div class="sub-content">
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.Com">DEPARTMENT OF B.Com</p>
-                                </div>
-                            </div>
-                            <div class="has-sub">
-                                <p class="item">DEPARTMENT OF MANAGEMENT STUDIES</p>
-                                <div class="sub-content">
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.B.A">DEPARTMENT OF B.B.A</p>
-                                </div>
-                            </div>
+                            <div class="program-item">Department of Commerce <br>(DEPARTMENT OF B.Com)</div>
+                            <div class="program-item">Department of Management Studies <br>(DEPARTMENT OF B.B.A)</div>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="footer-content">
-                <p>Footer Content</p>
-            </div>
-        </footer>
     </div>
-    <script type="module">
-        import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
-    
-        const aicteDropdowns = document.querySelectorAll('.aicte .dropdown');
-        const universityDropdowns = document.querySelectorAll('.university .dropdown');
-        const university = document.querySelector('.university');
-        const footer = document.querySelector('.footer');
-    
-        const handleDropdownHover = (dropdown, target, className) => {
-            const dropdownContent = dropdown.querySelector('.dropdown-content');
-            dropdown.addEventListener('mouseover', () => {
-                const dropdownHeight = dropdownContent.offsetHeight;
-                target.style.setProperty('--dropdown-height', `${dropdownHeight + 20}px`);
-                target.classList.add(className);
-            });
-    
-            dropdown.addEventListener('mouseout', () => {
-                target.classList.remove(className);
-            });
-        };
-    
-        aicteDropdowns.forEach(dropdown => handleDropdownHover(dropdown, university, 'move-university'));
-        universityDropdowns.forEach(dropdown => handleDropdownHover(dropdown, footer, 'move-footer'));
-    
-        document.addEventListener('DOMContentLoaded', () => {
-            const handleSubContentHover = (subContent) => {
-                subContent.addEventListener('mouseover', () => {
-                    const subContentHeight = subContent.offsetHeight;
-                    footer.style.setProperty('--dropdown-height', `${subContentHeight + 20}px`);
-                    footer.classList.add('move-footer');
-                });
-    
-                subContent.addEventListener('mouseout', () => {
-                    footer.classList.remove('move-footer');
-                });
-            };
-        });
 
-        
-        document.addEventListener('DOMContentLoaded', () => {
-    const itemsWithSubContent = document.querySelectorAll('.dropdown-content .item');
-
-    // Function to toggle sub-content visibility
-    const toggleSubContent = (item) => {
-        const subContent = item.nextElementSibling;
-        if (subContent && subContent.classList.contains('sub-content')) {
-            subContent.classList.toggle('open');
-        }
-    };
-
-    // Close all open sub-content
-    const closeAllSubContent = () => {
-        document.querySelectorAll('.dropdown-content .sub-content.open').forEach(subContent => {
-            subContent.classList.remove('open');
-        });
-    };
-
-    // Add click event listener to items with sub-content
-    itemsWithSubContent.forEach(item => {
-        item.addEventListener('click', (event) => {
-            // Close all other sub-content dropdowns
-            closeAllSubContent();
-
-            // Toggle the clicked item’s sub-content
-            toggleSubContent(item);
-
-            // Stop propagation to prevent closing immediately
-            event.stopPropagation();
-        });
-    });
-
-    // Close sub-content when clicking outside
-    document.addEventListener('click', (event) => {
-        // Check if the click is outside any dropdown
-        if (!event.target.closest('.dropdown-content')) {
-            closeAllSubContent();
-        }
-    });
-
-        
-            document.querySelectorAll('.dropdown-content .dropdown-item').forEach(item => {
-                item.addEventListener('click', (event) => {
-                    const category = event.target.dataset.category;
-                    const branch = event.target.dataset.branch;
-                    loadContentPage(category, branch);
-                });
-            });
-    
-            function loadContentPage(category, branch) {
-                console.log(`Loading content for category: ${category}, branch: ${branch}`);
-    
-                const content = document.getElementById('content');
-                content.innerHTML = `
-                    <main>
-                        <button class="back-button"><a href="faculty.html"><i class="fa fa-arrow-circle-left" style="color:#000"></i></a></button> <br>
-                        <h1 class="heading">${branch}</h1>
-                        <div class="card-container" id="card-container"></div>
-                    </main>
-                `;
-    
-                function createCard(data) {
-                    console.log('Creating card for:', data);
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    card.dataset.id = data.id;
-                    card.innerHTML = `
-                        <div class="fac_card">
-                            <div class="fac_img">
-                                <img class="profile-image" src="${data.image}" alt="${data.name}">
-                                <a href="${data.viewprofile}"><button class="view-profile-btn">View Profile</button></a>
-                            </div>
-                            <div class="fac_title">
-                                <h1 class="name">${data.name}</h1>
-                                <p>${data.title}</p>
-                                <p class="designation">${data.designation}</p>
-                                <p>${data.email}</p>
-                                <div class="fac_details">
-                                    <p><span class="bold">Area of Specialization:</span> <span class="color">${data.areaOfSpecialisation}</span></p>
-                                    <p><span class="bold">Date of Joining:</span> <span class="color">${data.dateOfJoining}</span></p>
-                                    <p><span class="bold">Nature of Association:</span> <span class="color">${data.natureOfAssosiation}</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    return card;
+    <script>
+        // Simple JavaScript to toggle program dropdowns
+        document.querySelectorAll('.program-category').forEach(category => {
+            category.addEventListener('click', () => {
+                const dropdown = category.querySelector('.program-dropdown');
+                if (dropdown) {
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
                 }
-     
-                const container = document.getElementById('card-container');
-                const filteredCardsData = cardsData.filter(cardData => 
-                    cardData.category === category && cardData.branch === branch
-                );
-                console.log(`Filtered cards data:`, filteredCardsData);
-    
-                filteredCardsData.forEach(cardData => {
-                    const card = createCard(cardData);
-                    container.appendChild(card);
-                });
-    
-                if (filteredCardsData.length === 0) {
-                    container.innerHTML = `<p>No data available for the selected category and branch.</p>`;
-                }
-            }
+            });
         });
     </script>
-    
     <footer id="footer-placeholder"></footer>
-    <script src="../templates/includeHTML.js" defer></script>
 </body>
 </html>
