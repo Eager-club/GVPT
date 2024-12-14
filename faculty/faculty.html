@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Directory</title>
+    <title>Faculty</title>
     <script src="../templates/includeHTML.js" defer></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+         body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
 
-        :root {
-            --primary-color: #22316D;
-            --secondary-color: #4A5CB5;
-            --background-color: #F4F6F9;
-            --text-color: #333;
-            --white: #FFFFFF;
-            --transition-speed: 0.3s;
-        }
-        header {
+header {
             background-image: url("../assects/faculty.webp");
             background-repeat: no-repeat;
             background-position: top;
@@ -26,206 +20,352 @@
             position: relative;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+.controls {
+    margin-bottom: 10px;
+}
 
+#search {
+    width: calc(100% - 150px);
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#items-per-page {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #f4f4f4;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pagination {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.page-btn {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-btn:disabled {
+    cursor: not-allowed;
+    background-color: #e9ecef;
+}
+
+        /* Additional styles for responsiveness and controls */
         .container {
-            max-width: 1200px;
+            max-width: 100vw;
             margin: 0 auto;
             padding: 20px;
         }
-
-        .faculty-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        .faculty-header h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            font-weight: 700;
+        .controls {
             margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-
-        .faculty-sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+        #search {
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
         }
-
-        .faculty-section {
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 30px;
-            transition: transform var(--transition-speed) ease;
+        #items-per-page {
+            padding: 8px;
+            width: 120px;
         }
-
-        .faculty-section:hover {
-            transform: translateY(-5px);
-        }
-
-        .faculty-section h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--background-color);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .program-categories {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .program-category {
-            background-color: var(--background-color);
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            transition: all var(--transition-speed) ease;
-        }
-
-        .program-category:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
-        .program-dropdown {
-            display: none;
-            margin-top: 20px;
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .program-item {
-            color: #22316C;
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--background-color);
-            cursor: pointer;
-            transition: background-color var(--transition-speed) ease;
-        }
-
-        .program-item:last-child {
-            border-bottom: none;
-        }
-
-        .program-item:hover {
-            color: #22316C;
-            background-color: var(--background-color);
-        }
-
-        @media (max-width: 768px) {
-            .faculty-sections {
-                grid-template-columns: 1fr;
+        table {
+                width: 100%;
+                border-collapse: collapse; /* Removes gaps between cells */
+                margin: 2vw auto; /* Centers the table and adds some space around it */
+                font-size: 1.2vw; /* Adjust font size according to your design */
+                max-width: 1200px; /* Ensures the table doesn't exceed this width */
+                background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+                border-radius: 15px;
+                overflow: hidden; /* Ensures border-radius works even if the content overflows */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
             }
 
-            .program-categories {
-                grid-template-columns: 1fr;
+            thead th{
+                background-color: #22316c; /* Background color for the header */
+                color: white; /* White text color for contrast */
             }
+
+            thead th {
+                padding: 1vw; /* Adds padding to the header cells */
+                font-weight: bold; /* Makes the text bold */
+                text-align: left; /* Aligns text to the left */
+                font-size: 1.5vw;
+            }
+
+            tbody tr {
+                border-bottom: 1px solid #ddd; /* Adds a border between rows */
+            }
+
+            tbody tr:last-child {
+                border-bottom: none; /* Removes border from the last row */
+            }
+
+            tbody td {
+                padding: 1vw; /* Adds padding to the body cells */
+                text-align: left; /* Aligns text to the left */
+            }
+
+            tbody tr:hover {
+                background-color: rgba(34, 49, 104, 0.1); /* Adds a hover effect */
+            }
+
+            @media (max-width: 768px) {
+            
+                .container {
+                    max-width: min-content;
+                    /* margin: 0 auto; */
+                    padding: 1%;
+                }
+                table {
+                     width: 100%;
+                    font-size: 3vw; /* Increases font size on smaller screens */
+                    margin: 2vw auto;
+                }
+
+                thead th, tbody td {
+                    padding: 2vw; /* Increases padding on smaller screens */
+                }
+                thead th {
+                font-size: 2vw;
+            }
+            }
+        .profile-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .section-heading {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-btn {
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 8px 12px;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+        .page-btn.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .page-btn:disabled {
+            cursor: not-allowed;
+            background-color: #e9ecef;
         }
     </style>
 </head>
 <body>
     <header id="nav-placeholder"></header>
     <div class="container">
-        <div class="faculty-header">
-            <h1>Faculty Directory</h1>
-            <p>Explore Our Academic Programs and Faculty</p>
+        <h2 id="title" style="text-align: center; color: #22316c; margin:20px 0 20px 0"></h2>
+        <div class="controls">
+            <input type="text" id="search" placeholder="Search...">
+            <select id="items-per-page">
+                <option value="10">10 items per page</option>
+                <option value="25">25 items per page</option>
+                <option value="50">50 items per page</option>
+                <option value="100">100 items per page</option>
+                <option value="all">All items</option>
+            </select>
         </div>
 
-        <div class="faculty-sections">
-            <div class="faculty-section">
-                <h2>AICTE Approved Programs</h2>
-                <div class="program-categories">
-                    <div class="program-category">
-                        Post Graduate
-                        <div class="program-dropdown">
-                            <div class="program-item">Computer Applications</div>
-                            <div class="program-item">Management Studies</div>
-                        </div>
-                    </div>
-                    <div class="program-category">
-                        UG Engineering
-                        <div class="program-dropdown">
-                            <div class="program-item">Civil Engineering</div>
-                            <div class="program-item">Computer Science and Engineering</div>
-                            <div class="program-item">Electronics and Communication Engineering</div>
-                            <div class="program-item">Mechanical Engineering</div>
-                            <div class="program-item">Basic Sciences and Humanity</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Department</th>
+                    <th>Phone</th>
+                    <th>Extension</th>
+                    <th>Email</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Data rows will be dynamically inserted here -->
+            </tbody>
+        </table>
 
-            <div class="faculty-section">
-                <h2>University Programs</h2>
-                <div class="program-categories">
-                    <div class="program-category">
-                        Post Graduate
-                        <div class="program-dropdown">
-                            <div class="program-item">Computer Science</div>
-                            <div class="program-item">Organic Chemistry</div>
-                            <div class="program-item">Human Resource Management</div>
-                        </div>
-                    </div>
-                    <div class="program-category">
-                        Undergraduate
-                        <div class="program-dropdown">
-                            <div class="program-category">Department of Sciences
-                                <div class="program-dropdown">
-                                    <div class="program-item">DEPARTMENT OF ENGLISH</div>
-                                    <div class="program-item">DEPARTMENT OF TELUGU/HINDI/SANSKRIT</div>
-                                    <div class="program-item">DEPARTMENT OF MATHEMATICS</div>
-                                    <div class="program-item">DEPARTMENT OF PHYSICS</div>
-                                    <div class="program-item">DEPARTMENT OF CHEMISTRY</div>
-                                    <div class="program-item">DEPARTMENT OF COMPUTER SCIENCE</div>
-                                    <div class="program-item">DEPARTMENT OF ELECTRONICS</div>
-                                    <div class="program-item">DEPARTMENT OF STATISTICS</div>
-                                    <div class="program-item">DEPARTMENT OF B.C.A</div>
-                                    <div class="program-item">DEPARTMENT OF B.C.A DATA SCIENCE</div>
-                                    <div class="program-item">DEPARTMENT OF B.Voc</div>
-                                    <div class="program-item">DEPARTMENT OF MICROBIOLOGY</div>
-                                    <div class="program-item">DEPARTMENT OF BIOTECHNOLOGY</div>
-                                    <div class="program-item">DEPARTMENT OF BIOCHEMISTRY</div>
-                                </div>
-                            </div>
-                            <div class="program-item">Department of Commerce <br>(DEPARTMENT OF B.Com)</div>
-                            <div class="program-item">Department of Management Studies <br>(DEPARTMENT OF B.B.A)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="pagination">
+            <button id="prev-page" class="page-btn">Previous</button>
+            <span id="page-numbers"></span>
+            <button id="next-page" class="page-btn">Next</button>
         </div>
     </div>
 
-    <script>
-        // Simple JavaScript to toggle program dropdowns
-        document.querySelectorAll('.program-category').forEach(category => {
-            category.addEventListener('click', () => {
-                const dropdown = category.querySelector('.program-dropdown');
-                if (dropdown) {
-                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                }
-            });
+    <script type="module">
+        import cardsData from '../data/faculty.js'; // Adjust the path as needed
+
+        document.addEventListener('DOMContentLoaded', () => {
+    // Get the branch from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const branch1 = urlParams.get('branch');
+    const title = document.getElementById('title');
+    title.textContent = branch1 ? `Faculty List - ${branch1.replace(/_/g, ' ')}` : 'Faculty List';
+    // Filter data based on the branch
+    const filteredData = cardsData.filter(item => item.branch === branch1);
+
+    // Initial settings
+    let currentPage = 1;
+    let itemsPerPage = 10;
+
+    // Get DOM elements
+    const searchInput = document.getElementById('search');
+    const itemsPerPageSelect = document.getElementById('items-per-page');
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+    const pageNumbers = document.getElementById('page-numbers');
+
+    // Function to render the table
+    function renderTable(data, currentPage = 1, itemsPerPage = 10) {
+        const tbody = document.getElementById('table-body');
+        tbody.innerHTML = '';
+
+        // Calculate pagination bounds
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = itemsPerPage === 'all' ? data.length : start + itemsPerPage;
+        const paginatedData = data.slice(start, end);
+
+        // Populate table rows
+        paginatedData.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.designation}</td>
+                <td>${item.branch.replace(/_/g, ' ')}</td>
+                <td>${item.phone}</td>
+                <td>${item.extension}</td>
+                <td>${item.email}</td>
+                <td><img src="${item.image}" alt="${item.name}" class="profile-image"></td>
+            `;
+            tbody.appendChild(row);
         });
+
+        // Update pagination controls
+        updatePaginationControls(data.length, currentPage, itemsPerPage);
+    }
+
+    // Function to update pagination controls
+    function updatePaginationControls(totalItems, currentPage, itemsPerPage) {
+        pageNumbers.innerHTML = '';
+
+        const totalPages = itemsPerPage === 'all' ? 1 : Math.ceil(totalItems / itemsPerPage);
+
+        // Update Previous button state
+        prevButton.disabled = currentPage === 1;
+
+        // Update Next button state
+        nextButton.disabled = currentPage === totalPages;
+
+        // Render page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.classList.add('page-btn');
+            if (i === currentPage) {
+                pageBtn.classList.add('active');
+            }
+            pageBtn.textContent = i;
+            pageBtn.addEventListener('click', () => {
+                currentPage = i;
+                renderTable(filteredData, currentPage, itemsPerPage);
+            });
+            pageNumbers.appendChild(pageBtn);
+        }
+    }
+
+    // Event listeners for controls
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        const filteredSearchData = filteredData.filter(item =>
+            item.name.toLowerCase().includes(query) ||
+            item.designation.toLowerCase().includes(query) ||
+            item.phone.includes(query) ||
+            item.extension.includes(query) ||
+            item.email.toLowerCase().includes(query)
+        );
+        currentPage = 1; // Reset to the first page
+        renderTable(filteredSearchData, currentPage, itemsPerPage);
+    });
+
+    itemsPerPageSelect.addEventListener('change', () => {
+        const value = itemsPerPageSelect.value;
+        itemsPerPage = value === 'all' ? 'all' : parseInt(value);
+        currentPage = 1; // Reset to the first page
+        renderTable(filteredData, currentPage, itemsPerPage);
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderTable(filteredData, currentPage, itemsPerPage);
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        const totalPages = itemsPerPage === 'all' ? 1 : Math.ceil(filteredData.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderTable(filteredData, currentPage, itemsPerPage);
+        }
+    });
+
+    // Initial render
+    renderTable(filteredData, currentPage, itemsPerPage);
+});
+
     </script>
-    <footer id="footer-placeholder"></footer>
+        <footer id="footer-placeholder"></footer>
 </body>
 </html>

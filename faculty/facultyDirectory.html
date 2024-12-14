@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Directory</title>
+    <script src="../templates/includeHTML.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+
+        :root {
+            --primary-color: #22316D;
+            --secondary-color: #4A5CB5;
+            --background-color: #F4F6F9;
+            --text-color: #333;
+            --white: #FFFFFF;
+            --transition-speed: 0.3s;
+        }
+        header {
+            background-image: url("../assects/faculty.webp");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-clip: content-box;
+            background-size: cover;
+            position: relative;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .faculty-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .faculty-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .faculty-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .faculty-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .faculty-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .faculty-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--background-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .program-categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .program-category {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+        }
+        .program-category a{
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .program-category:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .program-dropdown {
+            display: none;
+            margin-top: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .program-item {
+            color: #22316C;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--background-color);
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        .program-item:last-child {
+            border-bottom: none;
+        }
+
+        .program-item:hover {
+            color: #22316C;
+            background-color: var(--background-color);
+        }
+
+        @media (max-width: 768px) {
+            .faculty-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .program-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <div class="faculty-header">
+            <h1>Faculty Directory</h1>
+            <p>Explore Our Academic Programs and Faculty</p>
+        </div>
+
+        <div class="faculty-sections">
+            <div class="faculty-section">
+                <h2>AICTE Approved Programs</h2>
+                <div class="program-categories">
+                    <div class="program-category">
+                        Post Graduate
+                        <div class="program-dropdown">
+                            <a href="./faculty.html?branch=COMPUTER_APPLICATIONS"><div class="program-item">Computer Applications</div></a>
+                            <a href="./faculty.html?branch=MANAGMENT_STUDIES"><div class="program-item">Management Studies</div></a>
+                        </div>
+                    </div>
+                    <div class="program-category">
+                        UG Engineering
+                        <div class="program-dropdown">
+                            <a href="./faculty.html?branch=civil"><div class="program-item">Civil Engineering</div> </a>
+                            <a href="./faculty.html?branch=Computer_Science_and_Engineering"><div class="program-item">Computer Science and Engineering</div></a>
+                            <a href="./faculty.html?branch="><div class="program-item">Computer Science and Engineering (AI&ML)</div></a>
+                            <a href="./faculty.html?branch=ELECTRONICS_AND_COMMUNICATION_ENGINEERING"><div class="program-item">Electronics and Communication Engineering</div></a>
+                            <a href="./faculty.html?branch=MECHANICAL_ENGINEERING"><div class="program-item">Mechanical Engineering</div></a>
+                            <a href="./faculty.html?branch=Basic_Sciences_And_Humanity"><div class="program-item">Basic Sciences and Humanity</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faculty-section">
+                <h2>University Programs</h2>
+                <div class="program-categories">
+                    <div class="program-category">
+                        Post Graduate
+                        <div class="program-dropdown">
+                            <a href="./faculty.html?branch=COMPUTER_SCIENCE"><div class="program-item">Computer Science</div></a>
+                            <a href="./faculty.html?branch=ORGANIC_CHEMISTRY"><div class="program-item">Organic Chemistry</div></a>
+                            <a href="./faculty.html?branch=HUMAN_RESOURCE_MANAGEMENT"><div class="program-item">Human Resource Management</div></a>
+                        </div>
+                    </div>
+                    <div class="program-category">
+                        Undergraduate
+                        <div class="program-dropdown">
+                            <div class="program-category">Department of Sciences
+                                <div class="program-dropdown">
+                                    <a href="./faculty.html?branch=Department_of_English"><div class="program-item">DEPARTMENT OF ENGLISH</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Telugu/Hindi/Sanskrit"><div class="program-item">DEPARTMENT OF TELUGU/HINDI/SANSKRIT</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Mathematics"><div class="program-item">DEPARTMENT OF MATHEMATICS</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Physics"><div class="program-item">DEPARTMENT OF PHYSICS</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Chemistry"><div class="program-item">DEPARTMENT OF CHEMISTRY</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Computer_Science"><div class="program-item">DEPARTMENT OF COMPUTER SCIENCE</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Electronics"><div class="program-item">DEPARTMENT OF ELECTRONICS</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Statistics"><div class="program-item">DEPARTMENT OF STATISTICS</div></a>
+                                    <a href="./faculty.html?branch=Department_of_BCA"><div class="program-item">DEPARTMENT OF B.C.A</div></a>
+                                    <a href="./faculty.html?branch=Department_of_BCA"><div class="program-item">DEPARTMENT OF B.C.A DATA SCIENCE</div></a>
+                                    <a href="./faculty.html?branch=Department_of_B.Vocational"><div class="program-item">DEPARTMENT OF B.Voc</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Microbiology"><div class="program-item">DEPARTMENT OF MICROBIOLOGY</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Biotechnology"><div class="program-item">DEPARTMENT OF BIOTECHNOLOGY</div></a>
+                                    <a href="./faculty.html?branch=Department_of_Bio_Chemistry"><div class="program-item">DEPARTMENT OF BIOCHEMISTRY</div></a>
+                                </div>
+                            </div>
+                            <a href="./faculty.html?branch=Department_of_BCom"><div class="program-item">Department of Commerce <br>(DEPARTMENT OF B.Com)</div></a>
+                            <a href="./faculty.html?branch="><div class="program-item">Department of Management Studies <br>(DEPARTMENT OF B.B.A)</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to toggle program dropdowns
+        document.querySelectorAll('.program-category').forEach(category => {
+            category.addEventListener('click', () => {
+                const dropdown = category.querySelector('.program-dropdown');
+                if (dropdown) {
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+    <footer id="footer-placeholder"></footer>
+</body>
+</html>
