@@ -1,0 +1,390 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+    *{
+        scrollbar-width:none;
+    }
+    body {
+        font-family: 'inter', sans-serif;
+        margin: 20px;
+        
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .controls {
+        margin-bottom: 10px;
+    }
+
+    #search {
+        width: calc(100% - 150px);
+        padding: 8px;
+        margin-right: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #items-per-page {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        background-color: #f4f4f4;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .profile-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .pagination {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .page-btn {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        margin: 0 2px;
+        cursor: pointer;
+    }
+
+    .page-btn.active {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .page-btn:disabled {
+        cursor: not-allowed;
+        background-color: #e9ecef;
+    }
+
+    /* Additional styles for responsiveness and controls */
+    .container {
+        max-width: 100vw;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .controls {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #search {
+        padding: 8px;
+        width: 100%;
+        max-width: 300px;
+    }
+    #items-per-page {
+        padding: 8px;
+        width: 120px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse; /* Removes gaps between cells */
+        margin: 2vw auto; /* Centers the table and adds some space around it */
+        font-size: 1.2vw; /* Adjust font size according to your design */
+        max-width: 1200px; /* Ensures the table doesn't exceed this width */
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 15px;
+        overflow: hidden; /* Ensures border-radius works even if the content overflows */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    }
+
+    thead th {
+        background-color: #22316c; /* Background color for the header */
+        color: white; /* White text color for contrast */
+    }
+
+    thead th {
+        padding: 1vw; /* Adds padding to the header cells */
+        font-weight: bold; /* Makes the text bold */
+        text-align: left; /* Aligns text to the left */
+        font-size: 1.5vw;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid #ddd; /* Adds a border between rows */
+    }
+
+    tbody tr:last-child {
+        border-bottom: none; /* Removes border from the last row */
+    }
+
+    tbody td {
+        padding: 1vw; /* Adds padding to the body cells */
+        text-align: left; /* Aligns text to the left */
+    }
+
+    tbody tr:hover {
+        background-color: rgba(34, 49, 104, 0.1); /* Adds a hover effect */
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            max-width: min-content;
+            padding: 1%;
+        }
+        table {
+            width: 100%;
+            font-size: 3vw; /* Increases font size on smaller screens */
+            margin: 2vw auto;
+        }
+
+        thead th, tbody td {
+            padding: 2vw; /* Increases padding on smaller screens */
+        }
+        thead th {
+        font-size: 2vw;
+    }
+    }
+    .profile-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .section-heading {
+        background-color: #f2f2f2;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .page-btn {
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 8px 12px;
+        margin: 0 2px;
+        cursor: pointer;
+    }
+    .page-btn.active {
+        background-color: #007bff;
+        color: white;
+    }
+    .page-btn:disabled {
+        cursor: not-allowed;
+        background-color: #e9ecef;
+    }
+</style>
+<head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <input type="text" id="search" placeholder="Search...">
+            <select id="items-per-page">
+                <option value="10">10 items per page</option>
+                <option value="25">25 items per page</option>
+                <option value="50">50 items per page</option>
+                <option value="100">100 items per page</option>
+                <option value="all">All items</option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Phone</th>
+                    <th>Extension</th>
+                    <th>Email</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Data rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <button id="prev-page" class="page-btn">Previous</button>
+            <span id="page-numbers"></span>
+            <button id="next-page" class="page-btn">Next</button>
+        </div>
+    </div>
+    <script type="module">
+        import cardsData from '../data/faculty.js'; // Adjust the path as needed
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const categories = [
+                { title: 'HEADS OF COLLEGE', filter: item => item.administration === '1' },
+                { title: 'DIRECTORS', filter: item => item.director === '2' },
+                { title: 'DEANS', filter: item => item.dean === '3' },
+                { title: 'CONTROLLER OF EXAMINATION', filter: item => item.coe === '4' },
+                { title: 'HEAD OF DEPARTMENTS-PG', filter: item => item.hodpg === '7' },
+                { title: 'HEAD OF DEPARTMENTS-ET', filter: item => item.hodet === '6' },
+                { title: 'HEAD OF DEPARTMENTS-UG', filter: item => item.hodug === '5' },
+                { title: 'COORDINATORS', filter: item => item.cod === '8' }
+            ];
+
+            const categoryIndices = {};
+
+            categories.forEach(category => {
+                categoryIndices[category.title] = cardsData
+                    .map((item, index) => ({ item, index }))
+                    .filter(({ item }) => category.filter(item))
+                    .map(({ index }) => index);
+            });
+
+            const tbody = document.getElementById('table-body');
+            const searchInput = document.getElementById('search');
+            const itemsPerPageSelect = document.getElementById('items-per-page');
+            const pageNumbersSpan = document.getElementById('page-numbers');
+            const prevPageBtn = document.getElementById('prev-page');
+            const nextPageBtn = document.getElementById('next-page');
+
+            let currentPage = 1;
+            let itemsPerPage = parseInt(itemsPerPageSelect.value) || Infinity;
+            let filteredIndices = [];
+
+            function getFilteredIndices() {
+                const query = searchInput.value.toLowerCase();
+                let indices = [];
+
+                categories.forEach(category => {
+                    const categoryIndicesArray = categoryIndices[category.title];
+                    categoryIndicesArray.forEach(index => {
+                        const item = cardsData[index];
+                        if (item &&
+                            (item.name.toLowerCase().includes(query) ||
+                             item.designation.toLowerCase().includes(query) ||
+                             item.phone.toLowerCase().includes(query) ||
+                             item.extension.toLowerCase().includes(query) ||
+                             item.email.toLowerCase().includes(query))) {
+                            if (!indices.includes(index)) {
+                                indices.push(index);
+                            }
+                        }
+                    });
+                });
+
+                return indices;
+            }
+
+            function renderTable() {
+                tbody.innerHTML = '';
+
+                filteredIndices = getFilteredIndices();
+                const totalItems = filteredIndices.length;
+
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = itemsPerPage === Infinity ? totalItems : start + itemsPerPage;
+                const pageIndices = filteredIndices.slice(start, end);
+
+                const displayedIndices = new Set();
+
+                categories.forEach(category => {
+                    const indices = categoryIndices[category.title];
+                    const filteredIndicesForCategory = indices.filter(index => pageIndices.includes(index) && !displayedIndices.has(index));
+
+                    if (filteredIndicesForCategory.length > 0) {
+                        const headingRow = document.createElement('tr');
+                        headingRow.innerHTML = `<th colspan="6" class="section-heading">${category.title}</th>`;
+                        tbody.appendChild(headingRow);
+
+                        filteredIndicesForCategory.forEach(index => {
+                            const item = cardsData[index];
+                            if (item) {
+                                displayedIndices.add(index);
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <td>${item.name}</td>
+                                    <td>${item.designation}</td>
+                                    <td>${item.phone}</td>
+                                    <td>${item.extension}</td>
+                                    <td>${item.email}</td>
+                                    <td><img src="${item.image}" alt="${item.name}" class="profile-image"></td>
+                                `;
+                                tbody.appendChild(row);
+                            }
+                        });
+                    }
+                });
+
+                updatePaginationControls(totalItems);
+            }
+
+            function updatePaginationControls(totalItems) {
+                const totalPages = itemsPerPage === Infinity ? 1 : Math.ceil(totalItems / itemsPerPage);
+                pageNumbersSpan.innerHTML = '';
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const button = document.createElement('button');
+                    button.textContent = i;
+                    button.className = 'page-btn';
+                    button.addEventListener('click', () => {
+                        currentPage = i;
+                        renderTable();
+                    });
+                    if (i === currentPage) {
+                        button.classList.add('active');
+                    }
+                    pageNumbersSpan.appendChild(button);
+                }
+
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
+            }
+
+            function handleItemsPerPageChange() {
+                itemsPerPage = itemsPerPageSelect.value === 'all' ? Infinity : parseInt(itemsPerPageSelect.value);
+                currentPage = 1;
+                renderTable();
+            }
+
+            searchInput.addEventListener('input', renderTable);
+            itemsPerPageSelect.addEventListener('change', handleItemsPerPageChange);
+            prevPageBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderTable();
+                }
+            });
+            nextPageBtn.addEventListener('click', () => {
+                const totalPages = itemsPerPage === Infinity ? 1 : Math.ceil(filteredIndices.length / itemsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderTable();
+                }
+            });
+
+            function populateTable() {
+                filteredIndices = cardsData.map((_, index) => index);
+                renderTable();
+            }
+
+            populateTable();
+        });
+    </script>
+</body>

@@ -10,9 +10,240 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="../templates/includeHTML.js" defer></script>
     <script src="https://unpkg.com/htmx.org@1.8.5"></script>
-    <link rel="stylesheet" href="administration.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    
     <style>
+        
+*{
+    margin: 0px;
+    border: 0px;
+    font-family: "inter",sans-serif;
+    scrollbar-width:none;
+    }
+    .cards{
+        width: 100%;
+        overflow-x: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        padding: 30px;
+    }
+    .card-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 3rem;
+    margin-left: 1.5vw;
+    margin-bottom: 15px;
+    
+    }
+    header{
+        background-image: url("https://www.gvpcdpgc.edu.in/latest_images/21.jpeg");
+        width: 100%;
+        height: 45vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        background-blend-mode: screen;
+    }
+    
+    .container{
+    width: 100%;
+    margin: auto;
+  
+    }
+    .card-container{
+        /* width: 100%; */
+        justify-content: stretch;
+        align-content: start;
+        gap:100px;
+    }
+    
+    .container section{
+        padding-top: 5%;
+    }
+        
+    .card{
+    width: 200px;
+    height: 280px;
+    box-sizing: border-box;
+    /* border: 1px solid transparent; */
+    border-radius: 5px;
+    box-shadow: 0 0 20px  rgba(0, 0, 0, 0.329);
+    margin-top: 25px;
+    justify-content: center;
+    align-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    animation: fadeInLeft 1.5s backwards;
+    }
+    
+    .card img{
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: -5px;
+    }
+    .details{
+        text-align: center;
+        overflow: hidden;
+    }
+    .details h1{
+    font-size: 1.2vw;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    /* text-size-adjust: 080; */
+    
+    }
+    .details hr{
+    visibility: hidden;
+    color: #fff;
+    }
+    .details button{
+    height: 9vh;
+    width: 70%;
+    font-size: 70%;
+    font-weight: 700; 
+    border-radius: 5px;
+    background-color:rgba(34, 49, 108, 0.518) ;            
+    color: #fff;
+    
+    }
+    
+    .intro{
+    font-size: 60%;
+    margin-top: 20px;
+    display: none;
+    color: #100707;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: start;
+    }
+    
+    .intro .opt,.colon {
+    color: white;
+    font-weight: 600;
+    }
+    .intro .fill{
+    color: #000;
+    font-size: 100%;
+    /* text-align: start; */
+    text-wrap: pretty;
+    /* word-wrap: break-word; */
+    /* word-break: ; */
+    word-wrap: break-word;
+    word-break: break-all;
+    }
+    .fill p{
+        text-align: start;
+    }
+    .colon {
+    color: #fff;
+    }
+    .intro p{
+    padding: 2px;
+    }
+    .card:hover{
+        justify-content: center;
+        align-content: center;
+        transform: translateY(-10px); /* Slightly raise the card */
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .card:hover,.details:hover {
+    cursor: pointer;
+    }
+    .card:hover .details{
+    height: 70%;
+    background-color:rgba(34, 49, 108, 0.518);
+    border-radius: 5px;
+    clear: both; 
+    }
+    .card:hover button{
+        display: none;
+    }
+    .card:hover hr{
+    visibility: visible;
+    color: #000;
+    }
+    
+    .card:hover img{
+    margin: -60px 0 -70px -30px;
+    margin-top:-60px;
+    margin-bottom: -70px;
+    width: 270px;
+    height: 270px;
+    border-radius: 95%;
+    transform: scale(0.4);
+    /* box-shadow: 0 0 18px rgba(34, 49, 108, 0.9);; */
+    }
+    
+    .card:hover .intro  {
+    opacity: 1;
+    margin-top: -7px;
+    display: flex;
+    padding: 5px 0;
+    }
+    @keyframes fadeInLeft {
+        0% {
+          transform: translate(-100%,0);
+        }
+      
+        100% {
+            opacity: 1;
+            transform: none;
+        }
+      }
+    @media (max-width: 600px) {
+    .container{
+        /* display: none; */
+    }
+    .container {
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    .main-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .main-table th {
+        text-align: center;
+        padding: 10px;
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+    }
+    
+    .main-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+    
+    .section-heading {
+        background-color: #e2e2e2;
+        font-size: 1.2em;
+    }
+    
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        width: calc(33% - 20px);
+        box-sizing: border-box;
+    }
+    
+    .profile-image {
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+    }}
 .material-symbols-outlined {
   font-variation-settings:
     'FILL' 0,
@@ -20,36 +251,31 @@
     'GRAD' 0,
     'opsz' 48;
 }
-.view{
-    display: flex;
-    justify-content: end;
-    position: relative;
-    right: 3%;
-    /* bottom: 5rem; */
+.view {
+    width: 100%;
+    /* padding: 20px;    */
+    display: inline-flex;
+    justify-content: space-between;
+    align-content: space-between;
 } 
-.view button,.view-less,.view-more{
-    background-color: rgba(34, 49, 104, 2.5%); ;
-    padding: 4px 8px 4px 8px;
-    border: 1px solid  rgba(34, 49, 104, 3%);
-    border-radius: 20px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+.view a{
+    font-size: 1.2rem;
+    color: #22316c;
+    padding-right: 40px;
+    text-decoration: underline;
 }
-
-.view button span,.view-more span,.view-less span{
-    font-weight: 1000;
-    color: #22316C;
-    margin-top: 4px;
+.view a:hover{
+    
+    color: red;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    
 }
-.view button:hover,.view-less:hover ,.view-more:hover{
-    background-color: #22316C;
-}
-.view button:hover span,.view-less:hover span,.view-more:hover span{
-    color: white;
-}
-
+/* mobile  */
 </style>
 <body>
     <header id="nav-placeholder"></header>
+    <div class="desktop">
     <div class="cards">
         <div class="container">
             <!-- Heads of College -->
@@ -60,10 +286,11 @@
     
             <!-- Directors -->
             <section  id="director">
-                <h1 class="heading" >DIRECTORS</h1>
+                
                 <div class="view">
+                    <h1 class="heading" >DIRECTORS</h1>
                     <a href="#" id="view-all-director">
-                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                        view more
                     </a>
                 </div>
                 <div class="card-container" id="director-container"></div>
@@ -90,35 +317,38 @@
     
             <!-- Head of Departments-ET -->
             <section id="hod-ET">
-                <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
-                <div class="card-container" id="hodet-container"></div>
                 <div class="view">
+                    <h1 class="heading">HEAD OF DEPARTMENTS-ET</h1>
                     <a href="#" id="view-all-hodet">
-                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                        view more
                     </a>
                 </div>
+                <div class="card-container" id="hodet-container"></div>
+                
             </section>
     
             <!-- Head of Departments-UG -->
             <section id="hod-ug">
-                <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
-                <div class="card-container" id="hodug-container"></div>
                 <div class="view">
+                    <h1 class="heading">HEAD OF DEPARTMENTS-UG</h1>
                     <a href="#" id="view-all-hodug">
-                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                        view more
                     </a>
                 </div>
+                <div class="card-container" id="hodug-container"></div>
+                
             </section>
     
             <!-- Coordinators -->
             <section id="COORDINATORS">
-                <h1 class="heading">COORDINATORS</h1>
-                <div class="card-container" id="cod-container"></div>
                 <div class="view">
+                    <h1 class="heading">COORDINATORS</h1>
                     <a href="#" id="view-all-cod">
-                        <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+                        view more
                     </a>
                 </div>
+                <div class="card-container" id="cod-container"></div>
+                
             </section>
            
         </div>
@@ -231,14 +461,15 @@
 
                     if (isExpanded) {
                         // Collapse
-                        button.innerHTML = '<span class="material-symbols-outlined">keyboard_arrow_down</span>';
+                        button.innerHTML = 'view more';
                         button.classList.remove('view-less');
                         button.classList.add('view-more');
                         container.innerHTML = ''; // Clear all cards
                         populateContainer(containerId, filterFunction, 4); // Show limited cards
                     } else {
                         // Expand
-                        button.innerHTML = '<span class="material-symbols-outlined">keyboard_arrow_up</span>';
+                        window.scrollBy({ top: window.innerHeight * 0.5, behavior: 'smooth' });
+                        button.innerHTML = 'view less';
                         button.classList.add('view-less');
                         button.classList.remove('view-more');
                         populateContainer(containerId, filterFunction, 100); // Show all cards
@@ -262,7 +493,10 @@
             toggleView('view-all-cod', 'cod-container', cardData => cardData.cod === "8");
         });
     </script>
-    
+    </div>
+    <div class="mobile">
+        
+    </div>
     <footer id="footer-placeholder"></footer>
     <script src="script.js"></script>
 </body>
