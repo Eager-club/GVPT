@@ -3,6 +3,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <script src="../templates/includeHTML.js" defer></script>
 
 <style>
     *{
@@ -10,7 +11,7 @@
     }
     body {
         font-family: 'inter', sans-serif;
-        margin: 20px;
+        /* margin: 20px; */
         
     }
 
@@ -144,7 +145,33 @@
     tbody tr:hover {
         background-color: rgba(34, 49, 104, 0.1); /* Adds a hover effect */
     }
-
+    
+    .scroll-to-top {
+            position: fixed;
+            right: 20px;
+            background-color: #22316C;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s ease; /* Smooth transition for both opacity and bottom */
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+        .scroll-to-top.show {
+            opacity: 1;
+            box-shadow: 0 0 20px white;
+        }
+        .scroll-to-top:hover {
+            background-color: #e78709;
+        }
     @media (max-width: 768px) {
         .container {
             max-width: min-content;
@@ -198,7 +225,10 @@
     }
 </style>
 <head>
+
+
 <body>
+    <header id="nav-placeholder"></header>
     <div class="container">
         <div class="controls">
             <input type="text" id="search" placeholder="Search...">
@@ -233,6 +263,9 @@
             <button id="next-page" class="page-btn">Next</button>
         </div>
     </div>
+    <button id="scrollToTop" class="scroll-to-top">
+        &#8593; <!-- Unicode character for up arrow -->
+    </button>
     <script type="module">
         import cardsData from '../data/faculty.js'; // Adjust the path as needed
 
@@ -386,5 +419,59 @@
 
             populateTable();
         });
+        if (window.innerWidth >= 768) {
+            window.location.href = './administration.html';
+        }
+        // scroll to top of the page
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        const footer = document.querySelector('footer');
+
+        // Function to handle scroll events
+        function handleScroll() {
+            // Show or hide the button based on scroll position
+            if (window.scrollY > 100) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+            updateScrollToTopButtonPosition();
+        }
+
+        // Function to update the button's position
+        function updateScrollToTopButtonPosition() {
+            const footerRect = footer.getBoundingClientRect();
+            const buttonRect = scrollToTopButton.getBoundingClientRect();
+
+            // Calculate the space between the button and the footer
+            const footerTop = footerRect.top;
+            const buttonHeight = buttonRect.height;
+            const viewportHeight = window.innerHeight;
+            const footerBuffer = 10; // Buffer to keep the button above the footer
+
+            if (footerTop < viewportHeight) {
+                // Adjust button position to stay above the footer
+                const bottomOffset = Math.average(footerTop - buttonHeight - footerBuffer, 20);
+                scrollToTopButton.style.bottom = `${bottomOffset}px`;
+            } else {
+                // Fixed position if not near footer
+                scrollToTopButton.style.bottom = '20px';
+            }
+        }
+
+        // Function to handle scroll-to-top button click
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add event listeners for scroll and resize events
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', updateScrollToTopButtonPosition);
+
+        // Initial position update
+        updateScrollToTopButtonPosition();
     </script>
+        <footer id="footer-placeholder"></footer>
 </body>
