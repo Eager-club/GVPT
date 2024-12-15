@@ -218,6 +218,15 @@ th, td {
 <body>
     <header id="nav-placeholder"></header>
     <div class="container">
+        <button id="back-button" style="float: left; border: 0;">
+            <span style="font-size: 30px;font-weight: 900;">&#8592;</span> 
+        </button>
+
+        <script>
+            document.getElementById('back-button').addEventListener('click', () => {
+                window.location.href = 'facultyDirectory.html';
+            });
+        </script>
         <h2 id="title" style="text-align: center; color: #22316c; margin:20px 0 20px 0"></h2>
         <div class="controls">
             <input type="text" id="search" placeholder="Search...">
