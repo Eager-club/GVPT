@@ -1,10 +1,10 @@
-<!-- need to change the code  -->
+<!-- only header background need to change  -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AICTE</title>
-    <script src="../templates/includeHTML.js" defer></script>
+
     <style>
         * {
             margin: 0;
@@ -210,6 +210,7 @@
             position: relative;
         }
     </style>
+        <script src="../templates/includeHTML.js" defer></script>
 </head>
 <body>
     <header id="nav-placeholder"></header>
@@ -232,10 +233,11 @@
     <footer id="footer-placeholder"></footer>
     <script type="module">
         import syllabusData from '../data/academics/syllabusData.js';
-
+        console.log(syllabusData);
         function renderSection(syllabusId, data) {
             const container = document.getElementById(syllabusId);
-            container.innerHTML = `
+            console.log(syllabusData);
+            container.innerHTML = `  
                 <div class="head">
                     <div class="heading">
                         <h6>${data.heading}</h6>
@@ -246,7 +248,7 @@
                         ${data.files.map(file => `
                             <div class="file">
                                 <p>${file.text}</p>
-                                <a href="${file.link}"><button>Click me</button></a>
+                                <a href="${file.link}" target="_blank"><button>Click me</button></a>
                             </div>
                         `).join('')}
                     </div>
