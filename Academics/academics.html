@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics Directory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../templates/includeHTML.js" defer></script>
+    <style>
+        :root {
+            --primary-color: #22316c;
+            --secondary-color: #ffffff;
+            --text-color: #22316c;
+            --hover-color: #1a2655;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        header {
+            background-image: url("../assects/home.webp");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-clip: content-box;
+            background-size: cover;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: var(--secondary-color);
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(34, 49, 108, 0.1);
+            border-radius: 10px;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+
+        .container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .container li {
+            background: #f8f9fa;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(34, 49, 108, 0.1);
+        }
+
+        .container li:hover {
+            background: #f1f3f5;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(34, 49, 108, 0.15);
+        }
+
+        .container a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+        }
+
+        .container a:hover {
+            color: var(--hover-color);
+        }
+
+        .container .icon {
+            color: var(--primary-color);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .container li:hover .icon {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <h1>Academics Directory</h1>
+        <ul>
+            <li>
+                <a href="https://www.example.com">Academic Calendar</a>
+                <i class="fas fa-link icon"></i>
+            </li>
+            <li>
+                <a href="https://www.example2.com">Syllabus</a>
+                <i class="fas fa-link icon"></i>
+            </li>
+            <li>
+                <a href="https://www.example3.com">Program</a>
+                <i class="fas fa-link icon"></i>
+            </li>
+            <li>
+                <a href="https://www.example3.com">Regulation</a>
+                <i class="fas fa-link icon"></i>
+            </li>
+            <li>
+                <a href="https://www.example3.com">Archive</a>
+                <i class="fas fa-link icon"></i>
+            </li>
+        </ul>
+    </div>
+    <footer id="footer-placeholder"></footer>
+</body>
+</html>

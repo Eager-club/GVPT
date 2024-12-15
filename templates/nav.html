@@ -324,6 +324,88 @@
             text-align: left;
   }
     }
+/* Main dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 0; /* Position below the main dropdown item */
+    left: 100%; /* Align with parent menu item */
+    background-color: #fff; /* Background color */
+    padding: 5px 0;
+    list-style: none;
+    border: 1px solid #ccc; /* Border for dropdown */
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    min-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+.dropdown-menu  ul{
+    list-style: none;
+}
+.dropdown-menu li {
+    position: relative; /* Required for positioning nested dropdowns */
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 5px 10px;
+    color: #333; /* Text color */
+    text-decoration: none;
+    text-wrap: nowrap;
+    font-size: 12px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f4f4f4; /* Hover effect */
+    color: #000;
+}
+
+/* Nested dropdown menu styles */
+.dropdown-menu .dropdown-menu {
+    top: 0; /* Align with the parent menu item */
+    left: 100%; /* Position to the right of the parent dropdown */
+    margin-left: 10px; 
+    display: none; /* Initially hidden */
+}
+
+/* Show dropdown menus on hover */
+li:hover > .dropdown-menu {
+    display: flex;
+}
+
+/* Adjust heading styles within dropdown */
+.dropdown-menu h2 {
+    margin: 5px 10px;
+    font-size: 15px;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Add transition for smooth hover effect */
+.dropdown-menu {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Optional: Adjustments for responsiveness */
+@media screen and (max-width: 768px) {
+    .dropdown-menu {
+        position: relative; /* Ensure dropdown stacks in mobile view */
+        top: auto;
+        left: auto;
+        width: 100%; /* Full-width dropdown */
+        margin-left: 0;
+    }
+
+    .dropdown-menu .dropdown-menu {
+        position: relative; /* Nested menu stacks below in mobile */
+        top: auto;
+        left: auto;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
    
 </style>
 </head>
@@ -353,7 +435,7 @@
                    <i class="fa fa-caret-down"></i>
                  </button>
                  <div class="dropdown-content">
-                   <a href="../Academics/">Academics</a>
+                   <a href="../Academics/academics.html">Academics</a>
                      <a href="../Academics/programs.html">Programs</a>
                      <a href="../Academics/Academic calender.html">Academic calendar</a>
                      <a href="../Academics/Departments.html">Department</a>
@@ -483,11 +565,54 @@
                     <li><a href="../Adminstration/administration.html">Governing bodies</a></li>
                 </ul>
             </li>
-            <li><a href="../Academics/">Academics<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
+            <li><a href="../Academics/academics.html">Academics<span class="material-symbols-outlined">keyboard_arrow_down</span></a>
                 <ul>
                     <li><a href="../Academics/programs.html">Programs</a></li>
                     <li><a href="../Academics/Academic calender.html">Academic calendar</a></li>
-                    <li><a href="../Academics/Departments.html">Department</a></li>
+                    <!-- <li><a href="../Academics/Departments.html">Department</a></li> -->
+                    <li><span style="padding-left: 10px;">Departments<span class="material-symbols-outlined">keyboard_arrow_down</span></span>
+                        <div class="dropdown-menu">
+                            <ul>
+                            <h2>Undergraduate Programmes (UG)</h2>
+                            <li><a href="#">B.Com. Honors (General)</a></li>
+                            <li><a href="#">BBA Honors</a></li>
+                            <li><a href="#">BBA Honors (Digital Marketing)</a></li>
+                            <li><a href="#">B.Com. Honors (Computer Applications)</a></li>
+                            <li><a href="#">B.Sc. Honors (Computer Science)</a></li>
+                            <li><a href="#">B.Sc. Honors (Biochemistry)</a></li>
+                            <li><a href="#">B.Sc. Honors (Microbiology)</a></li>
+                            <li><a href="#">B.Sc. Honors (Electronics)</a></li>
+                            <li><a href="#">B.Sc. Honors (Chemistry)</a></li>
+                            <li><a href="#">B.Sc. Honors (Physics)</a></li>
+                            <li><a href="#">B.Sc. Honors (Mathematics)</a></li>
+                            <li><a href="#">B.Sc. Honors (Statistics)</a></li>
+                            <li><a href="#">BCA Honors</a></li>
+                            <li><a href="#">B.Sc. Honors (Data Science)</a></li>
+                            <li><a href="#">B.A. Honors (Economics)</a></li>
+                            <li><a href="#">B.A. Honors (Psychology)</a></li>
+                        </ul>
+                        <ul>
+                            <h2>Postgraduate Programmes (PG)</h2>
+                            <li><a href="#">Master of Business Administration (MBA)</a></li>
+                            <li><a href="#">Master of Business Administration (MBA) - Business Analytics</a></li>
+                            <li><a href="#">Master of Computer Applications (MCA)</a></li>
+                            <li><a href="#">Master of Human Resource Management (MHRM)</a></li>
+                            <li><a href="#">M.Sc. Computer Science</a></li>
+                            <li><a href="#">M.Sc. Organic Chemistry</a></li>
+                            <li><a href="#">M.Com.</a></li>
+                            <li><a href="#">M.Sc. Data Science</a></li>
+
+                            <h2>Engineering Programmes</h2>
+                            <li><a href="#">B.Tech. Civil Engineering</a></li>
+                            <li><a href="#">B.Tech. Computer Science and Engineering</a></li>
+                            <li><a href="#">B.Tech. Computer Science and Engineering <br> (Artificial Intelligence and Machine Learning)</a></li>
+                            <li><a href="#">B.Tech. Electronics & Communication Engineering</a></li>
+                            <li><a href="#">B.Tech. Mechanical Engineering</a></li>
+                            <li><a href="#">M.Tech. Structural Engineering</a></li>
+                            <li><a href="#">M.Tech. Computer Science and Technology</a></li>
+                        </ul>
+                        </div>
+                    </li>
                     <li><a href="../Academics/syllabus.html">Syllabus</a></li>
                     <li><a href="../Academics/Regulations.html">Regulations</a></li>
                     <li><a href="../Academics/Archives.html">Archives</a></li>

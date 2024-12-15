@@ -28,7 +28,7 @@
           header {
             background-image: url("image url");
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: bottom;
             background-clip: content-box;
             background-size: cover;
             position: relative;
