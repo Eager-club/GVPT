@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Department of Computer Science and Engineering</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script> -->
     <style>
         * {
         margin: 0;
@@ -1204,8 +1204,9 @@ if (x.className === "topnav") {
 <!-- faculty scprit -->
 <script type="module">
     import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
-
+    // console.log(cardsData);
     function createCard(data) {
+        
         const card = document.createElement('div');
         card.className = 'card';
         card.dataset.id = data.id;
@@ -1228,11 +1229,12 @@ if (x.className === "topnav") {
         return card;
     }
 
-    function loadContentPage(category, branch) {
+    function loadContentPage(branch) {
         const container = document.getElementById('card-container');
         const filteredCardsData = cardsData.filter(cardData => 
-            cardData.category === category && cardData.branch === branch
+        cardData.branch === branch
         );
+        
 
         filteredCardsData.forEach(cardData => {
             const card = createCard(cardData);
@@ -1245,7 +1247,7 @@ if (x.className === "topnav") {
     }
 
     // Load CSE faculty data
-    loadContentPage('AICTE APPROVED', 'COMPUTER SCIENCE AND ENGINEERING');
+    loadContentPage('Computer_Science_and_Engineering');
 </script>
 <!-- academic page scprit -->
 <script type="module">
