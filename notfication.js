@@ -76,3 +76,37 @@ links.forEach(linkObj => {
     
     notify.appendChild(link); // Append the link to the 'notify' container
 });
+
+// marquee js script
+
+//     document.addEventListener("DOMContentLoaded", () => {
+//     const marquee = document.querySelector(links);
+//     const speed = 1; // Scrolling Speed
+//     let scrollAmount = 0;
+//     let isHovered = false;
+
+//     // Duplicates the content
+//     const marqueeContent = marquee.innerHTML;
+//     marquee.innerHTML += marqueeContent;
+
+//     const startScrolling = () => {
+//         if (!isHovered) {
+//             scrollAmount -= speed;
+//             if (Math.abs(scrollAmount) >= marquee.scrollWidth / 2) {
+//                 scrollAmount = 0;
+//             }
+//             marquee.style.transform = `translateX(${scrollAmount}px)`;
+//         }
+//         requestAnimationFrame(startScrolling);
+//     };
+
+//     marquee.addEventListener("mouseover", () => {
+//         isHovered = true;
+//     });
+
+//     marquee.addEventListener("mouseout", () => {
+//         isHovered = false;
+//     });
+
+//     startScrolling();
+// });
