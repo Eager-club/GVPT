@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department of Computer Science and Engineering</title>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script> -->
+    <title>Department of Civil Engineering</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <section id="preloader-placeholder" ></section>
     <style>
         * {
         margin: 0;
@@ -341,6 +345,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
   .hod-img{
     width:100%; 
     max-width:400px;
+    
     display:block;
     margin-bottom:20px;
     border-radius: 20px;
@@ -348,6 +353,9 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-left: 25px; 
     float: right;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+   
 }
     .hod-img:hover{
     transform: translateY(-10px); /* Slightly raise the card */
@@ -638,7 +646,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         .pdf-link a:hover {
             text-decoration: underline;
         }
-        #pdf-viewer {
+        #pdf-viewer,#pdf-viewer1 {
             width: 100%;
             max-width: 1200px;
             height: 600px;
@@ -739,7 +747,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     #department-committees h2 ,#department-committees  h3,#department-committees .card-header button,#department-committees li{
         font-size: small;
     }
-    #pdf-viewer {
+    #pdf-viewer,#pdf-viewer1 {
         width: 100%; 
         height: 300px;
     }
@@ -755,8 +763,8 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 <div class="header1">
     <div>
         <div class="topnav" id="myTopnav">
-            
-            <a href="../index.html" style="align-items: center;color: #e78709;font-weight: 700;background-color: #22316C;" class="navHead">GVPCDPGC</a>
+            <!-- Main Nav bar -->
+            <a href="../index.html" style="align-items: center;color: #e78709;font-weight: 700;background-color: #22316C;" class="navHead"><img src="../assects/gvplogorm.png" width="20px" alt=""> GVPCDPGC</a>
              <a href="../index.html" class="singleLink">Home</a>
             <div class="dropdown">
               <button class="dropbtn">Administration
@@ -821,14 +829,17 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
               <button class="dropbtn">  other
                 <i class="fa fa-caret-down"></i>
               </button>
-              <div class="dropdown-content">
+              <div class="dropdown-content" style="right: 0;">
+                <div style="display: flex;">
+                    <div>
                   <a href="../others/examination-archives.html">Examination</a>
                   <a href="../others/Results.html">Results</a>
                   <a href="../others/clubs.html">Clubs</a>
                   <a href="#">Campus Life</a>
                   <a href="#">Transportation</a>
                   <a href="#">Events</a>
-                  <a href="#">Code of Conduct</a>
+                  <a href="#">Code of Conduct</a></div>
+                  <div>
                   <a href="../top/aicte.html">AICTE Mandatory Info</a>
                   <a href="../top/iqac.html">IQAC</a>
                   <a href="../top/iipc.html">IIPC</a>
@@ -837,6 +848,8 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
                   <a href="../top/online payment.html">Online Payments</a>
                   <a href="##">CAREERS</a>
                   <a href="##">360 Virtual Tour</a>
+                </div>
+                </div>
               </div>
             </div> 
 <a href="javascript:void(0);" style="font-size:20px;font-weight: 800;" class="nav-icon" onclick="myFunction()">&#9776;</a>
@@ -858,8 +871,9 @@ if (x.className === "topnav") {
 }
 </script>
     </div>
+    <!-- branch heading  -->
     <div class="header-container">
-        <h1>Department of Computer Science and Engineering</h1>
+        <h1>DEPARTMENT OF CIVIL ENGINEERING</h1>
         <div class="burger" id="menu-icon">
             <div class="strip burger-strip">
                 <div></div>
@@ -871,6 +885,7 @@ if (x.className === "topnav") {
 </div>
 
 <nav class="sidebar" id="sidebar">
+    <!-- sidebar -->
     <ul>
         <li ><a href="#" data-target="about-department">About Department</a></li>
         <li><a href="#" data-target="vision-mission">Vision & Mission / PEOs / PSOs / POs</a></li>
@@ -892,10 +907,10 @@ if (x.className === "topnav") {
         <h2>About Department</h2>
         <div class="dept-div">
             <div class="dept-con">
-                <p>The Department of Computer Science and Engineering was established in 2011 at Gayatri Vidya Parishad College for Degree & PG Courses (A). It offers a B.Tech program with a maximum intake of 240 students (180 for CSE and 60 for AI & ML). The department is committed to providing students with both theoretical and practical foundations in Information Technology and Computation, equipped with modern labs and exposure to the latest trends in the field.</p>
+                <p>Department of Civil Engineering was started under Gayatri Vidya Parishad College for Degree & PG Courses during 2011. This department offers B.Tech in Civil Engineering course with a current intake of 60 students. The admission to the program is through EAPCET rankings. M.Tech Structural Engineering course is introduced in the Department of Civil Engineering during the year 2020 with an intake of 18 students. The admission to the program is through PGECET/GATE rank. Civil Engineering is a core engineering program which caters to the built environment needs of the common man. During the course of four years the students gain knowledge in design and construction of different types of buildings, bridges, roads, industries and irrigation projects. Apart from theoretical subjects the students work in Structural Engineering, Hydraulic Engineering and Material Testing laboratories to gain hands on experience. Major Focus areas are Surveying, Structural Engineering, Fluid Mechanics, Geo-Technical Engineering, Environmental Engineering, Transportation Engineering, Remote sensing, GIS and Computer Aid Design (CAD).</p>
             </div>
             <div>
-                <img src="../assects/dept/cse/DALL·E 2024-08-24 22.19.06 - A classroom scene with a group of computer science students engaged in learning. The students are a diverse group, seated at desks with laptops, codin.webp" width="250" class="dept-img" alt="cse image">
+                <img src="../assects/dept/civil/DALL·E 2024-08-25 23.41.47 - A classroom scene with a group of civil engineering students engaged in learning. The students are diverse, seated at desks with blueprints, models, a.webp" width="250" class="dept-img" alt="civil image">
             </div>
         </div>
         <div>
@@ -910,48 +925,46 @@ if (x.className === "topnav") {
         </div>
         <div>
             <h2>About M.Tech Program</h2>
-            <p>MTech Computer Science & Technology Program started in the Academic Year 2020-21. It is a two-year Postgraduate program with four semesters. The main purpose behind crafting the M.Tech course is to equip students with the knowledge and abilities desirable to the modern computing industry. MTech in Computer Science & Technology have a wide range of job opportunities in sectors like Consultancy firms, IT companies, Corporate Industry, Multinational companies, Start ups, banking sectors etc.</p>
+            <p  style="font-weight: bolder;">PGECET/GATE Counseling Code: GVPT</p>
             <br>
-            <h2>M.Tech Admission Procedure:</h2>
-            <p>A Candidate for admission to M.Tech Program by qualify in GATE/PGCET conducted by Govt. Total number of students Intake is 18 and Specialization is Computer Science & Technology.</p>
+            <p>A Candidate for admission to the two-year Post graduation course in Structural Engineering must have passed the B.Tech examination from the Recognized University as per AICTE. All the eligible applicants for admission into First Year shall have to qualify in the PGECET/GATE Examination conducted by respective exam boards. The candidates will be admitted strictly in accordance with the merit secured at the Entrance Examination keeping in view the rules in force regarding the reservations of seats of various categories of candidates.</p>
         </div>
     </section>
 
     <section id="vision-mission">
         <h2 style="text-align: center;">Our Mission And Vision</h2>
         <div class="page2">
-            
+            <!-- missson & visson -->
             <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
               <h2 style="color: white;padding-bottom: 3vh;">MISSION :</h2>
-              <p>The vision of the department is “Create and sustain as a Centre of excellence in Computer Science and Engineering and allied areas of research to pave the way for providing better technocrats to the society”.</p>
+              <p >To inculcate fundamentals of Civil Engineering in design, construction and maintenance of projects at national and global level. To excel in Design of economical and sustainable structures with due care for environment, public health and safety considering geo-technical bases and encourage in pursuing future careers. To create conscientious engineers who would apply their knowledge critically and innovatively to solve professional and societal challenges.</p>
             </div>
             <div class="mivison" style="background-color: rgba(34, 49, 104, 2.5%);">
               <h2  style="color: #22316c;padding-bottom: 3vh;">VISION :</h2>
-              <p >The mission of the department is “To provide strong conceptual base (M1) for acquiring programming skills, to develop high computational innovative skills (M2) and to empower leadership qualities with strong ethical base (M3)”.</p>
+              <p>Empower civil engineers with high technical competence and social consciousness.</p>
             </div>
           </div>
         <br>
-        <h2>B.Tech: Program Educational Objectives (PEOs)</h2>
+        <h2>Program Educational Objectives (PEOs)</h2>
         <ul>
-            <li><strong>PEO1:</strong> Ability to develop hardware and software problem solving capabilities by inculcating strong fundamental, analytical, and communication skills.</li>
-            <li><strong>PEO2:</strong> Ability to build confidence to address the challenges in their work and to apply innovative technical tools through interaction with professional bodies.</li>
-            <li><strong>PEO3:</strong> Ability to gain sufficient depth of knowledge, Self-learning skills, technical skills and leadership qualities through participating in personality development activities, so as to sustain in multidisciplinary environment.</li>
-            <li><strong>PEO4:</strong> To be able to respond to societal needs in professional and ethical concerns.</li>
+            <li><strong>PEO1:</strong> IMPART: Application of Mathematical, physical, geotechnical, environmental, hydrological and structural knowledge for the formulation and framing of solution models in civil engineering.</li>
+            <li><strong>PEO2:</strong> COMPETENCE: Establish an understanding of theory and design practice in all disciplines of Civil Engineering.</li>
+            <li><strong>PEO3:</strong> DEVELOP: To enhance computer based knowledge for civil engineering applications and communication skills.</li>
+            <li><strong>PEO4:</strong> ADVANCE: Instill interest in lifelong learning and ethical thinking that cater the needs of the society.</li>
         </ul>
         <br>
         <h2>Program Specific Outcomes (PSOs)</h2>
         <ul>
-            <li><strong>PSO 1:</strong> System Inception and Elaboration: Conceptualize the software and/or hardware systems, system components and processes/procedures through requirement analysis, Modelling/Design of the system using various architectural/design patterns, Standard Notations, procedures and algorithms.</li>
-            <li><strong>PSO 2:</strong> System Construction: Implement the systems, Procedures and Processes using the state of the art technologies, standards, tools and Programming Paradigms.</li>
-            <li><strong>PSO 3:</strong> System Testing and Deployment: Verify and Validate the Systems, Procedures and Processes using various testing and verification techniques and tools.</li>
-            <li><strong>PSO 4:</strong> Quality and Maintenance: Manage the quality through various product development strategies under revision, transition and operation through maintainability, flexibility, testability, portability, reusability, interoperability, correctness, reliability, efficiency, integrity and usability to adapt the system to the changing structure and behavior of the systems/environments.</li>
+            <li><strong>PSO1:</strong> Graduates of Civil Engineering department should be able to identify, resolve and provide solutions for engineering problems.</li>
+            <li><strong>PSO2:</strong> Graduates should be able to communicate effectively, use modern tools for cost-effective solutions and have environmental consciousness.</li>
+            <li><strong>PSO3:</strong> Develop engineers with ability to work in multidisciplinary environment and have interest in life long learning.</li>
         </ul>
         <br>
         <h2>Program Outcomes (POs)</h2>
         <ul>
             <li><strong>Engineering knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
             <li><strong>Problem analysis:</strong> Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
-            <li><strong>Design/development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
+            <li><strong>Design/Development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
             <li><strong>Conduct investigations of complex problems:</strong> Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
             <li><strong>Modern tool usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</li>
             <li><strong>The engineer and society:</strong> Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</li>
@@ -962,66 +975,23 @@ if (x.className === "topnav") {
             <li><strong>Project management and finance:</strong> Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.</li>
             <li><strong>Life-long learning:</strong> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</li>
         </ul>
-        <br>
-        <h2>M.Tech: Program Educational Objectives (PEOs)</h2>
-        <ul>
-            <li><strong>PEO1:</strong> To motivate students in learning the advanced concepts to develop real world applications in the thrust areas of Computer Science and Technology.</li>
-            <li><strong>PEO2:</strong> To impart ethical practices in molding graduates to engage in research, leadership roles along diverse career paths and lifelong learning to adapt innovation.</li>
-        </ul>
-        <br>
-        <h2>Program Specific Outcomes (PSOs)</h2>
-        <ul>
-            <li><strong>PSO 1:</strong> Applying problem solving skills in a systematic way to Analyze software processes and employable in a product oriented Industry.</li>
-            <li><strong>PSO 2:</strong> Ability to publish research articles in the thrust areas of Computer Science and Technology in quality indexed journals.</li>
-        </ul>
-        <br>
-        <h2>Program Outcomes (POs)</h2>
-        <ul>
-            <li><strong>PO 1:</strong> An ability to independently carry out research /investigation and development work to solve practical problems.</li>
-            <li><strong>PO 2:</strong> An ability to write and present a substantial technical report/document.</li>
-            <li><strong>PO 3:</strong> Students should be able to demonstrate a degree of mastery over the area as per the specialization of the program. The mastery should be at a level higher than the requirements in the appropriate bachelor program.</li>
-        </ul>
         
     </section>
 
     <section id="hod-message">
+        <!-- hod message -->
         <h2>HOD's Message</h2>
-        <img src="https://www.gvpcdpgc.edu.in/cse/images/Dr.GRS-hod.jpeg" alt="HOD Image" class="hod-img">
+        <img src="https://www.gvpcdpgc.edu.in/civil/images/civil_hod.jpeg" alt="HOD Image" class="hod-img">
 
-        <p>Careers in the field of Computer Science and Engineering are in very high demand, offering not only the comfort of high-paying jobs but also the intellectual challenges of a creative and productive profession.</p>
+        <p>An affectionate welcome to the Civil Engineering discipline. Civil Engineering is considered to be the most versatile branch among all the engineering branches in the country. Being the oldest Engineering branch in the academic institutions in the world, it has a lot of diversity right from Geotechnical Engineering, Structural Engineering, Environmental Science, Transportation, Hydrology and Construction Engineering.</p>
 
-        <p>Welcome to the Department of Computer Science and Engineering at Gayatri Vidya Parishad College for Degree and PG Courses. Our B.Tech and M.Tech programs, which are at the forefront of technological advancements, are designed to empower you with the necessary proficiencies to succeed in the ever-changing tech industry. The department offers a regular four-year B.Tech in Computer Science and Engineering (CSE) course with an intake of 180 students and an M.Tech in Computer Science & Technology with an intake of 12 students. Both B.Tech and M.Tech programs are under the permanent affiliation of Andhra University.</p>
+        <p>There are many career paths for civil engineers. Civil engineers are essential in government agencies, private and public sector undertakings to take up various mega projects like metro railway projects, express highway corridors, industrial structures, reservoir projects, flyovers, townships and mega city projects. Today, the world is undergoing vast changes in technological revolution, population growth and environmental concerns. All these changes create unique challenges for civil engineers.</p>
 
-        <p>Since 2011, the department has consistently strived to offer high-quality, state-of-the-art education in computer science and engineering, with well-established laboratories that cater to industry needs. The department is accredited by the NBA and NAAC for its quality education, and the institute is ISO certified. We are especially proud of the long and sustained placement records of our Bachelor's students in various multinational software companies, and our students are pursuing higher education at top international universities.</p>
+        <p>Gayatri Vidya Parishad College for Degree and PG Courses (A) is one of the best engineering colleges in Visakhapatnam offering B.Tech and M.Tech in Civil Engineering. In our Department all the labs are well setup and equipped with mechanized equipment’s which includes Soil Mechanics Lab, Environmental Engineering Lab, Concrete Lab, Transportation Lab, Surveying Lab, strength of Materials Lab, Fluid Mechanics lab, Computer Aided Design & Drawing Lab. For better awareness and interest of student seminars, workshops and site visits are conducted at regular intervals thus students here are encouraged to engage extra-curricular and co-curricular activities which are essentials for personality development, nurturing of team spirit and development of organization skills.</p>
 
-        <p>Here are some reasons that make CSE at Gayatri Vidya Parishad College exceptional:</p>
-
-        <ul>
-            <li><strong>Curriculum Aligned with Industry Needs:</strong> Our curriculum is meticulously crafted to meet the current IT industry's requirements. We consistently revise our courses to ensure that you are proficient in the most pertinent programming languages, software development practices, and technical skills.</li>
-            <li><strong>Learn from Experts:</strong> Our faculty members are knowledgeable, dedicated, and many hold Ph.D.s. They are actively engaged in research, allowing them to bring current, real-world insights into the classroom.</li>
-            <li><strong>Practical Experience:</strong> We prioritize hands-on learning in addition to theoretical knowledge. Our program incorporates projects, labs, and internships where you'll create real-world software applications, solve intricate problems, and acquire the practical experience that employers seek.</li>
-            <li><strong>Collaboration with Industry:</strong> We bridge the gap between academia and industry by offering internships with leading companies. These opportunities enable you to apply your knowledge in practical settings and establish valuable professional connections.</li>
-            <li><strong>Dynamic Learning Opportunities:</strong> Enhance your skills through various active learning avenues. Participate in coding competitions, hackathons, and student-led clubs like ACM (Association for Computing Machinery) to push your boundaries, collaborate with peers, and build an impressive technical portfolio.</li>
-            <li><strong>Innovation through Projects:</strong> Unlock your creativity by working on innovative projects under the guidance of our faculty. You'll address real-world issues in areas such as web development, mobile app creation, data science, and artificial intelligence.</li>
-            <li><strong>Stay Ahead of Tech Trends:</strong> Keep up-to-date with technological advancements through our workshops, guest lectures, and seminars featuring industry experts. These events will provide you with insights into the latest trends and emerging technologies in computer science.</li>
-            <li><strong>Holistic Growth:</strong> We foster holistic development by encouraging participation in co-curricular and extracurricular activities to enhance your communication, teamwork, and leadership skills.</li>
-        </ul>
-
-        <p>The Department of Computer Science and Engineering aims to create a Center of Excellence and prepare students to be skilled technologists and well-rounded individuals who positively impact society. This aligns with the college's mission of "Creating Human Excellence for a Better Society." The department believes that a strong foundation in computer science, critical thinking, and ethical practices will empower graduates to be future leaders and innovators.</p>
-
-        <p>I welcome all the aspirants to be a part of the CSE family and wish them a bright future!</p>
-
-        <p><strong>Dr. G.R.S. Murthy, M.Tech, Ph.D</strong><br>
-        Professor & HOD<br>
-        Contact: <a href="mailto:hodcse@gvpcdpgc.edu.in">hodcse@gvpcdpgc.edu.in</a></p>
-
-        <p><strong>Predecessors:</strong></p>
-        <ul >
-            <li><strong style="border: unset;">Dr. N.V. Ramana Murthy, Professor</strong><br>
-            Duration: 01/07/2021 to 01/05/2024</li>
-            <li><strong style="border: unset;">Dr. T.M.N. Vamsi, Professor</strong><br>
-            Duration: 11/01/2018 to 30/06/2021</li>
-        </ul>
+        <p><strong> P. Jyotsna Devi, B.E, M. E, Ph. D,</strong><br>
+        Professor & HOD.<br>
+        Contact: <a href="mailto:hodcivil@gvpcdpgc.edu.in">hodcivil@gvpcdpgc.edu.in</a></p>
     </section>
 
     <section id="faculty">
@@ -1033,55 +1003,44 @@ if (x.className === "topnav") {
     </section>
 
     <section id="syllabus">
-        <h2>M.Tech Syllabus</h2>
-        <div class="file">
-            <p>M.Tech Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
-            <a href="URL_TO_MTECH_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
-        <br>
-        <h2>B.Tech Syllabus</h2>
+        
+        <script type="module">
+            import syllabusData from '../data/dept/civil/civilSyllabus.js';
 
-        <h3>B.TECH CSE-AIML R22 Regulation (From admitted batch 2022-2023)</h3>
-        <div class="file">
-            <p>B.Tech CSE-AIML R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_AIML_R22_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
-            
-        <h3>B.TECH CSE R22 Regulation (From admitted batch 2022-2023)</h3>
-        <div class="file">
-            <p>B.Tech CSE R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_R22_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+            function renderSyllabus(data) {
+                const syllabusSection = document.getElementById('syllabus');
 
-        <h3>B.TECH CSE R20 Regulation (From admitted batch 2020-2021)</h3>
-        <div class="file">
-            <p>B.Tech CSE R20 Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_R20_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+                // M.Tech Syllabus
+                const mtechSyllabus = data.mtechSyllabus;
+                syllabusSection.innerHTML += `
+                    <h2>M.Tech Syllabus</h2>
+                    <div class="file">
+                        <p>${mtechSyllabus[0].title}</p>
+                        <a href="${mtechSyllabus[0].url}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                    <br>
+                `;
 
-        <h3>B.TECH CSE R19 Regulation (From admitted batch 2019-2020)</h3>
-        <div class="file">
-            <p>B.Tech CSE R19 Syllabus (With effect from 2019-2020 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_R19_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+                // B.Tech Syllabus
+                const btechSyllabus = data.btechSyllabus;
+                syllabusSection.innerHTML += `<h2>B.Tech Syllabus</h2>`;
 
-        <h3>B.TECH CSE AU Syllabus (From admitted batch 2015-2016)</h3>
-        <div class="file">
-            <p>CSE Syllabus (With effect from 2015-2016 admitted batch to 2018-19)</p>
-            <a href="URL_TO_CSE_AU_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+                btechSyllabus.forEach(item => {
+                    syllabusSection.innerHTML += `
+                        <div class="file">
+                            <p>${item.title}</p>
+                            <a href="${item.url}" target="_blank">
+                                <button>Click Here</button>
+                            </a>
+                        </div>
+                    `;
+                });
+            }
+
+            renderSyllabus(syllabusData);
+        </script>
 
     </section>
 
@@ -1091,6 +1050,14 @@ if (x.className === "topnav") {
     </section>
 
     <section id="infrastructure">
+        <div class="container">
+            <h1>Civil Department Labs</h1>
+            
+            <div id="pdf-viewer1"></div>
+            <div class="pdf-link">
+                <p>Download the PDF: <a href="../data/dept/civil/pdf/Civil-Labs-list.pdf" target="_blank">Click Here</a></p>
+            </div>
+        </div>
         <div class="div1">
             <h2>Lab Details</h2>
             <table id="labTable">
@@ -1106,6 +1073,39 @@ if (x.className === "topnav") {
                 </tbody>
             </table>
         </div>
+        <script>
+            const pdfViewer1 = document.getElementById('pdf-viewer1');
+        
+            // URL of the PDF
+            const url1 = '../data/dept/civil/pdf/Civil-Labs-list.pdf';
+            
+            // Asynchronous download of PDF
+            pdfjsLib.getDocument(url1).promise.then(function(pdfDoc_) {
+                pdfViewer1.innerHTML = ''; // Clear previous content
+                const pdfDoc = pdfDoc_;
+                const scale = 1.5;
+                const numPages = pdfDoc.numPages;
+                console.log(numPages);
+                for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                    pdfDoc.getPage(pageNum).then(function(page) {
+                        const viewport = page.getViewport({ scale });
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+        
+                        // Render PDF page into canvas context
+                        const renderContext = {
+                            canvasContext: ctx,
+                            viewport: viewport
+                        };
+                        page.render(renderContext).promise.then(function() {
+                            pdfViewer1.appendChild(canvas);
+                        });
+                    });
+                }
+            });
+        </script>
     </section>
 
     <section id="department-committees">
@@ -1135,11 +1135,13 @@ if (x.className === "topnav") {
     <section id="research-innovations">
         <div class="container">
             <h1>Research Publications</h1>
-            
-            <div id="pdf-viewer"></div>
-            <div class="pdf-link">
-                <p>Download the PDF: <a href="../data\dept\cse\pdf\CSE_Dept _ResearchPaperPublications.pdf" target="_blank">Click Here</a></p>
+            <br>
+            <div class="pdf-link" style="text-align: left;">
+                <p>CE List of publications in academic year 2023-2024: <a href="../data/dept/civil/pdf/publications_2023-2024.pdf" target="_blank">Click Here</a></p>
+                <p>CE List of publications in academic year 2019-2023: <a href="../data/dept/civil/pdf/publications_2019-2023.pdf" target="_blank">Click Here</a></p>
+                <p>CE List of publications in academic year 2015-2021: <a href="../data/dept/civil/pdf/Research publications 2015-2021.pdf" target="_blank">Click Here</a></p>
             </div>
+            <div id="pdf-viewer"></div>
         </div>
     </section>
 
@@ -1154,6 +1156,7 @@ if (x.className === "topnav") {
 </main>
 
 <script>
+    // sidebar js
     function adjustSidebarPadding() {
         const header = document.querySelector('.header1');
         const sidebar = document.getElementById('sidebar');
@@ -1200,6 +1203,15 @@ if (x.className === "topnav") {
     });
 
     document.querySelector('.sidebar ul li a').classList.add('active');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('data-target');
+    if (target) {
+        const targetLink = document.querySelector(`.sidebar ul li a[data-target="${target}"]`);
+        if (targetLink) {
+            targetLink.click();
+        }
+    }
 </script>
 <!-- faculty scprit -->
 <script type="module">
@@ -1247,11 +1259,11 @@ if (x.className === "topnav") {
     }
 
     // Load CSE faculty data
-    loadContentPage('Computer_Science_and_Engineering');
+    loadContentPage('civil');
 </script>
 <!-- academic page scprit -->
 <script type="module">
-    import academicData from '../data/dept/cse/academic.js';
+    import academicData from '../data/dept/civil/academic.js';
     
     function renderSection(sectionId, title, data) {
         const sectionContainer = document.getElementById(sectionId);
@@ -1273,7 +1285,7 @@ if (x.className === "topnav") {
 </script>
 <!-- infrastructure scprit -->
 <script type="module">
-    import labDetails from '../data/dept/cse/labDetails.js';
+    import labDetails from '../data/dept/civil/labDetails.js';
 
     function renderTable(data) {
         const tableBody = document.querySelector('#labTable tbody');
@@ -1281,21 +1293,10 @@ if (x.className === "topnav") {
             <tr>
                 <td>${lab.labName}</td>
                 <td>
-                    <table class="nested-table">
-                        <tr><th>Total Systems</th><td>${lab.configuration.totalSystems}</td></tr>
-                        ${lab.configuration.systems.map(system => `
-                            <tr>
-                                <th>System Count</th>
-                                <td>${system.count} - ${system.specs}</td>
-                            </tr>
-                        `).join('')}
-                        ${lab.configuration.equippedWith ? `
-                            <tr><th>Equipped With</th><td>${lab.configuration.equippedWith}</td></tr>
-                        ` : ''}
-                    </table>
+                    <img src="${lab.image}" alt="${lab.labName}" style="width: 250px; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);aspect-ratio: 6 / 4;">
                 </td>
                 <td>
-                    ${lab.utilization ? '&#8227; '+lab.utilization.join('<br>&#8227; ') : 'N/A'}
+                    ${lab.utilization.length ? '&#8227; '+lab.utilization.join('<br>&#8227; ') : 'N/A'}
                 </td>
             </tr>
         `).join('');
@@ -1308,7 +1309,7 @@ if (x.className === "topnav") {
 <script type="module">
     
     // JavaScript object containing committee data
-    import committees from '../data/dept/cse/committees.js';
+    import committees from '../data/dept/civil/committees.js';
     // Function to generate HTML for each committee card
     function renderCommittees() {
         const accordion = document.getElementById('accordion');
@@ -1398,7 +1399,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <!-- placement -->
 <script type="module">
-    import Placements from '../data/dept/cse/Placement.js'; // Update the path as necessary
+    import Placements from '../data/dept/civil/Placement.js'; // Update the path as necessary
 
     function renderData(containerId, data) {
         const container = document.getElementById(containerId);
@@ -1428,39 +1429,53 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
     const pdfViewer = document.getElementById('pdf-viewer');
 
-    // URL of the PDF
-    const url = '../data/dept/cse/pdf/CSE_Dept _ResearchPaperPublications.pdf';
+    // URLs of the PDFs
+    const urls = [
+        '../data/dept/civil/pdf/publications_2023-2024.pdf',
+        '../data/dept/civil/pdf/publications_2019-2023.pdf',
+        '../data/dept/civil/pdf/Research publications 2015-2021.pdf'
+    ];
     
-    // Asynchronous download of PDF
-    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-        pdfViewer.innerHTML = ''; // Clear previous content
-        const pdfDoc = pdfDoc_;
-        const scale = 1.5;
-        const numPages = pdfDoc.numPages;
+    // Function to render a PDF
+    function renderPDF(url, container) {
+        pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+            // container.innerHTML = ''; // Clear previous content
+            const pdfDoc = pdfDoc_;
+            const scale = 1.5;
+            const numPages = pdfDoc.numPages;
 
-        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
-            pdfDoc.getPage(pageNum).then(function(page) {
-                const viewport = page.getViewport({ scale });
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
+            for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                pdfDoc.getPage(pageNum).then(function(page) {
+                    const viewport = page.getViewport({ scale });
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
 
-                // Render PDF page into canvas context
-                const renderContext = {
-                    canvasContext: ctx,
-                    viewport: viewport
-                };
-                page.render(renderContext).promise.then(function() {
-                    pdfViewer.appendChild(canvas);
+                    // Render PDF page into canvas context
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
+                    page.render(renderContext).promise.then(function() {
+                        container.appendChild(canvas);
+                    });
                 });
-            });
-        }
+            }
+        });
+    }
+
+    // Render all PDFs
+    urls.forEach(url => {
+        const container = document.createElement('div');
+        container.classList.add('pdf-container');
+        pdfViewer.appendChild(container);
+        renderPDF(url, container);
     });
 </script>
 <!-- activities  -->
 <script type="module">
-    import Activities from '../data/dept/cse/Activities.js'; // Update the path as necessary
+    import Activities from '../data/dept/civil/Activities.js'; // Update the path as necessary
 
     function renderData(containerId, data) {
         const container = document.getElementById(containerId);
@@ -1486,5 +1501,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Render the data section using the FacultyAndStudentActivities object
     renderData('ActivitiesSection', Activities);
 </script>
+<script src="../templates/preloader.js"></script>
+
 </body>
 </html>
