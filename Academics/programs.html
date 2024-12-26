@@ -4,67 +4,323 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs</title>
+    <script src="../templates/includeHTML.js" defer></script>
     <style>
-        * {
-            margin: 0;
-            border: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .main {
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .img1, .img2, .img3 {
-            width: 100%;
-            height: 33.33vh;
-            background-position: center;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+header {
+            background-image: url("../assects/home.webp");
             background-repeat: no-repeat;
+            background-position: bottom;
+            background-clip: content-box;
             background-size: cover;
             position: relative;
         }
-        @media (min-width: 600px) {
-            .img1, .img2, .img3 {
-                width: 33.33%;
-                height: 100vh;
-            }
-        }
-        .img1 h1, .img2 h1, .img3 h1 {
-            display: none;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
-        .img1:hover h1, .img2:hover h1, .img3:hover h1 {
-            background-color: rgba(45, 44, 44, 0.5);
-            color: #fff;
-            display: flex;
-        }
-        a {
-            text-decoration: none;
-        }
+
+body {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 325px;
+    height: 450px;
+    background: #000;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.poster {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.poster::before {
+    content: '';
+    position: absolute;
+    bottom: -45%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: .3s;
+}
+
+.card:hover .poster::before {
+    bottom: 0;
+}
+
+.poster img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.card:hover .poster img {
+    transform: scale(1.1);
+}
+
+.details {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1.5em 1.5em 2em;
+    background: #000a;
+    backdrop-filter: blur(16px) saturate(120%);
+    transition: .3s;
+    color: #fff;
+    z-index: 2;
+}
+
+.card:hover .details {
+    bottom: 0;
+}
+
+.details h1,
+.details h2 {
+    font-weight: 700;
+}
+
+.details h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.details h2 {
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 10px;
+    opacity: .6;
+}
+
+.details .rating {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    gap: .25em;
+}
+
+.details .rating i {
+    color: #e3c414;
+}
+
+.details .rating span {
+    margin-left: 0.25em;
+}
+
+.details .tags {
+    display: flex;
+    gap: .375em;
+    margin-bottom: .875em;
+    font-size: .85em;
+}
+
+.details .tags span {
+    padding: .35rem .65rem;
+    color: #fff;
+    border: 1.5px solid rgba(255 255 255 / 0.4);
+    border-radius: 4px;
+    border-radius: 50px;
+}
+.tag{
+    font-size: 10px;
+}
+
+.details .desc {
+    color: #fff;
+    opacity: .8;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.details .cast h3 {
+    margin-bottom: .5em;
+}
+
+.details .cast ul {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    width: 100%;
+}
+
+.details .cast ul li {
+    list-style: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid #fff;
+}
+
+.details .cast ul li img {
+    width: 100%;
+    height: 100%;
+}
+@media  screen and (max-width: 768px) {
+    .wrapper {
+        gap: 16px;
+    }
+
+    .card {
+        width: 300px;
+        height: 400px;
+    }
+
+    .details {
+        padding: 1.25em 1.25em 1.5em;
+    }
+
+    .details h1 {
+        font-size: 1.25em;
+    }
+
+    .details h2 {
+        font-size: .9em;
+    }
+
+    .details .rating {
+        margin-bottom: 10px;
+    }
+
+    .details .tags {
+        margin-bottom: .75em;
+    }
+
+    .details .tags span {
+        padding: .3rem .6rem;
+    }
+   
+    .details .desc {
+        margin-bottom: .75em;
+    }
+
+    .details .cast ul li {
+        width: 50px;
+        height: 50px;
+    }
+    
+}
         
     </style>
 </head>
-<body>
-    <div id="nav-placeholder"></div>
-    <div class="main">
-        <div class="img1" style="background-image:url(../assects/engeneering.png)">
-            <a href="./engeenering.html"><h1>ENGINEERING</h1></a>
+<div>
+    <header id="nav-placeholder"></header>
+    <h1 style="text-align: center; margin-top: 20px; color:#22316c">Programs</h1>
+    <div class="wrapper">
+        <div class="card">
+            <div class="poster"><img src="../assects/engeneering.png" alt="Location Unknown"></div>
+            <div class="details">
+                <h1>Engineering And Technology</h1>
+                <h2>B-Tech 5 Dept • M-Tech 2 Dept</h2>
+                <h3>Offering: </h3>
+                <div class="tags">
+                    <span class="tag" >CIVIL</span>
+                    <span class="tag">CSE</span>
+                    <span class="tag">CSE(AI&ML)</span>
+                    <span class="tag">ECE</span>
+                    <span class="tag">Mech</span>
+                </div>
+                <h6 style="margin: 4px 0 4px 0">M tech:</h6>
+                <div class="tags">
+                    <span class="tag" >structural Eng.</span>
+                    <span class="tag">CS & Tech.</span>
+                </div>
+                <p class="desc">
+                    Gayatri Vidya Parishad, established in 2011, emphasizes academic excellence, leadership, entrepreneurship, and social engagement.
+                </p>
+                <div class="cast">
+                    <div>
+                        <button style="background-color: #f5f5f5; color: black; border: none; border-radius: 5px; padding: 6px 12px; cursor: pointer;">Explore Engineering</button><br>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-        <div class="img2" style="background-image:url(../assects/under\ graduate.png)">
-            <a href="./undergraduate.html"><h1>UNDER GRADUATE</h1></a>
+        <div class="card">
+            <div class="poster"><img src="../assects/under graduate.png" alt="Location Unknown"></div>
+            <div class="details">
+                <h1>Undergraduate Program</h1>
+                <h2>science 7 Dept • Commerce 4 Dept <br>Arts 2 Dept • Managment 4 Dept </h2>
+                <h3>Offering: </h3><br>
+                <div class="tags">
+                    <span class="tag" >Science</span>
+                    <span class="tag">Commerce</span>
+                    <span class="tag">Arts</span>
+                    <span class="tag">Managment</span>
+                </div>
+                <p class="desc" style="margin-bottom: .3em;">
+                    The college emphasizes undergraduate education by nurturing academic excellence, personal development, leadership skills, and preparing students for impactful careers and societal  contributions.
+                </p>
+                 <div class="cast">
+                    <div>
+                       <button style="background-color: #f5f5f5; color: black; border: none; border-radius: 5px; padding: 6px 12px;  cursor: pointer;">Explore UG</button><br>
+                 </div>
+                </div>
+            </div>
         </div>
-        <div class="img3" style="background-image: url(../assects/postgraduate.png);">
-            <a href="./pg.html"><h1>POST GRADUATE</h1></a>
+        <div class="card">
+            <div class="poster"><img src="../assects/postgraduate.png" alt="Location Unknown"></div>
+            <div class="details">
+                <h1>Postgraduate Program</h1>
+                <h2>PG 7 Dept</h2>
+                <h3>Offering: </h3>
+                <h6 style="margin: 4px 0 4px 0">B tech:</h6>
+                <div class="tags">
+                    <span class="tag" >MBA</span>
+                    <span class="tag">MCA</span>
+                    <span class="tag">Organic_Chemistry</span>
+                    <span class="tag">MHRM</span>
+                    
+                </div>
+                <div class="tags">
+                    <span class="tag">MBA-(BA)</span>
+                    <span class="tag">Commerce</span>
+                    <span class="tag">MSC-cs</span>
+                </div>
+                <p class="desc">
+                    At Gayatri Vidya Parishad College, we focus on holistic student development, combining academic excellence, integrity, leadership, and societal contributions for future success.                    </p>
+                 <div class="cast">
+                    <div>
+                       <button style="background-color: #f5f5f5; color: black; border: none; border-radius: 5px; padding: 6px 12px; cursor: pointer;">Explore Engineering</button><br>
+                 </div>
+            </div>
         </div>
-    </div>
-    <script src="../templates/includeHTML.js" defer></script>
-    <div id="footer-placeholder"></div>
+    </div>  </div>
+    <footer id="footer-placeholder"></footer>  
 </body>
 </html>

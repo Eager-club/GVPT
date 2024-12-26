@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <section id="preloader-placeholder" ></section>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        font-family: "inter",sans-serif;
+        }
+
+body {
+
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/* nav bar */
+.topnav {
+  overflow: hidden;
+  background-color: #22316c;
+  font-family: "inter",sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav.active {
+  background-color: #22316c;
+  color: white;
+}
+
+.topnav .nav-icon {
+  display: none;
+}
+.navHead{
+    margin-right: 20%;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown-content a:hover {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navHead:hover {
+    background-color: #22316c;
+}
+.singleLink{
+    margin-top: -5px;
+}
+@media screen and (max-width: 768px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.nav-icon {
+    float: right;
+    display: block;
+  }
+  .navHead{
+    margin-right: 0%;
+}
+.singleLink{
+    margin-top: 0;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .nav-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+.header1 {
+    width: 100%;
+    background-color: #559ee7;
+    color: #22316c;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure this header is above sidebar */
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+.header-container{
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    color: #22316c;
+}
+.header1 h1 {
+    font-size: 1.5rem;
+}
+  /* burger  */
+
+  .burger {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: all .5s ease;
+    /* margin: 1em; */
+}
+.burger:hover {
+    background: #22316C;
+}
+.burger-strip {
+    transition: all .5s ease;
+}
+.strip div {
+    height: 3px;
+    border-radius: 2px;
+    background: #22316C;
+    margin: 5px;
+    transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 22.5px;
+}
+.burger:hover .strip div {
+    background: white;
+}
+/* BURGER 1 */
+.burger-strip div:first-child {
+    width: 8px;
+}
+.burger-strip div:last-child {
+    width: 15px;
+}
+.burger.active .burger-strip div:first-child {
+    transform: rotate(46deg) translateY(-0.2px) translateX(4px);
+}
+.burger.active .burger-strip div:nth-child(2) {
+    transform: rotate(-45deg);
+}
+.burger.active .burger-strip div:last-child {
+    transform: rotate(45deg) translateY(-9px) translateX(1px);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dept-div {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.sidebar {
+    background-color: #eaecee;
+    color: #22316c;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    scrollbar-width: none;
+    z-index: 999; /* Ensure sidebar is below header */
+    padding-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 6px 20px;
+}
+
+.sidebar ul li a {
+    color: #22316c;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1b255334;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+}
+
+.sidebar ul li a.active {
+    background-color: #1b255334;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    color: #22316c;
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 50px;
+    flex-grow: 1;
+}
+
+.content > section {
+    display: none;
+}
+
+.content > section.active {
+    display: block;
+}
+
+h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    text-rendering: geometricPrecision;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+section {
+    text-align: justify;
+}
+.dept-img {
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.dept-img:hover{
+transform: translateY(-10px); /* Slightly raise the card */
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.dept-con {
+    width: 100%;
+}
+
+.page2{
+      display: flex;
+    }
+    .mivison{
+      margin: 3vw;
+      padding: 2vw;
+      border: 2px solid transparent;
+      border-radius: 1vw;
+      font-size: 1.3vw;
+      text-align: justify;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .mivison:hover {
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+  section ul{
+    list-style: none;
+  }
+  section ul li{
+    margin-bottom: 20px;
+  }
+  section ul li strong{
+    border-bottom: 2px solid #22316cb0;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+  }
+
+  /* hod message */
+  .hod-img{
+    width:100%; 
+    max-width:400px;
+    display:block;
+    margin-bottom:20px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 25px; 
+    float: right;
+    aspect-ratio: 16 / 9;
+    object-fit: scale-down;
+    background-color: #EFECB5;
+}
+    .hod-img:hover{
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+    /* faculty css  */
+    #faculty{
+        padding-left: 6%;
+    }
+    .container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* align-content: ; */
+        gap: 30px;
+    }
+    #faculty .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        width: 250px;
+        max-height: 350px;
+        background: #eaecee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #faculty .card:hover {
+        transform: translateY(-10px); /* Slightly raise the card */
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .fac_img img {
+        width: 100%;
+        height: 150px;
+        object-fit: calc(100px - 200 * 3);
+    }
+    .fac_title {
+        width: 100%;
+        max-height: 200px;
+        padding: 10px;
+        word-break: break-all;
+        
+    }
+    .fac_title h3 {
+        font-size: 1em;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+    }
+    .fac_title p {
+        font-size: 10px;
+        margin: 5px 0;
+        font-weight: 500;
+        text-wrap: pretty;
+    }
+    /* syllabus */
+    .file {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 1.3%;
+        background-color: rgba(34, 49, 104, 0.25);
+        border: 0.17vw solid transparent;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .file:hover, .file.active {
+        background-color: rgba(34, 49, 104, 0.55);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .file p {
+        margin: unset;
+        display: flex;
+        justify-content: center;
+      
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .file button {
+        color: #22316C;
+        font-size: medium;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-wrap: pretty;
+    }
+    .file:hover button {
+        font-size: large;
+        color: #e78709;
+        text-decoration: underline;
+        text-underline-offset: calc(4px);
+    }
+    /* infrastructure */
+    table{
+        width: 100%;
+        max-width: 1200px;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        overflow: hidden; 
+        font-size: 1vw;
+    }
+    thead{
+        color: #22316C;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .nested-table {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nested-table th {
+        border: none;
+        background-color: transparent; /* Remove background color from nested-table th */
+        text-align: left;
+    }
+
+    .nested-table tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+    .nested-table td {
+        padding: 5px 10px;
+        border: none;
+    }
+    /* committes css */
+    #department-committees .container-fluid {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+    }
+
+    #department-committees    .row {
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+    #department-committees    .col-sm-10 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    #department-committees    .col-sm-10 h2{
+            text-wrap: nowrap;
+        }
+
+
+    #department-committees   .accordion .card {
+            width: 100%;
+            height: min-content;
+            background-color: rgba(34, 49, 104, 0.1);
+            border: 0.17vw solid transparent;
+            border-radius: 10px;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+    #department-committees    .card-header {
+            width: 100%;
+            padding: 1.5px 0;
+            border-radius: 10px;
+            background-color: rgba(34, 49, 104, 0.2);
+        }
+
+    #department-committees   .card-header h3{
+            margin-left: 4px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    #department-committees    .card-header h3 span{
+            margin-right: 10px;
+        }
+    #department-committees    .btn-link {
+            background: none;
+            border: none;
+            /* color: #007bff; */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            cursor: pointer;
+            text-align: start;
+        }
+  
+    #department-committees    .button-container button {
+            padding: 10px 20px;
+            border: unset;
+            border-radius: 10px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 600;
+            font-size: 1.3vw;
+            box-shadow: 4px 8px 19px 3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
+            text-wrap: nowrap;
+            margin-top: 20px;
+        }
+    #department-committees   .button-container button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #22316C;
+            z-index: -1;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+        }
+    #department-committees   .button-container button:hover {
+            color: #e8e8e8;
+        }
+    #department-committees    .button-container button:hover::before {
+            width: 100%;
+        }
+
+    #department-committees    .card-body {
+            padding: 15px;
+        }
+
+    #department-committees    .card-body b {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    #department-committees    ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+    #department-committees    ul li {
+            list-style: circle;
+            margin-bottom: 3px;
+        }
+
+    #department-committees    .collapse {
+            display: none;
+        }
+
+    #department-committees .collapse.show {
+            display: block;
+            height: max-content;
+        }
+        
+        /* Icons for the accordion */
+    #department-committees    .card-header .icon {
+            font-size: 1.5rem;
+        }
+
+        /* research & development */
+        .pdf-link {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .pdf-link a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .pdf-link a:hover {
+            text-decoration: underline;
+        }
+        #pdf-viewer {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+@media (max-width: 768px) {
+    h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    font-size: medium;
+    }
+
+    p ,strong{
+        font-size: small;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: 999; /* Ensure sidebar does not overlap other content */
+    }
+
+    .dept-div {
+        width: 100%;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .dept-con {
+        width: 100%;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        padding-top: 70px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .dept-img {
+        display: none;
+    }
+    .page2{
+     flex-direction: column;
+    }
+    #syllabus h3{
+        font-size: x-small;
+    }
+    .file p{
+        font-size: 2.5vw;
+    }
+    .file{
+        border-radius: 6px;
+    }
+    .file a{
+        padding-left: 15%;
+        align-content: center;
+    }
+    .file button{
+        font-size: 3vw;
+        text-align: center;
+        display: flex;
+        white-space: nowrap;
+    }
+    .file:hover button{
+        font-size: 3vw;
+    }
+    table{
+        font-size: 2.5vw;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+    th, td {
+        padding: 4px;
+    }
+    #department-committees .col-sm-10 {
+                flex: 0 0 100%;
+            }
+    #department-committees .button-container button {
+        margin-top: 0;
+        font-size: small;
+    }
+    #department-committees h2 ,#department-committees  h3,#department-committees .card-header button,#department-committees li{
+        font-size: small;
+    }
+    #pdf-viewer {
+        width: 100%; 
+        height: 300px;
+    }
+    canvas {
+        width: min-content;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<div class="header1">
+    <div>
+        <div class="topnav" id="myTopnav">
+            
+            <a href="../index.html" style="align-items: center;color: #e78709;font-weight: 700;background-color: #22316C;" class="navHead"><img src="../assects/gvplogorm.png" width="20px" alt=""> GVPCDPGC</a>
+             <a href="../index.html" class="singleLink">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Administration
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                                    <a href="../Adminstration/administration.html">Administrators</a>
+                  <a href="../Adminstration/administration.html#director">Directors</a>
+                  <a href="../Adminstration/administration.html#deans">Deans</a>
+                  <a href="../Adminstration/administration.html#controllers">Controllers</a>
+                  <a href="../Adminstration/administration.html#hod-pg">PG HOD's</a>
+                  <a href="../Adminstration/administration.html#hod-ET">E&T HOD's</a>
+                  <a href="../Adminstration/administration.html#hod-ug">UG HOD's</a>
+                  <a href="../Adminstration/administration.html#COORDINATORS">Coordinators</a>
+                  <a href="../Adminstration/administration.html">Governing bodies</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Academics
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../Academics/">Academics</a>
+                  <a href="../Academics/programs.html">Programs</a>
+                  <a href="../Academics/Academic calender.html">Academic calendar</a>
+                  <a href="../Academics/Departments.html">Department</a>
+                  <a href="../Academics/syllabus.html">Syllabus</a>
+                  <a href="../Academics/Regulations.html">Regulations</a>
+                  <a href="../Academics/Archives.html">Archives</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Admissions</a>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../admissions/">Admissions</a>
+                  <a href="../Academics/engeenering.html">Undergraduate</a>
+                  <a href="../Academics/undergraduate.html">Graduate</a>
+                  <a href="../Academics/pg.html">International</a>
+              </div>
+            </div> 
+
+
+            <a href="../faculty/faculty.html"  class="singleLink">Faculty</a>
+            <div class="dropdown">
+              <button class="dropbtn">Placements
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                  <a href="../placements/">Placements</a>
+                  <a href="../placements/about-placements.html">About Placements</a>
+                  <a href="../placements/traningplacements.html">Training & Placements</a>
+                  <a href="../placements/placementteam.html">Placements Team</a>
+                  <a href="../placements/placements-activities.html">Placements Activities</a>
+              </div>
+            </div> 
+            
+            <a href="#"  class="singleLink">Research</a>
+            <div class="dropdown">
+                <button class="dropbtn">  other
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" style="right: 0;">
+                  <div style="display: flex;">
+                      <div>
+                    <a href="../others/examination-archives.html">Examination</a>
+                    <a href="../others/Results.html">Results</a>
+                    <a href="../others/clubs.html">Clubs</a>
+                    <a href="#">Campus Life</a>
+                    <a href="#">Transportation</a>
+                    <a href="#">Events</a>
+                    <a href="#">Code of Conduct</a></div>
+                    <div>
+                    <a href="../top/aicte.html">AICTE Mandatory Info</a>
+                    <a href="../top/iqac.html">IQAC</a>
+                    <a href="../top/iipc.html">IIPC</a>
+                    <a href="../top/naac.html">NAAC</a>
+                    <a href="##">ALUMNI</a>
+                    <a href="../top/online payment.html">Online Payments</a>
+                    <a href="##">CAREERS</a>
+                    <a href="##">360 Virtual Tour</a>
+                  </div>
+                  </div>
+                </div>
+              </div> 
+<a href="javascript:void(0);" style="font-size:20px;font-weight: 800;" class="nav-icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<script>
+function myFunction() {
+var x = document.getElementById("myTopnav");
+const navIcon = document.querySelector('.nav-icon');
+if (x.className === "topnav") {
+  x.className += " responsive";
+    navIcon.innerHTML = '&times;';
+
+} else {
+  x.className = "topnav";
+    navIcon.innerHTML = '&#9776;';
+}
+}
+</script>
+    </div>
+    <div class="header-container">
+        <h1>DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</h1>
+        <div class="burger" id="menu-icon">
+            <div class="strip burger-strip">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li ><a href="#" data-target="about-department">About Department</a></li>
+        <li><a href="#" data-target="vision-mission">Vision & Mission / PEOs / PSOs / POs</a></li>
+        <li><a href="#" data-target="hod-message">HOD's Message</a></li>
+        <li><a href="#" data-target="faculty">Faculty</a></li>
+        <li><a href="#" data-target="syllabus">Syllabus</a></li>
+        <li><a href="#" data-target="academic-calendar">Academic Calendar and Time Tables</a></li>
+        <li><a href="#" data-target="infrastructure">Infrastructure</a></li>
+        <li><a href="#" data-target="department-committees">Department Committees</a></li>
+        <li><a href="#" data-target="placements">Placements</a></li>
+        <li><a href="#" data-target="research-innovations">Research & Innovations</a></li>
+        <li><a href="#" data-target="activities">Activities</a></li>
+        <li><a href="#" data-target="student-corner">Student Corner</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section id="about-department" class="active">
+        <h2>About Department</h2>
+        <div class="dept-div">
+            <div class="dept-con">
+                <p >The Department of Electronics and Communication Engineering (ECE),Gayatri Vidya Parishad College for Degree and PG Courses (A) was established in the year 2011 as an under graduate course (B.Tech) in the program of Engineering and Technology with an initial intake of 60 students. The intake was further propelled with an approval of another 60 seats in 2022-23 making a grand total of 120 students.
+                    <br>
+                    The B.Tech Program in Electronics and Communication Engineering (ECE) has been accredited by National Board of Accreditation (NBA) successfully in 20019-20, and re accredited in the yeart 2022-23 with a validation till 2025.
+                    <br>
+                    Electronics and Communication Engineering is the branch of Engineering in which the students are trained in the science of practical and theoretical foundations of Electronics Devices & Circuits, Communication Engineering, Analog & Digital ICs, Microprocessors, Digital Signal Processing and Microwave & Fiber Optic Communication. The students are exposed to sophisticated laboratories and latest trends in Communication Engineering.
+                    <br>
+                    The Electronics and communication engineering program strives to graduate engineers of the highest quality and to conduct state-of-the-art research. The Electronics and Communication Engineering program enables the students with a set of skills, knowledge and attitudes that will permit its graduates to succeed and thrive as engineers and leaders.
+                    <br>
+                    The Program is designed to prepare its graduates to pursue life-long learning, serve the profession and meet intellectual, ethical and career challenges and to maintain a vital, state-of- the-art research enterprise to provide its students and faculty with opportunities to create, interpret, apply and disseminate knowledge.</p>
+            </div>
+        </div>
+        <div>
+            <br><h2>About B.Tech Admission</h2>
+            <p><strong>EAPCET Counseling Code: <span>GVPT</span></strong><br><strong>Admissions under Category "A" (Convener’s Quota-70% of intake in each branch):</strong></p>
+            <p>A Candidate for admission to the four-year degree program in Engineering must have passed the Intermediate examination of the Board of Intermediate Education, Government of Andhra Pradesh with Mathematics, Physics and Chemistry as optional subjects. All the eligible applicants for admission into First Year shall have to qualify in the EAPCET Examination conducted by the Govt. of AP. The candidates will be admitted strictly in accordance with the merit secured at the Entrance Examination keeping in view the rules in force regarding the reservations of seats of various categories of candidates. The candidates should satisfy local/non-local status requirement as laid down in the AP Educational institutions (Regulation of Admissions) Order 1974 as amended from time to time.</p>
+            <p><strong>Admissions under Category "B" (30% of intake in each branch)</strong></p>
+            <p><strong>ECET Counseling Code: <span>GVPT</span></strong></p>
+            <p>The Engineering Diploma holders, based on their merit at ECET, are admitted into Lateral Entry (II year B. Tech Courses)</p>
+            <p><strong>The seats shall be filled as per the rules given by APSCHE.</strong></p>
+            <br>
+        </div>
+    </section>
+
+    <section id="vision-mission">
+        <h2 style="text-align: center;">Our Mission And Vision</h2>
+        <div class="page2">
+            
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
+              <h2 style="color: white;padding-bottom: 3vh;">MISSION :</h2>
+              <p>The Mission of the Department is “To empower the students with quality education (M1), to achieve excellence in research to develop models that meet the needs of the society (M2) and to become team leaders with better communication skills, ethics and social responsibility (M3)”.</p>
+            </div>
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 2.5%);">
+              <h2  style="color: #22316c;padding-bottom: 3vh;">VISION :</h2>
+              <p >The Vision of the Department is “To achieve academic excellence and make significant contribution to the society through quality education and research in the field of Electronics and Communication Engineering”.</p>
+            </div>
+          </div>
+        <br>
+        <h2>Program Educational Objectives (PEOs)</h2>
+        <ul>
+            <li><strong>PEO1:</strong> Provide strong foundations in the domain of Electronics and Communication Engineering technologies.</li>
+            <li><strong>PEO2:</strong> Graduates shall provide appropriate solutions for society and industry relevant problems by using current engineering techniques and tools.</li>
+            <li><strong>PEO3:</strong> Graduates shall be employable by training them in domain Knowledge, soft skills and leadership /managerial skills.</li>
+            <li><strong>PEO4:</strong> Engage in professional development through Communication skills, Team spirit, integrity, social responsibility, lifelong learning, Professional ethics and human values in career.</li>
+        </ul>
+        <br>
+        <h2>Program Specific Outcomes (PSOs)</h2>
+        <ul>
+            <li><strong>PSO1:</strong> The ability to apply fundamental knowledge of core subjects in design and development of electronic circuits and communication systems.</li>
+            <li><strong>PSO2:</strong> Competence in using electronic modern IT tools (Simulation software) for design and analysis of complex electronic system for research activities.</li>
+            <li><strong>PSO3:</strong> Adaptability to change in work environment, good interpersonal skills and professional ethics.</li>
+        </ul>
+        <br>
+        <h2>Program Outcomes (POs)</h2>
+        <ul>
+            <li><strong>Engineering knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
+            <li><strong>Problem analysis:</strong> Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
+            <li><strong>Design/development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
+            <li><strong>Conduct investigations of complex problems:</strong> Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
+            <li><strong>Modern tool usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</li>
+            <li><strong>The engineer and society:</strong> Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</li>
+            <li><strong>Environment and sustainability:</strong> Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.</li>
+            <li><strong>Ethics:</strong> Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.</li>
+            <li><strong>Individual and team work:</strong> Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.</li>
+            <li><strong>Communication:</strong> Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.</li>
+            <li><strong>Project management and finance:</strong> Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.</li>
+            <li><strong>Life-long learning:</strong> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</li>
+        </ul>
+        
+    </section>
+
+    <section id="hod-message">
+        <h2>HOD's Message</h2>
+        <img src="https://www.gvpcdpgc.edu.in/ece/images/P.A-Nageswar-Rao.jpg" alt="HOD Image" class="hod-img">
+
+        <p>Welcome to the Department of Electronics and Communication Engineering (ECE) at Gayatri Vidya Parishad College for Degree and PG Courses (A). The Department offers a regular four-year B. Tech in Electronics and Communication Engineering course with an intake of 120 in the Program of Engineering and Technology under the affiliation of Andhra University.</p>
+
+        <p>The Department currently has highly qualified and well-experienced faculty on its roll with 4 doctorates and 6 pursuing their PhD degrees. Four Faculty are recognized as research guides by Andhra University and were allotted with 11 Ph. D Scholars.</p>
+
+        <p>The department is compiled with committed faculty who are equipped with a smart teaching and learning process and always strives to impart the fundamental concepts and the latest trends in the young minds. This kind of teaching enables the student’s ability to enhance critical thinking and problem-solving skills and accommodates them with required confidence for better employability.</p>
+
+        <p>To abridge the Industry-Lab-Academia, the department offers honors and minors courses in the curriculum.</p>
+
+        <p>The students are also given opportunities to be involved in the professional bodies in the field of Electronics and Communications, IETE Student Forum (ISF) as well as department association activities (INTEC), which boosts the confidence of the students and nurtures them into skilled engineering professionals. Students are provided internship facilities in organizations like BSNL, DRDO, DLRL, AIR, HSL, HPCL and ECIL etc.</p>
+
+        <p>The department is having strong Industry Institute Interaction and ample number of MOU’s signed for the upskilling of the students.</p>
+
+        <p>The student projects are conducted in-house with the guidance of department faculty and industrial trainers. The students are motivated to develop projects/ prototypes which are useful and meet the needs of the society like Drones, Solar operated Tri-cycle, Cold storage units for vegetables, two-way communication farmer assistance APP, Self-assisted Wheelchairs and IoT Health Monitoring System Etc.</p>
+
+        <p>The department conducts various workshops, expert talks, industrial visits and value added training programs on recent trends in Electronics and Communication Engineering in collaboration with industries for the benefit of faculty as well as the students.</p>
+
+        <p>The students are encouraged to participate in co-curricular, extracurricular, NSS, and NCC activities which enriches the holistic development in them.</p>
+
+        <p>Ultimately the Department of Electronics and Communication Engineering is relentlessly working to make the Vison of the college “Creating Human Excellence for a Better Society” true.</p>
+
+        <p><strong>Dr. P. A. Nageswara Rao</strong><br>
+        Associate Professor & HOD<br>
+        M.E., Ph. D.</p>
+    </section>
+
+    <section id="faculty">
+        <h2 style="font-size: xx-large; text-align: center;">Faculty Members</h2>
+        <div class="container" id="card-container">
+            <!-- Cards will be inserted here by JavaScript -->
+        </div>
+
+    </section>
+
+    <section id="syllabus">
+        <script type="module">
+            import syllabusData from '../data/dept/ece/eceSyllabus.js';
+
+            function renderSyllabus(data) {
+                const syllabusSection = document.getElementById('syllabus');
+
+               // B.Tech Syllabus
+               const btechSyllabus = data.btechSyllabus;
+                syllabusSection.innerHTML += `<h2>B.Tech Syllabus</h2>`;
+
+                btechSyllabus.forEach(item => {
+                    syllabusSection.innerHTML += `
+                        <div class="file">
+                            <p>${item.title}</p>
+                            <a href="${item.url}" target="_blank">
+                                <button>Click Here</button>
+                            </a>
+                        </div>
+                    `;
+                });
+            }
+
+            renderSyllabus(syllabusData);
+        </script>
+
+    </section>
+
+    <section id="academic-calendar">
+        <div id="academicCalendarSection"></div>
+        <div id="timeTablesSection"></div>
+    </section>
+
+    <section id="infrastructure">
+        <div class="div1">
+            <h2>Lab Details</h2>
+            <div id="lab"></div>
+        </div>
+    </section>
+
+    <section id="department-committees">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10">
+                    <div>
+                        <h2>List of Departmental Committees</h2>
+                    </div>
+                    <div class="button-container">
+                        <button id="view-all" class="expand">View All 	&#9660;</button>
+                        <button id="close-all" class="expand" style="display:none;">Close All &#128898;</button>
+                    </div>
+    
+                </div><br>
+                <div class="accordion" id="accordion">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="placements">
+        <div id="PlacementsSection"></div>
+    </section>
+
+    <section id="research-innovations">
+        <div class="container">
+            <h1>Research Publications</h1>
+        </div>
+        <div class="pdf-link" style="margin-left: 20px;">
+            <p>Faculty Publications of Academic Year 2022-23: <a href="../data/dept/ece/pdf/Journals_Published_2022-23.pdf" target="_blank">Click Here</a></p>
+            <p>Faculty Publications of Academic Year 2021-22: <a href="../data/dept/ece/pdf/Faculty_publications_21-22.pdf" target="_blank">Click Here</a></p>
+            <p>Faculty Publications of Academic Year 2020-21: <a href="../data/dept/ece/pdf/faculty_publications_2020_21.pdf" target="_blank">Click Here</a></p>
+            <p>Faculty Publications of Academic Year 2019-20: <a href="../data/dept/ece/pdf/faculty_publications_2019_20.pdf" target="_blank">Click Here</a></p>
+            <p>Faculty Publications of Academic Year 2018-19: <a href="../data/dept/ece/pdf/faculty_publications_2018_19.pdf" target="_blank">Click Here</a></p>
+            <p>Faculty Publications of Academic Year 2017-18: <a href="../data/dept/ece/pdf/faculty_publications_2017_18.pdf" target="_blank">Click Here</a></p>
+            <p>Faculty Publications of Academic Year 2016-17: <a href="../data/dept/ece/pdf/faculty_publications_2016_17.pdf" target="_blank">Click Here</a></p>
+        </div>
+    </section>
+
+    <section id="activities">
+        <div id="ActivitiesSection"></div>
+    </section>
+
+    <section id="student-corner">
+        <h2>Student Corner</h2>
+        <p>The Student Corner is a dedicated space for students to access important resources, including study materials, project ideas, and career guidance. We also provide information on scholarships, internships, and job opportunities to help students achieve their academic and professional goals.</p>
+    </section>
+</main>
+
+<script>
+    function adjustSidebarPadding() {
+        const header = document.querySelector('.header1');
+        const sidebar = document.getElementById('sidebar');
+        const headerHeight = header.offsetHeight;
+        sidebar.style.paddingTop = `${headerHeight}px`;
+    }
+
+    window.addEventListener('load', adjustSidebarPadding);
+    window.addEventListener('resize', adjustSidebarPadding);
+
+    document.getElementById('menu-icon').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+        document.getElementById('menu-icon').classList.toggle('active') ;
+    });
+
+    const links = document.querySelectorAll('.sidebar ul li a');
+    const sections = document.querySelectorAll('.content > section');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+            document.getElementById('menu-icon').innerHTML = `
+                <div class="strip burger-strip">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            `;
+            links.forEach(link => link.classList.remove('active'),
+            document.getElementById('menu-icon').classList.remove('active'));
+
+            link.classList.add('active');
+            sections.forEach(section => section.classList.remove('active'));
+            const targetId = link.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+            window.scrollTo({
+                top: 0,
+                // behavior: 'smooth'
+            });
+        });
+    });
+
+    document.querySelector('.sidebar ul li a').classList.add('active');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('data-target');
+    if (target) {
+        const targetLink = document.querySelector(`.sidebar ul li a[data-target="${target}"]`);
+        if (targetLink) {
+            targetLink.click();
+        }
+    }
+</script>
+<!-- faculty scprit -->
+<script type="module">
+    import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
+    // console.log(cardsData);
+    function createCard(data) {
+        
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = data.id;
+        card.innerHTML = `
+            <div class="fac_img">
+                <img class="profile-image" src="${data.image}" alt="${data.name}">
+            </div>
+            <div class="fac_title">
+                <h3 class="name">${data.name}</h3>
+                <p>${data.title}</p>
+                <p class="designation">${data.designation}</p>
+                <p><a href="${data.email}">${data.email}</a></p>
+                <div class="fac_details">
+                    <p><strong>Area of Specialization:</strong> <span class="color">${data.areaOfSpecialisation}</span></p>
+                    <p><strong>Date of Joining:</strong> <span class="color">${data.dateOfJoining}</span></p>
+                    <p><strong>Nature of Association:</strong> <span class="color">${data.natureOfAssosiation}</span></p>
+                </div>
+            </div>
+        `;
+        return card;
+    }
+
+    function loadContentPage(branch) {
+        const container = document.getElementById('card-container');
+        const filteredCardsData = cardsData.filter(cardData => 
+        cardData.branch === branch
+        );
+        
+
+        filteredCardsData.forEach(cardData => {
+            const card = createCard(cardData);
+            container.appendChild(card);
+        });
+
+        if (filteredCardsData.length === 0) {
+            container.innerHTML = `<p>No data available for the selected category and branch.</p>`;
+        }
+    }
+
+    // Load CSE faculty data
+    loadContentPage('ELECTRONICS_AND_COMMUNICATION_ENGINEERING');
+</script>
+<!-- academic page scprit -->
+<script type="module">
+    import academicData from '../data/dept/ece/academic.js';
+    
+    function renderSection(sectionId, title, data) {
+        const sectionContainer = document.getElementById(sectionId);
+        sectionContainer.innerHTML = `
+            <h2>${title}</h2>
+            ${data.map(item => `
+                <div class="file">
+                    <p>${item.text}</p>
+                    <a href="${item.link}" target="_blank">
+                        <button>Click Here</button>
+                    </a>
+                </div>
+            `).join('')}
+        `;
+    }
+
+    renderSection('academicCalendarSection', 'Academic Calendar', academicData.academicCalendar);
+    renderSection('timeTablesSection', 'Time Tables', academicData.timeTables);
+</script>
+<!-- infrastructure scprit -->
+<script type="module">
+    import labFacilities from '../data/dept/ece/labDetails.js';
+
+    function renderFacilities(data) {
+        const container = document.querySelector('#lab ');
+        container.innerHTML = data.map(department => `
+            <section class="department">
+                <h2>${department.department}</h2>
+                <p>${department.description}</p>
+                <h3>Key Features</h3>
+                <ul>
+                    ${department.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+                <h3>Lab Rooms</h3>
+                <table class="lab-rooms-table">
+                    <thead>
+                        <tr>
+                            <th>Room No</th>
+                            <th>Lab Name</th>
+                            <th>Dimensions (m)</th>
+                            <th>Area (sq.m)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${department.labRooms.map(room => `
+                            <tr>
+                                <td>${room.roomNo}</td>
+                                <td>${room.labName}</td>
+                                <td>${room.dimensions}</td>
+                                <td>${room.areaSqM}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+                <h3>Laboratories</h3>
+                ${department.laboratories.map(lab => `
+                    <section class="lab-category"><br>
+                        <h3>${lab.category}</h3>
+                        ${lab.subLabs.map(subLab => `
+                            <article class="sub-lab">
+                                
+                                <h4>${subLab.name}</h4>
+                                <p>${subLab.description}</p>
+                                ${subLab.equipment ? `
+                                    <h4>Equipment</h4>
+                                    <ul>
+                                        ${subLab.equipment.map(item => `<li>${item}</li>`).join('')}
+                                    </ul>
+                                ` : ''}
+                            </article>
+                        `).join('')}
+                    </section>
+                `).join('')}
+            </section>
+        `).join('');
+    }
+
+    // Call the renderFacilities function with the labFacilities data
+    renderFacilities(labFacilities);
+</script>
+
+
+<!-- committes page -->
+<script type="module">
+    
+    // JavaScript object containing committee data
+    import committees from '../data/dept/ece/committees.js';
+    // Function to generate HTML for each committee card
+    function renderCommittees() {
+        const accordion = document.getElementById('accordion');
+        committees.forEach(committee => {
+            const cardHTML = `
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <button type="button" class="btn-link">
+                              ${committee.title}
+                            </button>
+                            <span class="icon">&#128899;</span>
+                        </h3>
+                    </div>
+                    <div class="collapse">
+                        <div class="card-body">
+                            <b>Objectives:</b>
+                            <ul> 
+                                ${committee.objectives.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                            <b>Members:</b>
+                            <ul>
+                                ${committee.members.map(member => `<li>${member}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+            accordion.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
+
+    // Event listeners and functionality
+document.addEventListener('DOMContentLoaded', function () {
+    renderCommittees();
+
+    const acc = document.querySelectorAll('.card-header');
+    const viewAllButton = document.getElementById('view-all');
+    const closeAllButton = document.getElementById('close-all');
+
+    // Function to update button display based on state
+    function updateButtonStates() {
+        const anyVisible = document.querySelectorAll('.collapse.show').length > 0;
+        viewAllButton.style.display = anyVisible ? 'none' : 'inline-block';
+        closeAllButton.style.display = anyVisible ? 'inline-block' : 'none';
+    }
+
+    // Add click event to each header
+    acc.forEach(function (header) {
+        header.addEventListener('click', function () {
+            const collapse = this.nextElementSibling;
+            const icon = this.querySelector('.icon');
+            const isShowing = collapse.classList.contains('show');
+            collapse.classList.toggle('show', !isShowing);
+            icon.innerHTML = isShowing ? '&#128899;' : '&#128898;';
+
+            // Update button states when any header is clicked
+            updateButtonStates();
+        });
+    });
+
+    // View All button click event
+    viewAllButton.addEventListener('click', function () {
+        document.querySelectorAll('.collapse').forEach(function (collapse) {
+            collapse.classList.add('show');
+        });
+        document.querySelectorAll('.card-header .icon').forEach(function (icon) {
+            icon.innerHTML = '&#128898;';
+        });
+        updateButtonStates(); // Update button states after opening all
+    });
+
+    // Close All button click event
+    closeAllButton.addEventListener('click', function () {
+        document.querySelectorAll('.collapse').forEach(function (collapse) {
+            collapse.classList.remove('show');
+        });
+        document.querySelectorAll('.card-header .icon').forEach(function (icon) {
+            icon.innerHTML = '&#128899;';
+        });
+        updateButtonStates(); // Update button states after closing all
+    });
+
+    // Initial button state update
+    updateButtonStates();
+});
+</script>
+<!-- placement -->
+<script type="module">
+    import Placements from '../data/dept/ece/Placement.js'; // Update the path as necessary
+
+    function renderData(containerId, data) {
+        const container = document.getElementById(containerId);
+        let htmlContent = '';
+
+        for (const [title, items] of Object.entries(data)) {
+            htmlContent += `
+                <h2>${title}</h2>
+                ${items.map(item => `
+                    <div class="file">
+                        <p>${item.text}</p>
+                        <a href="${item.link}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+
+    // Render the data section using the Placements object
+    renderData('PlacementsSection', Placements);
+</script>
+<!-- r&i -->
+<!-- no need of R and I script for this page -->
+<!-- activities  -->
+<script type="module">
+    import Activities from '../data/dept/ece/Activities.js'; // Update the path as necessary
+
+    function renderData(containerId, data) {
+        const container = document.getElementById(containerId);
+        let htmlContent = '';
+
+        for (const [title, items] of Object.entries(data)) {
+            htmlContent += `
+                <h2>${title}</h2>
+                ${items.map(item => `
+                    <div class="file">
+                        <p>${item.text}</p>
+                        <a href="${item.link}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+
+    // Render the data section using the FacultyAndStudentActivities object
+    renderData('ActivitiesSection', Activities);
+</script>
+
+
+<script src="../templates/preloader.js"></script>
+
+</body>
+</html>

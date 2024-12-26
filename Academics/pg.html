@@ -3,88 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PostGraduate</title>
+    <title>Post Graduate</title>
     <style>
-        * {
+        *{
             margin: 0;
-            border: 0;
-            font-family: "Inter", sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Inter, sans-serif;
         }
-        .container
-        {
-            margin-bottom: 80px;
+        header {
+            width: 100%;
+            background: url("../assects/PGblock.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-clip: content-box;
+            position: relative;
+            background-size: cover;
         }
-        .pg {
-            color: #22316C;
+        .Engdesktop{
+            margin: 0;
+            padding: 0;
+            background: #22316c38;
+            display: block;
+            align-items: center;
+        }
+        .Engmobile{
+            display: none;
+        }
+
+        .marquee {
+            overflow-x: clip;
+            white-space: nowrap;
+            position: relative;
+            padding: 2em 0 0 0 ;
+            width: 100%;
+        }
+
+        .marquee-inner {
             display: flex;
             align-items: center;
-            padding: 15px;
-            justify-content: center;
+            gap: 2vw;
+            padding: 10vh 0;
+            will-change: transform;
         }
-        .scrolling-wrapper {
-            display: flex;
-            margin-left: 40px;
-            width: 95%;
-            overflow: hidden;
-            position: relative;
-        }
-        .scrolling-images {
-            display: flex;
-            width: max-content; /* Ensure the container is wide enough to hold all images */
-            animation: scroll 20s linear infinite;
-        }
-        .scrolling-images img {
-            width: 345px; /* Adjust this to your desired image width */
-            height: 400px; /* Maintain aspect ratio */
-            padding: 10px;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .scrolling-wrapper:hover .scrolling-images  {
-            animation-play-state: paused; 
-        }
-        .img:hover
-        {
-            
-            height: 420px;
-            width: 365px;   
-        }
-        .img {
+
+        .marquee-inner img {
+            width: 250px;
             height: 400px;
-            width: 345px;
-            padding: 10px;
+            transition: transform 0.5s;
+            flex-shrink: 0;
+            border-radius: 2rem;
         }
+
+        .marquee-inner img:hover {
+            transform: scale(1.03);
+        }
+               
+        .single-img {
+        position: relative;
+        width: 30%;
+        float: left;
+        margin: 0 1%;
+        }
+                        
+        .img-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(34, 35, 108, 0.8);
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+        border-radius: 2rem;
+        }
+
+        .single-img:hover .img-overlay {
+        height: 100%;
+        }
+
+        .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        font-family: poppins;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        }
+        .text span{
+            font-size: 15px;
+        }
+
+        
+        @media screen and (max-width: 768px){
+            .Engdesktop{
+                display: none;
+            }
+            .Engmobile{
+                display: block;
+            }
+            .btn button{
+                display: block;
+                width: 80%; 
+                margin: 10px auto; 
+                padding: 15px; 
+                font-size: 4vw; 
+                background-color: #22316c; 
+                color: white; 
+                border: none; 
+                border-radius: 10px; 
+                transition: background-color 0.3s;
+            }
+            .btn button:hover {
+                color: #22316c;
+                background-color: rgba(255, 166, 0, 0.733);
+            }
+        }
+ 
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <div class="container">
-        <div class="pg">
-            <h1>POSTGRADUATE</h1>
-        </div>
-        <div class="scrolling-wrapper">
-            <div class="scrolling-images">
-                <a href=""><img class="img" src="../assects/MBA.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MCA.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MSC.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MHRM.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MBA-BA.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MOC.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MSC-CS.png" alt=""></a>
-                <!-- Duplicate images for seamless scroll -->
-                <a href=""><img class="img" src="../assects/MBA.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MCA.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MSC.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MHRM.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MBA-BA.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MOC.png" alt=""></a>
-                <a href=""><img class="img" src="../assects/MSC-CS.png" alt=""></a>
+    <header id="nav-placeholder"></header>
+    <section class="Engdesktop">
+        <div class="marquee">
+            <h2 style="text-align: center; font-size: 2.5vw; color: #22316c;">Postgraduate Program</h2>
+            <div class="marquee-inner">
+               <a href="" class="single-img">
+                    <img src="../assects/programs/Mba.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"   style="background-color:  rgba(174, 174, 185, 0.8);">
+                        <div class="text">Master of <br> Business <br> Administration</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/mca.webp" alt="Image 2" class="image"> 
+                    <div class="img-overlay"   style="background-color: rgba(34, 35, 108, 0.8);">
+                        <div class="text">MASTER OF<br> COMPUTER <br>APPLICATIONS </div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/organicChe.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color: rgba(54, 54, 56, 0.8);">
+                        <div class="text">MASTER OF <br>ORGANIC <br> CHEMISTRY</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/mhrm.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color: rgba(186, 186, 189, 0.8);">
+                        <div class="text">MASTER OF <br> HUMAN RESOURCE <br> MANAGEMENT</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/ba.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color:  rgba(34, 35, 108, 0.8);">
+                        <div class="text"> MBA - <br>Business Analytics</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/commerce.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color: rgba(83, 83, 83, 0.8);">
+                        <div class="text"> MASTER OF <br>Commerce</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/ms.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color: rgba(83, 83, 83, 0.8);">
+                        <div class="text"> MASTER OF <br>COMPUTER SCIENCE</div>
+                    </div>            
+                </a>
             </div>
         </div>
-    </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const marquee = document.querySelector(".marquee-inner");
+            const speed = 1; // Scrolling Speed
+            let scrollAmount = 0;
+            let isHovered = false;
+
+            // Duplicates the content
+            const marqueeContent = marquee.innerHTML;
+            marquee.innerHTML += marqueeContent;
+
+            const startScrolling = () => {
+                if (!isHovered) {
+                    scrollAmount -= speed;
+                    if (Math.abs(scrollAmount) >= marquee.scrollWidth / 2) {
+                        scrollAmount = 0;
+                    }
+                    marquee.style.transform = `translateX(${scrollAmount}px)`;
+                }
+                requestAnimationFrame(startScrolling);
+            };
+
+            marquee.addEventListener("mouseover", () => {
+                isHovered = true;
+            });
+
+            marquee.addEventListener("mouseout", () => {
+                isHovered = false;
+            });
+
+            startScrolling();
+        });
+
+        </script>
+        
+    </section>
+    <section class="Engmobile">
+        <div style="text-align: center; padding: 20px;">
+            <h2 style="font-size: 5vw; color: #22316c;">Postgraduate Program</h2>
+            <a href="#" style="text-decoration: none;" class="btn"><button >Master of Business Administration</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >MASTER OF COMPUTER APPLICATIONS</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >MASTER OF ORGANIC CHEMISTRY</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >MASTER OF HUMAN RESOURCE MANAGEMENT</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >MBA - Business Analytics</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >MASTER OF Commerce</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >MASTER OF COMPUTER SCIENCE</button></a>
+        </div>
+        
+    </section>
     <script src="../templates/includeHTML.js" defer></script>
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder"></footer>
 </body>
 </html>

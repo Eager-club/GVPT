@@ -3,127 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering</title>
+    <title>Engineering Program</title>
     <style>
-        * {
+        *{
             margin: 0;
-            border: 0;
-            font-family: "Inter", sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Inter, sans-serif;
         }
-        .container
-        {
-            margin-bottom: 80px;
-        }
-        .btech {
-            color: #22316C;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            justify-content: center;
-        }
-        .scrolling-wrapper {
-            display: flex;
-            margin-left: 40px;
-            width: 95%;
-            overflow: hidden;
+        header {
+            width: 100%;
+            background: url("../assects/Videos/eng.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-clip: content-box;
             position: relative;
+            background-size: cover;
         }
-        .scrolling-images {
-            display: flex;
-            width: max-content; /* Ensure the container is wide enough to hold all images */
-            animation: scroll 20s linear infinite;
-        }
-        .scrolling-images img {
-            width: 345px; /* Adjust this to your desired image width */
-            height: 400px; /* Maintain aspect ratio */
-            padding: 10px;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .scrolling-wrapper:hover .scrolling-images  {
-            animation-play-state: paused; 
-        }
-        .img:hover {
-            height: 420px;
-            width: 365px;   
-        }
-        .img {
-            height: 400px;
-            width: 345px;
-            padding: 10px;
-        }
-        .mtech-img {
-            display: flex;
-            margin-left: 40px;
+        .Engdesktop{ 
+            margin: 0;
+            padding: 0;
+            background: #22316c38;
+            display: block;
             align-items: center;
         }
-
-        @media (max-width: 768px) {
-            .scrolling-wrapper {
-                margin-left: 20px;
-                width: 100%;
-            }
-            .scrolling-images img,
-            .mtech-img img {
-                width: 100%;
-                height: auto;
-            }
-            .img:hover {
-                height: auto;
-                width: 100%;
-            }
+        .Engmobile{
+            display: none;
         }
 
-        @media (max-width: 480px) {
-            .scrolling-wrapper {
-                margin-left: 10px;
-                width: 100%;
+        .marquee {
+            overflow-x: clip;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee-inner {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+            padding: 10vh 0;
+            will-change: transform;
+        }
+
+        .marquee-inner img {
+            width: 250px;
+            height: 400px;
+            transition: transform 0.5s;
+            flex-shrink: 0;
+            border-radius: 2rem;
+        }
+
+        .marquee-inner img:hover {
+            transform: scale(1.03);
+        }
+               
+        .single-img {
+        position: relative;
+        width: 30%;
+        float: left;
+        margin: 0 1%;
+        }
+                        
+        .img-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(34, 35, 108, 0.8);
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+        border-radius: 2rem;
+        }
+
+        .single-img:hover .img-overlay {
+        height: 100%;
+        }
+
+        .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        font-family: poppins;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        }
+        .text span{
+            font-size: 15px;
+        }
+
+        
+        @media screen and (max-width: 768px){
+            .Engdesktop{
+                display: none;
             }
-            .scrolling-images img,
-            .mtech-img img {
-                width: 100%;
-                height: auto;
-                padding: 5px;
+            .Engmobile{
+                display: block;
             }
-            .img:hover {
-                height: auto;
-                width: 100%;
+            .btn button{
+                display: block;
+                width: 80%; 
+                margin: 10px auto; 
+                padding: 15px; 
+                font-size: 4vw; 
+                background-color: #22316c; 
+                color: white; 
+                border: none; 
+                border-radius: 10px; 
+                transition: background-color 0.3s;
+            }
+            .btn button:hover {
+                color: #22316c;
+                background-color: rgba(255, 166, 0, 0.733);
             }
         }
+ 
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <div class="container">
-        <div class="btech">
-            <h1>B-TECH</h1>
-        </div>
-        <div class="scrolling-wrapper">
-            <div class="scrolling-images">
-                <a href="#"><img class="img" src="../assects/cse.png" alt="CSE"></a>
-                <a href="#"><img class="img" src="../assects/csm.png" alt="CSM"></a>
-                <a href="#"><img class="img" src="../assects/ece.png" alt="ECE"></a>
-                <a href="#"><img class="img" src="../assects/mech.png" alt="Mechanical"></a>
-                <a href="#"><img class="img" src="../assects/civil.png" alt="Civil"></a>
-                <!-- Duplicate images for seamless scroll -->
-                <a href="#"><img class="img" src="../assects/cse.png" alt="CSE"></a>
-                <a href="#"><img class="img" src="../assects/csm.png" alt="CSM"></a>
-                <a href="#"><img class="img" src="../assects/ece.png" alt="ECE"></a>
-                <a href="#"><img class="img" src="../assects/mech.png" alt="Mechanical"></a>
-                <a href="#"><img class="img" src="../assects/civil.png" alt="Civil"></a>
+    <header id="nav-placeholder"></header>
+    <section class="Engdesktop">
+        <div class="marquee">
+            <h2 style="text-align: center; font-size: 2.5vw; color: #22316c;">Engineering Program</h2>
+            <div class="marquee-inner">
+               <a href="" class="single-img">
+                    <img src="../assects/programs/civil.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"   style="background-color:  rgba(174, 174, 185, 0.8);">
+                        <div class="text">Civil <br> Engineering</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/cse.webp" alt="Image 2" class="image"> 
+                    <div class="img-overlay"   style="background-color: rgba(34, 35, 108, 0.8);">
+                        <div class="text">Computer Science  <br>and <br> Engineering</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/csm.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color: rgba(34, 35, 108, 0.8);">
+                        <div class="text">CSE<br><span>Artifical intelligence<br> And <br> Machine Learning</span></div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/ece.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color: rgba(186, 186, 189, 0.8);">
+                        <div class="text">Electronics and <br> Communication <br> Engineering</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/mech.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"  style="background-color: rgba(83, 83, 83, 0.8);">
+                        <div class="text">Mechanical<br>Engineering</div>
+                    </div>            
+                </a>
             </div>
         </div>
-        <div class="btech">
-            <h1>M-TECH</h1>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const marquee = document.querySelector(".marquee-inner");
+            const speed = 1; // Scrolling Speed
+            let scrollAmount = 0;
+            let isHovered = false;
+
+            // Duplicates the content
+            const marqueeContent = marquee.innerHTML;
+            marquee.innerHTML += marqueeContent;
+
+            const startScrolling = () => {
+                if (!isHovered) {
+                    scrollAmount -= speed;
+                    if (Math.abs(scrollAmount) >= marquee.scrollWidth / 2) {
+                        scrollAmount = 0;
+                    }
+                    marquee.style.transform = `translateX(${scrollAmount}px)`;
+                }
+                requestAnimationFrame(startScrolling);
+            };
+
+            marquee.addEventListener("mouseover", () => {
+                isHovered = true;
+            });
+
+            marquee.addEventListener("mouseout", () => {
+                isHovered = false;
+            });
+
+            startScrolling();
+        });
+
+        </script>
+        <div class="marquee">
+            <h2 style="text-align: center; font-size: 2.5vw; color: #22316c;">M-Tech Program</h2>
+            <div class="marquee-inner" style="max-width: 850px">
+               <a href="" class="single-img">
+                    <img src="../assects/programs/structuralEng.webp" alt="Image 1" class="image"> 
+                    <div class="img-overlay"   style="background-color:  rgba(104, 104, 105, 0.8);">
+                        <div class="text">structural <br> Engineering</div>
+                    </div>            
+                </a>
+                <a href="" class="single-img">
+                    <img src="../assects/programs/CST.webp" alt="Image 2" class="image"> 
+                    <div class="img-overlay"   style="background-color: rgba(19, 19, 20, 0.8);">
+                        <div class="text">Computer Science  <br>and <br> Technology</div>
+                    </div>            
+                </a>
+                
+            </div>
         </div>
-        <div class="mtech-img">
-            <a href="#"><img class="img" src="../assects/cst.png" alt="CST"></a>
-            <a href="#"><img class="img" src="../assects/structrual.png" alt="Structural"></a>
+    </section>
+    <section class="Engmobile">
+        <div style="text-align: center; padding: 20px;">
+            <h2 style="font-size: 5vw; color: #22316c;">Engineering Program</h2>
+            <a href="#" style="text-decoration: none;" class="btn"><button >Civil Engineering</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >Computer Science and Engineering</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >CSE - AI and ML</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >Electronics and Communication Engineering</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >Mechanical Engineering</button></a>
+            <h2 style="font-size: 5vw; color: #22316c; margin-top: 20px;">M-Tech Program</h2>
+            <a href="#" style="text-decoration: none;" class="btn"><button >Structural Engineering</button></a>
+            <a href="#" style="text-decoration: none;" class="btn"><button >Computer Science and Technology</button></a>
         </div>
-    </div>
+        <style>
+           
+        </style>
+    </section>
     <script src="../templates/includeHTML.js" defer></script>
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder"></footer>
 </body>
 </html>

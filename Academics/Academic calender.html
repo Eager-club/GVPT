@@ -4,161 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Calendar</title>
+    <script src="../templates/includeHTML.js" defer></script>
     <style>
         * {
             margin: 0;
-            border: 0;
-            box-sizing: border-box;
             font-family: "Inter", sans-serif;
         }
-        .faculty-main {
-            width: 80%;
-            margin-left: 85px;
+        header {
+            width: 100%;
+            background-image: url("/assects/home.png");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
             position: relative;
         }
-        .faculty-main h1 {
+        h2 {
+            color: #1b2553;
+            margin-bottom: 10px;
+            text-rendering: geometricPrecision;
+        }
+        .container {
+            width: 100%;
+            position: relative;
+            /* padding-bottom: 1%;  */
+        }
+        .container > .head {
             text-align: center;
-            color: #22316D;
-            padding: 50px 0;
-            font-size: 2.5em;
+            padding: 1.3vw; /* 40px */
+            color: #22316C;
+            font-size: 6vw;
         }
-        .faculty-main .dropdown {
-            width: 100%;
-            margin: 20px 0;
+        
+    
+        .box {
+            margin-top: 2.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .faculty-main button {
+        .heading {
+            background: #22316DBF;
+            color: white;
+            text-align: center;
+            border-radius: 15px;
             width: 100%;
-            background: transparent;
-            border: 1px solid #22316D;
-            color: #000000;
-            font-weight: bolder;
-            font-size: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .heading h6 {
+            font-size: 2vw;
+            justify-content: center;
+            margin-top: 0.01vw;
+            padding: 2%;
+        }
+        .files {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .file {
+            width: 100%;
+            background-color: rgba(34, 49, 104, 0.25);
+            border: 0.17vw solid transparent;
             border-radius: 10px;
-            padding: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-            text-align: left;
-            position: relative;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .faculty-main button:after {
-            content: '\25BC';
-            position: absolute;
-            right: 20px;
-        }
-        .faculty-main button.active {
-            background-color: #22316D;
+        .file:hover, .file.active {
+            background-color: rgba(34, 49, 104, 0.55);
             color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         }
-        .dropdown-content {
-            display: none;
-            background-color: #f1f1f1;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            border-radius: 5px;
-            padding: 10px;
-            transition: max-height 0.3s ease;
-            overflow: hidden;
+        .file h6:hover, .file.active h6 {
+            color: white;
         }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            border: 1px solid #000000;
-            border-radius: 5px;
+        .file h6 {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.67vw;
+        }
+        a {
             text-decoration: none;
+            color: black;
+        }
+        .c1.active {
+            background-color: #22316c;
+            color: white;
+        }
+        .sub1 {
+            margin-top: 5.83vw;
+        }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            padding: 4vw;
             display: block;
-            margin: 5px 0;
-            transition: background-color 0.3s ease;
-            text-transform: uppercase; /* Converts text to uppercase */
         }
-        .dropdown-content a:hover {
-            background-color: #e0e0e0;
+        .file {
+            width: 97%;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            padding: 1.3%;
         }
-        .show {
-            display: block;
+        .file button {
+            color: #22316C;
+            font-size: medium;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
         }
-
-        @media (max-width: 480px) {
-            .faculty-main {
-                width: 95%;
-                margin: 0 auto;
-                padding: 10px;
+        .file:hover button {
+            font-size: large;
+            color: #e78709;
+            text-decoration: underline;
+            text-underline-offset: calc(4px);
+        }
+        .scroll-to-top {
+            position: fixed;
+            right: 20px;
+            background-color: #22316C;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s ease; /* Smooth transition for both opacity and bottom */
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+        .scroll-to-top.show {
+            opacity: 1;
+            box-shadow: 0 0 20px white;
+        }
+        .scroll-to-top:hover {
+            background-color: #e78709;
+        }
+        @media (max-width: 768px) {
+            .content button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.6vw;}
+            .heading {
+                border-radius: 5px;
             }
-            .faculty-main h1 {
-                font-size: 1.5em;
-                padding: 20px 0;
+            .file p{
+                font-size: 3vw;
             }
-            .faculty-main button {
-                font-size: 18px;
-                padding: 10px 15px;
+            .file{
+                border-radius: 6px;
             }
-            .dropdown-content a {
-                font-size: 14px;
-                padding: 8px 10px;
+            .file button{
+                font-size: 3vw;
+                display: flex;
+                white-space: nowrap;
             }
+            .scroll-to-top.show{
+                display: none;
+            }
+        }
+        footer {
+            height: 200px; /* Adjust according to your footer height */
+            position: relative; /* Ensure footer has a relative position */
         }
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <div class="faculty-main">
-        <h1>ACADEMIC CALENDER</h1>
-        <div class="dropdown">
-            <button class="dropbtn" data-target="pg-dropdown">POST GRADUATE</button>
-            <div class="dropdown-content" id="pg-dropdown">
-                <a href="#" target="_blank">MBA - Master of Business Administration</a>
-                <a href="#" target="_blank" >MCA- Master of Computer Applications</a>
-                <a href="#" target="_blank">M.Sc. (Computer Science)</a>
-                <a href="#" target="_blank">MSc Organic Chemistry</a>
-                <a href="#" target="_blank">Master of Human Resource Management(MHRM)</a>
-                <a href="#" target="_blank">Master of Commerce</a>
-                <a href="#" target="_blank">MBA - Business Analytics</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn" data-target="ug-engineering-dropdown">UG-ENGINEERING</button>
-            <div class="dropdown-content" id="ug-engineering-dropdown">
-                <a href="#" target="_blank">Engineering & Technology Civil Engineering</a>
-                <a href="#" target="_blank">Engineering & Technology Computer Science & Engineering</a>
-                <a href="#" target="_blank">Engineering & Technology Computer Science (AI&ML) & Engineering</a>
-                <a href="#" target="_blank">Engineering & Technology Electronics and Communication Engineering</a>
-                <a href="#" target="_blank">Engineering & Technology Mechanical Engineering</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn" data-target="undergraduate-dropdown">UNDERGRADUATE</button>
-            <div class="dropdown-content" id="undergraduate-dropdown">
-                <a href="#" target="_blank">Bachelor of Science (B.Sc)</a>
-                <a href="#" target="_blank">Bachelor of Science (B.Sc) Honours</a>
-                <a href="#" target="_blank">Bachelor of Computer Applications (BCA)</a>
-                <a href="#" target="_blank">Bachelor of Computer Applications (BCA) Data Science</a>
-                <a href="#" target="_blank">Bachelor of Computer Applications (BCA) Honours</a>
-                <a href="#" target="_blank">Bachelor of Commerce (B.Com)</a>
-                <a href="#" target="_blank">B.Com. (Computers)</a>
-                <a href="#" target="_blank">Bachelor of Commerce (B.Com) Honours</a>
-                <a href="#" target="_blank">Bachelor of Commerce (B.Com) Minors</a>
-                <a href="#" target="_blank">Bachelor of Business Administration (BBA)</a>
-                <a href="#" target="_blank">Bachelor of Business Administration (BBA) Honours</a>
-            </div>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <div class="head">
+            <h6>Academic Calendar</h6>
         </div>
     </div>
 
-    <script>
-        const buttons = document.querySelectorAll('.dropbtn');
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                const target = document.getElementById(this.getAttribute('data-target'));
-                if (target.classList.contains('show')) {
-                    target.classList.remove('show');
-                    this.classList.remove('active');
-                } else {
-                    document.querySelectorAll('.dropdown-content').forEach(content => content.classList.remove('show'));
-                    document.querySelectorAll('.dropbtn').forEach(btn => btn.classList.remove('active'));
-                    target.classList.add('show');
-                    this.classList.add('active');
-                }
+    
+    <section id="academic-calendar">
+        <div id="academicCalendarSection"></div>
+        
+    </section>
+    <button id="scrollToTop" class="scroll-to-top">
+        &#8593; <!-- Unicode character for up arrow -->
+    </button>
+    <footer id="footer-placeholder"></footer>
+    <script type="module">
+
+    import acadCalendar from '../data/academics/acadCalender.js';
+    
+    function renderSection(sectionId, title, data) {
+        const sectionContainer = document.getElementById(sectionId);
+        sectionContainer.innerHTML = `
+            <!-- <h2>${ title}</h2> -->
+            <div class="box">
+              <div class="files">
+            ${data.map(item => `
+                <div class="file">
+                    <p>${item.text}</p>
+                    <a href="${item.link}" target="_blank">
+                        <button>Click Here</button>
+                    </a>
+                </div>
+            `).join('')}
+             </div>
+            </div>
+        `;
+    }
+
+    renderSection('academicCalendarSection', 'Academic Calendar', acadCalendar.academicCalendar);        
+        // Button for scrolling to the top
+
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        const footer = document.querySelector('footer');
+
+        // Function to handle scroll events
+        function handleScroll() {
+            // Show or hide the button based on scroll position
+            if (window.scrollY > 100) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+            updateScrollToTopButtonPosition();
+        }
+
+        // Function to update the button's position
+        function updateScrollToTopButtonPosition() {
+            const footerRect = footer.getBoundingClientRect();
+            const buttonRect = scrollToTopButton.getBoundingClientRect();
+
+            // Calculate the space between the button and the footer
+            const footerTop = footerRect.top;
+            const buttonHeight = buttonRect.height;
+            const viewportHeight = window.innerHeight;
+            const footerBuffer = 10; // Buffer to keep the button above the footer
+
+            if (footerTop < viewportHeight) {
+                // Adjust button position to stay above the footer
+                const bottomOffset = Math.average(footerTop - buttonHeight - footerBuffer, 20);
+                scrollToTopButton.style.bottom = `${bottomOffset}px`;
+            } else {
+                // Fixed position if not near footer
+                scrollToTopButton.style.bottom = '20px';
+            }
+        }
+
+        // Function to handle scroll-to-top button click
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
+
+        // Add event listeners for scroll and resize events
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', updateScrollToTopButtonPosition);
+
+        // Initial position update
+        updateScrollToTopButtonPosition();
     </script>
-    <script src="../templates/includeHTML.js" defer></script>
-    <div id="footer-placeholder"></div>
+ 
 </body>
 </html>

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Department of Computer Science and Engineering</title>
-    <!-- <script src="../templates/includeHTML.js" defer></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <section id="preloader-placeholder" ></section>
     <style>
         * {
         margin: 0;
@@ -22,20 +25,122 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-
-header {
-    height: 45vh;
-    background-image: url("../assects/home.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* position: relative; */
-    /* z-index: 1001; Ensure header is above sidebar */
-}
 /* nav bar */
-.nav{
-    background-color: #22316C;
-    color: white;
+.topnav {
+  overflow: hidden;
+  background-color: #22316c;
+  font-family: "inter",sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav.active {
+  background-color: #22316c;
+  color: white;
+}
+
+.topnav .nav-icon {
+  display: none;
+}
+.navHead{
+    margin-right: 20%;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown-content a:hover {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navHead:hover {
+    background-color: #22316c;
+}
+.singleLink{
+    margin-top: -5px;
+}
+@media screen and (max-width: 768px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.nav-icon {
+    float: right;
+    display: block;
+  }
+  .navHead{
+    margin-right: 0%;
+}
+.singleLink{
+    margin-top: 0;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .nav-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
 }
 .header1 {
     width: 100%;
@@ -73,7 +178,7 @@ header {
     /* margin: 1em; */
 }
 .burger:hover {
-    background: rgb(56 56 56);
+    background: #22316C;
 }
 .burger-strip {
     transition: all .5s ease;
@@ -81,7 +186,7 @@ header {
 .strip div {
     height: 3px;
     border-radius: 2px;
-    background: rgb(56 56 56);
+    background: #22316C;
     margin: 5px;
     transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
     width: 22.5px;
@@ -247,6 +352,8 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-left: 25px; 
     float: right;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
     .hod-img:hover{
     transform: translateY(-10px); /* Slightly raise the card */
@@ -648,19 +755,123 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 }
     </style>
 </head>
-<!-- <header id="nav-placeholder"></header> -->
+
 <body>
 
 <div class="header1">
     <div>
-        <div class="nav">
-            <div class="right"></div>
-            <div class="left">orange</div>
-        </div>
+        <div class="topnav" id="myTopnav">
+            
+            <a href="../index.html" style="align-items: center;color: #e78709;font-weight: 700;background-color: #22316C;" class="navHead"><img src="../assects/gvplogorm.png" width="20px" alt=""> GVPCDPGC</a>
+             <a href="../index.html" class="singleLink">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Administration
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                                    <a href="../Adminstration/administration.html">Administrators</a>
+                  <a href="../Adminstration/administration.html#director">Directors</a>
+                  <a href="../Adminstration/administration.html#deans">Deans</a>
+                  <a href="../Adminstration/administration.html#controllers">Controllers</a>
+                  <a href="../Adminstration/administration.html#hod-pg">PG HOD's</a>
+                  <a href="../Adminstration/administration.html#hod-ET">E&T HOD's</a>
+                  <a href="../Adminstration/administration.html#hod-ug">UG HOD's</a>
+                  <a href="../Adminstration/administration.html#COORDINATORS">Coordinators</a>
+                  <a href="../Adminstration/administration.html">Governing bodies</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Academics
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../Academics/">Academics</a>
+                  <a href="../Academics/programs.html">Programs</a>
+                  <a href="../Academics/Academic calender.html">Academic calendar</a>
+                  <a href="../Academics/Departments.html">Department</a>
+                  <a href="../Academics/syllabus.html">Syllabus</a>
+                  <a href="../Academics/Regulations.html">Regulations</a>
+                  <a href="../Academics/Archives.html">Archives</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Admissions</a>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../admissions/">Admissions</a>
+                  <a href="../Academics/engeenering.html">Undergraduate</a>
+                  <a href="../Academics/undergraduate.html">Graduate</a>
+                  <a href="../Academics/pg.html">International</a>
+              </div>
+            </div> 
+
+
+            <a href="../faculty/faculty.html"  class="singleLink">Faculty</a>
+            <div class="dropdown">
+              <button class="dropbtn">Placements
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                  <a href="../placements/">Placements</a>
+                  <a href="../placements/about-placements.html">About Placements</a>
+                  <a href="../placements/traningplacements.html">Training & Placements</a>
+                  <a href="../placements/placementteam.html">Placements Team</a>
+                  <a href="../placements/placements-activities.html">Placements Activities</a>
+              </div>
+            </div> 
+            
+            <a href="#"  class="singleLink">Research</a>
+            <div class="dropdown">
+                <button class="dropbtn">  other
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" style="right: 0;">
+                  <div style="display: flex;">
+                      <div>
+                    <a href="../others/examination-archives.html">Examination</a>
+                    <a href="../others/Results.html">Results</a>
+                    <a href="../others/clubs.html">Clubs</a>
+                    <a href="#">Campus Life</a>
+                    <a href="#">Transportation</a>
+                    <a href="#">Events</a>
+                    <a href="#">Code of Conduct</a></div>
+                    <div>
+                    <a href="../top/aicte.html">AICTE Mandatory Info</a>
+                    <a href="../top/iqac.html">IQAC</a>
+                    <a href="../top/iipc.html">IIPC</a>
+                    <a href="../top/naac.html">NAAC</a>
+                    <a href="##">ALUMNI</a>
+                    <a href="../top/online payment.html">Online Payments</a>
+                    <a href="##">CAREERS</a>
+                    <a href="##">360 Virtual Tour</a>
+                  </div>
+                  </div>
+                </div>
+              </div> 
+<a href="javascript:void(0);" style="font-size:20px;font-weight: 800;" class="nav-icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<script>
+function myFunction() {
+var x = document.getElementById("myTopnav");
+const navIcon = document.querySelector('.nav-icon');
+if (x.className === "topnav") {
+  x.className += " responsive";
+    navIcon.innerHTML = '&times;';
+
+} else {
+  x.className = "topnav";
+    navIcon.innerHTML = '&#9776;';
+}
+}
+</script>
     </div>
     <div class="header-container">
         <h1>Department of Computer Science and Engineering</h1>
-        <!-- <div class="menu-icon" id="menu-icon">&#9776;</div> -->
         <div class="burger" id="menu-icon">
             <div class="strip burger-strip">
                 <div></div>
@@ -673,7 +884,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 
 <nav class="sidebar" id="sidebar">
     <ul>
-        <li><a href="#" data-target="about-department">About Department</a></li>
+        <li ><a href="#" data-target="about-department">About Department</a></li>
         <li><a href="#" data-target="vision-mission">Vision & Mission / PEOs / PSOs / POs</a></li>
         <li><a href="#" data-target="hod-message">HOD's Message</a></li>
         <li><a href="#" data-target="faculty">Faculty</a></li>
@@ -724,11 +935,12 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
             
             <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
               <h2 style="color: white;padding-bottom: 3vh;">MISSION :</h2>
-              <p>The vision of the department is “Create and sustain as a Centre of excellence in Computer Science and Engineering and allied areas of research to pave the way for providing better technocrats to the society”.</p>
+              <p >The mission of the department is “To provide strong conceptual base (M1) for acquiring programming skills, to develop high computational innovative skills (M2) and to empower leadership qualities with strong ethical base (M3)”.</p>
             </div>
             <div class="mivison" style="background-color: rgba(34, 49, 104, 2.5%);">
               <h2  style="color: #22316c;padding-bottom: 3vh;">VISION :</h2>
-              <p >The mission of the department is “To provide strong conceptual base (M1) for acquiring programming skills, to develop high computational innovative skills (M2) and to empower leadership qualities with strong ethical base (M3)”.</p>
+              <p>The vision of the department is “Create and sustain as a Centre of excellence in Computer Science and Engineering and allied areas of research to pave the way for providing better technocrats to the society”.</p>
+
             </div>
           </div>
         <br>
@@ -834,55 +1046,44 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     </section>
 
     <section id="syllabus">
-        <h2>M.Tech Syllabus</h2>
-        <div class="file">
-            <p>M.Tech Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
-            <a href="URL_TO_MTECH_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
-        <br>
-        <h2>B.Tech Syllabus</h2>
+        <script type="module">
+            import syllabusData from '../data/dept/cse/cseSyllabus.js';
 
-        <h3>B.TECH CSE-AIML R22 Regulation (From admitted batch 2022-2023)</h3>
-        <div class="file">
-            <p>B.Tech CSE-AIML R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_AIML_R22_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
-            
-        <h3>B.TECH CSE R22 Regulation (From admitted batch 2022-2023)</h3>
-        <div class="file">
-            <p>B.Tech CSE R22 First Year and Second Year Syllabus (With effect from 2022-2023 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_R22_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+            function renderSyllabus(data) {
+                const syllabusSection = document.getElementById('syllabus');
 
-        <h3>B.TECH CSE R20 Regulation (From admitted batch 2020-2021)</h3>
-        <div class="file">
-            <p>B.Tech CSE R20 Syllabus (With effect from 2020-2021 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_R20_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+                // M.Tech Syllabus
+                const mtechSyllabus = data.mtechSyllabus;
+                syllabusSection.innerHTML += `
+                    <h2>M.Tech Syllabus</h2>
+                    <div class="file">
+                        <p>${mtechSyllabus[0].description}</p>
+                        <a href="${mtechSyllabus[0].url}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                    <br>
+                `;
 
-        <h3>B.TECH CSE R19 Regulation (From admitted batch 2019-2020)</h3>
-        <div class="file">
-            <p>B.Tech CSE R19 Syllabus (With effect from 2019-2020 admitted batch) Autonomous</p>
-            <a href="URL_TO_CSE_R19_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+                // B.Tech Syllabus
+                const btechSyllabus = data.btechSyllabus;
+                syllabusSection.innerHTML += `<h2>B.Tech Syllabus</h2>`;
 
-        <h3>B.TECH CSE AU Syllabus (From admitted batch 2015-2016)</h3>
-        <div class="file">
-            <p>CSE Syllabus (With effect from 2015-2016 admitted batch to 2018-19)</p>
-            <a href="URL_TO_CSE_AU_SYLLABUS" target="_blank">
-                <button>Click Here</button>
-            </a>
-        </div>
+                btechSyllabus.forEach(item => {
+                    syllabusSection.innerHTML += `
+                        <h3>${item.title}</h3>
+                        <div class="file">
+                            <p>${item.description}</p>
+                            <a href="${item.url}" target="_blank">
+                                <button>Click Here</button>
+                            </a>
+                        </div>
+                    `;
+                });
+            }
+
+            renderSyllabus(syllabusData);
+        </script>
 
     </section>
 
@@ -979,8 +1180,16 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
             e.preventDefault();
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
-            document.getElementById('menu-icon').innerHTML = sidebar.classList.contains('active') ? '&#10006;' : '&#9776;';
-            links.forEach(link => link.classList.remove('active'));
+            document.getElementById('menu-icon').innerHTML = `
+                <div class="strip burger-strip">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            `;
+            links.forEach(link => link.classList.remove('active'),
+            document.getElementById('menu-icon').classList.remove('active'));
+
             link.classList.add('active');
             sections.forEach(section => section.classList.remove('active'));
             const targetId = link.getAttribute('data-target');
@@ -993,12 +1202,22 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     });
 
     document.querySelector('.sidebar ul li a').classList.add('active');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('data-target');
+    if (target) {
+        const targetLink = document.querySelector(`.sidebar ul li a[data-target="${target}"]`);
+        if (targetLink) {
+            targetLink.click();
+        }
+    }
 </script>
 <!-- faculty scprit -->
 <script type="module">
     import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
-
+    // console.log(cardsData);
     function createCard(data) {
+        
         const card = document.createElement('div');
         card.className = 'card';
         card.dataset.id = data.id;
@@ -1021,11 +1240,12 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
         return card;
     }
 
-    function loadContentPage(category, branch) {
+    function loadContentPage(branch) {
         const container = document.getElementById('card-container');
         const filteredCardsData = cardsData.filter(cardData => 
-            cardData.category === category && cardData.branch === branch
+        cardData.branch === branch
         );
+        
 
         filteredCardsData.forEach(cardData => {
             const card = createCard(cardData);
@@ -1038,7 +1258,7 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     }
 
     // Load CSE faculty data
-    loadContentPage('AICTE APPROVED', 'COMPUTER SCIENCE AND ENGINEERING');
+    loadContentPage('Computer_Science_and_Engineering');
 </script>
 <!-- academic page scprit -->
 <script type="module">
@@ -1277,5 +1497,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Render the data section using the FacultyAndStudentActivities object
     renderData('ActivitiesSection', Activities);
 </script>
+<script src="../templates/preloader.js"></script>
+
 </body>
 </html>

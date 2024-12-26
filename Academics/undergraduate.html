@@ -3,49 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undergraduate</title>
+    <title>UnderGraduate program</title>
+    <script src="../templates/includeHTML.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        *{
+
+        :root {
+            --primary-color: #22316D;
+            --secondary-color: #4A5CB5;
+            --background-color: #F4F6F9;
+            --text-color: #333;
+            --white: #FFFFFF;
+            --transition-speed: 0.3s;
+        }
+        header {
+            background-image: url("../assects/faculty.webp");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-clip: content-box;
+            background-size: cover;
+            position: relative;
+        }
+
+        * {
             margin: 0;
-            border: 0;
-            font-family: "Inter", sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
-        .under
-        {
-            color:  #22316C;
-            display: flex;
-            justify-content: center;
-            padding: 40px;
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        .container
-        {
-            display: flex;
-            justify-content: space-evenly;
-            margin-bottom: 130px;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .img:hover
-        {
-            height: 420px;
-            width: 365px;   
+
+        .faculty-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
         }
-        .img {
-            height: 400px;
-            width: 345px;
-            padding: 0px;
+
+        .faculty-header h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .faculty-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .faculty-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .faculty-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .faculty-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--background-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .program-categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .program-category {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+        }
+        .program-category a{
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .program-category:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .program-dropdown {
+            display: none;
+            margin-top: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .program-item {
+            color: #22316C;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--background-color);
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        .program-item:last-child {
+            border-bottom: none;
+        }
+
+        .program-item:hover {
+            color: #22316C;
+            background-color: var(--background-color);
+        }
+
+        @media (max-width: 768px) {
+            .faculty-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .program-categories {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <div class="under">
-        <h1>UNDERGRADUATE</h1>
-    </div>
+    <header id="nav-placeholder"></header>
     <div class="container">
-        <a href=""><img class="img" src="../assects/sciences.png" alt=""></a>
-        <a href=""><img class="img" src="../assects/commerce.png" alt=""></a>
-        <a href=""><img class="img" src="../assects/management.png" alt=""></a>
+        <div class="faculty-header">
+            <h1>UnderGraduate Program</h1>
+        </div>
+
+        <div class="faculty-sections">
+            <div class="faculty-section">
+                <h2>Science</h2>
+                <div class="program-categories">
+                    <div class="program-category">
+                        B.Sc
+                        <div class="program-dropdown">
+                            <a href=""><div class="program-item">B.Sc Mathematics, Physics & Computer Science</div></a>
+                            <a href=""><div class="program-item">B.Sc Mathematics, Electronics & Computer Science</div></a>
+                            <a href=""><div class="program-item">B.Sc Mathematics, Statistics & Computer Science</div></a>
+                            <a href=""><div class="program-item">B.Sc Mathematics, Physics & Chemistry</div></a>
+                            <a href=""><div class="program-item">B.Sc Biotechnology, Microbiology & Bio chemistry</div></a>
+                        </div>
+                    </div>
+                    <div class="program-category">
+                        B.Sc Honours
+                        <div class="program-dropdown">
+                            <div class="program-category">Majors</div>
+                            <a href=""><div class="program-item">B.Sc Honours (Mathematics)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Physics)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Chemistry)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Statistics)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Computer Science)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Electronics)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Microbiology)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Biochemistry)</div></a>
+                            <a href=""><div class="program-item">B.Sc Honours (Data Science)</div></a>
+                            <div class="program-category">Minors</div>
+                            <a href=""><div class="program-item">Mathematics</div></a>
+                            <a href=""><div class="program-item">Physics</div></a>
+                            <a href=""><div class="program-item">Chemistry</div></a>
+                            <a href=""><div class="program-item">Statistics</div></a>
+                            <a href=""><div class="program-item">Electronics</div></a>
+                            <a href=""><div class="program-item">Computer Science</div></a>
+                            <a href=""><div class="program-item">Micro-Biology</div></a>
+                            <a href=""><div class="program-item">Bio-Chemistry</div></a>
+                            <a href=""><div class="program-item">Bio-Technology</div></a>
+                            <a href=""><div class="program-item">Data Science</div></a>
+                            <a href=""><div class="program-item">Business Management</div></a>
+                            <a href=""><div class="program-item">English</div></a>
+                        </div>
+                    </div>
+                        <a><div class="program-category">
+                            BCA
+                        </div></a>
+                        <a><div class="program-category">
+                            BCA Data Science
+                        </div></a>
+                        <a><div class="program-category">
+                            BCA Honours
+                        </div></a>
+                        <a><div class="program-category">
+                            B.Voc
+                        </div></a>
+                    </div>
+            </div>
+        
+
+            <div class="faculty-section">
+                <h2>commerce</h2>
+                <div class="program-categories">
+                    <a><div class="program-category">
+                        B.Com
+                    </div></a>
+                    <a><div class="program-category">
+                        B.Com (Computer Science)
+                    </div></a>
+                    <div class="program-category">
+                        B.Com Honours
+                        <div class="program-dropdown">
+                            <a href=""><div class="program-item">B.Com Honours (General)</div></a>
+                            <a href=""><div class="program-item">B.Com Honours (Computer Applications)</div></a>
+                        </div>
+                    </div>
+                    <div class="program-category">
+                        B.Com Minors
+                        <div class="program-dropdown">
+                            <a href=""><div class="program-item">Insurance Management</div></a>
+                            <a href=""><div class="program-item">Telugu</div></a>
+                            <a href=""><div class="program-item">Sanskrit</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faculty-section">
+                <h2>Arts</h2>
+                <div class="program-categories">
+                    <a><div class="program-category">
+                        B A Honours (Special Telugu)
+                    </div></a>
+                    <a><div class="program-category">
+                        B A Honours (Sanskrit)
+                    </div></a>
+                </div>
+            </div>
+            
+            <div class="faculty-section">
+                <h2>Management</h2>
+                <div class="program-categories">
+                    
+                    <div class="program-category">
+                        BBA Honours
+                        <div class="program-dropdown">
+                            <a href=""><div class="program-item">BBA Honors</div></a>
+                            <a href=""><div class="program-item">BBA Honors (Digital Marketing)</div></a>
+                            <a href=""><div class="program-item">BBA Honors (Logistics Management)</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </div>
-    <script src="../templates/includeHTML.js" defer></script>
-    <div id="footer-placeholder"></div>
+
+    <script>
+        // Simple JavaScript to toggle program dropdowns
+        document.querySelectorAll('.program-category').forEach(category => {
+            category.addEventListener('click', () => {
+                const dropdown = category.querySelector('.program-dropdown');
+                if (dropdown) {
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+    <footer id="footer-placeholder"></footer>
 </body>
 </html>

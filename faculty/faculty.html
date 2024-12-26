@@ -3,407 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Main</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-    <link rel="stylesheet" href="faculty.css">
+    <title>Faculty</title>
+    <script src="../templates/includeHTML.js" defer></script>
     <style>
-        * {
-            margin: 0;
-            border: 0;
-            box-sizing: border-box;
-            font-family: "Inter", sans-serif;
-        }
-        .faculty-main {
-            height: 100vh;
-            width: 90%;
-            justify-content: center;
-            margin-left: 85px;
+         body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    overflow-x: hidden;
+    
+}
+
+header {
+            background-image: url("../assects/faculty.webp");
+            background-repeat: no-repeat;
+            background-position: top;
+            background-clip: content-box;
+            background-size: cover;
             position: relative;
         }
-        .faculty-main h1 {
-            text-align: center;
-            color: #22316D;
-            padding: 50px 0 0 50px;
-            font-size: 2.5em;
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+.table-wrapper {
+    overflow-x: auto; /* Enables horizontal scrolling for the table */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.controls {
+    margin-bottom: 10px;
+}
+
+#search {
+    width: calc(100% - 150px);
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#items-per-page {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* overflow-x: scroll; */
+}
+
+thead th {
+    background-color: #f4f4f4;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pagination {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.page-btn {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-btn:disabled {
+    cursor: not-allowed;
+    background-color: #e9ecef;
+}
+
+        /* Additional styles for responsiveness and controls */
+        .container {
+            max-width: 100vw;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .faculty-main button {
-            /* height: 135px;
-            width: 400px; */
-            padding: 35px;
-            background: transparent;
-            border: 1px solid #22316D;
-            color: #000000;
-            font-weight: bolder;
-            font-size: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .faculty-main button:hover {
-            background-color: #22316D;
-            color: #ffffff;
-            background-position: right bottom;
-            transform: translateY(-5px);
-        }
-        .top1, .top2 {
+        .controls {
+            margin-bottom: 10px;
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+            gap: 10px;
         }
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        #search {
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
         }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f100;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 10px;
-            padding:3px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        #items-per-page {
+            padding: 8px;
+            width: 120px;
         }
-        .dropdown-content .dropdown-item {
-            color: black;
-            padding: 12px 16px;
-            border: 0.5px solid #0000006e;
+        table {
+                width: 100%;
+                border-collapse: collapse; /* Removes gaps between cells */
+                margin: 2vw auto; /* Centers the table and adds some space around it */
+                font-size: 1.2vw; /* Adjust font size according to your design */
+                max-width: 1200px; /* Ensures the table doesn't exceed this width */
+                background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+                border-radius: 15px;
+                overflow: hidden; /* Ensures border-radius works even if the content overflows */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+            }
+
+            thead th{
+                background-color: #22316c; /* Background color for the header */
+                color: white; /* White text color for contrast */
+            }
+
+            thead th {
+                padding: 1vw; /* Adds padding to the header cells */
+                font-weight: bold; /* Makes the text bold */
+                text-align: left; /* Aligns text to the left */
+                font-size: 1.5vw;
+            }
+
+            tbody tr {
+                border-bottom: 1px solid #ddd; /* Adds a border between rows */
+            }
+
+            tbody tr:last-child {
+                border-bottom: none; /* Removes border from the last row */
+            }
+
+            tbody td {
+                padding: 1vw; /* Adds padding to the body cells */
+                text-align: left; /* Aligns text to the left */
+            }
+
+            tbody tr:hover {
+                background-color: rgba(34, 49, 104, 0.1); /* Adds a hover effect */
+            }
+
+            @media (max-width: 768px) {
+            
+                .container {
+                    max-width: min-content;
+                    /* margin: 0 auto; */
+                    padding: 1%;
+                }
+                table {
+                     width: 100%;
+                    font-size: 3vw; /* Increases font size on smaller screens */
+                    margin: 2vw auto;
+                }
+
+                thead th, tbody td {
+                    padding: 2vw; /* Increases padding on smaller screens */
+                }
+                thead th {
+                font-size: 2vw;
+            }
+            }
+        .profile-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .section-heading {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-btn {
+            background-color: #f4f4f4;
             border-radius: 5px;
-            text-decoration: none;
-            display: block;
-            width: 330px;
-            margin-bottom: 1px;
-            transition: background-color 0.3s ease;
+            border: 1px solid #ddd;
+            box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 8px 12px;
+            margin: 0 2px;
             cursor: pointer;
         }
-            /* Basic styling for .item class */
-        .dropdown-content .item {
-            color: black;
-            padding: 12px 16px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-bottom: 2%;
-            display: block;
-            width: 330px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
+        .page-btn.active {
+            background-color: #007bff;
+            color: white;
         }
-
-        /* Hover effect for .item class */
-        .dropdown-content .item:hover {
-            background-color: #e0e0e0;
-            color: #22316D; /* Optional: Change text color on hover */
-        }
-
-        .sub-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease, display 0.3s ease;
-        }
-
-        .sub-content.open {
-            display: block;
-            opacity: 1;
-        }
-        .dropdown-content .dropdown-item:hover {
-            background-color: #e0e0e0;
-        }
-        /* .dropdown-content .sub-content {
-            position:relative;
-            left: 0;
-            top: 100%;
-            display: none;
-            background-color: #f9f9f9;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            border-radius: 5px;
-            z-index: 1;
-        } */
-        .dropdown-content .has-sub:hover  {
-            display: block;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-            opacity: 1;
-            top: 100%;
-            left: 0;
-        }
-        .dropdown:hover .dropbtn {
-            background-color: #22316C;
-            color: #ffffff;
-        }
-        .university {
-            transition: margin-top 0.5s ease, transform 0.5s ease;
-        }
-        .move-university {
-            margin-top: var(--dropdown-height);
-            transform: scale(1.05);
-        }
-        .footer {
-            position: relative;
-            transition: margin-top 0.5s ease, transform 0.5s ease;
-        }
-        .move-footer {
-            margin-top: var(--dropdown-height);
-            transform: scale(1.05);
-        }
-        
-        @media (max-width: 480px) {
-            .faculty-main {
-                width: 95%;
-                margin: 0 auto;
-                padding: 10px;
-            }
-            .faculty-main h1 {
-                font-size: 1.5em;
-                padding: 20px 0;
-            }
-            .faculty-main button {
-                font-size: 18px;
-                height: auto;
-                padding: 10px 15px;
-            }
-            .dropdown-content .dropdown-item {
-                font-size: 14px;
-                padding: 8px 10px;
-            }
-            .top1, .top2 {
-                flex-direction: column;
-            }
+        .page-btn:disabled {
+            cursor: not-allowed;
+            background-color: #e9ecef;
         }
     </style>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <div id="content">
-        <div class="faculty-main">
-            <div class="aicte">
-                <h1>AITCE APPROVED</h1>
-                <div class="top1">
-                    <div class="dropdown">
-                        <button class="dropbtn">POST GRADUATE</button>
-                        <div class="dropdown-content">
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="COMPUTER APPLICATIONS">COMPUTER APPLICATIONS</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="MANAGEMENT STUDIES">MANAGEMENT STUDIES</p>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">UG-ENGINEERING</button>
-                        <div class="dropdown-content">
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="CIVIL ENGINEERING">CIVIL ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="ELECTRONICS AND COMMUNICATION ENGINEERING">ELECTRONICS AND COMMUNICATION ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</p>
-                            <p class="dropdown-item" data-category="AICTE APPROVED" data-branch="BASIC SCIENCES AND HUMANITY">BASIC SCIENCES AND HUMANITY</p>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-            <div class="university">
-                <h1>UNIVERSITY</h1>
-                <div class="top2">
-                    <div class="dropdown">
-                        <button class="dropbtn">POST GRADUATE</button>
-                        <div class="dropdown-content">
-                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="COMPUTER SCIENCE">COMPUTER SCIENCE</p> 
-                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="ORGANIC CHEMISTRY">ORGANIC CHEMISTRY</p>
-                            <p class="dropdown-item" data-category="UNIVERSITY" data-branch="HUMAN RESOURCE MANAGEMENT">HUMAN RESOURCE MANAGEMENT</p>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">UNDERGRADUATE</button>
-                        <div class="dropdown-content">
-                            <div class="has-sub">
-                                <p class="item">DEPARTMENT OF SCIENCES</p>
-                                <div class="sub-content">
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF ENGLISH">DEPARTMENT OF ENGLISH</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF TELUGU/HINDI/SANSKRIT">DEPARTMENT OF TELUGU/HINDI/SANSKRIT</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF MATHEMATICS">DEPARTMENT OF MATHEMATICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF PHYSICS">DEPARTMENT OF PHYSICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF CHEMISTRY">DEPARTMENT OF CHEMISTRY</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF COMPUTER SCIENCE">DEPARTMENT OF COMPUTER SCIENCE</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF ELECTRONICS">DEPARTMENT OF ELECTRONICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF STATISTICS">DEPARTMENT OF STATISTICS</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.C.A">DEPARTMENT OF B.C.A</p>
-                                    <!-- <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.C.A DATA SCIENCE">DEPARTMENT OF B.C.A DATA SCIENCE</p> -->
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.Voc">DEPARTMENT OF B.Voc</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF MICROBIOLOGY">DEPARTMENT OF MICROBIOLOGY</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF BIOTECHNOLOGY">DEPARTMENT OF BIOTECHNOLOGY</p>
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF BIOCHEMISTRY">DEPARTMENT OF BIOCHEMISTRY</p>
-                                </div>
-                            </div>
-                            <div class="has-sub">
-                                <p class="item">DEPARTMENT OF COMMERCE</p>
-                                <div class="sub-content">
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.Com">DEPARTMENT OF B.Com</p>
-                                </div>
-                            </div>
-                            <div class="has-sub">
-                                <p class="item">DEPARTMENT OF MANAGEMENT STUDIES</p>
-                                <div class="sub-content">
-                                    <p class="dropdown-item" data-category="UNIVERSITY" data-branch="DEPARTMENT OF B.B.A">DEPARTMENT OF B.B.A</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-            </div>
+    <header id="nav-placeholder"></header>
+    <div class="container">
+        <button id="back-button" style="float: left; border: 0;">
+            <span style="font-size: 30px;font-weight: 900;">&#8592;</span> 
+        </button>
+
+        <script>
+            document.getElementById('back-button').addEventListener('click', () => {
+                window.location.href = 'facultyDirectory.html';
+            });
+        </script>
+        <h2 id="title" style="text-align: center; color: #22316c; margin:20px 0 20px 0"></h2>
+        <div class="controls">
+            <input type="text" id="search" placeholder="Search...">
+            <select id="items-per-page">
+                <option value="10">10 items per page</option>
+                <option value="25">25 items per page</option>
+                <option value="50">50 items per page</option>
+                <option value="100">100 items per page</option>
+                <option value="all">All items</option>
+            </select>
         </div>
-        <footer class="footer">
-            <div class="footer-content">
-                <p>Footer Content</p>
-            </div>
-        </footer>
+        <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Department</th>
+                    <th>Phone</th>
+                    <th>Extension</th>
+                    <th>Email</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Data rows will be dynamically inserted here -->
+            </tbody>
+        </table>
     </div>
+        <div class="pagination">
+            <button id="prev-page" class="page-btn">Previous</button>
+            <span id="page-numbers"></span>
+            <button id="next-page" class="page-btn">Next</button>
+        </div>
+    </div>
+
     <script type="module">
-        import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
-    
-        const aicteDropdowns = document.querySelectorAll('.aicte .dropdown');
-        const universityDropdowns = document.querySelectorAll('.university .dropdown');
-        const university = document.querySelector('.university');
-        const footer = document.querySelector('.footer');
-    
-        const handleDropdownHover = (dropdown, target, className) => {
-            const dropdownContent = dropdown.querySelector('.dropdown-content');
-            dropdown.addEventListener('mouseover', () => {
-                const dropdownHeight = dropdownContent.offsetHeight;
-                target.style.setProperty('--dropdown-height', `${dropdownHeight + 20}px`);
-                target.classList.add(className);
-            });
-    
-            dropdown.addEventListener('mouseout', () => {
-                target.classList.remove(className);
-            });
-        };
-    
-        aicteDropdowns.forEach(dropdown => handleDropdownHover(dropdown, university, 'move-university'));
-        universityDropdowns.forEach(dropdown => handleDropdownHover(dropdown, footer, 'move-footer'));
-    
+        import cardsData from '../data/faculty.js'; // Adjust the path as needed
+
         document.addEventListener('DOMContentLoaded', () => {
-            const handleSubContentHover = (subContent) => {
-                subContent.addEventListener('mouseover', () => {
-                    const subContentHeight = subContent.offsetHeight;
-                    footer.style.setProperty('--dropdown-height', `${subContentHeight + 20}px`);
-                    footer.classList.add('move-footer');
-                });
-    
-                subContent.addEventListener('mouseout', () => {
-                    footer.classList.remove('move-footer');
-                });
-            };
+    // Get the branch from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const branch1 = urlParams.get('branch');
+    const title = document.getElementById('title');
+    title.textContent = branch1 ? `Faculty List - ${branch1.replace(/_/g, ' ')}` : 'Faculty List';
+    // Filter data based on the branch
+    const filteredData = cardsData.filter(item => item.branch === branch1);
+
+    // Initial settings
+    let currentPage = 1;
+    let itemsPerPage = 10;
+
+    // Get DOM elements
+    const searchInput = document.getElementById('search');
+    const itemsPerPageSelect = document.getElementById('items-per-page');
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+    const pageNumbers = document.getElementById('page-numbers');
+
+    // Function to render the table
+    function renderTable(data, currentPage = 1, itemsPerPage = 10) {
+        const tbody = document.getElementById('table-body');
+        tbody.innerHTML = '';
+
+        // Calculate pagination bounds
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = itemsPerPage === 'all' ? data.length : start + itemsPerPage;
+        const paginatedData = data.slice(start, end);
+
+        // Populate table rows
+        paginatedData.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.designation}</td>
+                <td>${item.branch.replace(/_/g, ' ')}</td>
+                <td>${item.phone}</td>
+                <td>${item.extension}</td>
+                <td>${item.email}</td>
+                <td><img src="${item.image}" alt="${item.name}" class="profile-image"></td>
+            `;
+            tbody.appendChild(row);
         });
 
-        
-        document.addEventListener('DOMContentLoaded', () => {
-    const itemsWithSubContent = document.querySelectorAll('.dropdown-content .item');
+        // Update pagination controls
+        updatePaginationControls(data.length, currentPage, itemsPerPage);
+    }
 
-    // Function to toggle sub-content visibility
-    const toggleSubContent = (item) => {
-        const subContent = item.nextElementSibling;
-        if (subContent && subContent.classList.contains('sub-content')) {
-            subContent.classList.toggle('open');
-        }
-    };
+    // Function to update pagination controls
+    function updatePaginationControls(totalItems, currentPage, itemsPerPage) {
+        pageNumbers.innerHTML = '';
 
-    // Close all open sub-content
-    const closeAllSubContent = () => {
-        document.querySelectorAll('.dropdown-content .sub-content.open').forEach(subContent => {
-            subContent.classList.remove('open');
-        });
-    };
+        const totalPages = itemsPerPage === 'all' ? 1 : Math.ceil(totalItems / itemsPerPage);
 
-    // Add click event listener to items with sub-content
-    itemsWithSubContent.forEach(item => {
-        item.addEventListener('click', (event) => {
-            // Close all other sub-content dropdowns
-            closeAllSubContent();
+        // Update Previous button state
+        prevButton.disabled = currentPage === 1;
 
-            // Toggle the clicked item’s sub-content
-            toggleSubContent(item);
+        // Update Next button state
+        nextButton.disabled = currentPage === totalPages;
 
-            // Stop propagation to prevent closing immediately
-            event.stopPropagation();
-        });
-    });
-
-    // Close sub-content when clicking outside
-    document.addEventListener('click', (event) => {
-        // Check if the click is outside any dropdown
-        if (!event.target.closest('.dropdown-content')) {
-            closeAllSubContent();
-        }
-    });
-
-        
-            document.querySelectorAll('.dropdown-content .dropdown-item').forEach(item => {
-                item.addEventListener('click', (event) => {
-                    const category = event.target.dataset.category;
-                    const branch = event.target.dataset.branch;
-                    loadContentPage(category, branch);
-                });
-            });
-    
-            function loadContentPage(category, branch) {
-                console.log(`Loading content for category: ${category}, branch: ${branch}`);
-    
-                const content = document.getElementById('content');
-                content.innerHTML = `
-                    <main>
-                        <button class="back-button"><a href="faculty.html"><i class="fa fa-arrow-circle-left" style="color:#000"></i></a></button> <br>
-                        <h1 class="heading">${branch}</h1>
-                        <div class="card-container" id="card-container"></div>
-                    </main>
-                `;
-    
-                function createCard(data) {
-                    console.log('Creating card for:', data);
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    card.dataset.id = data.id;
-                    card.innerHTML = `
-                        <div class="fac_card">
-                            <div class="fac_img">
-                                <img class="profile-image" src="${data.image}" alt="${data.name}">
-                                <a href="${data.viewprofile}"><button class="view-profile-btn">View Profile</button></a>
-                            </div>
-                            <div class="fac_title">
-                                <h1 class="name">${data.name}</h1>
-                                <p>${data.title}</p>
-                                <p class="designation">${data.designation}</p>
-                                <p>${data.email}</p>
-                                <div class="fac_details">
-                                    <p><span class="bold">Area of Specialization:</span> <span class="color">${data.areaOfSpecialisation}</span></p>
-                                    <p><span class="bold">Date of Joining:</span> <span class="color">${data.dateOfJoining}</span></p>
-                                    <p><span class="bold">Nature of Association:</span> <span class="color">${data.natureOfAssosiation}</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    return card;
-                }
-     
-                const container = document.getElementById('card-container');
-                const filteredCardsData = cardsData.filter(cardData => 
-                    cardData.category === category && cardData.branch === branch
-                );
-                console.log(`Filtered cards data:`, filteredCardsData);
-    
-                filteredCardsData.forEach(cardData => {
-                    const card = createCard(cardData);
-                    container.appendChild(card);
-                });
-    
-                if (filteredCardsData.length === 0) {
-                    container.innerHTML = `<p>No data available for the selected category and branch.</p>`;
-                }
+        // Render page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.classList.add('page-btn');
+            if (i === currentPage) {
+                pageBtn.classList.add('active');
             }
-        });
+            pageBtn.textContent = i;
+            pageBtn.addEventListener('click', () => {
+                currentPage = i;
+                renderTable(filteredData, currentPage, itemsPerPage);
+            });
+            pageNumbers.appendChild(pageBtn);
+        }
+    }
+
+    // Event listeners for controls
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        const filteredSearchData = filteredData.filter(item =>
+            item.name.toLowerCase().includes(query) ||
+            item.designation.toLowerCase().includes(query) ||
+            item.phone.includes(query) ||
+            item.extension.includes(query) ||
+            item.email.toLowerCase().includes(query)
+        );
+        currentPage = 1; // Reset to the first page
+        renderTable(filteredSearchData, currentPage, itemsPerPage);
+    });
+
+    itemsPerPageSelect.addEventListener('change', () => {
+        const value = itemsPerPageSelect.value;
+        itemsPerPage = value === 'all' ? 'all' : parseInt(value);
+        currentPage = 1; // Reset to the first page
+        renderTable(filteredData, currentPage, itemsPerPage);
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderTable(filteredData, currentPage, itemsPerPage);
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        const totalPages = itemsPerPage === 'all' ? 1 : Math.ceil(filteredData.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderTable(filteredData, currentPage, itemsPerPage);
+        }
+    });
+
+    // Initial render
+    renderTable(filteredData, currentPage, itemsPerPage);
+});
+
     </script>
-    
-    <footer id="footer-placeholder"></footer>
-    <script src="../templates/includeHTML.js" defer></script>
+        <footer id="footer-placeholder"></footer>
 </body>
 </html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GVP</title>
+    <script src="./templates/includeHTML.js" defer></script>
+    <link rel="stylesheet" href="./templates/preloder.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+ 
+    <style>
+         header {
+            background-image: url("./assects/home.png");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-clip: content-box;
+            background-size: cover;
+            position: relative;
+        }
+        *{
+            font-family: "inter",sans-serif;
+        }
+        #content{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section id="preloader-placeholder"></section>
+    <header id="nav-placeholder"></header>
+    <div id="content"></div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function renderContent() {
+            const contentDiv = document.getElementById('content');
+            const page = getQueryParam('page');
+
+            if (page === 'Genesis_of_GVP') {
+                contentDiv.innerHTML = `   <title>Our Institution</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=open_in_new" />    <style>
+         .gog {
+
+            color: #22316c;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .gog{
+        h1, h2, h3 {
+            color: #22316c;
+        }
+        ul, li {
+            margin-top: 10px;
+    }}
+    </style>
+    <main class='gog'>
+    <h1>Our Institution <a href="https://www.gvpcdpgc.edu.in/about/collegephotos.pdf" style="color: #22316c;"><span class="material-symbols-outlined">open_in_new</span></a></h1>
+    <p>The Gayatri Vidya Parishad College for Degree and P.G. Courses since establishment has been progressing tremendously and today it is one of the premier institutions in the state of Andhra Pradesh contributing significantly to the human resource base that the economy needs and is run with self-generated funds.</p>
+    <p>The College was accredited by NAAC with B++ Grade and was conferred the Autonomous Status by Andhra University after due approval by the UGC in April 2007 and in the second cycle in June 2014. NAAC accreditation and the autonomous status have increased the responsibility of the institution enhancing the quality of teaching-learning, research, consultancy, skill development, and community development for a holistic development of the student.</p>
+    
+    <h3>The Goals and Objectives of the College</h3>
+    <p>The goals & objectives of this illustrious institution in pursuit of excellence are to:</p>
+    <ul>
+        <li>Provide a strong foundation to students for developing sound theoretical and practical knowledge in their chosen areas of knowledge and specialization.</li>
+        <li>Nurture research in thrust areas of knowledge relevant to national and global concerns.</li>
+        <li>Build strong interface with the industry for the skill development and the promotion of ready employability of the students.</li>
+        <li>Create an ambience for excellence and in pursuit of this objective, an ethic of sharing and a spirit of collaboration.</li>
+        <li>Focus on instilling in the student a sense of discipline and concern for society and prepare him for participation in national productivity enhancement.</li>
+    </ul>
+    
+    <h3>Courses Offered</h3>
+    <p>Gayatri Vidya Parishad College for Degree and P.G. Courses was established in 1989 offering B.A., B.Com., B.Sc. and B.B.A. with innovative and restructured combinations including Computer Science and Electronics, in addition to the traditional combinations. Biosciences were introduced from the academic year 2005-06. All these courses were brought into autonomous status from the academic year 2007-08. Post-Graduate courses were started from 1993-94 in various disciplines. These courses were conferred the autonomous status from 2009-10. Four engineering programs were added in 2011 and are autonomous since 2019-20</p>
+    
+    <h3>U.G. Courses</h3>
+    <p>The College offers a number of U.G. and P.G. Courses in Autonomous stream in English medium. All the Courses offered are based on the needs of the society and industry. The courses offered are:</p>
+    <ul>
+        <li>Bachelor of Science
+            <ul>
+                <li>Mathematics, Physics and Chemistry</li>
+                <li>Mathematics, Physics and Computer Science</li>
+                <li>Mathematics, Statistics and Computer Science</li>
+                <li>Mathematics, Electronics and Computer Science</li>
+                <li>Microbiology, Biotechnology and Biochemistry</li>
+            </ul>
+        </li>
+        <li>Commerce and Management Studies
+            <ul>
+                <li>Bachelor of Commerce (B.Com)</li>
+                <li>Bachelor of Business Administration (B.B.A)</li>
+                <li>Bachelor of Computer Applications (BCA)</li>
+            </ul>
+        </li>
+        <li>P.G. Courses (Autonomous)
+            <ul>
+                <li>Master of Business Administration (MBA)</li>
+                <li>Master of Computer Applications (MCA)</li>
+                <li>M.Sc. (Computer Science)</li>
+                <li>Master of Human Resource Management (MHRM)</li>
+                <li>M.Sc. (Organic Chemistry)</li>
+                <li>Part-time Ph.D.</li>
+            </ul>
+        </li>
+        <li>Engineering and Technology Program (Autonomous)
+            <ul>
+                <li>B.Tech Civil Engineering (CE)</li>
+                <li>B.Tech Computer Science Engineering (CSE)</li>
+                <li>B.Tech Electronics and Communication Engineering (ECE)</li>
+                <li>B.Tech Mechanical Engineering (ME)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Research Programme</h3>
+    <p>The Directorate for Research and Development of the college motivates the faculty to take up research and consultancy activities. Andhra University recognized P.G. College as a Research Centre to pursue Ph.D. in Management Studies.</p>
+
+    <h3>General Discipline Of The Campus</h3>
+    <h4>Dress Code</h4>
+    <p>Dress Code is strictly implemented in the college. Every UG student must wear the prescribed uniform on all weekdays except Saturday. Further, the student is required to wear the uniform on all examination days and on special occasions. On Saturdays they can have formal wear. The PG Students are required to come in formal wear.</p>
+
+    <h4>Ban on Cell Phones</h4>
+    <p>Use of mobile phones or other telecommunication devices are not allowed on the campus. If any faculty observes a student using a mobile phone in the college, the same will be confiscated and handed over to the Principal.</p>
+
+    <h4>Undertaking Letters</h4>
+    <p>At the time of admission the students and their parents shall submit a declaration to the effect that the rules and regulations of the college will be scrupulously followed. Parents are also advised to be in touch with the concerned mentors regularly. They shall also give an undertaking to the effect that they will abide by the decisions taken by the Staff-council.</p>
+
+    <h4>Credit system</h4>
+    <p>The College adopted credit system as per the guidelines of Andhra University (vide Resolution No. 2 (AC-03/07-08) of the Third Meeting of the Academic Council held on 30-03-2008).</p>
+    <p>As per the UGC guidelines the evaluation system and computation of the Cumulative Grade Point Average (CGPA) based on student's performance in examinations has been implemented from 2015-16 admitted batch onwards.</p>
+
+    <h4>Choice Based Credit System (CBCS)</h4>
+    <p>The CBCS provides an opportunity for the students to choose courses from those prescribed comprising core, elective/minor or skill based.</p>
+
+    <h4>Scholarships</h4>
+    <p>Scholarships will be facilitated to every deserving candidate if he / she achieves the minimum requirement of marks and puts in the requisite minimum attendance.</p>
+
+    <h4>Attendance</h4>
+    <p>A candidate shall be required to attend not less than 75% of the theory classes and 90% of the practical classes in each subject during each semester. The Principal may grant condonation of shortage of attendance in exceptional cases for a valid reason of absence up to a maximum of 10%. Unauthorized absence of any student from the classes is not allowed since all the courses are full-time. If a student applies for leave on medical grounds he / she shall enclose a Medical Certificate to the leave letter.</p>
+    <p>However, the Principal may grant an additional condonation for those candidates who represented the University/State in any inter-university or national camp(s), competition(s), games or sports or any national event during the relevant period of absence.</p>
+
+    <h3>Activities</h3>
+    <h4>Voice 4 Girls</h4>
+    <p>An adolescent girl has the unique power to break harmful cycles of economic and social inequality. Through activity-based camps like “Voice 4 Girls” the college student trainers train the girls of rural and remote areas in and around the city of Visakhapatnam. The girls are given training in life skills, spoken English and critical information that helps them make changes in their own and others lives.</p>
+
+    <h4>Literary and Cultural Activities</h4>
+    <p>The College encourages students to participate in literary and cultural activities to bring out their latent talents. Competitions in essay writing, elocution, debate, quiz and histrionic activities are frequently conducted in the college. Selected students will be given guidance to represent the college at intercollegiate competitions, youth festivals, etc.</p>
+
+    <h4>Youth Red Cross</h4>
+    <p>The Youth Red Cross in association with the Indian Red Cross Society organizes Blood Donation camps. In times of natural disaster, the volunteers come forward to help the displaced and needy.</p>
+
+    <h4>Red Ribbon Club</h4>
+    <p>The College has a Red Ribbon Club which provides awareness about AIDS and its control.</p>
+
+    <h4>Legal Literacy Club</h4>
+    <p>The College has a legal literacy club which provides legal knowledge and awareness to the students and through them to the general public.</p>
+    </main>
+    `;
+            } else if (page === 'Institute_Distinctiveness') {
+                contentDiv.innerHTML = `   <title>Institute Distinctiveness</title>
+    <style>
+        .id {
+            color: #22316c;
+            line-height: 1.6;
+            padding: 20px;
+        }.id{
+        h1, h2, h3, h4 {
+            color: #22316c;
+        }
+        ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }}
+    </style>
+</head>
+<main class="id">
+    <h1>Institute Distinctiveness</h1>
+    <p>Gayatri Vidya Parishad College for Degree and PG Courses(A) (GVPCDPGC(A)) has always focused its efforts to integrate student learning experience with development of the community. Besides including components in the regular curriculum to provide an opportunity to comprehend problems in the community through different courses addressing the local and regional needs, field visits are arranged for the students to nearby rural/tribal areas for a wider exposure.</p>
+    
+    <p>As a part of this since 2016, faculty and students of GVPCDPGC involved in organizing hundreds of health camps in and around Hukumpeta and Paderu mandals of ASR District serving thousands of tribal people. During these camps, it has been observed that there is a need for the enhancement of livelihood and standard of living Tribals in this region.</p>
+
+    <p>With a vision to promote need based, region specific development programs in tribal areas, with a view to help tribal people to move towards new horizons of prosperity and with a mission to be a catalyst in the integrated development of tribal people through appropriate programmes in Science, Engineering, Healthcare and Business models without disturbing their identity and culture, focused initiatives have been planned in association with Tribal welfare Dept. and District administration.</p>
+    
+    <p>As part of this Baseline survey was conducted covering about 3600 households in 33 gram panchayats, in Hukumpeta Mandal, ASR District. The Following problems have been identified during this survey:</p>
+    
+    <ul>
+        <li>Lack of knowledge on scientific methods of cultivation</li>
+        <li>Identified low hemoglobin levels in 65% the people</li>
+        <li>Poor infrastructure, warehousing facilities and market linkages</li>
+        <li>Lack of knowledge on soil health conditions, value addition adoption of modern technology and digital knowledge to communicate with agricultural and market expert</li>
+    </ul>
+    
+    <p>Among all the above, the most critical problem noticed was that 65% of the people were suffering from low levels of Haemoglobin (Anaemia) in the Tribal villages. Then, a plan of action has been formulated to address this issue. As a part of this plan, GVPCDPGCA organized Medical camps at various hamlets like Kangarumamidi, Santhari, Chinnaburuguputu, Barapalli, Kamayyapeta, Bonduguda, Majjivalasa, Pattigaravu, Baluroda etc of Hukumpeta Mandal and screened about 8400 persons for hemoglobin levels. Twenty faculty members and nearly 200 students along with NSS and NCC actively participated in this program.</p>
+    
+    <p>The services rendered to tribal population by the institute was appreciated by Dist. Collector, ASR District and requested GVPCDPGCA to conduct medical camp for the District officials at the district HQ, Paderu. Two medical camps for District officials on 01-04-23 and 07-08-23 where 450 employees availed the services.</p>
+    
+    <p>About 10-20 students along with 3 to 4 faculty members participate in every camp from the GVPCDPGCA and volunteer their services to monitor and organize the smooth conduction of camps. During all these medical camps, the Doctors identified that majority of the population were suffering with anemia and one of the causes for this might be Sickle Cell Disease (SCD).</p>
+    
+    <p>SCD being a dreaded disease debilitating the effected persons and limiting their lifestyle and often proving to be fatal too. It was decided to undertake Pilot Project on Sickle Cell Disease Management among the Tribal population in ASR District starting with Hukumpeta Mandal. GVPCDPGCA submitted a proposal to Dist. Collector Mr. Sumit Kumar Gandhi who after thorough study of the proposal, granted permissions to conduct Medical camps for SCD screening in all the Gram panchayats of Hukumpeta Mandal. The proposal includes:</p>
+    
+    <ul>
+        <li>Screening and diagnosis of SCD or traits</li>
+        <li>Creating awareness on SCD, anaemic conditions, physical and societal problems associated with SCD.</li>
+        <li>Continuous monitoring of health and other complications among effected persons using a customized app.</li>
+    </ul>
+    
+    <p>The first SCD screening camp was conducted in Majjivalasa on 12-02-23. District officials, Faulty members and 30 students involved in organizing the camp. Till date, 16 SCD screening camps have been conducted in Tribal residential school premises of Hukumpeta mandal covering about 2460 persons, identified 11 SCD positive cases and 223 persons with SCD traits. All X class students, pregnant women and lactating women from G. Boddaputtu and Bakuru School Complex have been covered.</p>
+    
+    <p>The Medical Board Recommended Pension for SCD positive persons. Based on the inputs gathered during the screening camps, a road map has been developed with the objectives of:</p>
+    
+    <ul>
+        <li>Controlling the severity of the disease in the people identified with SCD through regular monitoring and provision of access to timely healthcare and thereby improve their quality of life.</li>
+        <li>Preventing the spread of the disease by creating awareness among the vulnerable population and extensive counselling to discourage consanguine marriages which are major cause for the spread of the disease.</li>
+    </ul>
+    
+    <p>In this direction, students and faculty take up counselling and education sessions to the SCD affected persons and their families on the need to control the spread of the disease and strategies to support them in managing the disease. This program will be continued for a minimum period of 5 years.</p>
+
+    <p>The uniqueness of this practice offers a multifaceted approach that combines academic excellence, community. This practice aligns with the nation's emphasis on community outreach, service learning and fostering a deep sense of social responsibility among students.</p>
+
+    <p>Some problems encountered in taking this program forward are:</p>
+
+    <ul>
+        <li>During the organization of SCD camps, accessing the tribal community residing in remote locations to attend screening/health camps.</li>
+        <li>Financial constraints to conduct medical camps at remote locations having poor road connectivity.</li>
+        <li>Mobilization of pregnant and lactating women to camps.</li>
+        <li>To build confidence of the local population to seek help of our volunteers.</li>
+        <li>Seeking cooperation of government officials and NGOs.</li>
+        <li>Procurement of Testing kits for the detection of SCD and administration of confirmation test using HPLC.</li>
+    </ul>
+    
+    <p>Overcoming all these problems have provided valuable insights to the students about the living conditions and problems of the people residing in tribal areas. This has enhanced their sensitivity to social issues and instilled social responsiveness. The practice has enhanced students’ behavior pattern by fostering a sense of community responsibility and has contributed to character building and lifelong commitment to learning. We consider this as an essential step on the path to Vikasit Bharath.</p>
+</main>
+`;
+            }
+            else if(page === 'Academic_Council'){
+                contentDiv.innerHTML = `     <title>Members of Academic Council</title>
+    <style>
+        .mac {
+            color: #22316c;
+            /* font-family: Arial, sans-serif; */
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .mac{
+        h1, h2, h3 {
+            color: #22316c;
+        }
+               table{
+        width: 100%;
+        max-width: 1200px;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        overflow: hidden; 
+        /* font-size: 1vw; */
+         margin-bottom: 20px;
+  
+    }
+        th, td {
+
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+    thead{
+        color: #22316C;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+        }
+
+    </style>
+
+<main class="mac">
+    <h1>Members of Academic Council</h1>
+
+    <h2>Academic Council Members</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Designation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Prof. S. Rajani</td>
+                <td>Chairperson, Principal, Gayatri Vidya Parishad College for Degree and PG Courses</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Prof. P. Srinivasa Rao</td>
+                <td>Special Invitee, President, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sri. D. Dakshina Murty</td>
+                <td>Special Invitee, Vice President, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Prof. K.P.R. Sastry</td>
+                <td>Special Invitee, Vice President, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Prof. P. Somaraju</td>
+                <td>Special Invitee, Secretary, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Sri. V. R. K. S. Siva Prasad</td>
+                <td>Special Invitee, Treasurer, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Prof. V.S.R.Krishna Prasad</td>
+                <td>Special Invitee, Member, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Prof. P. V. Sarma</td>
+                <td>Special Invitee, Member, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Prof. V.S.R.K. Prasad</td>
+                <td>Special Invitee, Member, Gayatri Vidya Parishad</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dr. B. Subba Rao</td>
+                <td>Special Invitee, Member, Gayatri Vidya Parishad</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>All Heads of the UG Departments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Dr. G. Vijaya Lakshmi</td>
+                <td>Department of English</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dr. U.V.S.S. Sastry</td>
+                <td>Department of Telugu</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Dr. K. Anitha</td>
+                <td>Department of Hindi</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dr. V. Venkateswara Sarma</td>
+                <td>Department of Sanskrit</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sri. M.P.R. Murthy</td>
+                <td>Department of Mathematics</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Dr. P.D. Lavanya</td>
+                <td>Department of Physics</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Sri. K. Ravi Prasad</td>
+                <td>Department of Chemistry</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Sri. K. Krishna Kumar</td>
+                <td>Department of Computer Science</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Dr. D. Sridevi</td>
+                <td>Department of Electronics</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dr. P. Srinivasa Rao</td>
+                <td>Department of Statistics</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Dr. L. Sujatha</td>
+                <td>Department of Microbiology</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Dr. Hephzibah Rani Singh</td>
+                <td>Department of Biotechnology</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Dr. Ilahi Shaik</td>
+                <td>Department of Biochemistry</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Dr. G. Lakshmi Narayana</td>
+                <td>Department of Environment Education</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Sri. K. Gowri Sankar</td>
+                <td>Department of Commerce</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Prof. P.V.Mohini</td>
+                <td>Department of B.B.A and B.B.A Digital marketing</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Sri. P. Venkata Rao</td>
+                <td>Department of B.C.A & B.Sc Data Science</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>All Heads of the PG Departments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Prof. K.S.Bose</td>
+                <td>Department of M.B.A. and MBA Business Analytics</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Prof. I.S.Pallavi</td>
+                <td>Department of M.C.A.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Dr. A.V. Joga Rao</td>
+                <td>Department of M.H.R.M</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Prof. I.S.Pallavi</td>
+                <td>Department of M.Sc Computer Science</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Prof. P. Uma Devi</td>
+                <td>Department of M.Sc Organic Chemistry</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>All Heads of the B.Tech Engineering and Technology Programmes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Dr. S. Rajesh</td>
+                <td>Department of Basic Sciences and Humanities</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Prof. P. Jyotsna Devi</td>
+                <td>Department of Civil Engineering</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Prof. N.V.Ramana Murty</td>
+                <td>Department of CSE and CSE (AI&ML)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dr. A. Nageswara Rao</td>
+                <td>Department of ECE</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dr. Ch. Himagireesh</td>
+                <td>Department of Mechanical Engg</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Faculty of the M.Tech Engineering and Technology Programmes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Prof. P. Jyotsna Devi</td>
+                <td>Department of Civil Engineering</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Prof. N.V.Ramana Murty</td>
+                <td>Department of Computer Science and Technology (CST)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Teachers of the College Representing Different Categories</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Designation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Prof. P.V.Vinay</td>
+                <td>I/c Director, Engineering & Technology Programs and Dean, Academic Affairs</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dr. A. Anand</td>
+                <td>Director, UG Courses</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Dr. A. Sairoop</td>
+                <td>DEAN, Student Affairs</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Prof. K.V.V.Murali Someswara Rao</td>
+                <td>Controller of Examinations</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sri. D. Giridhar</td>
+                <td>DEAN, Career Guidance and Training Placements</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Experts from Outside of the College</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Designation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Prof. V. Balamohan Das</td>
+                <td>Former Vice Chancellor, Acharya Nagarjuna University</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dr. I. Vijaya Babu</td>
+                <td>Principal, Dr. V. S. Krishna Govt Degree College</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mr. K. Nagesh</td>
+                <td>General Manager - HR, HPCL, Visakha Refinery, Visakhapatnam</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mr. G. Prasad Reddy</td>
+                <td>Deputy General Manager, MSME Technology Centre, Visakhapatnam</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dr. Bijay Kumar Sahu</td>
+                <td>Sr. Manager & Officer Incharge, National Research Development Corporation</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Three Nominees of the University</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Prof. P. Shyamala</td>
+                <td>Dept of Chemistry, College of Science & Technology, Andhra University</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Prof. PDN Srinivasu</td>
+                <td>Department of Mathematics, College of Science & Technology, Andhra University</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Prof. G. Naga Raja</td>
+                <td>Department of Economics, College of Arts & Commerce, Andhra University</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Member Secretary</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Designation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Prof. P.V.Vinay</td>
+                <td>I/c Director, Engineering & Technology Programs, Gayatri Vidya Parishad College for Degree and PG Courses(A)</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+`;
+            }
+            else if(page === 'Strategic_Plan'){
+                contentDiv.innerHTML = `     
+
+    <title>Strategic Plan</title>
+    <style>
+        .sp {
+        background-color: white;
+        color: #22316c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .plan-link {
+        width: 700px;
+        display: block;
+        background-color: rgba(34, 49, 104, 0.25);
+        margin: 10px auto;
+        padding: 10px;
+        border: 0.17vw solid transparent;
+        border-radius: 10px;
+        max-width: 700px;
+        text-decoration: none;
+        color: #22316c;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 0.83vw;
+    }
+
+    .plan-link:hover {
+        background-color: rgba(34, 49, 104, 0.55);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    @media screen and (max-width: 768px) {
+        .plan-link {
+            width: 90%;
+        }
+        
+    }
+    </style>
+
+<main class=".sp">
+    <div class="content">
+        <h1>Strategic Plan</h1>
+        <div class="strategic-plan">
+            <a href="#" class="plan-link">Strategic Plan 2021-2026</a>
+            <a href="#" class="plan-link">Strategic Plan 2015-2020</a>
+        </div>
+    </div>
+</main>
+`;}
+            else if(page === 'Governance_and_Policies'){
+                contentDiv.innerHTML = `     <title>List of Policies</title>
+    <style>
+        .lop {
+            color: #22316c;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 0 0 0 5%;
+            margin: 0; /* Remove default margin */
+        
+        h1 {
+            color: #22316c;
+            margin-bottom: 20px; /* Add spacing below the heading */
+        }
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0 0 0 20px; /* Remove default padding */
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            list-style-type: "- ";
+        }
+        li {
+            margin: 10px 0; /* Add spacing between list items */
+            font-size: 18px; /* Increase font size for readability */
+        }
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: #22316c; /* Link color */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+    }}
+    </style>
+</head>
+<main class="lop">
+    <div class="content">
+        <h1>List of Policies</h1>
+        <ul>
+            <li><a href="#" target="_blank">Governance ↗</a></li>
+            <li><a href="#" target="_blank">Service Rules ↗</a></li>
+            <li><a href="#" target="_blank">Reimbursement Policy ↗</a></li>
+            <li><a href="#" target="_blank">Policies and Procedures ↗</a></li>
+            <li><a href="#" target="_blank">IQAC Policy ↗</a></li>
+            <li><a href="#" target="_blank">Consultancy Policy ↗</a></li>
+            <li><a href="#" target="_blank">Research Policy ↗</a></li>
+            <li><a href="#" target="_blank">Seed Money Policy ↗</a></li>
+            <li><a href="#" target="_blank">Policy on Plastic Free Campus ↗</a></li>
+            <li><a href="#" target="_blank">Policy on Vehicle Entry into Campus ↗</a></li>
+            <li><a href="#" target="_blank">Green Campus and Environment Policy ↗</a></li>
+            <li><a href="#" target="_blank">Funds Mobilization Policy ↗</a></li>
+        </ul>
+    </div>
+</main>
+`;}
+            else if(page === 'Committees'){
+                contentDiv.innerHTML = `<title>List of Policies</title>
+    <style>
+        .loc {
+            color: #22316c;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 0 0 0 5%;
+            margin: 0; /* Remove default margin */
+        
+        h1 {
+            color: #22316c;
+            margin-bottom: 20px; /* Add spacing below the heading */
+        }
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            list-style-type: "- ";
+        }
+        li {
+            margin: 10px 0; /* Add spacing between list items */
+            font-size: 18px; /* Increase font size for readability */
+        }
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: #22316c; /* Link color */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }}
+    </style>
+</head>
+<main class="loc">
+    <div class="content">
+        <h1>LIST OF COMMITTEES</h1>
+        <ul>
+            <li><a href="#" target="_blank">Academic Planning Committee ↗</a></li>
+            <li><a href="#" target="_blank">Training Placement Career Guidance Committee ↗</a></li>
+            <li><a href="#" target="_blank">Research Development Committee ↗</a></li>
+            <li><a href="#" target="_blank">Library Committee ↗</a></li>
+            <li><a href="#" target="_blank">Alumni Committee ↗</a></li>
+            <li><a href="#" target="_blank">Capacity Building Among SC-ST Students ↗</a></li>
+            <li><a href="#" target="_blank">Grievance Redressal Committee ↗</a></li>
+            <li><a href="#" target="_blank">Internal Complaints Committee (ICC) ↗</a></li>
+            <li><a href="#" target="_blank">IQAC Committee ↗</a></li>
+            <li><a href="#" target="_blank">Anti Ragging Committee ↗</a></li>
+            <li><a href="#" target="_blank">IIC (Institution Innovation Council) ↗</a></li>
+            <li><a href="#" target="_blank">Finance Committee ↗</a></li>
+            <li><a href="#" target="_blank">Canteen Committee ↗</a></li>
+            <li><a href="#" target="_blank">Minority Cell ↗</a></li>
+            <li><a href="#" target="_blank">OBC Cell ↗</a></li>
+            <li><a href="#" target="_blank">Intellectual Property Rights Cell ↗</a></li>
+            <li><a href="#" target="_blank">Sports Committee ↗</a></li>
+            <li><a href="#" target="_blank">Extension Activities Committee ↗</a></li>
+            <li><a href="#" target="_blank">Industry Institute Partnership Cell (IIPC) Committee ↗</a></li>
+            <li><a href="#" target="_blank">Website Development and Maintenance Committee ↗</a></li>
+            <li><a href="#" target="_blank">Entrepreneurship Committee ↗</a></li>
+            <li><a href="#" target="_blank">Disciplinary Committee ↗</a></li>
+            <li><a href="#" target="_blank">Academic Bank of Credits Committee ↗</a></li>
+            <li><a href="#" target="_blank">Literary and Cultural Committee ↗</a></li>
+            <li><a href="#" target="_blank">Admission Committee ↗</a></li>
+            <li><a href="#" target="_blank">Examination Committee ↗</a></li>
+            <li><a href="#" target="_blank">Civil Works and Maintenance Committee ↗</a></li>
+        </ul>
+    </div>
+</main>
+`;
+            }
+            else if(page === 'Finance'){
+                contentDiv.innerHTML = `     <title>Financial Information</title>`;}
+                
+             else {
+                contentDiv.innerHTML = '<h1>Welcome to GVP</h1><p>Please select a valid section.</p>';
+            }
+        }
+
+        window.onload = renderContent;
+    </script>
+    <footer id="footer-placeholder"></footer>
+    <!-- <script src="./templates/preloader.js"></script> -->
+</body>
+</html>
