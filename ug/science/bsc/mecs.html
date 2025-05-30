@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Sc Mathematics, Electronics & Computer Science</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <section id="preloader-placeholder" ></section>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        font-family: "inter",sans-serif;
+        }
+
+body {
+
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/* nav bar */
+.topnav {
+  overflow: hidden;
+  background-color: #22316c;
+  font-family: "inter",sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav.active {
+  background-color: #22316c;
+  color: white;
+}
+
+.topnav .nav-icon {
+  display: none;
+}
+.navHead{
+    margin-right: 20%;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown-content a:hover {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navHead:hover {
+    background-color: #22316c;
+}
+.singleLink{
+    margin-top: -5px;
+}
+@media screen and (max-width: 768px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.nav-icon {
+    float: right;
+    display: block;
+  }
+  .navHead{
+    margin-right: 0%;
+}
+.singleLink{
+    margin-top: 0;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .nav-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+.header1 {
+    width: 100%;
+    background-color: #559ee7;
+    color: #22316c;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure this header is above sidebar */
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+.header-container{
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    color: #22316c;
+}
+.header1 h1 {
+    font-size: 1.5rem;
+}
+  /* burger  */
+
+  .burger {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: all .5s ease;
+    /* margin: 1em; */
+}
+.burger:hover {
+    background: #22316C;
+}
+.burger-strip {
+    transition: all .5s ease;
+}
+.strip div {
+    height: 3px;
+    border-radius: 2px;
+    background: #22316C;
+    margin: 5px;
+    transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 22.5px;
+}
+.burger:hover .strip div {
+    background: white;
+}
+/* BURGER 1 */
+.burger-strip div:first-child {
+    width: 8px;
+}
+.burger-strip div:last-child {
+    width: 15px;
+}
+.burger.active .burger-strip div:first-child {
+    transform: rotate(46deg) translateY(-0.2px) translateX(4px);
+}
+.burger.active .burger-strip div:nth-child(2) {
+    transform: rotate(-45deg);
+}
+.burger.active .burger-strip div:last-child {
+    transform: rotate(45deg) translateY(-9px) translateX(1px);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* .dept-div {
+    width: 80%;
+    justify-content: space-between;
+} */
+
+.sidebar {
+    background-color: #eaecee;
+    color: #22316c;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    scrollbar-width: none;
+    z-index: 999; /* Ensure sidebar is below header */
+    padding-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 6px 20px;
+}
+
+.sidebar ul li a {
+    color: #22316c;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1b255334;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+}
+
+.sidebar ul li a.active {
+    background-color: #1b255334;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    color: #22316c;
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 50px;
+    flex-grow: 1;
+}
+
+.content > section {
+    display: none;
+}
+
+.content > section.active {
+    display: block;
+}
+
+h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    text-rendering: geometricPrecision;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+section {
+    text-align: justify;
+}
+.dept-img {
+    position: relative;
+    float: right;
+    margin: 0 20px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.dept-img:hover{
+transform: translateY(-10px); /* Slightly raise the card */
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.dept-con {
+    width: 100%;
+}
+
+.page2{
+      display: flex;
+    }
+    .mivison{
+      margin: 3vw;
+      padding: 2vw;
+      border: 2px solid transparent;
+      border-radius: 1vw;
+      font-size: 1.3vw;
+      text-align: justify;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .mivison:hover {
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+  section ul{
+    list-style: none;
+  }
+  section ul li{
+    margin-bottom: 20px;
+  }
+  section ul li strong{
+    border-bottom: 2px solid #22316cb0;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+  }
+
+  /* hod message */
+  .hod-img{
+    width:100%; 
+    max-width:400px;
+    display:block;
+    margin-bottom:20px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 25px; 
+    float: right;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+    .hod-img:hover{
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+    /* faculty css  */
+    #faculty{
+        padding-left: 6%;
+    }
+    .container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* align-content: ; */
+        gap: 30px;
+    }
+    #faculty .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        width: 250px;
+        max-height: 350px;
+        background: #eaecee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #faculty .card:hover {
+        transform: translateY(-10px); /* Slightly raise the card */
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .fac_img img {
+        width: 100%;
+        height: 150px;
+        object-fit: calc(100px - 200 * 3);
+    }
+    .fac_title {
+        width: 100%;
+        max-height: 200px;
+        padding: 10px;
+        word-break: break-all;
+        
+    }
+    .fac_title h3 {
+        font-size: 1em;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+    }
+    .fac_title p {
+        font-size: 10px;
+        margin: 5px 0;
+        font-weight: 500;
+        text-wrap: pretty;
+    }
+    /* syllabus */
+    .file {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 1.3%;
+        background-color: rgba(34, 49, 104, 0.25);
+        border: 0.17vw solid transparent;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .file:hover, .file.active {
+        background-color: rgba(34, 49, 104, 0.55);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .file p {
+        margin: unset;
+        display: flex;
+        justify-content: center;
+      
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .file button {
+        color: #22316C;
+        font-size: medium;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-wrap: pretty;
+    }
+    .file:hover button {
+        font-size: large;
+        color: #e78709;
+        text-decoration: underline;
+        text-underline-offset: calc(4px);
+    }
+    /* infrastructure */
+    table{
+        width: 100%;
+        max-width: 1200px;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        overflow: hidden; 
+        font-size: 1vw;
+    }
+    thead{
+        color: #22316C;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .nested-table {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nested-table th {
+        border: none;
+        background-color: transparent; /* Remove background color from nested-table th */
+        text-align: left;
+    }
+
+    .nested-table tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+    .nested-table td {
+        padding: 5px 10px;
+        border: none;
+    }
+    /* committes css */
+    #department-committees .container-fluid {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+    }
+
+    #department-committees    .row {
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+    #department-committees    .col-sm-10 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    #department-committees    .col-sm-10 h2{
+            text-wrap: nowrap;
+        }
+
+
+    #department-committees   .accordion .card {
+            width: 100%;
+            height: min-content;
+            background-color: rgba(34, 49, 104, 0.1);
+            border: 0.17vw solid transparent;
+            border-radius: 10px;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+    #department-committees    .card-header {
+            width: 100%;
+            padding: 1.5px 0;
+            border-radius: 10px;
+            background-color: rgba(34, 49, 104, 0.2);
+        }
+
+    #department-committees   .card-header h3{
+            margin-left: 4px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    #department-committees    .card-header h3 span{
+            margin-right: 10px;
+        }
+    #department-committees    .btn-link {
+            background: none;
+            border: none;
+            /* color: #007bff; */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            cursor: pointer;
+            text-align: start;
+        }
+  
+    #department-committees    .button-container button {
+            padding: 10px 20px;
+            border: unset;
+            border-radius: 10px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 600;
+            font-size: 1.3vw;
+            box-shadow: 4px 8px 19px 3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
+            text-wrap: nowrap;
+            margin-top: 20px;
+        }
+    #department-committees   .button-container button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #22316C;
+            z-index: -1;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+        }
+    #department-committees   .button-container button:hover {
+            color: #e8e8e8;
+        }
+    #department-committees    .button-container button:hover::before {
+            width: 100%;
+        }
+
+    #department-committees    .card-body {
+            padding: 15px;
+        }
+
+    #department-committees    .card-body b {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    #department-committees    ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+    #department-committees    ul li {
+            list-style: circle;
+            margin-bottom: 3px;
+        }
+
+    #department-committees    .collapse {
+            display: none;
+        }
+
+    #department-committees .collapse.show {
+            display: block;
+            height: max-content;
+        }
+        
+        /* Icons for the accordion */
+    #department-committees    .card-header .icon {
+            font-size: 1.5rem;
+        }
+
+        /* research & development */
+        .pdf-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pdf-link a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .pdf-link a:hover {
+            text-decoration: underline;
+        }
+        .pdf-viewer {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+@media (max-width: 768px) {
+    h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    font-size: medium;
+    }
+
+    p ,strong{
+        font-size: small;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: 999; /* Ensure sidebar does not overlap other content */
+    }
+
+    .dept-div {
+        width: 100%;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .dept-con {
+        width: 100%;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        padding-top: 70px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .dept-img {
+        display: none;
+    }
+    .page2{
+     flex-direction: column;
+    }
+    #syllabus h3{
+        font-size: x-small;
+    }
+    .file p{
+        font-size: 2.5vw;
+    }
+    .file{
+        border-radius: 6px;
+    }
+    .file a{
+        padding-left: 15%;
+        align-content: center;
+    }
+    .file button{
+        font-size: 3vw;
+        text-align: center;
+        display: flex;
+        white-space: nowrap;
+    }
+    .file:hover button{
+        font-size: 3vw;
+    }
+    table{
+        font-size: 2.5vw;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+    th, td {
+        padding: 4px;
+    }
+    #department-committees .col-sm-10 {
+                flex: 0 0 100%;
+            }
+    #department-committees .button-container button {
+        margin-top: 0;
+        font-size: small;
+    }
+    #department-committees h2 ,#department-committees  h3,#department-committees .card-header button,#department-committees li{
+        font-size: small;
+    }
+    .pdf-viewer {
+        width: 100%; 
+        height: 300px;
+    }
+    canvas {
+        width: min-content;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<div class="header1">
+    <div>
+        <div class="topnav" id="myTopnav">
+            
+            <a href="../../../index.html" style="align-items: center;color: #e78709;font-weight: 700;background-color: #22316C;" class="navHead"><img src="../assects/gvplogorm.png" width="20px" alt=""> GVPCDPGC</a>
+             <a href="../../../index.html" class="singleLink">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Administration
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                                    <a href="../../../Adminstration/administration.html">Administrators</a>
+                  <a href="../../../Adminstration/administration.html#director">Directors</a>
+                  <a href="../../../Adminstration/administration.html#deans">Deans</a>
+                  <a href="../../../Adminstration/administration.html#controllers">Controllers</a>
+                  <a href="../../../Adminstration/administration.html#hod-pg">PG HOD's</a>
+                  <a href="../../../Adminstration/administration.html#hod-ET">E&T HOD's</a>
+                  <a href="../../../Adminstration/administration.html#hod-ug">UG HOD's</a>
+                  <a href="../../../Adminstration/administration.html#COORDINATORS">Coordinators</a>
+                  <a href="../../../Adminstration/administration.html">Governing bodies</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Academics
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../../../Academics/">Academics</a>
+                  <a href="../../../Academics/programs.html">Programs</a>
+                  <a href="../../../Academics/Academic calender.html">Academic calendar</a>
+                  <a href="../../../Academics/Departments.html">Department</a>
+                  <a href="../../../Academics/syllabus.html">Syllabus</a>
+                  <a href="../../../Academics/Regulations.html">Regulations</a>
+                  <a href="../../../Academics/Archives.html">Archives</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Admissions</a>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../../../admissions/">Admissions</a>
+                  <a href="../../../Academics/engeenering.html">Undergraduate</a>
+                  <a href="../../../Academics/undergraduate.html">Graduate</a>
+                  <a href="../../../Academics/pg.html">International</a>
+              </div>
+            </div> 
+
+
+            <a href="../../../faculty/faculty.html"  class="singleLink">Faculty</a>
+            <div class="dropdown">
+              <button class="dropbtn">Placements
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                  <a href="../../../placements/">Placements</a>
+                  <a href="../../../placements/about-placements.html">About Placements</a>
+                  <a href="../../../placements/traningplacements.html">Training & Placements</a>
+                  <a href="../../../placements/placementteam.html">Placements Team</a>
+                  <a href="../../../placements/placements-activities.html">Placements Activities</a>
+              </div>
+            </div> 
+            
+            <a href="#"  class="singleLink">Research</a>
+            <div class="dropdown">
+                <button class="dropbtn">  other
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" style="right: 0;">
+                  <div style="display: flex;">
+                      <div>
+                    <a href="../../../others/examination-archives.html">Examination</a>
+                    <a href="../../../others/Results.html">Results</a>
+                    <a href="../../../others/clubs.html">Clubs</a>
+                    <a href="#">Campus Life</a>
+                    <a href="#">Transportation</a>
+                    <a href="#">Events</a>
+                    <a href="#">Code of Conduct</a></div>
+                    <div>
+                    <a href="../../../top/aicte.html">AICTE Mandatory Info</a>
+                    <a href="../../../top/iqac.html">IQAC</a>
+                    <a href="../../../top/iipc.html">IIPC</a>
+                    <a href="../../../top/naac.html">NAAC</a>
+                    <a href="##">ALUMNI</a>
+                    <a href="../../../top/online payment.html">Online Payments</a>
+                    <a href="##">CAREERS</a>
+                    <a href="##">360 Virtual Tour</a>
+                  </div>
+                  </div>
+                </div>
+              </div> 
+<a href="javascript:void(0);" style="font-size:20px;font-weight: 800;" class="nav-icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<script>
+function myFunction() {
+var x = document.getElementById("myTopnav");
+const navIcon = document.querySelector('.nav-icon');
+if (x.className === "topnav") {
+  x.className += " responsive";
+    navIcon.innerHTML = '&times;';
+
+} else {
+  x.className = "topnav";
+    navIcon.innerHTML = '&#9776;';
+}
+}
+</script>
+    </div>
+    <div class="header-container">
+        <h1>B.Sc Mathematics, Electronics & Computer Science</h1>
+        <div class="burger" id="menu-icon">
+            <div class="strip burger-strip">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li ><a href="#" data-target="about-department">About Department</a></li>
+        <li><a href="#" data-target="vision-mission">PO's & PSO's</a></li>
+        <li><a href="#" data-target="admissions">Admissions</a></li>
+        <li><a href="#" data-target="course-structure">Course Structure</a></li>
+        <li><a href="#" data-target="departments">Departments</a></li>
+        <li><a href="#" data-target="placements">Placements</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section id="about-department" class="active">
+        <h2>About the Program</h2>
+        <p>The B.Sc Mathematics, Electronics & Computer Science (MECs) program at Gayatri Vidya Parishad College for Degree and P.G. Courses is a three-year undergraduate course affiliated with Andhra University. It integrates Mathematics, Electronics, and Computer Science to provide a multidisciplinary approach and practical skills.</p>
+
+        <h2>Eligibility</h2>
+        <p>Candidates must have completed Higher Secondary (10+2) in the science stream or an equivalent qualification with Mathematics as one of the core subjects.</p>
+
+    </section>
+
+    <section id="vision-mission">
+        
+        <h2>Program Specific Outcomes (PSOs)</h2>
+        <ul>
+            <li><strong>PSO 1:</strong> An ability to apply mathematical foundations, algorithmic principles and computer science theory in the modelling and design of computer based systems in a way that demonstrates comprehension of the tradeoffs involved in design choices and create interest towards the area of research.</li>
+            <li><strong>PSO 2:</strong> Students equip themselves with embedded knowledge of hardware and software. The course will enrich the students with a comprehensive understanding of basic circuits to advanced emerging technologies of the Electronics industry that makes him a successful technocrat.</li>
+            <li><strong>PSO 3:</strong> The ability to understand, analyze and develop computer programs in the areas related to algorithms, system software, and multimedia and big data analytics for efficient design of computer-based systems of varying complexity. They develop the ability to employ modern platforms in creating innovative career paths to be an entrepreneur and a zest for higher studies.</li>
+        </ul>
+        <br>
+        <h2>Program Outcomes (POs)</h2>
+        <ul>
+            <li><strong>Critical thinking skills:</strong> Students able to take informed actions by differentiating between fact and opinion, recognize and evaluate, develop inferential skills and distinguish logical assumption from different perceptive allow making decisions and judgments by using scientific-based reasoning.</li>
+            <li><strong>Analytical skills:</strong> Students able to analyze and interpret concepts from a variety of methods apply these methods to analogous situations. They assess the elements of a problem and become competent at problem solving.</li>
+            <li><strong>Usage of modern tools and technologies:</strong> Students develop scientific orientation and are at ease in the adoption of modern techniques.</li>
+            <li><strong>Effective communication:</strong> Students develop skills like listening, speaking, reading and writing in their respective domains and become communicators.</li>
+            <li><strong>Ethics:</strong> Students develop ethical values and contribute to nation building as responsible citizens.</li>
+            <li><strong>Self-directed and life–long learning:</strong> Acquire the ability to engage in independent and lifelong learning in the broadest context socio-technological changes.</li>
+            <li><strong>Social interaction and sustainability:</strong> Students develop empathy towards the societal needs and are able to contribute sustainable development and gain knowledge and skill to understand and solve environmental issues and problems.</li>
+        </ul>
+    </section>
+
+    <section id="admissions">
+        <h2>Admissions</h2>
+        <table border="1">
+            <thead>
+              <tr>
+                <th>Programme Name</th>
+                <th>Programme Code</th>
+                <th>Number of Seats available/ Sanctioned</th>
+                <th>Number of Students Admitted</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2020-21 (Online Admissions)<br>Mathematics, Electronics, Computer Science</td>
+                <td>05</td>
+                <td>180+18 EWS</td>
+                <td>185</td>
+              </tr>
+              <tr>
+                <td>2019-20<br>Mathematics, Electronics, Computer Science</td>
+                <td>05</td>
+                <td>180 (180+36)</td>
+                <td>216</td>
+              </tr>
+              <tr>
+                <td>2018-19<br>Mathematics, Electronics, Computer Science</td>
+                <td>05</td>
+                <td>148 (148+30)</td>
+                <td>178</td>
+              </tr>
+              <tr>
+                <td>2017-18<br>Mathematics, Electronics, Computer Science</td>
+                <td>05</td>
+                <td>148 (148+35)</td>
+                <td>183</td>
+              </tr>
+              <tr>
+                <td>2016-17<br>Mathematics, Electronics, Computer Science</td>
+                <td>05</td>
+                <td>148 (148+33)</td>
+                <td>181</td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </section>
+
+    <section id="course-structure">
+        <h2>Course Structure</h2>
+        <div id="course-structure-viewer" class="pdf-viewer"></div>
+        <div class="pdf-link">
+            <a href="../data/dept/cse/pdf/Course_Structure.pdf" target="_blank">Download Course Structure PDF</a>
+        </div>
+    </section>
+
+    <section id="departments">
+        <div class="dept-div">
+            <h2>Departments</h2>
+               <div id="departments-viewer" class="pdf-viewer"></div>
+                <div class="pdf-link">
+                    <a href="../data/dept/cse/pdf/Departments.pdf" target="_blank">Download Departments PDF</a>
+                </div>
+
+        </div>
+    </section>
+
+    <section id="placements">
+        <div id="placements-viewer" class="pdf-viewer"></div>
+        <div class="pdf-link">
+            <a href="../data/dept/cse/pdf/Placements.pdf" target="_blank">Download Placements PDF</a>
+        </div>
+    </section>
+
+    <script>
+        function renderPDF(url, viewerId) {
+            const pdfViewer = document.getElementById(viewerId);
+
+            pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+                pdfViewer.innerHTML = ''; // Clear previous content
+                const pdfDoc = pdfDoc_;
+                const scale = 1.5;
+                const numPages = pdfDoc.numPages;
+
+                for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                    pdfDoc.getPage(pageNum).then(function(page) {
+                        const viewport = page.getViewport({ scale });
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        const renderContext = {
+                            canvasContext: ctx,
+                            viewport: viewport
+                        };
+                        page.render(renderContext).promise.then(function() {
+                            pdfViewer.appendChild(canvas);
+                        });
+                    });
+                }
+            });
+        }
+
+
+        const sectionsToRender = [
+            { id: 'admissions-viewer', url: '../../../data/ug/science/bsc/course_structureMathematics_Physics_and_Computer_Science.pdf' },
+            { id: 'course-structure-viewer', url: '../../../data/ug/science/bsc/course_structureMathematics_Physics_and_Computer_Science.pdf' },
+            { id: 'departments-viewer', url: '../../../data/ug/science/bsc/course_structureMathematics_Physics_and_Computer_Science.pdf' },
+            { id: 'placements-viewer', url: '../../../data/ug/science/bsc/course_structureMathematics_Physics_and_Computer_Science.pdf' }
+        ];
+
+        sectionsToRender.forEach(section => {
+            renderPDF(section.url, `${section.id}`);
+        });
+    </script>
+
+</main>
+
+<script>
+    function adjustSidebarPadding() {
+        const header = document.querySelector('.header1');
+        const sidebar = document.getElementById('sidebar');
+        const headerHeight = header.offsetHeight;
+        sidebar.style.paddingTop = `${headerHeight}px`;
+    }
+
+    window.addEventListener('load', adjustSidebarPadding);
+    window.addEventListener('resize', adjustSidebarPadding);
+
+    document.getElementById('menu-icon').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+        document.getElementById('menu-icon').classList.toggle('active') ;
+    });
+
+    const links = document.querySelectorAll('.sidebar ul li a');
+    const sections = document.querySelectorAll('.content > section');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+            document.getElementById('menu-icon').innerHTML = `
+                <div class="strip burger-strip">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            `;
+            links.forEach(link => link.classList.remove('active'),
+            document.getElementById('menu-icon').classList.remove('active'));
+
+            link.classList.add('active');
+            sections.forEach(section => section.classList.remove('active'));
+            const targetId = link.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+            window.scrollTo({
+                top: 0,
+                // behavior: 'smooth'
+            });
+        });
+    });
+
+    document.querySelector('.sidebar ul li a').classList.add('active');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('data-target');
+    if (target) {
+        const targetLink = document.querySelector(`.sidebar ul li a[data-target="${target}"]`);
+        if (targetLink) {
+            targetLink.click();
+        }
+    }
+</script>
+<!-- r&i -->
+ 
+<script>
+    const pdfViewer = document.getElementById('placements');
+
+    // URL of the PDF
+    // const url = '../../../data/ug/science/bsc/course_structureMathematics_Physics_and_Computer_Science.pdf';
+    
+    // Asynchronous download of PDF
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfViewer.innerHTML = ''; // Clear previous content
+        const pdfDoc = pdfDoc_;
+        const scale = 1.5;
+        const numPages = pdfDoc.numPages;
+
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+            pdfDoc.getPage(pageNum).then(function(page) {
+                const viewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Render PDF page into canvas context
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                page.render(renderContext).promise.then(function() {
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+        }
+    });
+</script>
+<!-- activities  -->
+<script type="module">
+    import Activities from '../data/dept/cse/Activities.js'; // Update the path as necessary
+
+    function renderData(containerId, data) {
+        const container = document.getElementById(containerId);
+        let htmlContent = '';
+
+        for (const [title, items] of Object.entries(data)) {
+            htmlContent += `
+                <h2>${title}</h2>
+                ${items.map(item => `
+                    <div class="file">
+                        <p>${item.text}</p>
+                        <a href="${item.link}" target="_blank">
+                            <button>Click Here</button>
+                        </a>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+
+    // Render the data section using the FacultyAndStudentActivities object
+    renderData('ActivitiesSection', Activities);
+</script>
+<script src="../templates/preloader.js"></script>
+
+</body>
+</html>

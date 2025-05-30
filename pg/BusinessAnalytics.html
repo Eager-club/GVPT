@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DEPARTMENT OF MBA - Business Analytics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <section id="preloader-placeholder" ></section>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        font-family: "inter",sans-serif;
+        }
+
+body {
+
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/* nav bar */
+.topnav {
+  overflow: hidden;
+  background-color: #22316c;
+  font-family: "inter",sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav.active {
+  background-color: #22316c;
+  color: white;
+}
+
+.topnav .nav-icon {
+  display: none;
+}
+.navHead{
+    margin-right: 20%;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown-content a:hover {
+    background-color: #e78709;
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navHead:hover {
+    background-color: #22316c;
+}
+.singleLink{
+    margin-top: -5px;
+}
+@media screen and (max-width: 768px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.nav-icon {
+    float: right;
+    display: block;
+  }
+  .navHead{
+    margin-right: 0%;
+}
+.singleLink{
+    margin-top: 0;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .nav-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+.header1 {
+    width: 100%;
+    background-color: #559ee7;
+    color: #22316c;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure this header is above sidebar */
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+.header-container{
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    color: #22316c;
+}
+.header1 h1 {
+    font-size: 1.5rem;
+}
+  /* burger  */
+
+  .burger {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: all .5s ease;
+    /* margin: 1em; */
+}
+.burger:hover {
+    background: #22316C;
+}
+.burger-strip {
+    transition: all .5s ease;
+}
+.strip div {
+    height: 3px;
+    border-radius: 2px;
+    background: #22316C;
+    margin: 5px;
+    transition: all .55s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 22.5px;
+}
+.burger:hover .strip div {
+    background: white;
+}
+/* BURGER 1 */
+.burger-strip div:first-child {
+    width: 8px;
+}
+.burger-strip div:last-child {
+    width: 15px;
+}
+.burger.active .burger-strip div:first-child {
+    transform: rotate(46deg) translateY(-0.2px) translateX(4px);
+}
+.burger.active .burger-strip div:nth-child(2) {
+    transform: rotate(-45deg);
+}
+.burger.active .burger-strip div:last-child {
+    transform: rotate(45deg) translateY(-9px) translateX(1px);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dept-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.sidebar {
+    background-color: #eaecee;
+    color: #22316c;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    scrollbar-width: none;
+    z-index: 999; /* Ensure sidebar is below header */
+    padding-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 6px 20px;
+}
+
+.sidebar ul li a {
+    color: #22316c;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1b255334;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+}
+
+.sidebar ul li a.active {
+    background-color: #1b255334;
+    border-radius: 10px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    color: #22316c;
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 50px;
+    flex-grow: 1;
+}
+
+.content > section {
+    display: none;
+}
+
+.content > section.active {
+    display: block;
+}
+
+h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    text-rendering: geometricPrecision;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+section {
+    text-align: justify;
+}
+.dept-img {
+    position: relative;
+    float: right;
+    margin: 0 20px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.dept-img:hover{
+transform: translateY(-10px); /* Slightly raise the card */
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.dept-con {
+    width: 100%;
+}
+
+.page2{
+      display: flex;
+    }
+    .mivison{
+      margin: 3vw;
+      padding: 2vw;
+      border: 2px solid transparent;
+      border-radius: 1vw;
+      font-size: 1.3vw;
+      text-align: justify;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .mivison:hover {
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+  section ul{
+    list-style: none;
+  }
+  section ul li{
+    margin-bottom: 20px;
+  }
+  section ul li strong{
+    border-bottom: 2px solid #22316cb0;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+  }
+
+  /* hod message */
+  .hod-img{
+    width:100%; 
+    max-width:400px;
+    display:block;
+    margin-bottom:20px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 25px; 
+    float: right;
+    aspect-ratio: 16 / 9;
+    object-fit: scale-down;
+    background-color: #EEECF7;
+}
+    .hod-img:hover{
+    transform: translateY(-10px); /* Slightly raise the card */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+    /* faculty css  */
+    #faculty{
+        padding-left: 6%;
+    }
+    .container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* align-content: ; */
+        gap: 30px;
+    }
+    #faculty .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        width: 250px;
+        max-height: 350px;
+        background: #eaecee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #faculty .card:hover {
+        transform: translateY(-10px); /* Slightly raise the card */
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .fac_img img {
+        width: 100%;
+        height: 150px;
+        object-fit: calc(100px - 200 * 3);
+    }
+    .fac_title {
+        width: 100%;
+        max-height: 200px;
+        padding: 10px;
+        word-break: break-all;
+        
+    }
+    .fac_title h3 {
+        font-size: 1em;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+    }
+    .fac_title p {
+        font-size: 10px;
+        margin: 5px 0;
+        font-weight: 500;
+        text-wrap: pretty;
+    }
+    /* syllabus */
+    .file {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 1.3%;
+        background-color: rgba(34, 49, 104, 0.25);
+        border: 0.17vw solid transparent;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .file:hover, .file.active {
+        background-color: rgba(34, 49, 104, 0.55);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    .file p {
+        margin: unset;
+        display: flex;
+        justify-content: center;
+      
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .file button {
+        color: #22316C;
+        font-size: medium;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-wrap: pretty;
+    }
+    .file:hover button {
+        font-size: large;
+        color: #e78709;
+        text-decoration: underline;
+        text-underline-offset: calc(4px);
+    }
+    /* infrastructure */
+    table{
+        width: 100%;
+        max-width: 1200px;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        overflow: hidden; 
+        font-size: 1vw;
+    }
+    thead{
+        color: #22316C;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .nested-table {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nested-table th {
+        border: none;
+        background-color: transparent; /* Remove background color from nested-table th */
+        text-align: left;
+    }
+
+    .nested-table tr:nth-child(even) {
+        background-color: #f2f2f2; /* Alternating row color for nested-table */
+    }
+
+    .nested-table td {
+        padding: 5px 10px;
+        border: none;
+    }
+    /* committes css */
+    #department-committees .container-fluid {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+    }
+
+    #department-committees    .row {
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+    #department-committees    .col-sm-10 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    #department-committees    .col-sm-10 h2{
+            text-wrap: nowrap;
+        }
+
+
+    #department-committees   .accordion .card {
+            width: 100%;
+            height: min-content;
+            background-color: rgba(34, 49, 104, 0.1);
+            border: 0.17vw solid transparent;
+            border-radius: 10px;
+            margin-bottom: 0.83vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+    #department-committees    .card-header {
+            width: 100%;
+            padding: 1.5px 0;
+            border-radius: 10px;
+            background-color: rgba(34, 49, 104, 0.2);
+        }
+
+    #department-committees   .card-header h3{
+            margin-left: 4px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    #department-committees    .card-header h3 span{
+            margin-right: 10px;
+        }
+    #department-committees    .btn-link {
+            background: none;
+            border: none;
+            /* color: #007bff; */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            cursor: pointer;
+            text-align: start;
+        }
+  
+    #department-committees    .button-container button {
+            padding: 10px 20px;
+            border: unset;
+            border-radius: 10px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 600;
+            font-size: 1.3vw;
+            box-shadow: 4px 8px 19px 3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+            overflow: hidden;
+            text-wrap: nowrap;
+            margin-top: 20px;
+        }
+    #department-committees   .button-container button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #22316C;
+            z-index: -1;
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms;
+        }
+    #department-committees   .button-container button:hover {
+            color: #e8e8e8;
+        }
+    #department-committees    .button-container button:hover::before {
+            width: 100%;
+        }
+
+    #department-committees    .card-body {
+            padding: 15px;
+        }
+
+    #department-committees    .card-body b {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    #department-committees    ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+    #department-committees    ul li {
+            list-style: circle;
+            margin-bottom: 3px;
+        }
+
+    #department-committees    .collapse {
+            display: none;
+        }
+
+    #department-committees .collapse.show {
+            display: block;
+            height: max-content;
+        }
+        
+        /* Icons for the accordion */
+    #department-committees    .card-header .icon {
+            font-size: 1.5rem;
+        }
+
+        /* research & development */
+        .pdf-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pdf-link a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .pdf-link a:hover {
+            text-decoration: underline;
+        }
+        #pdf-viewer,#pdf-viewer1{
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+@media (max-width: 768px) {
+    h2 {
+    color: #1b2553;
+    margin-bottom: 10px;
+    font-size: medium;
+    }
+
+    p ,strong{
+        font-size: small;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: 999; /* Ensure sidebar does not overlap other content */
+    }
+
+    .dept-div {
+        width: 100%;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .dept-con {
+        width: 100%;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        padding-top: 70px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .dept-img {
+        display: none;
+    }
+    .page2{
+     flex-direction: column;
+    }
+    #syllabus h3{
+        font-size: x-small;
+    }
+    .file p{
+        font-size: 2.5vw;
+    }
+    .file{
+        border-radius: 6px;
+    }
+    .file a{
+        padding-left: 15%;
+        align-content: center;
+    }
+    .file button{
+        font-size: 3vw;
+        text-align: center;
+        display: flex;
+        white-space: nowrap;
+    }
+    .file:hover button{
+        font-size: 3vw;
+    }
+    table{
+        font-size: 2.5vw;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+    th, td {
+        padding: 4px;
+    }
+    #department-committees .col-sm-10 {
+                flex: 0 0 100%;
+            }
+    #department-committees .button-container button {
+        margin-top: 0;
+        font-size: small;
+    }
+    #department-committees h2 ,#department-committees  h3,#department-committees .card-header button,#department-committees li{
+        font-size: small;
+    }
+    #pdf-viewer,#pdf-viewer1 {
+        width: 100%; 
+        height: 300px;
+    }
+    canvas {
+        width: min-content;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<div class="header1">
+    <div>
+        <div class="topnav" id="myTopnav">
+            
+            <a href="../index.html" style="align-items: center;color: #e78709;font-weight: 700;background-color: #22316C;" class="navHead"><img src="../assects/gvplogorm.png" width="20px" alt=""> GVPCDPGC</a>
+             <a href="../index.html" class="singleLink">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Administration
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                                    <a href="../Adminstration/administration.html">Administrators</a>
+                  <a href="../Adminstration/administration.html#director">Directors</a>
+                  <a href="../Adminstration/administration.html#deans">Deans</a>
+                  <a href="../Adminstration/administration.html#controllers">Controllers</a>
+                  <a href="../Adminstration/administration.html#hod-pg">PG HOD's</a>
+                  <a href="../Adminstration/administration.html#hod-ET">E&T HOD's</a>
+                  <a href="../Adminstration/administration.html#hod-ug">UG HOD's</a>
+                  <a href="../Adminstration/administration.html#COORDINATORS">Coordinators</a>
+                  <a href="../Adminstration/administration.html">Governing bodies</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Academics
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../Academics/">Academics</a>
+                  <a href="../Academics/programs.html">Programs</a>
+                  <a href="../Academics/Academic calender.html">Academic calendar</a>
+                  <a href="../Academics/Departments.html">Department</a>
+                  <a href="../Academics/syllabus.html">Syllabus</a>
+                  <a href="../Academics/Regulations.html">Regulations</a>
+                  <a href="../Academics/Archives.html">Archives</a>
+              </div>
+            </div> 
+
+            <div class="dropdown">
+              <button class="dropbtn">Admissions</a>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="../admissions/">Admissions</a>
+                  <a href="../Academics/engeenering.html">Undergraduate</a>
+                  <a href="../Academics/undergraduate.html">Graduate</a>
+                  <a href="../Academics/pg.html">International</a>
+              </div>
+            </div> 
+
+
+            <a href="../faculty/faculty.html"  class="singleLink">Faculty</a>
+            <div class="dropdown">
+              <button class="dropbtn">Placements
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                  <a href="../placements/">Placements</a>
+                  <a href="../placements/about-placements.html">About Placements</a>
+                  <a href="../placements/traningplacements.html">Training & Placements</a>
+                  <a href="../placements/placementteam.html">Placements Team</a>
+                  <a href="../placements/placements-activities.html">Placements Activities</a>
+              </div>
+            </div> 
+            
+            <a href="#"  class="singleLink">Research</a>
+            <div class="dropdown">
+                <button class="dropbtn">  other
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" style="right: 0;">
+                  <div style="display: flex;">
+                      <div>
+                    <a href="../others/examination-archives.html">Examination</a>
+                    <a href="../others/Results.html">Results</a>
+                    <a href="../others/clubs.html">Clubs</a>
+                    <a href="#">Campus Life</a>
+                    <a href="#">Transportation</a>
+                    <a href="#">Events</a>
+                    <a href="#">Code of Conduct</a></div>
+                    <div>
+                    <a href="../top/aicte.html">AICTE Mandatory Info</a>
+                    <a href="../top/iqac.html">IQAC</a>
+                    <a href="../top/iipc.html">IIPC</a>
+                    <a href="../top/naac.html">NAAC</a>
+                    <a href="##">ALUMNI</a>
+                    <a href="../top/online payment.html">Online Payments</a>
+                    <a href="##">CAREERS</a>
+                    <a href="##">360 Virtual Tour</a>
+                  </div>
+                  </div>
+                </div>
+              </div> 
+<a href="javascript:void(0);" style="font-size:20px;font-weight: 800;" class="nav-icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<script>
+function myFunction() {
+var x = document.getElementById("myTopnav");
+const navIcon = document.querySelector('.nav-icon');
+if (x.className === "topnav") {
+  x.className += " responsive";
+    navIcon.innerHTML = '&times;';
+
+} else {
+  x.className = "topnav";
+    navIcon.innerHTML = '&#9776;';
+}
+}
+</script>
+    </div>
+    <div class="header-container">
+        <h1> DEPARTMENT OF MBA - Business Analytics</h1>
+        <div class="burger" id="menu-icon">
+            <div class="strip burger-strip">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li ><a href="#" data-target="about-department">About Department</a></li>
+        <li><a href="#" data-target="vision-mission">Vision & Mission / PEOs / PSOs / POs</a></li>
+        <li><a href="#" data-target="hod-message">HOD's Message</a></li>
+        <li><a href="#" data-target="faculty">Faculty</a></li>
+        <li><a href="#" data-target="syllabus">Syllabus</a></li>
+        <li><a href="#" data-target="academic-calendar">Academic Calendar and Time Tables</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section id="about-department" class="active">
+        <h2>About Department</h2>
+        <div class="dept-div">
+            <div class="dept-con">
+                <p>The MBA in Business Analytics program is a symphony of data and strategy, orchestrating a new generation of leaders who turn information into innovation and insight into impact. In a world driven by data, where every click, transaction, and interaction generate a wealth of information, the ability to decode and harness this data is no longer a luxury—it's a necessity.</p>
+
+                <p>The MBA Business Analytics program was started by Gayatri Vidya Parishad College for Degree & P.G. Courses(A) in the year 2022. The objective of this program is to create good leaders who create an impact in the world with logic and values. It's a program where the art of leadership meets the science of data. Here, students are not just trained to understand business concepts; they are equipped to transform those concepts using analytical tools and techniques.</p>
+
+                <p>An MBA in Business Analytics here is not just about acquiring technical skills; it's about fostering a mindset of curiosity, critical thinking, and continuous learning. The journey extends beyond the classroom, with opportunities for networking, mentorship, and exposure to the latest industry trends.</p>
+
+                <p>The department is located in the 8.7-acre lush green Rushikonda campus with well-ventilated spacious classrooms, well-equipped laboratories, library, play fields, canteen, vehicle parking, gym, staff rooms, waiting halls, auditorium, seminar halls, etc.</p>
+
+                <p>This program empowers students to become the architects of this data-driven future and is a journey of transformation, where every data point becomes a stepping stone towards innovation and success.</p>
+
+                <p><em>“Data really powers everything that we do.”</em> — Jeff Weiner</p>
+
+        </div>
+    </section>
+
+    <section id="vision-mission">
+        <h2 style="text-align: center;">Our Mission And Vision</h2>
+        <div class="page2">
+            
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 30%); ">
+              <h2 style="color: white;padding-bottom: 3vh;">MISSION :</h2>
+              <p >Transform into a premier management institution in pursuit of global knowledge and pragmatic orientation for grooming leadership, entrepreneurial talent and corporate acumen to nurture socially responsible business leaders.</p>
+            </div>
+            <div class="mivison" style="background-color: rgba(34, 49, 104, 2.5%);">
+              <h2  style="color: #22316c;padding-bottom: 3vh;">VISION :</h2>
+              <p>“Provide value based management education to nurture global business leaders.”</p>
+
+            </div>
+          </div>
+        <br>
+        <h2>Program Outcomes (POs)</h2>
+        <p><strong>PO 1:</strong> Apply knowledge of management theories and practices to solve business problems</p>
+        <p><strong>PO 2:</strong> Foster analytical and critical thinking abilities for data based decision making.</p>
+        <p><strong>PO 3:</strong> Ability to develop value based leadership ability.</p>
+        <p><strong>PO 4:</strong> Ability to understand analyse and communicate global, economic, legal and ethical aspects of business.</p>
+        <p><strong>PO 5:</strong> Ability to lead themselves and others in the achievement of organizational goals, contributing effectively to a team environment.</p>
+        <p><strong>PO 6:</strong> Ability to continuously learn and adapt to the dynamics of business and society.</p>
+        <p><strong>PO 7:</strong> Acquire entrepreneurial skills to establish and manage enterprises.</p>
+        <br>
+        <h2>Program Educational Objectives (PEOs)</h2>
+        <p>The Educational objectives of the two years MBA program of this institution are:</p>
+        <p><strong>PEO 1:</strong> To impart a general level of competence in management and to orient the students to acquire creative, innovative and entrepreneurial potential.</p>
+        <p><strong>PEO 2:</strong> To equip the students with requisite knowledge, skills, right attitude and orientation towards Continuous Learning and to develop efficient managers.</p>
+        <p><strong>PEO 3:</strong> To prepare them to adapt to a rapidly changing environment by applying their conceptual knowledge and become socially responsible and value driven citizens committed to sustainable development.</p>
+        <p><strong>PEO 4:</strong> Students of this program will be equipped with quantitative and qualitative skills to identify, analyze, design and create business opportunities in a globally dynamic environment.</p>
+        
+    </section>
+
+    <section id="hod-message">
+        <h2>HOD's Message</h2>
+        <img src="https://www.gvpcdpgc.edu.in/mba-ba/mba_data/Dr.K.V.V.Murali_Someswara_Rao.jpg" alt="HOD Image" class="hod-img">
+
+        <p><em>“Information is the oil of the 21st century, and analytics is the combustion engine.”</em> – Peter Sondergaard</p>
+        <p>Welcome to the Department of Master of Business Administration- Business Analytics (MBA-BA),</p>
+        <p>Department of Management Studies with a Vision “to provide value based management education to nurture global business leaders” is proud to introduce a comprehensive two-year MBA in Business Analytics, commencing in the academic year 2022-23, with a capacity for 60 students. This program, will be delivered over four semesters, integrates foundational management subjects in the first year—including Management Concepts, QT, Econometrics, Finance, Marketing, Human Resource Management, Operations, and Business Analytics. In the second year, students will explore advanced topics such as Statistics for Business Analytics, Decision-Making Analytics, R, Python, AI & Machine Learning, Marketing and Retail Analytics, Financial Analytics, HR Analytics, and Operations and Supply Chain Analytics. The curriculum also includes practical lab sessions, latest tools to enhance hands-on experience along with an internship in iv semester.</p>
+        <p>Our Business Analytics program offers a robust curriculum that covers key areas such as data analysis, statistical modeling, and predictive analytics. Students will gain the skills needed to extract valuable insights, streamline processes, and helps to make informed business decisions.</p>
+        <p>Welcome to the Department, where we invite you to explore the exciting intersection of Management Education and Data Analytics.</p>
+        <p>Welcome to the Master of Business Administration- Business Analytics (MBA-BA)…..,</p>
+        <p><strong>Dr. K.V.V. Murali Someswara Rao</strong><br>
+        Head of the Department<br>
+        Master of Business Administration- Business Analytics (MBA-BA)</p>
+    </section>
+
+    <section id="faculty">
+        <h2 style="font-size: xx-large; text-align: center;">Faculty Members</h2>
+        <div class="container" id="card-container">
+            <!-- Cards will be inserted here by JavaScript -->
+        </div>
+
+    </section>
+
+    <section id="syllabus">
+        <div class="container">
+            <h1>syllabus</h1>
+            
+            <div id="pdf-viewer"></div>
+            <div class="pdf-link">
+                <p>Download the PDF: <a href="../data/pg/BusinessAnalytics/pdf/MBA-BA-Syllabus.pdf" target="_blank">Click Here</a></p>
+            </div>
+        </div>
+    
+    </section>
+
+    <section id="academic-calendar">
+        <div class="container">
+            <h1>academic calendar</h1>
+            
+            <div id="pdf-viewer1"></div>
+            <div class="pdf-link">
+                <p>Download the PDF: <a href="../data/pg/BusinessAnalytics/pdf/academic_calender_2024-25.pdf" target="_blank">Click Here</a></p>
+            </div>
+        </div>
+
+    </section>
+
+
+</main>
+
+<script>
+    function adjustSidebarPadding() {
+        const header = document.querySelector('.header1');
+        const sidebar = document.getElementById('sidebar');
+        const headerHeight = header.offsetHeight;
+        sidebar.style.paddingTop = `${headerHeight}px`;
+    }
+
+    window.addEventListener('load', adjustSidebarPadding);
+    window.addEventListener('resize', adjustSidebarPadding);
+
+    document.getElementById('menu-icon').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+        document.getElementById('menu-icon').classList.toggle('active') ;
+    });
+
+    const links = document.querySelectorAll('.sidebar ul li a');
+    const sections = document.querySelectorAll('.content > section');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+            document.getElementById('menu-icon').innerHTML = `
+                <div class="strip burger-strip">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            `;
+            links.forEach(link => link.classList.remove('active'),
+            document.getElementById('menu-icon').classList.remove('active'));
+
+            link.classList.add('active');
+            sections.forEach(section => section.classList.remove('active'));
+            const targetId = link.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+            window.scrollTo({
+                top: 0,
+                // behavior: 'smooth'
+            });
+        });
+    });
+
+    document.querySelector('.sidebar ul li a').classList.add('active');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('data-target');
+    if (target) {
+        const targetLink = document.querySelector(`.sidebar ul li a[data-target="${target}"]`);
+        if (targetLink) {
+            targetLink.click();
+        }
+    }
+</script>
+<!-- faculty scprit -->
+<script type="module">
+    import cardsData from '../data/faculty.js'; // Ensure the correct path to your faculty.js file
+    // console.log(cardsData);
+    function createCard(data) {
+        
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = data.id;
+        card.innerHTML = `
+            <div class="fac_img">
+                <img class="profile-image" src="${data.image}" alt="${data.name}">
+            </div>
+            <div class="fac_title">
+                <h3 class="name">${data.name}</h3>
+                <p>${data.title}</p>
+                <p class="designation">${data.designation}</p>
+                <p><a href="${data.email}">${data.email}</a></p>
+                <div class="fac_details">
+                    <p><strong>Area of Specialization:</strong> <span class="color">${data.areaOfSpecialisation}</span></p>
+                    <p><strong>Date of Joining:</strong> <span class="color">${data.dateOfJoining}</span></p>
+                    <p><strong>Nature of Association:</strong> <span class="color">${data.natureOfAssosiation}</span></p>
+                </div>
+            </div>
+        `;
+        return card;
+    }
+
+    function loadContentPage(branch) {
+        const container = document.getElementById('card-container');
+        const filteredCardsData = cardsData.filter(cardData => 
+        cardData.branch === branch
+        );
+        
+
+        filteredCardsData.forEach(cardData => {
+            const card = createCard(cardData);
+            container.appendChild(card);
+        });
+
+        if (filteredCardsData.length === 0) {
+            container.innerHTML = `<p>No data available for the selected category and branch.</p>`;
+        }
+    }
+
+    // Load CSE faculty data
+    loadContentPage('BUSINESS_ANALYTICS');
+</script>
+<!-- academic page scprit -->
+<script>
+    const pdfViewer1 = document.getElementById('pdf-viewer1');
+
+    // URL of the PDF
+    const url1 = '../data/pg/BusinessAnalytics/pdf/academic_calender_2024-25.pdf';
+    
+    // Asynchronous download of PDF
+    pdfjsLib.getDocument(url1).promise.then(function(pdfDoc_) {
+        pdfViewer1.innerHTML = ''; // Clear previous content
+        const pdfDoc = pdfDoc_;
+        const scale = 1.5;
+        const numPages = pdfDoc.numPages;
+
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+            pdfDoc.getPage(pageNum).then(function(page) {
+                const viewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Render PDF page into canvas context
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                page.render(renderContext).promise.then(function() {
+                    pdfViewer1.appendChild(canvas);
+                });
+            });
+        }
+    });
+</script>
+
+
+<!-- syllabus -->
+<script>
+    const pdfViewer = document.getElementById('pdf-viewer');
+
+    // URL of the PDF
+    const url = '../data/pg/BusinessAnalytics/pdf/MBA-BA-Syllabus.pdf';
+    
+    // Asynchronous download of PDF
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfViewer.innerHTML = ''; // Clear previous content
+        const pdfDoc = pdfDoc_;
+        const scale = 1.5;
+        const numPages = pdfDoc.numPages;
+
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+            pdfDoc.getPage(pageNum).then(function(page) {
+                const viewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Render PDF page into canvas context
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                page.render(renderContext).promise.then(function() {
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+        }
+    });
+</script>
+
+<script src="../templates/preloader.js"></script>
+
+</body>
+</html>
